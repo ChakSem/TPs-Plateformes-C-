@@ -3,20 +3,14 @@
 #include <iostream>
 #include <vector>
 #include <list>
-#include <random>
 #include <iterator>
 #include <algorithm>
 #include <functional>
 
+#include "Outils.h"
+
 using namespace std;
 
-int generate(int min, int max) {
-	std::uniform_int_distribution <int> distribution(min, max);
-	std::random_device rd;
-	std::mt19937 engine(rd());
-
-	return distribution(engine);
-}
 
 void Afficher(vector<unsigned int> l) {
 
@@ -43,7 +37,7 @@ void vecteur(
 	vector<unsigned int> v = *vadd;
 
 	for (int i = 0; i < 10; i++) {
-		v.push_back(generate(2, 10));
+		v.push_back(generer(2, 10));
 
 		cout << v[i] << ", ";
 	}
@@ -74,7 +68,7 @@ list<unsigned int> liste() {
 	myIterator = l.begin();
 
 	while (myIterator != l.end()) {
-		*myIterator = generate(2,10);
+		*myIterator = generer(2,10);
 
 		myIterator++;
 	}
@@ -92,7 +86,7 @@ list<unsigned int> liste() {
 	return l;
 }
 
-int main() {
+int main_Q1() {
 	cout << "Vector :\n";
 
 	vector<unsigned int> v;
