@@ -35,7 +35,7 @@ unordered_map<string, double> main_unordered_map() {
 		it++;
 	}
 
-	/* Stupide vu que unordered_map => valeur dans un ordre aléatoire */
+	/* Stupide vu que unordered_map => valeur dans un ordre alï¿½atoire */
 	//it = umap.begin()++++++;
 	//umap.erase(it->first);
 
@@ -132,3 +132,4 @@ int main_Q2() {
 
 	return 0;
 }
+int somme
