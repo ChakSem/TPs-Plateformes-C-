@@ -41,13 +41,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 21,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 18,
+				"line" : 19,
 				"parent" : 0
 			},
 			{
@@ -174,11 +174,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "Projet_QT_autogen::@6890427a1f51a3e7e1df"
+			"id" : "Projet_QT_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
 		},
 		{
-			"id" : "Projet_QT_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+			"backtrace" : 0,
+			"id" : "Projet_QT_autogen::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "Projet_QT::@6890427a1f51a3e7e1df",
@@ -251,14 +251,22 @@
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				2
+				2,
+				4
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				3
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				3
+				5
 			]
 		}
 	],
@@ -278,6 +286,17 @@
 			"sourceGroupIndex" : 0
 		},
 		{
+			"backtrace" : 1,
+			"path" : "calculatorform.ui",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/Projet_QT_autogen/include/ui_calculatorform.h",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/Projet_QT_autogen/timestamp",
@@ -287,7 +306,7 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/Projet_QT_autogen/timestamp.rule",
-			"sourceGroupIndex" : 2
+			"sourceGroupIndex" : 3
 		}
 	],
 	"type" : "EXECUTABLE"
