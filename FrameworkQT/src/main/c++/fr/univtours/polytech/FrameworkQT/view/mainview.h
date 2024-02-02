@@ -1,14 +1,23 @@
-#include "mainview.h"
-#include "ui_connectionview.h"
+#ifndef MAINVIEW_H
+#define MAINVIEW_H
 
-MainView::MainView(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainView)
-{
-    ui->setupUi(this);
-}
+#include <QMainWindow>
 
-MainView::~MainView()
-{
-    delete ui;
+QT_BEGIN_NAMESPACE
+namespace Ui {
+class MainView;
 }
+QT_END_NAMESPACE
+
+class MainView : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    MainView(QWidget *parent = nullptr);
+    ~MainView();
+
+private:
+    Ui::MainView *ui;
+};
+#endif // MAINVIEW_H

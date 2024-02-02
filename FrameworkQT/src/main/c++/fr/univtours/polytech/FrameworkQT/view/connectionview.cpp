@@ -1,5 +1,5 @@
 #include "connectionview.h"
-#include "ui_ConnectionView.h"
+#include "././ui_ConnectionView.h"
 
 ConnectionView::ConnectionView(QWidget *parent)
     : QMainWindow(parent)
