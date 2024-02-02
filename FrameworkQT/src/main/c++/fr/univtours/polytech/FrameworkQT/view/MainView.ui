@@ -1,106 +1,31 @@
-package fr.univtours.polytech.FrameworkQT.view;
-
-import java.util.List;
-import java.util.function.Consumer;
-
-import fr.univtours.polytech.FrameworkQT.algorithmes.Label;
-import fr.univtours.polytech.FrameworkQT.dessin.ViewBox;
-import javafx.scene.Scene;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.ScatterChart;
-import javafx.scene.chart.XYChart;
-import javafx.scene.control.Tooltip;
-import javafx.util.Duration;
-
-/**
- * Vue pour la fenêtre du graphique contenant
- * les étiquettes des chemins trouvés
- * par l'algorithme Label Setting.
- */
-public class LabelChartVue {
-    private Scene scene;
-    private ScatterChart<Number, Number> scatterChart;
-
-    /**
-     * Constructeur de LabelChartVue
-     *
-     * @param etiquettes Liste des étiquettes à afficher
-     * @param etiquetteCliquee Fonction à appeler lorsqu'une étiquette est cliquée
-     */
-    public LabelChartVue(List<Label> etiquettes, Consumer<Label> etiquetteCliquee) {
-        final NumberAxis xAxis = new NumberAxis();
-        final NumberAxis yAxis = new NumberAxis();
-        this.scatterChart = new ScatterChart<>(xAxis, yAxis);
-        xAxis.setLabel("Distance (mètres)");
-        yAxis.setLabel("Danger");
-        this.scatterChart.setTitle("Chemins Optimaux avec Label Setting");
-        this.scene = new Scene(this.scatterChart, 500, 400);
-
-        XYChart.Series<Number, Number> series = new XYChart.Series<>();
-        float distanceMin = Float.MAX_VALUE;
-        float distanceMax = Float.MIN_VALUE;
-        float dangerMin = Float.MAX_VALUE;
-        float dangerMax = Float.MIN_VALUE;
-        for (Label label : etiquettes) {
-            series.getData().add(new XYChart.Data<>(label.lireDistance(), label.lireDanger()));
-            if (label.lireDistance() < distanceMin) {
-                distanceMin = label.lireDistance();
-            }
-            if (label.lireDistance() > distanceMax) {
-                distanceMax = label.lireDistance();
-            }
-            if (label.lireDanger() < dangerMin) {
-                dangerMin = label.lireDanger();
-            }
-            if (label.lireDanger() > dangerMax) {
-                dangerMax = label.lireDanger();
-            }
-        }
-        series.setName(etiquettes.size() + " chemins trouvés");
-        scatterChart.getData().add(series);
-
-        ViewBox rectangleAffichage = ViewBox.viewBoxMinMax(distanceMin, dangerMin, distanceMax, dangerMax);
-        rectangleAffichage.zoomCentre(0.8);
-        rectangleAffichage.arrondirX(200);
-        rectangleAffichage.arrondirY(5000);
-        xAxis.setAutoRanging(false);
-        yAxis.setAutoRanging(false);
-        xAxis.setTickUnit(200);
-        yAxis.setTickUnit(5000);
-        xAxis.setLowerBound(rectangleAffichage.getMinX());
-        xAxis.setUpperBound(rectangleAffichage.getMaxX());
-        yAxis.setLowerBound(rectangleAffichage.getMinY());
-        yAxis.setUpperBound(rectangleAffichage.getMaxY());
-
-        series.getData().forEach(pointEtiquette -> {
-            int indexLabel = series.getData().indexOf(pointEtiquette);
-            Label etiquette = etiquettes.get(indexLabel);
-
-            // événement lorsqu'on clique sur une étiquette
-            pointEtiquette.getNode().setOnMouseClicked(event -> etiquetteCliquee.accept(etiquette));
-
-            // infobulle de l'étiquette lorsque la souris passe dessus
-            Tooltip tooltip = new Tooltip("Danger : " + formatReels(etiquette.lireDanger()) + "\nDistance : " + formatReels(etiquette.lireDistance()) + " m");
-            tooltip.setStyle("-fx-font-size: 20");
-            // Temps d'apparition
-            tooltip.setShowDelay(Duration.millis(100));
-            Tooltip.install(pointEtiquette.getNode(), tooltip);
-        });
-    }
-
-    /**
-     * Récupère la scène
-     *
-     * @return La scène contenant le graphique
-     */
-    public Scene lireScene() {
-        return this.scene;
-    }
-
-    private static String formatReels(float n) {
-        if (n == (long)n)
-            return String.format("%d", (long)n);
-        else
-            return String.format("%f", n);
-    }
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainView</class>
+ <widget class="QMainWindow" name="MainView">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainView</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
