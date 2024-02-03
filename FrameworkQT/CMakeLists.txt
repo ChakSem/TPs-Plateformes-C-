@@ -13,22 +13,19 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-        main.cpp
-
-
-
+    src/main/c++/fr/univtours/polytech/FrameworkQT/model/Utilisateur.h
+    src/main/c++/fr/univtours/polytech/FrameworkQT/model/Utilsateur.cpp
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/ConnectionView.ui
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/MainView.ui
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionview.h src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionview.cpp
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainview.h src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainview.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(FrameworkQT
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        src/main/c++/fr/univtours/polytech/FrameworkQT/model/Utilisateur.h
-        src/main/c++/fr/univtours/polytech/FrameworkQT/model/Utilsateur.cpp
-        src/main/c++/fr/univtours/polytech/FrameworkQT/view/ConnectionView.ui
-        src/main/c++/fr/univtours/polytech/FrameworkQT/view/MainView.ui
-        src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionview.h src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionview.cpp
-        src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainview.h src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainview.cpp
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET FrameworkQT APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -69,6 +66,10 @@ install(TARGETS FrameworkQT
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+include_directories(
+    ""src\main\c++\fr\univtours\polytech\FrameworkQT\view""
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)

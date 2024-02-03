@@ -1,14 +1,14 @@
 #include "mainview.h"
-#include "././././././././ui_MainView.h"
+#include "ui_MainView.h"
 
-MainView::ConnectionView(QWidget *parent)
+MainView::MainView(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::ConnectionView)
+    , ui(new Ui::MainView)
 {
     ui->setupUi(this);
 }
 
-ConnectionView::~ConnectionView()
+MainView::~MainView()
 {
     delete ui;
 }

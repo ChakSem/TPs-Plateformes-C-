@@ -380,11 +380,6 @@
 	"SOURCES" : 
 	[
 		[
-			"S:/Polytech/DI4/S8/Plateformes logicielles C++/TPs-Plateformes-C-/FrameworkQT/main.cpp",
-			"MU",
-			null
-		],
-		[
 			"S:/Polytech/DI4/S8/Plateformes logicielles C++/TPs-Plateformes-C-/FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/model/Utilsateur.cpp",
 			"MU",
 			null
