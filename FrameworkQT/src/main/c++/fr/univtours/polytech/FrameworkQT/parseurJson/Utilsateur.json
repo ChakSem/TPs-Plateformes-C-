@@ -1,0 +1,22 @@
+//Fichier Json pour stocker les données des administrateurs
+{
+    "Utilisateurs": [
+        {
+            "id": 1,
+            "prenom": "Arthur",
+            "motdepasse": "mdp1"
+        },
+        {
+            "id": 2,
+            "prenom": "Alaa",
+            "motdepasse": "mdp2"
+        },
+        {
+            "id": 3,
+            "prenom": "Tom",
+            "motdepasse": "mdp3"
+        }
+
+    ]
+}
+

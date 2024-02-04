@@ -1,9 +1,0 @@
-C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/calculatorbuilder.dir
-C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/install.dir
-C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
-C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
-C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/calculatorbuilder_autogen_timestamp_deps.dir
-C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/build-Projet_QT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/CMakeFiles/calculatorbuilder_autogen.dir

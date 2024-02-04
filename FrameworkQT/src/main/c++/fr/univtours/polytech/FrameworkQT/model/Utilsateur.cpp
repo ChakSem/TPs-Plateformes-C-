@@ -1,8 +1,9 @@
 #include "Utilisateur.h"
 
-unsigned long int Utilisateur::getId() {
+int Utilisateur::getId() {
     return id;
 }
+
 void Utilisateur::setId(unsigned long int newId) {
     id = newId;
 }
