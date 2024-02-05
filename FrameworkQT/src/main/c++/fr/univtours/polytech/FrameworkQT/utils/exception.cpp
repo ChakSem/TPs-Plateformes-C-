@@ -12,7 +12,7 @@
 ***** Sortie : uiEXCValeur : unsigned int  						*****
 ***** Entraine : <pas de cond>									*****
 ********************************************************************/
-unsigned int CException::EXCLireValeur()
+unsigned int Exception::EXCLireValeur()
 {
     return uiEXCCodeErreur;
 }
@@ -25,7 +25,7 @@ unsigned int CException::EXCLireValeur()
 ***** Sortie :													*****
 ***** Entraine : uiEXCCodeErreur = uiCodeErreur 				*****
 ********************************************************************/
-void CException::EXCModifierValeur(unsigned int uiValeur)
+void Exception::EXCModifierValeur(unsigned int uiValeur)
 {
     uiEXCCodeErreur = uiValeur;
 }
@@ -39,7 +39,7 @@ void CException::EXCModifierValeur(unsigned int uiValeur)
 ***** Sortie :													*****
 ***** Entraine : <pas de cond>									*****
 ********************************************************************/
-void CException::EXCAffichageErreur()
+void Exception::EXCAffichageErreur()
 {
     printf_s("Erreur : ");
     switch (uiEXCCodeErreur)
@@ -57,9 +57,22 @@ void CException::EXCAffichageErreur()
 ***** Sortie :	uiEXCCodeErreur = PASDERREUR					*****
 ***** Entraine : <pas de cond>									*****
 ********************************************************************/
-CException::CException()
+Exception::Exception()
 {
     uiEXCCodeErreur = PASDERREUR;
+}
+
+/********************************************************************
+***** CException : Constructeur par défaut						*****
+*********************************************************************
+***** Necessite : <pas de cond>									*****
+***** Entree :						i							*****
+***** Sortie :	uiEXCCodeErreur = i					*****
+***** Entraine : <pas de cond>									*****
+********************************************************************/
+Exception::Exception(int i)
+{
+    uiEXCCodeErreur = i;
 }
 
 /********************************************************************
@@ -70,6 +83,6 @@ CException::CException()
 ***** Sortie :													*****
 ***** Entraine : <pas de cond>									*****
 ********************************************************************/
-CException::~CException()
+Exception::~Exception()
 {
 }

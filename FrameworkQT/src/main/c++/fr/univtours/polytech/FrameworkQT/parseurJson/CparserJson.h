@@ -8,8 +8,8 @@
 #include <string>
 #include <vector>
 #include <fstream>
-#include "Utilisateur.h"
-#include "Profil.h"
+#include "../model/User.h"
+#include "../model/Profile.h"
 
 
 class CparseurJson
@@ -29,46 +29,46 @@ public:
 	/*Methode qui permet de lire les utilisateurs dans le fichier json
 	 *Entree : Rien
 	 *Necessite : Rien
-	 *Sortie : std::vector<Utilisateur> 
+	 *Sortie : std::vector<User> 
 	 *Entrain : Retourne un vecteur d'utilisateur qui contient tous les utilisateurs dans le fichier json
 	 */
-	std::vector<Utilisateur> readUsers();
+	std::vector<User> readUsers();
 	/*
 	 * Methode qui permet de lire les profils dans le fichier json
 	 *Entree : Rien
 	 *Necessite : Rien
-	 *Sortie : std::vector<Profil>
+	 *Sortie : std::vector<Profile>
 	 *Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json
 	*/
-	std::vector<Profil> readProfils();
+	std::vector<Profile> readProfils();
 
 	/*
 	 * Methode qui permet de lire les profils dans le fichier json d'un utilisateur
 	 *Entree : std::string id
 	 *Necessite : Rien
-	 *Sortie : std::vector<Profil>
+	 *Sortie : std::vector<Profile>
 	 *Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json d'un utilisateur
 	*/
-	std::vector<Profil> readProfilsUser(std::string id);
+	std::vector<Profile> readProfilsUser(std::string id);
 	/*Methode qui permet de sauvegarder un utilisateur dans le fichier json et son mot de passe dans le fichier json (on va le crypter avant de le sauvegarder)
-	 *Entree : Utilisateur user, std::string password
+	 *Entree : User user, std::string password
 	 *Necessite : Rien
 	 *Sortie : Rien
 	 *Entrain : Sauvegarde l'utilisateur dans le fichier json et son mot de passe dans le fichier json (on va le crypter avant de le sauvegarder)
 	 */
 
 	
-	void addUser(Utilisateur user, std::string password);
+	void addUser(User user, std::string password);
 	/*Methode qui permet de supprimer un utilisateur dans le fichier json
-	 *Entree : Utilisateur user
+	 *Entree : User user
 	 *Necessite : Rien
 	 *Sortie : Rien
 	 *Entrain : Supprime l'utilisateur dans le fichier json
 	 */
-	void removeUser(Utilisateur user);
+	void removeUser(User user);
 
 	/* Methode qui permet de mettre a jour un utilisateur dans le fichier json
-	 *Entree : Utilisateur user
+	 *Entree : User user
 	 *Necessite : Rien
 	 *Sortie : Rien
 	 *Entrain : Met a jour l'utilisateur dans le fichier json

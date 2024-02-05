@@ -1,0 +1,13 @@
+//Fichier Json pour stocker les données des administrateurs
+    
+
+    {
+        "ProfilUser": [
+            {
+                "nom": 1,
+                "Droit": "admin",
+                "BDDs": "BDD1,BDD2,..." //(Vector /Listes de BDDs)
+            }
+        ]
+    }
+

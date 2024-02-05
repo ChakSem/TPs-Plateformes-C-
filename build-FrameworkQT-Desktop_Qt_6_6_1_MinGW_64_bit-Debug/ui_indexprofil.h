@@ -56,8 +56,8 @@ public:
     void retranslateUi(QDialog *IndexProfil)
     {
         IndexProfil->setWindowTitle(QCoreApplication::translate("IndexProfil", "Dialog", nullptr));
-        labelConnection->setText(QCoreApplication::translate("IndexProfil", "Choix Profil", nullptr));
-        pushButton->setText(QCoreApplication::translate("IndexProfil", "Charger Profil", nullptr));
+        labelConnection->setText(QCoreApplication::translate("IndexProfil", "Choix Profile", nullptr));
+        pushButton->setText(QCoreApplication::translate("IndexProfil", "Charger Profile", nullptr));
         pushButton_2->setText(QCoreApplication::translate("IndexProfil", "Retour", nullptr));
     } // retranslateUi
 

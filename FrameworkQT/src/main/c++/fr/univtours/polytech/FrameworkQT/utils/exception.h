@@ -3,7 +3,7 @@
 
 #define PASDERREUR 0
 
-class CException {
+class Exception {
 private:
     unsigned int uiEXCCodeErreur;
 
@@ -51,7 +51,18 @@ public:
     ***** Sortie :	uiEXCCodeErreur = PASDERREUR					*****
     ***** Entraine : <pas de cond>									*****
     ********************************************************************/
-    CException();
+    Exception();
+
+    
+    /********************************************************************
+    ***** CException : Constructeur par défaut						*****
+    *********************************************************************
+    ***** Necessite : <pas de cond>									*****
+    ***** Entree :													*****
+    ***** Sortie :	uiEXCCodeErreur = PASDERREUR					*****
+    ***** Entraine : <pas de cond>									*****
+    ********************************************************************/
+    Exception(int i);
 
     /********************************************************************
     ***** ~CException : Destructeur									*****
@@ -61,7 +72,7 @@ public:
     ***** Sortie :													*****
     ***** Entraine : <pas de cond>									*****
     ********************************************************************/
-    ~CException();
+    ~Exception();
 };
 
 

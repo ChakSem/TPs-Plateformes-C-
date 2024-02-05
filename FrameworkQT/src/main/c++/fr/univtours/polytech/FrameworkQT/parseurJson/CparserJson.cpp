@@ -9,9 +9,9 @@ CparseurJson::CparseurJson(std::string filepath) : filePath(QString::fromStdStri
 {
 }
 
-std::vector<Utilisateur> CparseurJson::readUsers()
+std::vector<User> CparseurJson::readUsers()
 {
-	std::vector<Utilisateur> utilisateurs;
+	std::vector<User> utilisateurs;
 
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
@@ -34,7 +34,7 @@ std::vector<Utilisateur> CparseurJson::readUsers()
 		{
 			// Parcours chaque utilisateur dans le tableau JSON
 			QJsonObject userObject = userValue.toObject();
-			Utilisateur utilisateur;
+			User utilisateur;
 
 			// Extrait les données de l'utilisateur depuis le fichier JSON
 			utilisateur.setId(userObject["id"].toString().toStdString());
@@ -48,7 +48,7 @@ std::vector<Utilisateur> CparseurJson::readUsers()
 	return utilisateurs;
 }
 
-void CparseurJson::addUser(Utilisateur user, std::string password)
+void CparseurJson::addUser(User user, std::string password)
 {
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
@@ -93,7 +93,7 @@ void CparseurJson::addUser(Utilisateur user, std::string password)
 	file.close();
 }
 
-void CparseurJson::removeUser(Utilisateur user)
+void CparseurJson::removeUser(User user)
 {
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
@@ -234,12 +234,12 @@ std::string CparseurJson::decryptPassword(std::string password)
  * Methode qui permet de lire les profils dans le fichier json
  *Entree : Rien
  *Necessite : Rien
- *Sortie : std::vector<Profil>
+ *Sortie : std::vector<Profile>
  *Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json
  */
-std::vector<Profil> readProfils()
+std::vector<Profile> readProfils()
 {
-	std::vector<Profil> profils;
+	std::vector<Profile> profils;
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
 	{
@@ -261,7 +261,7 @@ std::vector<Profil> readProfils()
 		{
 			// Parcours chaque profil dans le tableau JSON
 			QJsonObject profilObject = profilValue.toObject();
-			Profil profil;
+			Profile profil;
 
 			// Extrait les données du profil depuis le fichier JSON
 			QJsonObject profilData = profilObject["profil"].toObject();
@@ -284,12 +284,12 @@ std::vector<Profil> readProfils()
  * Methode qui permet de lire les profils dans le fichier json d'un utilisateur
  *Entree : std::string id
  *Necessite : Rien
- *Sortie : std::vector<Profil>
+ *Sortie : std::vector<Profile>
  *Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json d'un utilisateur
  */
-std::vector<Profil> readProfilsUser(std::string id);
+std::vector<Profile> readProfilsUser(std::string id);
 {
-	std::vector<Profil> profils;
+	std::vector<Profile> profils;
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
 	{
@@ -317,7 +317,7 @@ std::vector<Profil> readProfilsUser(std::string id);
 				for (const QJsonValue &profilValue : profilsArray)
 				{
 					QJsonObject profilObject = profilValue.toObject();
-					Profil profil;
+					Profile profil;
 
 					// Extrait les données du profil depuis le fichier JSON
 					QJsonObject profilData = profilObject["profil"].toObject();
