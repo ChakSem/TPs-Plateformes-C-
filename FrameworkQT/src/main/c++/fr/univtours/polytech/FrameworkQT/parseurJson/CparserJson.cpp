@@ -11,14 +11,14 @@ CparseurJson::CparseurJson(std::string filepath) : filePath(QString::fromStdStri
 
 std::vector<User> CparseurJson::readUsers()
 {
-	std::vector<User> utilisateurs;
+	std::vector<User> users;
 
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
 	{
 		// Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
 		qDebug() << ERREUR_OUVERTURE_FICHIER_JSON;
-		return utilisateurs;
+		return users;
 	}
 
 	// Lit le contenu du fichier JSON
@@ -34,18 +34,18 @@ std::vector<User> CparseurJson::readUsers()
 		{
 			// Parcours chaque utilisateur dans le tableau JSON
 			QJsonObject userObject = userValue.toObject();
-			User utilisateur;
+			User user;
 
 			// Extrait les données de l'utilisateur depuis le fichier JSON
-			utilisateur.setId(userObject["id"].toString().toStdString());
-			utilisateur.setFirstname(userObject["name"].toString().toStdString());
+			user.setId(userObject["id"].toString().toStdString());
+			user.setFirstname(userObject["name"].toString().toStdString());
 
-			utilisateurs.push_back(utilisateur);
+			user.push_back(user);
 		}
 	}
 
 	file.close();
-	return utilisateurs;
+	return users;
 }
 
 void CparseurJson::addUser(User user, std::string password)
