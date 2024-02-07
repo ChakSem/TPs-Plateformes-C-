@@ -17,7 +17,7 @@ private :
     std::string id;
     std::string lastname;
     std::string firstname;
-    std::list<Profile> profiles;
+    std::list<Profile*> profiles;
 
     // User():genreateId(uuid::generate_uuid_v4()){};//on genere un id unique pour chaque utilisateur
     // //        ^ peut etre juste id 
@@ -28,6 +28,8 @@ public :
     void setLastname(std::string newLastname);
     std::string getFirstname();
     void setFirstname(std::string newFirstname);
+    void addProfile(Profile* profile);
+    void deleteProfile(std::string intitule);
 
     User();
 };

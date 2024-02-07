@@ -17,8 +17,8 @@ public :
     void updateUser( std::string userId, std::string newFirstname, std::string newLastName, std::string newPassword);
 
     //Methode liées a l'administration des profils
-    void createProfile(std::string profileTitle);
-    void deleteProfile(std::string profileTitle);
+    void createProfile(User* actualUser, std::string profileTitle);
+    void deleteProfile(User* actualUser, std::string profileTitle);
     
     //Methode liées a l'administration des BDD
     void createDatabase(std::string databaseName);

@@ -10,18 +10,22 @@
 class Data
 {
 private:
-    Data* instance;
     //Map des données des utilisateurs ( clé: id de l'utilisateur, valeur: l'utilisateur) 
-    std::unordered_map<std::string, User> users;
+    std::unordered_map<std::string, User*> users;
     Data();
     
 public:
     //Signleton
-    Data* getInstance();
+    static Data& getInstance()
+        {
+            static Data instance;
+            return instance;
+        }
     
     //Recuperer un utilisateur avec son id
-    User getUser(std::string id);
-    
+    User* getUser(std::string id);
+    void addUser(User* user);
+    std::unordered_map<std::string, User*> getUsers();
 };
 
 #endif // DATA_H

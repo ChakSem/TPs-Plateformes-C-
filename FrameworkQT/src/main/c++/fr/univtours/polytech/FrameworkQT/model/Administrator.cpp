@@ -1,59 +1,59 @@
 #include "Administrator.h"
 #include "Data.h"
+#include "Profile.h"
 
-void createUser(std::string newFirstname, std::string newLastname, std::string newPassword)
+void Administrator::createUser(std::string newFirstname, std::string newLastname, std::string newPassword)
 {
     User* newUser = new User();
     newUser->setFirstname(newFirstname);
     newUser->setLastname(newLastname);
     
+    Data data = Data::getInstance();
+
     //, newPassword);
-    users.push_back(*newUser);
+    data.addUser(newUser);
 }
 
-void deleteUser(std::string userId)
+void Administrator::deleteUser(std::string userId)
 {
-    for (int i = 0; i < users.size(); i++)
+    std::unordered_map<std::string, User*> users = Data::getInstance().getUsers();
+
+    for(std::unordered_map<std::string, User*>::iterator iter = users.begin(); iter != users.end(); ++iter)
     {
-        if (users[i].getId() == userId)
+        if (iter->first == userId)
         {
-            users.erase(users.begin() + i);
+            users.erase(iter->first);
             break;
         }
     }
 }
 
-void updateUser(std::string userId, std::string newFirstname, std::string newLastName, std::string newPassword)
+void Administrator::updateUser(std::string userId, std::string newFirstname, std::string newLastName, std::string newPassword)
 {
-    for (int i = 0; i < users.size(); i++)
+    std::unordered_map<std::string, User*> users = Data::getInstance().getUsers();
+    
+    for(std::unordered_map<std::string, User*>::iterator iter = users.begin(); iter != users.end(); ++iter)
     {
-        if (users[i].getId() == userId)
+        if (iter->first == userId)
         {
-            users[i].setFirstname(newFirstname);
-            users[i].setLastname(newLastName);
-            users[i].setPassword(newPassword);
+            iter->second->setFirstname(newFirstname);
+            iter->second->setLastname(newLastName);
+            //iter->second->setPassword(newPassword);
             break;
         }
     }
 }
 
 // Methode liées a l'administration des profils
-void createProfile(std::string profileTitle);
+void Administrator::createProfile(User* actualUser, std::string profileTitle)
 {
-    Profile newProfile = new Profile(profileTitle);
-    profiles.push_back(newProfile);
+    Profile* newProfile = new Profile(actualUser, profileTitle);
+    actualUser->addProfile(newProfile);
 }
 
-void deleteProfile(std::string profileTitle);
+void Administrator::deleteProfile(User* actualUser, std::string profileTitle)
 {
-    for (int i = 0; i < profiles.size(); i++)
-    {
-        if (profiles[i].getTitle() == profileTitle)
-        {
-            profiles.erase(profiles.begin() + i);
-            break;
-        }
-    }
+    actualUser->deleteProfile(profileTitle);
 }
 
 // Methode liées a l'administration des BDD

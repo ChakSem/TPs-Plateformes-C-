@@ -25,10 +25,22 @@ void User::setFirstname(std::string newFirstname) {
     firstname = newFirstname;
 }
 
+void User::addProfile(Profile* profile) {
+    profiles.push_back(profile);
+}
+
+void User::deleteProfile(std::string title) {
+    for(std::list<Profile*>::iterator iter = profiles.begin(); iter != profiles.end(); ++iter) {
+        if(title == (*iter)->getTitle()) {
+            profiles.remove(*iter);
+            break;
+        }
+    }
+}
+
 User::User() {
     id = uuid::generate_uuid_v4();
     lastname = std::string("");
     firstname = std::string("");
-    profiles = std::list<Profile>();//std::make_unique<std::list<Profile>>();
+    profiles = std::list<Profile*>();//std::make_unique<std::list<Profile>>();
 }
-
