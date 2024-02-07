@@ -19,6 +19,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Utilsateur.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/data.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/CparserJson.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/encryption.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexdeconnection.cpp \
@@ -84,6 +85,7 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/ordered_map.hpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/thirdparty/hedley/hedley.hpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/encryption.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexdeconnection.h \

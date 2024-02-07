@@ -89,7 +89,7 @@ public:
 	 *Sortie : std::string
 	 *Entrain : Retourne le mot de passe crypte
 	*/
-	std::string cryptPassword(std::string password);
+	void setPassword(User* user, std::string password);
 
 	/*Methode qui permet de decrypter un mot de passe
 	 *Entree : std::string password
@@ -97,8 +97,7 @@ public:
 	 *Sortie : std::string
 	 *Entrain : Retourne le mot de passe decrypte
 	*/
-	std::string decryptPassword(std::string password);
-
+	std::string getPassword(User* user);
 };
 
 #endif // CPARSEUR_H

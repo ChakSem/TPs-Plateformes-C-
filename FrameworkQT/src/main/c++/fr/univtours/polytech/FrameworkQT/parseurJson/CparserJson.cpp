@@ -216,14 +216,13 @@ bool CparseurJson::isIDUserExist(std::string id)
 	return false;
 }
 
-std::string CparseurJson::cryptPassword(std::string password)
+void CparseurJson::setPassword(User* user, std::string password)
 {
-	// TODO : Implémenter la logique de cryptage du mot de passe
-	return password;
+	// TODO : Ecrire dans password.json "user.id : Encryption.encrtypt(password)"" 
 }
 
 
-std::string CparseurJson::decryptPassword(std::string password)
+std::string CparseurJson::getPassword(User* user)
 {
 	// TODO:  Implémenter la logique de décryptage du mot de passe
 	return password;
