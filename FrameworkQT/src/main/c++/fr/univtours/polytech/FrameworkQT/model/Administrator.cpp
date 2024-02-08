@@ -2,23 +2,20 @@
 #include "Data.h"
 #include "Profile.h"
 
-void Administrator::createUser(QString newFirstname, QString newLastname, QString newPassword)
+void Administrator::createUser(const QString& newFirstname, const QString& newLastname, const QString& newPassword)
 {
-    User* newUser = new User();
-    newUser->setFirstname(newFirstname);
-    newUser->setLastname(newLastname);
-    
+    User* newUser = new User(newLastname, newFirstname);
     Data data = Data::getInstance();
+    // ecrire mot de passe à "user.id : newPassword"
 
-    //, newPassword);
     data.addUser(newUser);
 }
 
-void Administrator::deleteUser(QString userId)
+void Administrator::deleteUser(const QString& userId)
 {
     QMap<QString, User*> users = Data::getInstance().getUsers();
 
-    for(QMap<QString, User*>::iterator iter = users.begin(); iter != users.end(); ++iter)
+    for(QMap<QString, User*>::const_iterator iter = users.constBegin(); iter != users.constEnd(); ++iter)
     {
         if (iter.key() == userId)
         {
@@ -29,7 +26,7 @@ void Administrator::deleteUser(QString userId)
     }
 }
 
-void Administrator::updateUser(QString userId, QString newFirstname, QString newLastName, QString newPassword)
+void Administrator::updateUser(const QString& userId, const QString& newFirstname, const QString& newLastName, const QString& newPassword)
 {
     QMap<QString, User*> users = Data::getInstance().getUsers();
     
@@ -39,29 +36,30 @@ void Administrator::updateUser(QString userId, QString newFirstname, QString new
         {
             iter.value()->setFirstname(newFirstname);
             iter.value()->setLastname(newLastName);
-            //iter->second->setPassword(newPassword);
+            // ecrire mot de passe à "userId : newPassword"
+
             break;
         }
     }
 }
 
 // Methode liées a l'administration des profils
-void Administrator::createProfile(User* actualUser, QString profileTitle)
+void Administrator::createProfile(User* actualUser, const QString& profileTitle)
 {
     Profile* newProfile = new Profile(actualUser, profileTitle);
-    actualUser->addProfile(newProfile);
+    actualUser->addProfile(*newProfile);
 }
 
-void Administrator::deleteProfile(User* actualUser, QString profileTitle)
+void Administrator::deleteProfile(User* actualUser, const QString& profileTitle)
 {
     actualUser->deleteProfile(profileTitle);
 }
 
 // Methode liées a l'administration des BDD
-void Administrator::createDatabase(QString databaseName) {
+void Administrator::createDatabase(const QString& databaseName) {
     // TODO
 }
 
-void Administrator::deleteDatabase(QString id){
+void Administrator::deleteDatabase(const QString& id){
     // TODO
 }
