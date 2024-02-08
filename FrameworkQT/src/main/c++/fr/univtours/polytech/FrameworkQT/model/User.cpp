@@ -21,6 +21,10 @@ void User::setFirstname(const QString& newFirstname) {
     firstname = newFirstname;
 }
 
+QList<Profile*> User::getProfiles() {
+    return profiles;
+}
+
 void User::addProfile(const Profile& profile) {
     profiles.push_back(new Profile(profile));
 }

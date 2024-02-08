@@ -3,6 +3,9 @@
 
 #define PASDERREUR 0
 
+#define NOMPROFILEDEJAATTRIBUE 1
+#define BASEDEDONNEEDEJAAJOUTEE 2
+
 class Exception {
 private:
     unsigned int uiEXCCodeErreur;

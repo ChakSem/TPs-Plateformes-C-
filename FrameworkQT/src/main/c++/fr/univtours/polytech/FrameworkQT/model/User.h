@@ -28,15 +28,16 @@ public :
     QString getFirstname();
     void setFirstname(const QString& newFirstname);
 
-    /* Pseudo-Accesseurs de l'attribut profiles */
+    /* Accesseur en lecture et Pseudo-Accesseurs en écriture de l'attribut profiles */
+    QList<Profile*> getProfiles();
     void addProfile(const Profile& profile);
     void deleteProfile(const QString intitule);
 
     /* Surcharge de l'opérateur = */
     User& operator=(const User& user);
 
-/* Constructeur à ne pas utiliser (on veut avoir des utilisateurs nommés) */
 private:
+/* Constructeur à ne pas utiliser (on veut avoir des utilisateurs nommés) */
     User();
 
 public :
