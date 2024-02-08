@@ -1,7 +1,7 @@
 #include "User.h"
 #include "Profile.h"
 
-QString User::getId() {
+QString User::getId() const {
     return id;
 }
 

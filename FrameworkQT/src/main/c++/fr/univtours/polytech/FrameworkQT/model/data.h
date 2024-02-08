@@ -11,7 +11,6 @@ class Data
 private:
     //Map des données des utilisateurs ( clé: id de l'utilisateur, valeur: l'utilisateur)
     QMap<QString, User*> users;
-    Data();
     
 public:
     //Singleton
@@ -21,10 +20,19 @@ public:
             return instance;
         }
     
-    //Recuperer un utilisateur avec son id
+    /* Accesseurs de l'attribut users */
     User* getUser(QString id);
-    void addUser(const User& user);
     QMap<QString, User*> getUsers();
+    void addUser(const User& user);
+
+private :
+/* Destructeur, sera appelé automatiquement à la fin du programme */
+    ~Data();
+
+/* Constructeurs et opérateur = à ne pas utiliser (Singleton) */
+    Data();
+    Data(const Data&);
+    Data& operator=(const Data&);
 };
 
 #endif // DATA_H

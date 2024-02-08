@@ -60,7 +60,7 @@ void Profile::addDataBase(const QString& newDatabase) {
     {
         QString newDatabase;
         Search(QString db) : newDatabase(db) {}
-        void operator()(const QString& n) { find += n == newDatabase; }
+        void operator()(const QString* n) { find += *n == newDatabase; }
         int find {0};
     };
 

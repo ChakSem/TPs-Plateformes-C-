@@ -5,10 +5,10 @@
 void Administrator::createUser(const QString& newFirstname, const QString& newLastname, const QString& newPassword)
 {
     User* newUser = new User(newLastname, newFirstname);
-    Data data = Data::getInstance();
+    Data& data = Data::getInstance();
     // ecrire mot de passe à "user.id : newPassword"
 
-    data.addUser(newUser);
+    data.addUser(*newUser);
 }
 
 void Administrator::deleteUser(const QString& userId)
