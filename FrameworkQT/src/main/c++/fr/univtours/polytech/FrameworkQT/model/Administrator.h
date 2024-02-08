@@ -20,8 +20,13 @@ public :
     //Methode liées a l'administration des BDD
     void createDatabase(const QString& databaseName);
     void deleteDatabase(const QString& id);
-    
-    Administrator();
+
+    /* Constructeurs et Destructeur */
+    Administrator(const User& user);
+    Administrator(const QString& newLastname, const QString& newFirstname);
+    Administrator(const QString& newLastname, const QString& newFirstname, const QList<Profile*>& newProfiles);
+
+    ~Administrator();
 };
 
 #endif

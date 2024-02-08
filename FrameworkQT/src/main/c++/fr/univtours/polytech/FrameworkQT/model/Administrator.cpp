@@ -63,3 +63,15 @@ void Administrator::createDatabase(const QString& databaseName) {
 void Administrator::deleteDatabase(const QString& id){
     // TODO
 }
+
+Administrator::Administrator(const User& user) : User(user) {
+}
+
+Administrator::Administrator(const QString& newLastname, const QString& newFirstname) : User(newLastname, newFirstname) {
+}
+
+Administrator::Administrator(const QString& newLastname, const QString& newFirstname, const QList<Profile*>& newProfiles) : User(newLastname, newFirstname, newProfiles) {
+}
+
+Administrator::~Administrator() {
+}

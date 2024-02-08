@@ -23,7 +23,7 @@ public:
     
     //Recuperer un utilisateur avec son id
     User* getUser(QString id);
-    void addUser(User* user);
+    void addUser(const User& user);
     QMap<QString, User*> getUsers();
 };
 
