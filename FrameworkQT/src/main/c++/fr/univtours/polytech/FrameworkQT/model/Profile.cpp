@@ -1,13 +1,13 @@
 #include <algorithm>
 #include "Profile.h"
 #include "User.h"
-#include "exception.h"
+#include "../utils/exception.h"
 
-std::string Profile::getTitle() {
+QString Profile::getTitle() {
     return title;
 }
 
-void Profile::setTitle(std::string newTitle) {
+void Profile::setTitle(QString newTitle) {
     title = newTitle; // A FAIRE DANS UTILISATEUR
 }
 
@@ -15,17 +15,17 @@ void Profile::setRight(Rights newRight){
     right = newRight;
 }
 
-QList<std::string> Profile::getDatabases(){
+QList<QString> Profile::getDatabases(){
     return databases;
 }
 
-void Profile::addDataBase(std::string newDatabase){
+void Profile::addDataBase(QString newDatabase){
     //Foncteur qui ajoute une base de données à la liste des bases de données (si (son nom)  n'est pas déjà présente dans la liste)
     struct Search
     {
-        std::string newDatabase;
-        Search(std::string db) : newDatabase(db) {} 
-        void operator()(const std::string& n) { find += n == newDatabase; }  
+        QString newDatabase;
+        Search(QString db) : newDatabase(db) {}
+        void operator()(const QString& n) { find += n == newDatabase; }
         int find {0};
     };
 
@@ -40,26 +40,37 @@ void Profile::addDataBase(std::string newDatabase){
     }
 }
 
-Profile::Profile(User* actualUser, std::string newTitle)
+Profile* Profile::operator=(const Profile& profile) {
+    QList<QString> newDataBases = QList<QString>(profile.databases);
+    return new Profile(profile.user, profile.title, profile.right, newDataBases);
+}
+
+Profile::Profile(const Profile& profile){
+    operator=(profile);
+}
+
+Profile::Profile(User* actualUser, QString newTitle)
 {
     user = actualUser;
     title = newTitle;
     right = Rights::LECTURE;
-    databases = std::list<std::string>(); 
 }
 
-Profile::Profile(User* actualUser,std::string newTitle, Rights newRight)
+Profile::Profile(User* actualUser,QString newTitle, Rights newRight)
 {
     user = actualUser;
     title = newTitle;
     right = newRight;
-    databases = std::list<std::string>(); 
 }
 
-Profile::Profile(User* actualUser, std::string newTitle, Rights newRight, QList<std::string> newDataBases)
+Profile::Profile(User* actualUser, QString newTitle, Rights newRight, QList<QString> newDataBases)
 {
     user = actualUser;
     title = newTitle;
     right = newRight;
     databases = newDataBases;
+}
+
+Profile::~Profile()
+{
 }

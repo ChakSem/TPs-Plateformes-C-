@@ -1,5 +1,9 @@
 debug/main.o
-debug/Utilsateur.o
+debug/Administrator.o
+debug/Profile.o
+debug/User.o
+debug/data.o
+debug/encryption.o
 debug/exception.o
 debug/indexbdd.o
 debug/indexdeconnection.o

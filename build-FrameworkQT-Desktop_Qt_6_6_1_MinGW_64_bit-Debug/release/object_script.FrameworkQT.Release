@@ -1,5 +1,9 @@
 release/main.o
-release/Utilsateur.o
+release/Administrator.o
+release/Profile.o
+release/User.o
+release/data.o
+release/encryption.o
 release/exception.o
 release/indexbdd.o
 release/indexdeconnection.o

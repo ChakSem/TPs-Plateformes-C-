@@ -1,6 +1,4 @@
-#include <iostream>
-#include <unordered_map>
-#include <string>
+#include <qstring>
 
 #include "User.h"
 #include "qmap.h"
@@ -12,7 +10,7 @@ class Data
 {
 private:
     //Map des données des utilisateurs ( clé: id de l'utilisateur, valeur: l'utilisateur)
-    QMap<std::string, User*> users;
+    QMap<QString, User*> users;
     Data();
     
 public:
@@ -24,9 +22,9 @@ public:
         }
     
     //Recuperer un utilisateur avec son id
-    User* getUser(std::string id);
+    User* getUser(QString id);
     void addUser(User* user);
-    QMap<std::string, User*> getUsers();
+    QMap<QString, User*> getUsers();
 };
 
 #endif // DATA_H

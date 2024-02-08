@@ -4,7 +4,7 @@ Data::Data() {
     // INITIALISER A PARTIR DES FICHIERS .JSON
 }
 
-User* Data::getUser(std::string id)
+User* Data::getUser(QString id)
 {
     return users[id];
 }
@@ -13,6 +13,6 @@ void Data::addUser(User* user) {
     users[user->getId()] = user;
 }
 
-QMap<std::string, User*> Data::getUsers() {
+QMap<QString, User*> Data::getUsers() {
     return users;
 }

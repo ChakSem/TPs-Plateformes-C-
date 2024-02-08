@@ -1,18 +1,19 @@
 #ifndef CPARSERJSON_H
 #define CPARSERJSON_H
 
-#define ERREUR_OUVERTURE_FICHIER_JSON 
-#define ERREUR_UTILISATEUR_SANS_PROFIL 
-#define ERREUR_UTILISATEUR_INEXISTANT 
+#define ERREUR_OUVERTURE_FICHIER_JSON
+#define ERREUR_UTILISATEUR_SANS_PROFIL
+#define ERREUR_UTILISATEUR_INEXISTANT
 
+#include <qstring>
+#include <qlist>
 #include <string>
-#include <vector>
 #include <fstream>
 #include "../model/User.h"
 #include "../model/Profile.h"
 
 
-class CparseurJson
+class CparserJson
 {
 private:
 	 
@@ -24,7 +25,7 @@ public:
 	 *Sortie : Rien
 	 *Entrain : Initialise le chemin du fichier json
 	 */
-	CparseurJson(std::string filepath);
+    CparserJson(QString filepath);
 
 	/*Methode qui permet de lire les utilisateurs dans le fichier json
 	 *Entree : Rien
@@ -32,7 +33,7 @@ public:
 	 *Sortie : std::vector<User> 
 	 *Entrain : Retourne un vecteur d'utilisateur qui contient tous les utilisateurs dans le fichier json
 	 */
-	std::vector<User> readUsers();
+    QList<User> readUsers();
 	/*
 	 * Methode qui permet de lire les profils dans le fichier json
 	 *Entree : Rien
@@ -40,7 +41,7 @@ public:
 	 *Sortie : std::vector<Profile>
 	 *Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json
 	*/
-	std::vector<Profile> readProfils();
+    QList<Profile> readProfils();
 
 	/*
 	 * Methode qui permet de lire les profils dans le fichier json d'un utilisateur
@@ -49,7 +50,7 @@ public:
 	 *Sortie : std::vector<Profile>
 	 *Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json d'un utilisateur
 	*/
-	std::vector<Profile> readProfilsUser(std::string id);
+    QList<Profile> readProfilsUser(std::string id);
 	/*Methode qui permet de sauvegarder un utilisateur dans le fichier json et son mot de passe dans le fichier json (on va le crypter avant de le sauvegarder)
 	 *Entree : User user, std::string password
 	 *Necessite : Rien
@@ -100,4 +101,4 @@ public:
 	std::string getPassword(User* user);
 };
 
-#endif // CPARSEUR_H
+#endif // CPARSER_H

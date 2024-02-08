@@ -1,8 +1,9 @@
-
 #include <random>
 #include <sstream>
+#include <qstring>
+
 #ifndef UUID_H
-#define UUID_H
+#define UUID_H 1
 
 namespace uuid
 {
@@ -11,7 +12,7 @@ namespace uuid
     static std::uniform_int_distribution<> dis(0, 15);
     static std::uniform_int_distribution<> dis2(8, 11);
 
-    std::string generate_uuid_v4()
+    inline QString generate_uuid_v4()
     {
         std::stringstream ss;
         int i;
@@ -41,7 +42,7 @@ namespace uuid
         {
             ss << dis(gen);
         };
-        return ss.str();
+        return  QString::fromStdString(ss.str());
     }
 }
 #endif

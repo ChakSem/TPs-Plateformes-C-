@@ -1,7 +1,4 @@
-#include <string>
-#include <vector>
-#include "UUID.h"
-
+#include <qstring>
 
 #ifndef ADMINISTRATOR
 #define ADMINISTRATOR 1
@@ -11,18 +8,18 @@ class Profile;
 
 class Administrator : public User {
 public :
-    //Methode liées a l'administration d'un utilsateur 
-    void createUser( std::string newFirstname, std::string newLastname, std::string newPassword);
-    void deleteUser( std::string userId);
-    void updateUser( std::string userId, std::string newFirstname, std::string newLastName, std::string newPassword);
+    //Methode liées a l'administration d'un utilisateur
+    void createUser(QString newFirstname, QString newLastname, QString newPassword);
+    void deleteUser(QString userId);
+    void updateUser(QString userId, QString newFirstname, QString newLastName, QString newPassword);
 
     //Methode liées a l'administration des profils
-    void createProfile(User* actualUser, std::string profileTitle);
-    void deleteProfile(User* actualUser, std::string profileTitle);
+    void createProfile(User* actualUser, QString profileTitle);
+    void deleteProfile(User* actualUser, QString profileTitle);
     
     //Methode liées a l'administration des BDD
-    void createDatabase(std::string databaseName);
-    void deleteDatabase(std::string id);
+    void createDatabase(QString databaseName);
+    void deleteDatabase(QString id);
     
     Administrator();
 };

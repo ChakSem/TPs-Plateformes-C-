@@ -2,7 +2,7 @@
 #include "Data.h"
 #include "Profile.h"
 
-void Administrator::createUser(std::string newFirstname, std::string newLastname, std::string newPassword)
+void Administrator::createUser(QString newFirstname, QString newLastname, QString newPassword)
 {
     User* newUser = new User();
     newUser->setFirstname(newFirstname);
@@ -14,30 +14,31 @@ void Administrator::createUser(std::string newFirstname, std::string newLastname
     data.addUser(newUser);
 }
 
-void Administrator::deleteUser(std::string userId)
+void Administrator::deleteUser(QString userId)
 {
-    std::unordered_map<std::string, User*> users = Data::getInstance().getUsers();
+    QMap<QString, User*> users = Data::getInstance().getUsers();
 
-    for(std::unordered_map<std::string, User*>::iterator iter = users.begin(); iter != users.end(); ++iter)
+    for(QMap<QString, User*>::iterator iter = users.begin(); iter != users.end(); ++iter)
     {
-        if (iter->first == userId)
+        if (iter.key() == userId)
         {
-            users.erase(iter->first);
+            delete iter.value();
+            users.erase(iter);
             break;
         }
     }
 }
 
-void Administrator::updateUser(std::string userId, std::string newFirstname, std::string newLastName, std::string newPassword)
+void Administrator::updateUser(QString userId, QString newFirstname, QString newLastName, QString newPassword)
 {
-    std::unordered_map<std::string, User*> users = Data::getInstance().getUsers();
+    QMap<QString, User*> users = Data::getInstance().getUsers();
     
-    for(std::unordered_map<std::string, User*>::iterator iter = users.begin(); iter != users.end(); ++iter)
+    for(QMap<QString, User*>::iterator iter = users.begin(); iter != users.end(); ++iter)
     {
-        if (iter->first == userId)
+        if (iter.key() == userId)
         {
-            iter->second->setFirstname(newFirstname);
-            iter->second->setLastname(newLastName);
+            iter.value()->setFirstname(newFirstname);
+            iter.value()->setLastname(newLastName);
             //iter->second->setPassword(newPassword);
             break;
         }
@@ -45,17 +46,22 @@ void Administrator::updateUser(std::string userId, std::string newFirstname, std
 }
 
 // Methode liées a l'administration des profils
-void Administrator::createProfile(User* actualUser, std::string profileTitle)
+void Administrator::createProfile(User* actualUser, QString profileTitle)
 {
     Profile* newProfile = new Profile(actualUser, profileTitle);
     actualUser->addProfile(newProfile);
 }
 
-void Administrator::deleteProfile(User* actualUser, std::string profileTitle)
+void Administrator::deleteProfile(User* actualUser, QString profileTitle)
 {
     actualUser->deleteProfile(profileTitle);
 }
 
 // Methode liées a l'administration des BDD
-void createDatabase(std::string databaseName);
-void deleteDatabase(std::string id);
+void Administrator::createDatabase(QString databaseName) {
+    // TODO
+}
+
+void Administrator::deleteDatabase(QString id){
+    // TODO
+}

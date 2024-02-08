@@ -1,15 +1,15 @@
-#include "CparseurJson.h"
+#include "CparserJson.h"
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QFile>
 #include <QDebug>
 
-CparseurJson::CparseurJson(std::string filepath) : filePath(QString::fromStdString(filepath))
+CparserJson::CparserJson(QString filepath) : filePath(filepath)
 {
 }
 
-std::vector<User> CparseurJson::readUsers()
+std::vector<User> CparserJson::readUsers()
 {
 	std::vector<User> users;
 
@@ -48,7 +48,7 @@ std::vector<User> CparseurJson::readUsers()
 	return users;
 }
 
-void CparseurJson::addUser(User user, std::string password)
+void CparserJson::addUser(User user, std::string password)
 {
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
@@ -93,7 +93,7 @@ void CparseurJson::addUser(User user, std::string password)
 	file.close();
 }
 
-void CparseurJson::removeUser(User user)
+void CparserJson::removeUser(User user)
 {
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
@@ -136,7 +136,7 @@ void CparseurJson::removeUser(User user)
 	file.close();
 }
 
-void CparseurJson::updateNameUser(std::string id, std::string newName)
+void CparserJson::updateNameUser(std::string id, std::string newName)
 {
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
@@ -182,7 +182,7 @@ void CparseurJson::updateNameUser(std::string id, std::string newName)
 	file.close();
 }
 
-bool CparseurJson::isIDUserExist(std::string id)
+bool CparserJson::isIDUserExist(std::string id)
 {
 	QFile file(filePath);
 	if (!file.open(QIODevice::ReadOnly))
@@ -216,13 +216,13 @@ bool CparseurJson::isIDUserExist(std::string id)
 	return false;
 }
 
-void CparseurJson::setPassword(User* user, std::string password)
+void CparserJson::setPassword(User* user, std::string password)
 {
 	// TODO : Ecrire dans password.json "user.id : Encryption.encrtypt(password)"" 
 }
 
 
-std::string CparseurJson::getPassword(User* user)
+std::string CparserJson::getPassword(User* user)
 {
 	// TODO:  Implémenter la logique de décryptage du mot de passe
 	return password;
@@ -236,7 +236,7 @@ std::string CparseurJson::getPassword(User* user)
  *Sortie : std::vector<Profile>
  *Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json
  */
-std::vector<Profile> readProfils()
+QList<Profile> CparserJson::readProfils()
 {
 	std::vector<Profile> profils;
 	QFile file(filePath);
@@ -286,7 +286,7 @@ std::vector<Profile> readProfils()
  *Sortie : std::vector<Profile>
  *Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json d'un utilisateur
  */
-std::vector<Profile> readProfilsUser(std::string id);
+QList<Profile> CparserJson::readProfilsUser(std::string id);
 {
 	std::vector<Profile> profils;
 	QFile file(filePath);

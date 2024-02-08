@@ -1,35 +1,31 @@
 #include "User.h"
 #include "Profile.h"
 
-std::string User::getId() {
+QString User::getId() {
     return id;
 }
 
-void User::setId(std::string newId) {
-    id = newId;
-}
-
-std::string User::getLastname() {
+QString User::getLastname() {
     return lastname;
 }
 
-void User::setLastname(std::string newLastname) {
+void User::setLastname(const QString& newLastname) {
     lastname = newLastname;
 }
 
-std::string User::getFirstname() {
+QString User::getFirstname() {
     return firstname;
 }
 
-void User::setFirstname(std::string newFirstname) {
+void User::setFirstname(const QString& newFirstname) {
     firstname = newFirstname;
 }
 
-void User::addProfile(Profile* profile) {
-    profiles.push_back(profile);
+void User::addProfile(const Profile& profile) {
+    profiles.push_back(new Profile(profile));
 }
 
-void User::deleteProfile(std::string title) {
+void User::deleteProfile(const QString title) {
     for(QList<Profile*>::iterator iter = profiles.begin(); iter != profiles.end(); ++iter) {
         if(title == (*iter)->getTitle()) {
             delete *iter;
@@ -39,8 +35,22 @@ void User::deleteProfile(std::string title) {
     }
 }
 
-User::User() {
+User::User() {}
+User::User(User& user){}
+
+User::User(const QString& newLastname, const QString& newFirstname) {
     id = uuid::generate_uuid_v4();
-    lastname = std::string("");
-    firstname = std::string("");
+    lastname = newLastname;
+    firstname = newFirstname;
+}
+
+User::User(const QString& newLastname, const QString& newFirstname, const QList<Profile*>& newProfiles) {
+    id = uuid::generate_uuid_v4();
+    lastname = newLastname;
+    firstname = newFirstname;
+
+    /* On copie et ajoute les profils un à un */
+    for(Profile* newProfile : newProfiles) {
+        addProfile(*newProfile);
+    }
 }
