@@ -1,7 +1,6 @@
 #include "data.h"
 
 Data::Data() {
-    users = std::unordered_map<std::string, User*>();
     // INITIALISER A PARTIR DES FICHIERS .JSON
 }
 
@@ -14,6 +13,6 @@ void Data::addUser(User* user) {
     users[user->getId()] = user;
 }
 
-std::unordered_map<std::string, User*> Data::getUsers() {
+QMap<std::string, User*> Data::getUsers() {
     return users;
 }

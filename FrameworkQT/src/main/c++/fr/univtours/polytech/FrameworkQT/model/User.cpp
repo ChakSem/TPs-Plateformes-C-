@@ -30,9 +30,10 @@ void User::addProfile(Profile* profile) {
 }
 
 void User::deleteProfile(std::string title) {
-    for(std::list<Profile*>::iterator iter = profiles.begin(); iter != profiles.end(); ++iter) {
+    for(QList<Profile*>::iterator iter = profiles.begin(); iter != profiles.end(); ++iter) {
         if(title == (*iter)->getTitle()) {
-            profiles.remove(*iter);
+            delete *iter;
+            profiles.erase(iter);
             break;
         }
     }
@@ -42,5 +43,4 @@ User::User() {
     id = uuid::generate_uuid_v4();
     lastname = std::string("");
     firstname = std::string("");
-    profiles = std::list<Profile*>();//std::make_unique<std::list<Profile>>();
 }

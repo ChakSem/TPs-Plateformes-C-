@@ -3,7 +3,7 @@
 #include <UUID.h>
 #include <iostream>
 #include <string>
-#include <list>
+#include "qlist.h"
 
 
 #ifndef USER
@@ -17,7 +17,7 @@ private :
     std::string id;
     std::string lastname;
     std::string firstname;
-    std::list<Profile*> profiles;
+    QList<Profile*> profiles;
 
     // User():genreateId(uuid::generate_uuid_v4()){};//on genere un id unique pour chaque utilisateur
     // //        ^ peut etre juste id 

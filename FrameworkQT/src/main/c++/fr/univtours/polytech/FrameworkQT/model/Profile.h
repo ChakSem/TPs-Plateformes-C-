@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-#include <list>
+#include "qlist.h"
 
 #include "Rights.h"
 
@@ -18,7 +18,7 @@ private:
     
     std::string title;
     Rights right;
-    std::list<std::string> databases;
+    QList<std::string> databases;
     User *user;
 
 public:
@@ -45,7 +45,8 @@ public:
     *Sortie: la liste des bases de donnees
     *Entraine: On recupere la liste des bases de donnees
     */
-    std::list<std::string> getDatabases();
+    QList<std::string> getDatabases();
+
     /*Methode qui permet d'ajouter une base de donnees a la liste des bases de donnees
     *Entree: le nom de la base de donnees a ajouter
     *Sortie: aucun
@@ -56,7 +57,7 @@ public:
     
     Profile(User* actualUser, std::string newTitle);
     Profile(User* actualUser, std::string newTitle, Rights newRight);
-    Profile(User* actualUser, std::string newTitle, Rights newRight, std::list<std::string> newDatabases);
+    Profile(User* actualUser, std::string newTitle, Rights newRight, QList<std::string> newDatabases);
    
     // std::string toString(); //Pour convertir le profil en string et ensuite le sauvegarder dans un fichier ou l'afficher / PAS NECESAIRE POUR LE MOMENT
 };

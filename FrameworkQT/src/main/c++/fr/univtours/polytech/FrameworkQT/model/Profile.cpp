@@ -15,7 +15,7 @@ void Profile::setRight(Rights newRight){
     right = newRight;
 }
 
-std::list<std::string> Profile::getDatabases(){
+QList<std::string> Profile::getDatabases(){
     return databases;
 }
 
@@ -56,7 +56,7 @@ Profile::Profile(User* actualUser,std::string newTitle, Rights newRight)
     databases = std::list<std::string>(); 
 }
 
-Profile::Profile(User* actualUser, std::string newTitle, Rights newRight, std::list<std::string> newDataBases)
+Profile::Profile(User* actualUser, std::string newTitle, Rights newRight, QList<std::string> newDataBases)
 {
     user = actualUser;
     title = newTitle;
