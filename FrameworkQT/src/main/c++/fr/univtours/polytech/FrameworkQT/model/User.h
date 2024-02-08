@@ -16,21 +16,36 @@ private :
     QList<Profile*> profiles;
 
 public :
+    /* Accesseurs de l'attribut id */
     QString getId();
+
+    /* Accesseurs de l'attribut lastname */
     QString getLastname();
     void setLastname(const QString& newLastname);
+
+
+    /* Accesseurs de l'attribut firstname */
     QString getFirstname();
     void setFirstname(const QString& newFirstname);
+
+    /* Pseudo-Accesseurs de l'attribut profiles */
     void addProfile(const Profile& profile);
     void deleteProfile(const QString intitule);
 
+    /* Surcharge de l'opérateur = */
+    User& operator=(const User& user);
+
+/* Constructeur à ne pas utiliser (on veut avoir des utilisateurs nommés) */
 private:
     User();
-    User(User& user);
 
 public :
+/* Constructeurs et Destructeur */
+    User(const User& user);
     User(const QString& newLastname, const QString& newFirstname);
     User(const QString& newLastname, const QString& newFirstname, const QList<Profile*>& newProfiles);
+
+    ~User();
 };
 
 #endif

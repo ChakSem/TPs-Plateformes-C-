@@ -40,9 +40,12 @@ void Profile::addDataBase(QString newDatabase){
     }
 }
 
-Profile* Profile::operator=(const Profile& profile) {
-    QList<QString> newDataBases = QList<QString>(profile.databases);
-    return new Profile(profile.user, profile.title, profile.right, newDataBases);
+Profile& Profile::operator=(const Profile& profile) {
+    user = profile.user;
+    title = profile.title;
+    right = profile.right;
+    databases = QList<QString>(profile.databases);
+    return *this;
 }
 
 Profile::Profile(const Profile& profile){

@@ -30,7 +30,7 @@ public:
     QList<QString> getDatabases();
     void addDataBase(QString newDatabase);
 
-    Profile* operator=(const Profile& profile);
+    Profile& operator=(const Profile& profile);
 
     /* Constructeur */
     Profile(const Profile& profile);

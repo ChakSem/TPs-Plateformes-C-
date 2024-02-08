@@ -26,7 +26,7 @@ void User::addProfile(const Profile& profile) {
 }
 
 void User::deleteProfile(const QString title) {
-    for(QList<Profile*>::iterator iter = profiles.begin(); iter != profiles.end(); ++iter) {
+    for(QList<Profile*>::const_iterator iter = profiles.constBegin(); iter != profiles.constEnd(); ++iter) {
         if(title == (*iter)->getTitle()) {
             delete *iter;
             profiles.erase(iter);
@@ -35,8 +35,25 @@ void User::deleteProfile(const QString title) {
     }
 }
 
-User::User() {}
-User::User(User& user){}
+User& User::operator=(const User& user) {
+    // On ne recopie pas l'id (Pas la même personne)
+    lastname = QString(user.lastname);
+    firstname = QString(user.lastname);
+    lastname = QString();
+
+    /* On copie et ajoute les profils un à un */
+    for(Profile* newProfile : user.profiles) {
+        addProfile(*newProfile);
+    }
+
+    return *this;
+}
+
+User::User() {} // Méthode privé, inutile de la définir
+
+User::User(const User& user){
+    operator=(user);
+}
 
 User::User(const QString& newLastname, const QString& newFirstname) {
     id = uuid::generate_uuid_v4();
@@ -52,5 +69,11 @@ User::User(const QString& newLastname, const QString& newFirstname, const QList<
     /* On copie et ajoute les profils un à un */
     for(Profile* newProfile : newProfiles) {
         addProfile(*newProfile);
+    }
+}
+
+User::~User() {
+    for(Profile* profile : profiles) {
+        delete profile;
     }
 }
