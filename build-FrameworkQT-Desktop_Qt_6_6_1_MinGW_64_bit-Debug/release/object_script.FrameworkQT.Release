@@ -3,6 +3,7 @@ release/Administrator.o
 release/Profile.o
 release/User.o
 release/data.o
+release/CparserJson.o
 release/encryption.o
 release/exception.o
 release/indexbdd.o

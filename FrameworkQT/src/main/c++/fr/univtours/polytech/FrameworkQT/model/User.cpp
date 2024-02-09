@@ -76,6 +76,12 @@ User::User(const QString& newFirstname, const QString& newLastname, const QList<
     }
 }
 
+User::User(const QString& newId, const QString& newFirstname, const QString& newLastname) {
+    id = newId;
+    lastname = newLastname;
+    firstname = newFirstname;
+}
+
 User::~User() {
     for(Profile* profile : profiles) {
         delete profile;

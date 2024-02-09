@@ -45,6 +45,7 @@ public :
     User(const User& user);
     User(const QString& newFirstname, const QString& newLastname);
     User(const QString& newFirstname, const QString& newLastname, const QList<Profile*>& newProfiles);
+    User(const QString& newId, const QString& newFirstname, const QString& newLastname); // Constructeur pour le parseur
 
     ~User();
 };

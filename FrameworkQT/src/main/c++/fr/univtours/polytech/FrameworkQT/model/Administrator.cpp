@@ -73,5 +73,8 @@ Administrator::Administrator(const QString& newLastname, const QString& newFirst
 Administrator::Administrator(const QString& newLastname, const QString& newFirstname, const QList<Profile*>& newProfiles) : User(newLastname, newFirstname, newProfiles) {
 }
 
+Administrator::Administrator(const QString& newId, const QString& newLastname, const QString& newFirstname) : User(newId, newLastname, newFirstname) {
+}
+
 Administrator::~Administrator() {
 }

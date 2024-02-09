@@ -1,5 +1,7 @@
 #include "data.h"
 
+#include "../parseurJson/CparserJson.h"
+
 User* Data::getUser(QString id)
 {
     return users[id];
@@ -41,6 +43,7 @@ Data::~Data() {
 
 Data::Data() {
     // TODO : initialisation à partir des de la désérialisation des fichiers .json
+    CparserJson::updateData(*this);
 }
 
 Data::Data(const Data&) {

@@ -25,6 +25,7 @@ public :
     Administrator(const User& user);
     Administrator(const QString& newLastname, const QString& newFirstname);
     Administrator(const QString& newLastname, const QString& newFirstname, const QList<Profile*>& newProfiles);
+    Administrator(const QString& newId, const QString& newFirstname, const QString& newLastname); // Constructeur pour le parseur
 
     ~Administrator();
 };

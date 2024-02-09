@@ -3,6 +3,7 @@ debug/Administrator.o
 debug/Profile.o
 debug/User.o
 debug/data.o
+debug/CparserJson.o
 debug/encryption.o
 debug/exception.o
 debug/indexbdd.o
