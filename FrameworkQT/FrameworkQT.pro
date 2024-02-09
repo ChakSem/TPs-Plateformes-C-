@@ -109,6 +109,8 @@ DISTFILES += \
     glog/uml/PUML.md \
     glog/uml/Rapport_TP8_1.md \
     glog/uml/TO_DO.md \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/data/admins.json \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/data/users.json \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/Adminstateur.json \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/ProfilUser.json \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/Utilsateur.json

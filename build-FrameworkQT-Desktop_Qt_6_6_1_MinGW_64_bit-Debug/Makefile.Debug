@@ -96,6 +96,8 @@ DIST          = .gitignore \
 		glog/uml/PUML.md \
 		glog/uml/Rapport_TP8_1.md \
 		glog/uml/TO_DO.md \
+		src/main/c++/fr/univtours/polytech/FrameworkQT/data/admins.json \
+		src/main/c++/fr/univtours/polytech/FrameworkQT/data/users.json \
 		src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/Adminstateur.json \
 		src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/ProfilUser.json \
 		src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/Utilsateur.json ..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\model\Administrator.h \
@@ -1443,6 +1445,10 @@ debug/main.o: ../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/main
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/model/UUID.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/model/Administrator.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/model/data.h \
+		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/CparserJson.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qlist \
+		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/model/Profile.h \
+		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/model/Rights.h \
 		C:/Qt/6.6.1/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qcoreapplication.h \
@@ -1805,7 +1811,11 @@ debug/data.o: ../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/mode
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/model/Administrator.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qmap.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qshareddata.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qshareddata_impl.h
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qshareddata_impl.h \
+		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/CparserJson.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qlist \
+		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/model/Profile.h \
+		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/model/Rights.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\data.o ..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\model\data.cpp
 
 debug/CparserJson.o: ../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/CparserJson.cpp ../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/CparserJson.h \

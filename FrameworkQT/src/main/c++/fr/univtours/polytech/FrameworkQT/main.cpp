@@ -2,6 +2,7 @@
 #include "model/User.h"
 #include "model/Administrator.h"
 #include "model/data.h"
+#include "parseurJson/CparserJson.h"
 
 #include <QApplication>
 
@@ -22,6 +23,8 @@ int main(int argc, char *argv[])
     for(Administrator* administrator : data.getAdministrators()) {
         qDebug().nospace() << "administrator" << qPrintable(administrator->getId());
     }
+
+    CparserJson::saveData(data);
 
     return a.exec();
 }

@@ -53,6 +53,33 @@ int CparserJson::saveData(Data& data) {
         userObject["firstname"] = user->getFirstname();
         userObject["surname"] = user->getLastname();
 
+        QJsonArray profilesArray;
+        for (Profile* profile : user->getProfiles()) {
+            QJsonObject profileObject;
+            profileObject["title"] = profile->getTitle();
+            // Convert Rights enum to string
+            QString rightString;
+            switch (profile->getRight()) {
+            case Rights::LECTURE:
+                rightString = "LECTURE";
+                break;
+            case Rights::LECTURE_MODIFICATION:
+                rightString = "LECTURE_MODIFICATION";
+                break;
+            case Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION:
+                rightString = "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION";
+                break;
+            default:
+                qDebug() << "ERREUR_DROIT_INCONNU";
+                return ERROR;
+            }
+            profileObject["right"] = rightString;
+            profilesArray.append(profileObject);
+        }
+        userObject["profiles"] = profilesArray;
+
+        // TODO : Gérer les bases de données
+
         usersArray.append(userObject);
     }
 
@@ -85,12 +112,39 @@ int CparserJson::saveData(Data& data) {
     // Créer un objet JSON pour l'utilisateur
     QJsonArray adminsArray = docAdmin.array();
     for (Administrator* administrator : data.getAdministrators()) {
-        QJsonObject userObject;
-        userObject["id"] = administrator->getId();
-        userObject["firstname"] = administrator->getFirstname();
-        userObject["surname"] = administrator->getLastname();
+        QJsonObject adminObject;
+        adminObject["id"] = administrator->getId();
+        adminObject["firstname"] = administrator->getFirstname();
+        adminObject["surname"] = administrator->getLastname();
 
-        usersArray.append(adminsArray);
+        QJsonArray profilesArray;
+        for (Profile* profile : administrator->getProfiles()) {
+            QJsonObject profileObject;
+            profileObject["title"] = profile->getTitle();
+            // Convert Rights enum to string
+            QString rightString;
+            switch (profile->getRight()) {
+            case Rights::LECTURE:
+                rightString = "LECTURE";
+                break;
+            case Rights::LECTURE_MODIFICATION:
+                rightString = "LECTURE_MODIFICATION";
+                break;
+            case Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION:
+                rightString = "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION";
+                break;
+            default:
+                qDebug() << "ERREUR_DROIT_INCONNU";
+                return ERROR;
+            }
+            profileObject["right"] = rightString;
+            profilesArray.append(profileObject);
+        }
+        adminObject["profiles"] = profilesArray;
+
+        // TODO : Gérer les bases de données
+
+        adminsArray.append(adminObject);
     }
 
     fileAdmin.close();
@@ -141,8 +195,35 @@ int CparserJson::updateData(Data& data) {
         {
             // Parcours chaque utilisateur dans le tableau JSON
             QJsonObject userObject = userValue.toObject();
+
             User* user = new User(QString::fromStdString(userObject["id"].toString().toStdString()), QString::fromStdString(userObject["firstname"].toString().toStdString())
                                   , QString::fromStdString(userObject["firstname"].toString().toStdString()));
+
+            QJsonArray profilesArray = userObject["profiles"].toArray();
+            for (const QJsonValue &profileValue : profilesArray) {
+                QJsonObject profileObject = profileValue.toObject();
+
+                Rights right;
+                if(profileObject["right"].toString().toStdString() == "LECTURE") {
+                    right = Rights::LECTURE;
+                } else {
+                    if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION") {
+                        right = Rights::LECTURE;
+                    } else {
+                        if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION") {
+                            right = Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION;
+                        } else {
+                            qDebug() << "ERREUR_DROIT_INCONNU";
+                            return ERROR;
+                        }
+                    }
+                }
+
+                Profile* profile = new Profile(user, QString::fromStdString(userObject["title"].toString().toStdString()), right);
+                // TODO : Gérer les bases de données
+
+                user->addProfile(*profile);
+            }
 
             data.addUser(*user);
         }
@@ -159,13 +240,38 @@ int CparserJson::updateData(Data& data) {
         // Si le document JSON est un tableau
         QJsonArray adminsArray = docAdmin.array();
 
-        for (const QJsonValue &userValue : adminsArray)
+        for (const QJsonValue &adminValue : adminsArray)
         {
             // Parcours chaque utilisateur dans le tableau JSON
-            QJsonObject userObject = userValue.toObject();
-            Administrator* admin = new Administrator(QString::fromStdString(userObject["id"].toString().toStdString()), QString::fromStdString(userObject["firstname"].toString().toStdString())
-                                                   , QString::fromStdString(userObject["firstname"].toString().toStdString()));
+            QJsonObject adminObject = adminValue.toObject();
+            Administrator* admin = new Administrator(QString::fromStdString(adminObject["id"].toString().toStdString()), QString::fromStdString(adminObject["firstname"].toString().toStdString())
+                                                   , QString::fromStdString(adminObject["firstname"].toString().toStdString()));
 
+            QJsonArray profilesArray = adminObject["profiles"].toArray();
+            for (const QJsonValue &profileValue : profilesArray) {
+                QJsonObject profileObject = profileValue.toObject();
+
+                Rights right;
+                if(profileObject["right"].toString().toStdString() == "LECTURE") {
+                    right = Rights::LECTURE;
+                } else {
+                    if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION") {
+                        right = Rights::LECTURE;
+                    } else {
+                        if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION") {
+                            right = Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION;
+                        } else {
+                            qDebug() << "ERREUR_DROIT_INCONNU";
+                            return ERROR;
+                        }
+                    }
+                }
+
+                Profile* profile = new Profile(admin, QString::fromStdString(adminObject["title"].toString().toStdString()), right);
+                // TODO : Gérer les bases de données
+
+                admin->addProfile(*profile);
+            }
 
             data.addAdministrator(*admin);
         }
@@ -175,6 +281,9 @@ int CparserJson::updateData(Data& data) {
 
     return SUCCESS;
 }
+
+
+
 
 void CparserJson::setPassword(User* user, QString password)
 {
