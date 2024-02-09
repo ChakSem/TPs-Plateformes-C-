@@ -1,6 +1,7 @@
 #include <qstring>
 
 #include "User.h"
+#include "Administrator.h"
 #include "qmap.h"
 
 #ifndef DATA_H
@@ -11,6 +12,7 @@ class Data
 private:
     //Map des données des utilisateurs ( clé: id de l'utilisateur, valeur: l'utilisateur)
     QMap<QString, User*> users;
+    QMap<QString, Administrator*> administrators;
     
 public:
     //Singleton
@@ -24,6 +26,11 @@ public:
     User* getUser(QString id);
     QMap<QString, User*> getUsers();
     void addUser(const User& user);
+
+    /* Accesseurs de l'attribut administrators */
+    Administrator* getAdministrator(QString id);
+    QMap<QString, Administrator*> getAdministrators();
+    void addAdministrator(const Administrator& administrator);
 
 private :
 /* Destructeur, sera appelé automatiquement à la fin du programme */

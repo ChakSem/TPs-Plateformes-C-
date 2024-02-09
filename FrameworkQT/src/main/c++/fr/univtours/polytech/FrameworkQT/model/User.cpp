@@ -59,13 +59,13 @@ User::User(const User& user){
     operator=(user);
 }
 
-User::User(const QString& newLastname, const QString& newFirstname) {
+User::User(const QString& newFirstname, const QString& newLastname) {
     id = uuid::generate_uuid_v4();
     lastname = newLastname;
     firstname = newFirstname;
 }
 
-User::User(const QString& newLastname, const QString& newFirstname, const QList<Profile*>& newProfiles) {
+User::User(const QString& newFirstname, const QString& newLastname, const QList<Profile*>& newProfiles) {
     id = uuid::generate_uuid_v4();
     lastname = newLastname;
     firstname = newFirstname;

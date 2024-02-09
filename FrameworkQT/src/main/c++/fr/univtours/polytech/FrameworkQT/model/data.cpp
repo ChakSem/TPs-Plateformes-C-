@@ -13,11 +13,29 @@ QMap<QString, User*> Data::getUsers() {
     return users;
 }
 
+Administrator* Data::getAdministrator(QString id)
+{
+    return administrators[id];
+}
+
+void Data::addAdministrator(const Administrator& administrator) {
+    users.insert(administrator.getId(), new User(administrator));
+    administrators.insert(administrator.getId(), new Administrator(administrator));
+}
+
+QMap<QString, Administrator*> Data::getAdministrators() {
+    return administrators;
+}
+
 Data::~Data() {
     // TODO : sérialisation des données dans les fichiers .json
 
     for(User* user : users) {
         delete user;
+    }
+
+    for(Administrator* administrator : administrators) {
+        delete administrator;
     }
 }
 

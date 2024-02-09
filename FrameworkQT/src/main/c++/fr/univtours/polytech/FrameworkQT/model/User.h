@@ -11,8 +11,8 @@ class Profile;
 class User {
 private :
     QString id; // Gestion attribution id dynamique
-    QString lastname;
     QString firstname;
+    QString lastname;
     QList<Profile*> profiles;
 
 public :
@@ -43,8 +43,8 @@ private:
 public :
 /* Constructeurs et Destructeur */
     User(const User& user);
-    User(const QString& newLastname, const QString& newFirstname);
-    User(const QString& newLastname, const QString& newFirstname, const QList<Profile*>& newProfiles);
+    User(const QString& newFirstname, const QString& newLastname);
+    User(const QString& newFirstname, const QString& newLastname, const QList<Profile*>& newProfiles);
 
     ~User();
 };
