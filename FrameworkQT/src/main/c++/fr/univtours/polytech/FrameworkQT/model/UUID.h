@@ -1,6 +1,9 @@
 #include <random>
 #include <sstream>
 #include <qstring>
+#include <qdebug>
+
+#include <iostream>
 
 #ifndef UUID_H
 #define UUID_H 1
@@ -42,6 +45,7 @@ namespace uuid
         {
             ss << dis(gen);
         };
+
         return  QString::fromStdString(ss.str());
     }
 }

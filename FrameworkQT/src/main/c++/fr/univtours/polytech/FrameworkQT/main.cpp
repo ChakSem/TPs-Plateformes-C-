@@ -13,18 +13,6 @@ int main(int argc, char *argv[])
     w.show();
 
     Data& data = Data::getInstance();
-    data.addUser(*new User("arthur", "crochemore"));
-    data.addAdministrator(*new Administrator("admin", "sudo"));
-
-    for(User* user : data.getUsers()) {
-        qDebug().nospace() << "user" << qPrintable(user->getId());
-    }
-
-    for(Administrator* administrator : data.getAdministrators()) {
-        qDebug().nospace() << "administrator" << qPrintable(administrator->getId());
-    }
-
-    CparserJson::saveData(data);
 
     return a.exec();
 }

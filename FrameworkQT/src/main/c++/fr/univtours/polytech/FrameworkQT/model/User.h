@@ -17,7 +17,7 @@ private :
 
 public :
     /* Accesseurs de l'attribut id */
-    QString getId() const;
+    QString getId();
 
     /* Accesseurs de l'attribut lastname */
     QString getLastname();

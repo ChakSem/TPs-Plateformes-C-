@@ -21,16 +21,16 @@ QString Profile::getTitle() {
 int searchTitle(const QList<Profile*>& profiles, const QString& newTitle) {
     for(Profile* profile : profiles) {
         if(profile->getTitle() == newTitle) {
-            return PASTROUVE;
+            return TROUVE;
         }
     }
 
-    return TROUVE;
+    return PASTROUVE;
 }
 
 void Profile::setTitle(const QString& newTitle) {
     try {
-        if(searchTitle(user->getProfiles(), newTitle)) {
+        if(searchTitle(user->getProfiles(), newTitle) == TROUVE) {
             throw new Exception(NOMPROFILEDEJAATTRIBUE);
         }
 
@@ -84,7 +84,7 @@ Profile& Profile::operator=(const Profile& profile) {
 
     QString uniqueTitle = profile.title;
     int copyCount = 1;
-    while(searchTitle(user->getProfiles(), profile.title)) {
+    while(searchTitle(user->getProfiles(), uniqueTitle) == TROUVE) {
         uniqueTitle = profile.title + QString::number(copyCount);
         copyCount ++;
     }
@@ -108,7 +108,7 @@ Profile::Profile(User* actualUser, const QString& newTitle) {
     /* On incremente un entier, ajouté à la fin de newTile, jusqu'à avoir une chaîne unique */
     QString uniqueTitle = newTitle;
     int copyCount = 1;
-    while(searchTitle(user->getProfiles(), newTitle)) {
+    while(searchTitle(user->getProfiles(), uniqueTitle) == TROUVE) {
         uniqueTitle = newTitle + QString::number(copyCount);
         copyCount ++;
     }
@@ -122,11 +122,10 @@ Profile::Profile(User* actualUser,const QString& newTitle,  const Rights& newRig
     /* On incremente un entier, ajouté à la fin de newTile, jusqu'à avoir une chaîne unique */
     QString uniqueTitle = newTitle;
     int copyCount = 1;
-    while(searchTitle(user->getProfiles(), newTitle)) {
+    while(searchTitle(user->getProfiles(), uniqueTitle) == TROUVE) {
         uniqueTitle = newTitle + QString::number(copyCount);
         copyCount ++;
     }
-
     title = uniqueTitle;
     right = newRight;
 }
@@ -137,7 +136,7 @@ Profile::Profile(User* actualUser, const QString& newTitle,  const Rights& newRi
     /* On incremente un entier, ajouté à la fin de newTile, jusqu'à avoir une chaîne unique */
     QString uniqueTitle = newTitle;
     int copyCount = 1;
-    while(searchTitle(user->getProfiles(), newTitle)) {
+    while(searchTitle(user->getProfiles(), uniqueTitle) == TROUVE) {
         uniqueTitle = newTitle + QString::number(copyCount);
         copyCount ++;
     }

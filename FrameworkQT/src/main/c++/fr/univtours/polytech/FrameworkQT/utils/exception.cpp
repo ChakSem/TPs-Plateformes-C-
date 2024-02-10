@@ -44,6 +44,30 @@ void Exception::EXCAffichageErreur()
     printf_s("Erreur : ");
     switch (uiEXCCodeErreur)
     {
+    case NOMPROFILEDEJAATTRIBUE :
+        printf_s("ERREUR : Le nom de profil saisi est deja affecte");
+        break;
+    case BASEDEDONNEEDEJAAJOUTEE :
+        printf_s("ERREUR : La base de donnee est deja ajoutee");
+        break;
+    case ERREUROUVERTUREFICHIERPOURSAUVEGARDEUSER :
+        printf_s("ERREUR : Le fichier pour la sauvegarde des utilisateurs n'a pu etre ouvert");
+        break;
+    case ERREUROUVERTUREFICHIERPOURSAUVEGARDEADMIN :
+        printf_s("ERREUR : Le fichier pour la sauvegarde des administrateurs n'a pu etre ouvert");
+        break;
+    case ERREUROUVERTUREFICHIERPOURCHARGERUSER :
+        printf_s("ERREUR : Le fichier pour le chargement des utilisateurs n'a pu etre ouvert");
+        break;
+    case ERREUROUVERTUREFICHIERPOURCHARGERADMIN :
+        printf_s("ERREUR : Le fichier pour le chargement des administrateurs n'a pu etre ouvert");
+        break;
+    case ERREUROUVERTUREFICHIERPOURECRIREDANSLASAUVEGARDEUSER :
+        printf_s("ERREUR : L'ecriture dans fichier pour le sauvegarde des utilisateurs a echoue");
+        break;
+    case ERREUROUVERTUREFICHIERPOURECRIREDANSLASAUVEGARDEADMIN :
+        printf_s("ERREUR : L'ecriture dans fichier pour le sauvegarde des administrateurs a echoue");
+        break;
     default:
         printf_s("\n");
     }

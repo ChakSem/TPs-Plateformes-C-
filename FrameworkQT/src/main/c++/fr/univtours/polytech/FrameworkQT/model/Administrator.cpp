@@ -8,7 +8,7 @@ void Administrator::createUser(const QString& newFirstname, const QString& newLa
     Data& data = Data::getInstance();
     // ecrire mot de passe à "user.id : newPassword"
 
-    data.addUser(*newUser);
+    data.addUser(newUser);
 }
 
 void Administrator::deleteUser(const QString& userId)

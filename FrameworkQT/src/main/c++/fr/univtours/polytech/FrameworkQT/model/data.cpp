@@ -7,8 +7,8 @@ User* Data::getUser(QString id)
     return users[id];
 }
 
-void Data::addUser(const User& user) {
-    users.insert(user.getId(), new User(user));
+void Data::addUser(User* user) {
+    users.insert(user->getId(), user);
 }
 
 QMap<QString, User*> Data::getUsers() {
@@ -20,9 +20,9 @@ Administrator* Data::getAdministrator(QString id)
     return administrators[id];
 }
 
-void Data::addAdministrator(const Administrator& administrator) {
-    users.insert(administrator.getId(), new User(administrator));
-    administrators.insert(administrator.getId(), new Administrator(administrator));
+void Data::addAdministrator(Administrator* administrator) {
+    users.insert(administrator->getId(), administrator);
+    administrators.insert(administrator->getId(), administrator);
 }
 
 QMap<QString, Administrator*> Data::getAdministrators() {
@@ -30,19 +30,14 @@ QMap<QString, Administrator*> Data::getAdministrators() {
 }
 
 Data::~Data() {
-    // TODO : sérialisation des données dans les fichiers .json
+    CparserJson::saveData(*this);
 
     for(User* user : users) {
         delete user;
     }
-
-    for(Administrator* administrator : administrators) {
-        delete administrator;
-    }
 }
 
 Data::Data() {
-    // TODO : initialisation à partir des de la désérialisation des fichiers .json
     CparserJson::updateData(*this);
 }
 

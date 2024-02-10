@@ -25,12 +25,12 @@ public:
     /* Accesseurs de l'attribut users */
     User* getUser(QString id);
     QMap<QString, User*> getUsers();
-    void addUser(const User& user);
+    void addUser(User* user);
 
     /* Accesseurs de l'attribut administrators */
     Administrator* getAdministrator(QString id);
     QMap<QString, Administrator*> getAdministrators();
-    void addAdministrator(const Administrator& administrator);
+    void addAdministrator(Administrator* administrator);
 
 private :
 /* Destructeur, sera appelé automatiquement à la fin du programme */

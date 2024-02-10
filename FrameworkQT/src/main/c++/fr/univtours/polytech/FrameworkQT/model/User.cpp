@@ -1,7 +1,7 @@
 #include "User.h"
 #include "Profile.h"
 
-QString User::getId() const {
+QString User::getId() {
     return id;
 }
 
@@ -42,8 +42,7 @@ void User::deleteProfile(const QString title) {
 User& User::operator=(const User& user) {
     // On ne recopie pas l'id (Pas la même personne)
     lastname = QString(user.lastname);
-    firstname = QString(user.lastname);
-    lastname = QString();
+    firstname = QString(user.firstname);
 
     /* On copie et ajoute les profils un à un */
     for(Profile* newProfile : user.profiles) {
@@ -56,6 +55,7 @@ User& User::operator=(const User& user) {
 User::User() {} // Méthode privé, inutile de la définir
 
 User::User(const User& user){
+    id = uuid::generate_uuid_v4();
     operator=(user);
 }
 
