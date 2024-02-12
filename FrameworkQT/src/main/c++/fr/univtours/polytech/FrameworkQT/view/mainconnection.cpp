@@ -1,5 +1,6 @@
-#include "mainconnection.h"
 #include "ui_mainconnection.h"
+#include "mainconnection.h"
+#include <QMainWindow>>
 
 MainConnection::MainConnection(QWidget *parent)
     : QDialog(parent)

@@ -8,6 +8,7 @@
 #include "../model/Administrator.h"
 #include "../model/Data.h"
 #include "../utils/exception.h"
+#include "../utils/encryption.h"
 
 #define ERROR 1
 #define SUCCESS 0
@@ -270,7 +271,7 @@ int CparserJson::updateData(Data& data) {
 
 void CparserJson::setPassword(User* user, QString password)
 {
-	// TODO : Ecrire dans password.json "user.id : Encryption.encrtypt(password)"" 
+    // TODO : Ecrire dans password.json "user.id : Encryption.encrtypt(password)"
 }
 
 

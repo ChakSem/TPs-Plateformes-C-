@@ -13,6 +13,7 @@ class MainConnection : public QDialog
 
 public:
     explicit MainConnection(QWidget *parent = nullptr);
+    void static show();
     ~MainConnection();
 
 private:

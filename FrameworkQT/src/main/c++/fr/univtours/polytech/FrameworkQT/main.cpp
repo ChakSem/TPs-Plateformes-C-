@@ -1,4 +1,5 @@
 #include "view/mainwindow.h"
+#include "view/mainconnection.h"
 #include "model/User.h"
 #include "model/Administrator.h"
 #include "model/data.h"
@@ -13,6 +14,8 @@ int main(int argc, char *argv[])
     w.show();
 
     Data& data = Data::getInstance();
+
+    CparserJson::saveData(Data::getInstance());
 
     return a.exec();
 }
