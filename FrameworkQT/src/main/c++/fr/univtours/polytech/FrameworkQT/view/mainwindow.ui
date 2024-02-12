@@ -23,9 +23,9 @@
       <height>491</height>
      </rect>
     </property>
-    <widget class="Connection" name="page_2"/>
+    <widget class="Connection" name="connection"/>
    </widget>
-   <widget class="QStackedWidget" name="stackedWidget">
+   <widget class="QStackedWidget" name="stackedWidgetDeconnection">
     <property name="geometry">
      <rect>
       <x>670</x>
@@ -34,8 +34,21 @@
       <height>41</height>
      </rect>
     </property>
-    <widget class="deconnection" name="page"/>
-    <widget class="QWidget" name="page_3"/>
+    <widget class="Deconnection" name="deconnection"/>
+    <widget class="QWidget" name="void_2"/>
+   </widget>
+   <widget class="QPushButton" name="boutton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -54,13 +67,13 @@
   <customwidget>
    <class>Connection</class>
    <extends>QWidget</extends>
-   <header location="global">connection.h</header>
+   <header>..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\connection.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>deconnection</class>
+   <class>Deconnection</class>
    <extends>QWidget</extends>
-   <header location="global">deconnection.h</header>
+   <header>..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\deconnection.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

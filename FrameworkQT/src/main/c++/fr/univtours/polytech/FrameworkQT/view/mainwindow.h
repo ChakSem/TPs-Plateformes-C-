@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+class QStackedWidget;
+
 namespace Ui {
 class MainWindow;
 }
@@ -20,8 +22,11 @@ private:
     Q_OBJECT
 
 public:
-    Ui::MainWindow* getUi();
+    QStackedWidget* getWidgetCenter();
+    QStackedWidget* getWidgetDeconnection();
+    void displayDeconnection();
     explicit MainWindow(QWidget *parent = nullptr);
+
     ~MainWindow();
 
 private:

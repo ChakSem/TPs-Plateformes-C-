@@ -2,13 +2,17 @@
 #include "mainwindow.h"
 #include "ui_connection.h"
 
+#include <QStackedWidget>
+
+
+
 Connection::Connection(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Connection)
 {
     ui->setupUi(this);
 
-    connect( ui->pushButton, SIGNAL( clicked() ), this, SLOT( pushButtonClicked() ) );
+    connect( ui->pushButton, SIGNAL( clicked() ), this, SLOT (MainWindow::getInstance().displayDeconnection() ));
 }
 
 Connection::~Connection()
@@ -16,6 +20,3 @@ Connection::~Connection()
     delete ui;
 }
 
-void pushButtonClicked() {
-    MainWindow::getInstance().getUi()->stackedWidgetCenter;
-}

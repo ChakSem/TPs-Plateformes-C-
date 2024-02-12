@@ -1,7 +1,7 @@
 #include "mainwindow.h"
-#include "connection.h"
 #include "ui_mainwindow.h"
 #include <QLabel>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,13 +10,24 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     ui->stackedWidgetCenter->setCurrentIndex(1);
+    ui->stackedWidgetDeconnection->setCurrentIndex(1);
+
+    connect(ui->boutton, &QPushButton::clicked, this, &MainWindow::displayDeconnection);
+}
+QStackedWidget* MainWindow::getWidgetCenter() {
+    return ui->stackedWidgetCenter;
 }
 
-Ui::MainWindow* MainWindow::getUi() {
-    return ui;
+QStackedWidget* MainWindow::getWidgetDeconnection() {
+    return ui->stackedWidgetDeconnection;
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+void MainWindow::displayDeconnection() {
+    qDebug() << "ca marche";
+
+    ui->stackedWidgetDeconnection->setCurrentIndex(2);
 }
