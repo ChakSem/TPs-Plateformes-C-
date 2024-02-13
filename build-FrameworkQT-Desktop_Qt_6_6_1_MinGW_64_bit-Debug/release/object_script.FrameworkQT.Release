@@ -11,8 +11,8 @@ release/combobox.o
 release/connectionInterface.o
 release/createupdatedeleteButtons.o
 release/deconnectionButton.o
-release/dialogpopupok.o
-release/dialogpopupvalidation.o
+release/dialogError.o
+release/dialogValidation.o
 release/homebuttons.o
 release/indexbdd.o
 release/mainwindow.o
@@ -22,8 +22,8 @@ release/moc_combobox.o
 release/moc_connectionInterface.o
 release/moc_createupdatedeleteButtons.o
 release/moc_deconnectionButton.o
-release/moc_dialogpopupok.o
-release/moc_dialogpopupvalidation.o
+release/moc_dialogError.o
+release/moc_dialogValidation.o
 release/moc_homebuttons.o
 release/moc_indexbdd.o
 release/moc_mainwindow.o

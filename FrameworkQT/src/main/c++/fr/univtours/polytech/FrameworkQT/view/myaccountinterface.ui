@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MyAccountInterface</class>
+ <widget class="QWidget" name="MyAccountInterface">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>173</width>
+    <height>125</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>160</width>
+     <height>102</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="passwordLogin_3"/>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="passwordLogin"/>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="passwordLogin_4"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="passwordLogin_2"/>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelId">
+      <property name="text">
+       <string>ID:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelId_2">
+      <property name="text">
+       <string>Rôle/Statut</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelId_3">
+      <property name="text">
+       <string>Nom: </string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="labelId_4">
+      <property name="text">
+       <string>Mot de passe</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="labelConnection">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>0</y>
+     <width>91</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Mon Compte</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

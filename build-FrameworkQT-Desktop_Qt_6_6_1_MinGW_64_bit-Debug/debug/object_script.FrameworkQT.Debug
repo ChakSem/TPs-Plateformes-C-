@@ -11,8 +11,8 @@ debug/combobox.o
 debug/connectionInterface.o
 debug/createupdatedeleteButtons.o
 debug/deconnectionButton.o
-debug/dialogpopupok.o
-debug/dialogpopupvalidation.o
+debug/dialogError.o
+debug/dialogValidation.o
 debug/homebuttons.o
 debug/indexbdd.o
 debug/mainwindow.o
@@ -22,8 +22,8 @@ debug/moc_combobox.o
 debug/moc_connectionInterface.o
 debug/moc_createupdatedeleteButtons.o
 debug/moc_deconnectionButton.o
-debug/moc_dialogpopupok.o
-debug/moc_dialogpopupvalidation.o
+debug/moc_dialogError.o
+debug/moc_dialogValidation.o
 debug/moc_homebuttons.o
 debug/moc_indexbdd.o
 debug/moc_mainwindow.o
