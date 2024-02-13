@@ -1,6 +1,6 @@
-#include "connection.h"
+#include "connectionInterface.h"
 #include "mainwindow.h"
-#include "ui_connection.h"
+#include "ui_connectionInterface.h"
 
 #include <QStackedWidget>
 

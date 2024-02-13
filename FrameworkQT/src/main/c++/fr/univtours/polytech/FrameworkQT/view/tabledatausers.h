@@ -1,5 +1,5 @@
-#ifndef INDEXTABLEDATAUSERS_H
-#define INDEXTABLEDATAUSERS_H
+#ifndef TABLEDATAUSERS_H
+#define TABLEDATAUSERS_H
 
 #include <QWidget>
 
@@ -19,4 +19,4 @@ private:
     Ui::indexTableDataUsers *ui;
 };
 
-#endif // INDEXTABLEDATAUSERS_H
+#endif // TABLEDATAUSERS_H

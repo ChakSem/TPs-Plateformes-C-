@@ -1,5 +1,5 @@
-#include "deconnection.h"
-#include "ui_deconnection.h"
+#include "deconnectionButton.h"
+#include "ui_deconnectionButton.h"
 
 Deconnection::Deconnection(QWidget *parent)
     : QWidget(parent)

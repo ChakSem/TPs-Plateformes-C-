@@ -1,5 +1,5 @@
-#include "indextabledatausers.h"
-#include "ui_indextabledatausers.h"
+#include "tabledatausers.h"
+#include "ui_tabledatausers.h"
 
 indexTableDataUsers::indexTableDataUsers(QWidget *parent)
     : QWidget(parent)

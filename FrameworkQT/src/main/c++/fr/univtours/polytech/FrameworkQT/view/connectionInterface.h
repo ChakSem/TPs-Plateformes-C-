@@ -1,5 +1,5 @@
-#ifndef CONNECTION_H
-#define CONNECTION_H
+#ifndef CONNECTIONINTERFACE_H
+#define CONNECTIONINTERFACE_H
 
 #include <QWidget>
 
@@ -19,4 +19,4 @@ private:
     Ui::Connection *ui;
 };
 
-#endif // CONNECTION_H
+#endif // CONNECTIONINTERFACE_H

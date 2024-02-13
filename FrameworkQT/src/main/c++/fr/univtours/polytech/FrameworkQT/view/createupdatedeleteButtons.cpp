@@ -1,5 +1,5 @@
-#include "indexcreateupdatedelete.h"
-#include "ui_indexcreateupdatedelete.h"
+#include "createupdatedeleteButtons.h"
+#include "ui_createupdatedeleteButtons.h"
 
 indexCreateUpdateDelete::indexCreateUpdateDelete(QWidget *parent)
     : QWidget(parent)

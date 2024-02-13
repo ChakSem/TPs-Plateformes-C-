@@ -17,8 +17,8 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
-#include "..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\connection.h"
-#include "..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\deconnection.h"
+#include "..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\connectionInterface.h"
+#include "..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\deconnectionButton.h"
 
 QT_BEGIN_NAMESPACE
 
