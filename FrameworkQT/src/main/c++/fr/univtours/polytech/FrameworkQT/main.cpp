@@ -1,5 +1,4 @@
 #include "view/mainwindow.h"
-#include "view/mainconnection.h"
 #include "model/User.h"
 #include "model/Administrator.h"
 #include "model/data.h"

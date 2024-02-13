@@ -32,7 +32,7 @@
      <x>20</x>
      <y>110</y>
      <width>161</width>
-     <height>42</height>
+     <height>52</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
@@ -81,9 +81,9 @@
   <widget class="QLabel" name="labelConnection">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>40</x>
      <y>10</y>
-     <width>111</width>
+     <width>141</width>
      <height>19</height>
     </rect>
    </property>

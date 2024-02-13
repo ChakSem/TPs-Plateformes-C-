@@ -28,9 +28,14 @@ public:
         if (DialogPopUpOk->objectName().isEmpty())
             DialogPopUpOk->setObjectName("DialogPopUpOk");
         DialogPopUpOk->resize(205, 103);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(DialogPopUpOk->sizePolicy().hasHeightForWidth());
+        DialogPopUpOk->setSizePolicy(sizePolicy);
         plainTextEdit = new QPlainTextEdit(DialogPopUpOk);
         plainTextEdit->setObjectName("plainTextEdit");
-        plainTextEdit->setGeometry(QRect(10, 10, 191, 61));
+        plainTextEdit->setGeometry(QRect(0, 10, 201, 61));
         pushButtonOk = new QPushButton(DialogPopUpOk);
         pushButtonOk->setObjectName("pushButtonOk");
         pushButtonOk->setGeometry(QRect(60, 80, 80, 18));

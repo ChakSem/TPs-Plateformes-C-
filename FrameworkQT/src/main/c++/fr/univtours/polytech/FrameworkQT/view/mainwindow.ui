@@ -7,20 +7,41 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">
+
+QLineEdit {
+	background : transparent;
+	border : none;
+    color :  white;
+	border-bottom : 1px solid #717072;
+}
+
+
+QPushButton {
+background : grey;
+border-radius:15px;
+
+color : white;
+}
+
+QPushButton:hover {
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidgetCenter">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>0</x>
       <y>50</y>
-      <width>661</width>
-      <height>491</height>
+      <width>800</width>
+      <height>500</height>
      </rect>
     </property>
     <widget class="Connection" name="connection"/>
@@ -28,27 +49,14 @@
    <widget class="QStackedWidget" name="stackedWidgetDeconnection">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>700</x>
       <y>0</y>
-      <width>131</width>
+      <width>101</width>
       <height>41</height>
      </rect>
     </property>
     <widget class="Deconnection" name="deconnection"/>
     <widget class="QWidget" name="void_2"/>
-   </widget>
-   <widget class="QPushButton" name="boutton">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>20</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -67,13 +75,13 @@
   <customwidget>
    <class>Connection</class>
    <extends>QWidget</extends>
-   <header>..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\connection.h</header>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>Deconnection</class>
    <extends>QWidget</extends>
-   <header>..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\deconnection.h</header>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -19,6 +20,7 @@ QT_BEGIN_NAMESPACE
 class Ui_ComboBox
 {
 public:
+    QGridLayout *gridLayout;
     QComboBox *comboBoxProfiles;
 
     void setupUi(QWidget *ComboBox)
@@ -26,9 +28,13 @@ public:
         if (ComboBox->objectName().isEmpty())
             ComboBox->setObjectName("ComboBox");
         ComboBox->resize(223, 40);
+        gridLayout = new QGridLayout(ComboBox);
+        gridLayout->setObjectName("gridLayout");
         comboBoxProfiles = new QComboBox(ComboBox);
         comboBoxProfiles->setObjectName("comboBoxProfiles");
-        comboBoxProfiles->setGeometry(QRect(10, 10, 211, 24));
+
+        gridLayout->addWidget(comboBoxProfiles, 0, 0, 1, 1);
+
 
         retranslateUi(ComboBox);
 

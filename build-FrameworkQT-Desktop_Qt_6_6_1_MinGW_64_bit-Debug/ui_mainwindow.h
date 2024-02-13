@@ -13,12 +13,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
-#include "..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\connectionInterface.h"
-#include "..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\deconnectionButton.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -31,7 +30,6 @@ public:
     QStackedWidget *stackedWidgetDeconnection;
     Deconnection *deconnection;
     QWidget *void_2;
-    QPushButton *boutton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -39,27 +37,43 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->resize(800, 550);
+        MainWindow->setStyleSheet(QString::fromUtf8("\n"
+"\n"
+"QLineEdit {\n"
+"	background : transparent;\n"
+"	border : none;\n"
+"    color :  white;\n"
+"	border-bottom : 1px solid #717072;\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton {\n"
+"background : grey;\n"
+"border-radius:15px;\n"
+"\n"
+"color : white;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         stackedWidgetCenter = new QStackedWidget(centralwidget);
         stackedWidgetCenter->setObjectName("stackedWidgetCenter");
-        stackedWidgetCenter->setGeometry(QRect(50, 50, 661, 491));
+        stackedWidgetCenter->setGeometry(QRect(0, 50, 800, 500));
         connection = new Connection();
         connection->setObjectName("connection");
         stackedWidgetCenter->addWidget(connection);
         stackedWidgetDeconnection = new QStackedWidget(centralwidget);
         stackedWidgetDeconnection->setObjectName("stackedWidgetDeconnection");
-        stackedWidgetDeconnection->setGeometry(QRect(670, 0, 131, 41));
+        stackedWidgetDeconnection->setGeometry(QRect(700, 0, 101, 41));
         deconnection = new Deconnection();
         deconnection->setObjectName("deconnection");
         stackedWidgetDeconnection->addWidget(deconnection);
         void_2 = new QWidget();
         void_2->setObjectName("void_2");
         stackedWidgetDeconnection->addWidget(void_2);
-        boutton = new QPushButton(centralwidget);
-        boutton->setObjectName("boutton");
-        boutton->setGeometry(QRect(0, 20, 80, 24));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -77,7 +91,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        boutton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
 };

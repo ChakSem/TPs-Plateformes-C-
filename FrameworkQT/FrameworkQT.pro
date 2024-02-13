@@ -138,3 +138,6 @@ DISTFILES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/Adminstateur.json \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/ProfilUser.json \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/Utilsateur.json
+
+RESOURCES += \
+    forest-background.qrc

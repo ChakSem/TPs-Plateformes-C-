@@ -13,6 +13,7 @@ class Connection : public QWidget
 
 public:
     explicit Connection(QWidget *parent = nullptr);
+    void actionConnection();
     ~Connection();
 
 private:
