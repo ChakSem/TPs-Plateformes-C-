@@ -28,8 +28,8 @@ public:
     QGridLayout *gridLayout;
     QLineEdit *passwordLogin;
     QLabel *labelMdp;
-    QLabel *labelId;
     QLineEdit *idLogin;
+    QLabel *labelId;
     QLabel *labelConnection;
 
     void setupUi(QDialog *MainConnection)
@@ -39,10 +39,10 @@ public:
         MainConnection->resize(400, 300);
         pushButton = new QPushButton(MainConnection);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(170, 180, 80, 24));
+        pushButton->setGeometry(QRect(150, 210, 80, 24));
         gridLayoutWidget = new QWidget(MainConnection);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(130, 102, 138, 66));
+        gridLayoutWidget->setGeometry(QRect(110, 100, 181, 101));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -56,20 +56,20 @@ public:
 
         gridLayout->addWidget(labelMdp, 3, 0, 1, 1);
 
-        labelId = new QLabel(gridLayoutWidget);
-        labelId->setObjectName("labelId");
-
-        gridLayout->addWidget(labelId, 2, 0, 1, 1);
-
         idLogin = new QLineEdit(gridLayoutWidget);
         idLogin->setObjectName("idLogin");
         idLogin->setProperty("long", QVariant(Q_INT64_C(0)));
 
         gridLayout->addWidget(idLogin, 2, 1, 1, 1);
 
+        labelId = new QLabel(gridLayoutWidget);
+        labelId->setObjectName("labelId");
+
+        gridLayout->addWidget(labelId, 2, 0, 1, 1);
+
         labelConnection = new QLabel(MainConnection);
         labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(160, 80, 71, 19));
+        labelConnection->setGeometry(QRect(150, 70, 121, 19));
         QFont font;
         font.setPointSize(14);
         font.setBold(true);

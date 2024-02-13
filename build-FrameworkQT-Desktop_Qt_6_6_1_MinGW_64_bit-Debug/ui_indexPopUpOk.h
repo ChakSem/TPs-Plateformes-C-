@@ -30,10 +30,10 @@ public:
         indexPopUpChampsManquants->resize(400, 300);
         pushButton = new QPushButton(indexPopUpChampsManquants);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(160, 220, 80, 18));
+        pushButton->setGeometry(QRect(150, 230, 80, 18));
         plainTextEdit = new QPlainTextEdit(indexPopUpChampsManquants);
         plainTextEdit->setObjectName("plainTextEdit");
-        plainTextEdit->setGeometry(QRect(110, 90, 191, 121));
+        plainTextEdit->setGeometry(QRect(100, 90, 191, 121));
 
         retranslateUi(indexPopUpChampsManquants);
 

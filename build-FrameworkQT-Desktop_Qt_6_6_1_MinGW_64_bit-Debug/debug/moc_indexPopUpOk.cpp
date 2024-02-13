@@ -36,28 +36,28 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSindexPopUpChampsManquantsENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASSindexPopUpChampsManquantsENDCLASS = QtMocHelpers::stringData(
-    "indexPopUpChampsManquants"
+struct qt_meta_stringdata_CLASSindexPopUpOkENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASSindexPopUpOkENDCLASS = QtMocHelpers::stringData(
+    "indexPopUpOk"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASSindexPopUpChampsManquantsENDCLASS_t {
+struct qt_meta_stringdata_CLASSindexPopUpOkENDCLASS_t {
     uint offsetsAndSizes[2];
-    char stringdata0[26];
+    char stringdata0[13];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASSindexPopUpChampsManquantsENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASSindexPopUpChampsManquantsENDCLASS_t qt_meta_stringdata_CLASSindexPopUpChampsManquantsENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASSindexPopUpOkENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSindexPopUpOkENDCLASS_t qt_meta_stringdata_CLASSindexPopUpOkENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 25)   // "indexPopUpChampsManquants"
+        QT_MOC_LITERAL(0, 12)   // "indexPopUpOk"
     },
-    "indexPopUpChampsManquants"
+    "indexPopUpOk"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSindexPopUpChampsManquantsENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSindexPopUpOkENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -73,20 +73,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSindexPopUpChampsManquantsENDCLAS
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject indexPopUpChampsManquants::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject indexPopUpOk::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_CLASSindexPopUpChampsManquantsENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSindexPopUpChampsManquantsENDCLASS,
+    qt_meta_stringdata_CLASSindexPopUpOkENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSindexPopUpOkENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSindexPopUpChampsManquantsENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSindexPopUpOkENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<indexPopUpChampsManquants, std::true_type>
+        QtPrivate::TypeAndForceComplete<indexPopUpOk, std::true_type>
     >,
     nullptr
 } };
 
-void indexPopUpChampsManquants::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void indexPopUpOk::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     (void)_o;
     (void)_id;
@@ -94,20 +94,20 @@ void indexPopUpChampsManquants::qt_static_metacall(QObject *_o, QMetaObject::Cal
     (void)_a;
 }
 
-const QMetaObject *indexPopUpChampsManquants::metaObject() const
+const QMetaObject *indexPopUpOk::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *indexPopUpChampsManquants::qt_metacast(const char *_clname)
+void *indexPopUpOk::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSindexPopUpChampsManquantsENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSindexPopUpOkENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int indexPopUpChampsManquants::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int indexPopUpOk::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     return _id;
