@@ -1,5 +1,5 @@
-#include "dialogpopupok.h"
-#include "ui_dialogpopupok.h"
+#include "dialogError.h"
+#include "ui_dialogError.h"
 
 DialogPopUpOk::DialogPopUpOk(QWidget *parent)
     : QDialog(parent)

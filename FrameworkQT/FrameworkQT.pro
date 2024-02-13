@@ -22,8 +22,8 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionInterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/createupdatedeleteButtons.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogpopupok.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogpopupvalidation.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogValidation.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homebuttons.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainwindow.cpp \
@@ -89,8 +89,8 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionInterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/createupdatedeleteButtons.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogpopupok.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogpopupvalidation.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogValidation.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homebuttons.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainwindow.h \
@@ -105,8 +105,8 @@ FORMS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionInterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/createupdatedeleteButtons.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogpopupok.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogpopupvalidation.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogValidation.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homebuttons.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainwindow.ui \

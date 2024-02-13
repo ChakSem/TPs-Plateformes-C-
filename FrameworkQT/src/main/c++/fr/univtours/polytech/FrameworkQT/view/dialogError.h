@@ -1,5 +1,5 @@
-#ifndef DIALOGPOPUPOK_H
-#define DIALOGPOPUPOK_H
+#ifndef DIALOGERROR_H
+#define DIALOGERROR_H
 
 #include <QDialog>
 
@@ -19,4 +19,4 @@ private:
     Ui::DialogPopUpOk *ui;
 };
 
-#endif // DIALOGPOPUPOK_H
+#endif // DIALOGERROR_H

@@ -1,5 +1,5 @@
-#include "dialogpopupvalidation.h"
-#include "ui_dialogpopupvalidation.h"
+#include "dialogValidation.h"
+#include "ui_dialogValidation.h"
 
 DialogPopUpValidation::DialogPopUpValidation(QWidget *parent)
     : QDialog(parent)

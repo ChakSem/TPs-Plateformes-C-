@@ -1,5 +1,5 @@
-#ifndef DIALOGPOPUPVALIDATION_H
-#define DIALOGPOPUPVALIDATION_H
+#ifndef DIALOGVALIDATION_H
+#define DIALOGVALIDATION_H
 
 #include <QDialog>
 
@@ -19,4 +19,4 @@ private:
     Ui::DialogPopUpValidation *ui;
 };
 
-#endif // DIALOGPOPUPVALIDATION_H
+#endif // DIALOGVALIDATION_H
