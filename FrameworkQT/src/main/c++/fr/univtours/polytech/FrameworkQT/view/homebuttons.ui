@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>276</width>
-    <height>90</height>
+    <height>89</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,28 +24,28 @@
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="4" column="0">
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="databaseButton">
       <property name="text">
        <string>BDDs</string>
       </property>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="usersButton">
       <property name="text">
        <string>Utilisateurs</string>
       </property>
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="accountButton">
       <property name="text">
        <string>Mon Compte</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="profileButton">
       <property name="text">
        <string>Profils</string>
       </property>

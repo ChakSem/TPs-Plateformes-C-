@@ -12,6 +12,10 @@ class HomeButtons : public QWidget
     Q_OBJECT
 
 public:
+    void actionProfiles();
+    void actionAccount();
+    void actionUsersManagement();
+
     explicit HomeButtons(QWidget *parent = nullptr);
     ~HomeButtons();
 
