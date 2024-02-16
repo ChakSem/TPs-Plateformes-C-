@@ -8,7 +8,6 @@ release/encryption.o
 release/exception.o
 release/addprofileinterface.o
 release/backbutton.o
-release/combobox.o
 release/connectionInterface.o
 release/createupdatedeleteButtons.o
 release/creationuserinterface.o
@@ -23,7 +22,6 @@ release/tabledatausers.o
 release/qrc_forest-background.o
 release/moc_addprofileinterface.o
 release/moc_backbutton.o
-release/moc_combobox.o
 release/moc_connectionInterface.o
 release/moc_createupdatedeleteButtons.o
 release/moc_creationuserinterface.o

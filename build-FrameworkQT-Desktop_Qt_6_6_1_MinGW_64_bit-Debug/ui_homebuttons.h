@@ -22,41 +22,41 @@ class Ui_HomeButtons
 public:
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
+    QPushButton *databaseButton;
+    QPushButton *usersButton;
+    QPushButton *accountButton;
+    QPushButton *profileButton;
 
     void setupUi(QWidget *HomeButtons)
     {
         if (HomeButtons->objectName().isEmpty())
             HomeButtons->setObjectName("HomeButtons");
-        HomeButtons->resize(276, 90);
+        HomeButtons->resize(276, 89);
         gridLayoutWidget = new QWidget(HomeButtons);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(10, 0, 261, 86));
+        gridLayoutWidget->setGeometry(QRect(10, 0, 261, 116));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_6 = new QPushButton(gridLayoutWidget);
-        pushButton_6->setObjectName("pushButton_6");
+        databaseButton = new QPushButton(gridLayoutWidget);
+        databaseButton->setObjectName("databaseButton");
 
-        gridLayout->addWidget(pushButton_6, 4, 0, 1, 1);
+        gridLayout->addWidget(databaseButton, 4, 0, 1, 1);
 
-        pushButton_5 = new QPushButton(gridLayoutWidget);
-        pushButton_5->setObjectName("pushButton_5");
+        usersButton = new QPushButton(gridLayoutWidget);
+        usersButton->setObjectName("usersButton");
 
-        gridLayout->addWidget(pushButton_5, 3, 0, 1, 1);
+        gridLayout->addWidget(usersButton, 3, 0, 1, 1);
 
-        pushButton_2 = new QPushButton(gridLayoutWidget);
-        pushButton_2->setObjectName("pushButton_2");
+        accountButton = new QPushButton(gridLayoutWidget);
+        accountButton->setObjectName("accountButton");
 
-        gridLayout->addWidget(pushButton_2, 2, 0, 1, 1);
+        gridLayout->addWidget(accountButton, 2, 0, 1, 1);
 
-        pushButton = new QPushButton(gridLayoutWidget);
-        pushButton->setObjectName("pushButton");
+        profileButton = new QPushButton(gridLayoutWidget);
+        profileButton->setObjectName("profileButton");
 
-        gridLayout->addWidget(pushButton, 1, 0, 1, 1);
+        gridLayout->addWidget(profileButton, 1, 0, 1, 1);
 
 
         retranslateUi(HomeButtons);
@@ -67,10 +67,10 @@ public:
     void retranslateUi(QWidget *HomeButtons)
     {
         HomeButtons->setWindowTitle(QCoreApplication::translate("HomeButtons", "Form", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("HomeButtons", "BDDs", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("HomeButtons", "Utilisateurs", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("HomeButtons", "Mon Compte", nullptr));
-        pushButton->setText(QCoreApplication::translate("HomeButtons", "Profils", nullptr));
+        databaseButton->setText(QCoreApplication::translate("HomeButtons", "BDDs", nullptr));
+        usersButton->setText(QCoreApplication::translate("HomeButtons", "Utilisateurs", nullptr));
+        accountButton->setText(QCoreApplication::translate("HomeButtons", "Mon Compte", nullptr));
+        profileButton->setText(QCoreApplication::translate("HomeButtons", "Profils", nullptr));
     } // retranslateUi
 
 };
