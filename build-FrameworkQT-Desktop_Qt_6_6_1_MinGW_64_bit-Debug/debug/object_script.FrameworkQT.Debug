@@ -8,7 +8,6 @@ debug/encryption.o
 debug/exception.o
 debug/addprofileinterface.o
 debug/backbutton.o
-debug/combobox.o
 debug/connectionInterface.o
 debug/createupdatedeleteButtons.o
 debug/creationuserinterface.o
@@ -23,7 +22,6 @@ debug/tabledatausers.o
 debug/qrc_forest-background.o
 debug/moc_addprofileinterface.o
 debug/moc_backbutton.o
-debug/moc_combobox.o
 debug/moc_connectionInterface.o
 debug/moc_createupdatedeleteButtons.o
 debug/moc_creationuserinterface.o

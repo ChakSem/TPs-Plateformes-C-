@@ -26,10 +26,10 @@ public:
     {
         if (indexTableDataUsers->objectName().isEmpty())
             indexTableDataUsers->setObjectName("indexTableDataUsers");
-        indexTableDataUsers->resize(208, 284);
+        indexTableDataUsers->resize(224, 302);
         tableWidget = new QTableWidget(indexTableDataUsers);
         tableWidget->setObjectName("tableWidget");
-        tableWidget->setGeometry(QRect(0, 0, 201, 281));
+        tableWidget->setGeometry(QRect(10, 10, 201, 281));
 
         retranslateUi(indexTableDataUsers);
 

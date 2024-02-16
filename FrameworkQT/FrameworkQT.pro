@@ -19,9 +19,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/combobox.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionInterface.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/createupdatedeleteButtons.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.cpp \
@@ -30,6 +28,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainwindow.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/myaccountinterface.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/tabledatausers.cpp
 
 HEADERS += \
@@ -89,9 +88,7 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/combobox.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionInterface.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/createupdatedeleteButtons.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.h \
@@ -100,6 +97,7 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainwindow.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/myaccountinterface.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/tabledatausers.h
     QT+=widgets
     QT+=core
@@ -108,9 +106,7 @@ HEADERS += \
 FORMS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/combobox.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionInterface.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/createupdatedeleteButtons.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.ui \
@@ -119,6 +115,7 @@ FORMS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainwindow.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/myaccountinterface.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/tabledatausers.ui
 
 # Default rules for deployment.

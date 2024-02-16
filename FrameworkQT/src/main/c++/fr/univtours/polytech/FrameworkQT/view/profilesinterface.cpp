@@ -1,5 +1,5 @@
-#include "combobox.h"
-#include "ui_combobox.h"
+#include "profilesInterface.h"
+#include "ui_profilesInterface.h"
 
 comboBox::comboBox(QWidget *parent)
     : QWidget(parent)
