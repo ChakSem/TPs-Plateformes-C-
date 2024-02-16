@@ -1,0 +1,30 @@
+Prefixe pour les header :
+../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/
+
+MainWidget :
+	0. Connexion : Connection / connectionInterface.h
+	1. Home : HomeButtons / homebuttons.h
+	2. Gestion Utilisateurs :
+	3. Création d'un compte : creationUserInterface / creationuserinterface.h
+	4. Profil de :
+	5. Nouveau Profil : addProfileInterface / addprofileinterface.h
+
+DeconnexionWidget : 
+	0. Deconnexion : Deconnection / deconnectionButton.h
+	1. Rien .
+
+BackWidget :
+	0. Retour : cancelButton / backbutton.h
+	1. Rien .
+
+PopupWidget : 
+	0. Rien .
+	1. Ok : dialogPopUpOk / dialogError.h
+	2. Confirmation : DialogPopUpValidation / dialogValidation.h
+
+? :
+	combobox.h
+	createupdatedeleteButtons.h : GestionUtilisateur ?
+	indexbdd.h
+	myaccountinterface.h
+	tabledatausers.h
