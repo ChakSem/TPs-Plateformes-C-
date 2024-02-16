@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->MainWidget->setCurrentIndex(1);
+    ui->MainWidget->setCurrentIndex(0);
     ui->DeconnectionWidget->setCurrentIndex(1);
     
     qDebug() << "Stacked Widget Deconnection initialized with current index:" << ui->DeconnectionWidget->currentIndex();
@@ -25,6 +25,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 void MainWindow::displayDeconnection() {
     ui->DeconnectionWidget->setCurrentIndex(0); // On affiche le bouton deconnexion
 }
