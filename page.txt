@@ -1,7 +1,7 @@
 Prefixe pour les header :
 ../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/
 
-MainWidget :
+MainWidget : (800 x 500)
 	0. Connexion : Connection / connectionInterface.h
 	1. Home : HomeButtons / homebuttons.h
 	2. Gestion Utilisateurs :
