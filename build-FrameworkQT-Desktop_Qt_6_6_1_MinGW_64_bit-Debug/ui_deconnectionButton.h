@@ -25,10 +25,19 @@ public:
     {
         if (Deconnection->objectName().isEmpty())
             Deconnection->setObjectName("Deconnection");
-        Deconnection->resize(94, 32);
+        Deconnection->resize(103, 32);
         pushButtonDeconnection = new QPushButton(Deconnection);
         pushButtonDeconnection->setObjectName("pushButtonDeconnection");
-        pushButtonDeconnection->setGeometry(QRect(0, 0, 85, 24));
+        pushButtonDeconnection->setGeometry(QRect(0, 0, 101, 31));
+        pushButtonDeconnection->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background : grey;\n"
+"border-radius:15px;\n"
+"\n"
+"color : white;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"}"));
 
         retranslateUi(Deconnection);
 
@@ -38,7 +47,7 @@ public:
     void retranslateUi(QWidget *Deconnection)
     {
         Deconnection->setWindowTitle(QCoreApplication::translate("Deconnection", "Form", nullptr));
-        pushButtonDeconnection->setText(QCoreApplication::translate("Deconnection", "Deconnection", nullptr));
+        pushButtonDeconnection->setText(QCoreApplication::translate("Deconnection", "Se D\303\251connecter", nullptr));
     } // retranslateUi
 
 };

@@ -24,7 +24,7 @@ class Ui_Connection
 {
 public:
     QFrame *frame;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout;
     QLineEdit *passwordLogin;
     QLineEdit *idLogin;
@@ -41,37 +41,27 @@ public:
         frame = new QFrame(Connection);
         frame->setObjectName("frame");
         frame->setGeometry(QRect(100, 50, 600, 400));
-        frame->setStyleSheet(QString::fromUtf8("QFrame {\n"
-"background : #333;\n"
-"}\n"
-"\n"
-"QLineEdit {\n"
-"	background : transparent;\n"
-"	border : none;\n"
-"    color :  #710702;\n"
-"border-bottom : 1px solid #717072;\n"
-"}\n"
-""));
+        frame->setStyleSheet(QString::fromUtf8(""));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        widget = new QWidget(frame);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(100, 110, 371, 161));
-        gridLayout = new QGridLayout(widget);
+        layoutWidget = new QWidget(frame);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(100, 110, 371, 161));
+        gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        passwordLogin = new QLineEdit(widget);
+        passwordLogin = new QLineEdit(layoutWidget);
         passwordLogin->setObjectName("passwordLogin");
 
         gridLayout->addWidget(passwordLogin, 3, 1, 1, 1);
 
-        idLogin = new QLineEdit(widget);
+        idLogin = new QLineEdit(layoutWidget);
         idLogin->setObjectName("idLogin");
         idLogin->setProperty("long", QVariant(Q_INT64_C(0)));
 
         gridLayout->addWidget(idLogin, 2, 1, 1, 1);
 
-        labelMdp = new QLabel(widget);
+        labelMdp = new QLabel(layoutWidget);
         labelMdp->setObjectName("labelMdp");
         QFont font;
         font.setPointSize(12);
@@ -79,7 +69,7 @@ public:
 
         gridLayout->addWidget(labelMdp, 3, 0, 1, 1);
 
-        labelId = new QLabel(widget);
+        labelId = new QLabel(layoutWidget);
         labelId->setObjectName("labelId");
         labelId->setFont(font);
 
@@ -89,15 +79,7 @@ public:
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(80, 340, 411, 31));
         pushButton->setFont(font);
-        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"background : grey;\n"
-"border-radius:15px;\n"
-"\n"
-"color : white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"}"));
+        pushButton->setStyleSheet(QString::fromUtf8(""));
         labelConnection = new QLabel(frame);
         labelConnection->setObjectName("labelConnection");
         labelConnection->setGeometry(QRect(210, 50, 141, 26));

@@ -13,6 +13,7 @@ class Deconnection : public QWidget
 
 public:
     explicit Deconnection(QWidget *parent = nullptr);
+    void actionDeconnection();
     ~Deconnection();
 
 private:

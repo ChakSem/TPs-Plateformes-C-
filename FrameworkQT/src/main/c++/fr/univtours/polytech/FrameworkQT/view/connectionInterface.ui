@@ -23,17 +23,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">QFrame {
-background : #333;
-}
-
-QLineEdit {
-	background : transparent;
-	border : none;
-    color :  #710702;
-border-bottom : 1px solid #717072;
-}
-</string>
+    <string notr="true"/>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -41,7 +31,7 @@ border-bottom : 1px solid #717072;
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -102,15 +92,7 @@ border-bottom : 1px solid #717072;
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton {
-background : grey;
-border-radius:15px;
-
-color : white;
-}
-
-QPushButton:hover {
-}</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>Connexion</string>

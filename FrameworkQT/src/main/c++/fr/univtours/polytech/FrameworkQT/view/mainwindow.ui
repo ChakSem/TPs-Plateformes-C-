@@ -35,7 +35,7 @@ QPushButton:hover {
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QStackedWidget" name="stackedWidgetCenter">
+   <widget class="QStackedWidget" name="MainWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -44,9 +44,31 @@ QPushButton:hover {
       <height>500</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame {
+background : #333;
+}
+
+QLineEdit {
+	background : transparent;
+	border : none;
+    color :  #710702;
+border-bottom : 1px solid #717072;
+}
+QPushButton {
+background : grey;
+border-radius:15px;
+
+color : white;
+}
+
+QPushButton:hover {
+}</string>
+    </property>
     <widget class="Connection" name="connection"/>
+    <widget class="HomeButtons" name="home"/>
    </widget>
-   <widget class="QStackedWidget" name="stackedWidgetDeconnection">
+   <widget class="QStackedWidget" name="DeconnectionWidget">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -54,6 +76,17 @@ QPushButton:hover {
       <width>101</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background : grey;
+border-radius:15px;
+
+color : white;
+}
+
+QPushButton:hover {
+}</string>
     </property>
     <widget class="Deconnection" name="deconnection"/>
     <widget class="QWidget" name="void_2"/>
@@ -82,6 +115,12 @@ QPushButton:hover {
    <class>Deconnection</class>
    <extends>QWidget</extends>
    <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>HomeButtons</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homebuttons.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

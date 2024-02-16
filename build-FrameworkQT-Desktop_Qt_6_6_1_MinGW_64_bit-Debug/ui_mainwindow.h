@@ -25,9 +25,9 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QStackedWidget *stackedWidgetCenter;
+    QStackedWidget *MainWidget;
     Connection *connection;
-    QStackedWidget *stackedWidgetDeconnection;
+    QStackedWidget *DeconnectionWidget;
     Deconnection *deconnection;
     QWidget *void_2;
     QMenuBar *menubar;
@@ -59,21 +59,49 @@ public:
 "}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        stackedWidgetCenter = new QStackedWidget(centralwidget);
-        stackedWidgetCenter->setObjectName("stackedWidgetCenter");
-        stackedWidgetCenter->setGeometry(QRect(0, 50, 800, 500));
+        MainWidget = new QStackedWidget(centralwidget);
+        MainWidget->setObjectName("MainWidget");
+        MainWidget->setGeometry(QRect(0, 50, 800, 500));
+        MainWidget->setStyleSheet(QString::fromUtf8("QFrame {\n"
+"background : #333;\n"
+"}\n"
+"\n"
+"QLineEdit {\n"
+"	background : transparent;\n"
+"	border : none;\n"
+"    color :  #710702;\n"
+"border-bottom : 1px solid #717072;\n"
+"}\n"
+"QPushButton {\n"
+"background : grey;\n"
+"border-radius:15px;\n"
+"\n"
+"color : white;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"}"));
         connection = new Connection();
         connection->setObjectName("connection");
-        stackedWidgetCenter->addWidget(connection);
-        stackedWidgetDeconnection = new QStackedWidget(centralwidget);
-        stackedWidgetDeconnection->setObjectName("stackedWidgetDeconnection");
-        stackedWidgetDeconnection->setGeometry(QRect(700, 0, 101, 41));
+        MainWidget->addWidget(connection);
+        DeconnectionWidget = new QStackedWidget(centralwidget);
+        DeconnectionWidget->setObjectName("DeconnectionWidget");
+        DeconnectionWidget->setGeometry(QRect(700, 0, 101, 41));
+        DeconnectionWidget->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background : grey;\n"
+"border-radius:15px;\n"
+"\n"
+"color : white;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"}"));
         deconnection = new Deconnection();
         deconnection->setObjectName("deconnection");
-        stackedWidgetDeconnection->addWidget(deconnection);
+        DeconnectionWidget->addWidget(deconnection);
         void_2 = new QWidget();
         void_2->setObjectName("void_2");
-        stackedWidgetDeconnection->addWidget(void_2);
+        DeconnectionWidget->addWidget(void_2);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

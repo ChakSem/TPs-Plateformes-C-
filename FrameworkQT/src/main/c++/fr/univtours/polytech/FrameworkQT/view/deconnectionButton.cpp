@@ -6,6 +6,13 @@ Deconnection::Deconnection(QWidget *parent)
     , ui(new Ui::Deconnection)
 {
     ui->setupUi(this);
+
+    connect( ui->pushButtonDeconnection, &QPushButton::clicked, this, &Deconnection::actionDeconnection);
+}
+
+
+void Deconnection::actionDeconnection() {
+
 }
 
 Deconnection::~Deconnection()
