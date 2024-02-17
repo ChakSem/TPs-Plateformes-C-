@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>95</width>
-    <height>20</height>
+    <width>137</width>
+    <height>48</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,10 +17,21 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>0</y>
-     <width>80</width>
-     <height>18</height>
+     <y>10</y>
+     <width>121</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+background : grey;
+border-radius:15px;
+
+color : white;
+}
+
+QPushButton:hover {
+}</string>
    </property>
    <property name="text">
     <string>Retour</string>
