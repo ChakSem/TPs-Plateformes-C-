@@ -7,7 +7,6 @@ release/data.o
 release/CparserJson.o
 release/encryption.o
 release/exception.o
-release/accountinterface.o
 release/addprofileinterface.o
 release/backbutton.o
 release/connectionInterface.o
@@ -20,7 +19,6 @@ release/mainwindow.o
 release/profilesinterface.o
 release/usermanagementinterface.o
 release/qrc_forest-background.o
-release/moc_accountinterface.o
 release/moc_addprofileinterface.o
 release/moc_backbutton.o
 release/moc_connectionInterface.o
