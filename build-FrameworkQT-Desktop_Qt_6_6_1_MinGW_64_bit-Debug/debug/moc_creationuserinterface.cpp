@@ -36,28 +36,28 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASScreationUserInterfaceENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASScreationUserInterfaceENDCLASS = QtMocHelpers::stringData(
-    "creationUserInterface"
+struct qt_meta_stringdata_CLASScreationuserinterfaceENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASScreationuserinterfaceENDCLASS = QtMocHelpers::stringData(
+    "creationuserinterface"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASScreationUserInterfaceENDCLASS_t {
+struct qt_meta_stringdata_CLASScreationuserinterfaceENDCLASS_t {
     uint offsetsAndSizes[2];
     char stringdata0[22];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASScreationUserInterfaceENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASScreationUserInterfaceENDCLASS_t qt_meta_stringdata_CLASScreationUserInterfaceENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASScreationuserinterfaceENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASScreationuserinterfaceENDCLASS_t qt_meta_stringdata_CLASScreationuserinterfaceENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 21)   // "creationUserInterface"
+        QT_MOC_LITERAL(0, 21)   // "creationuserinterface"
     },
-    "creationUserInterface"
+    "creationuserinterface"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASScreationUserInterfaceENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASScreationuserinterfaceENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -73,20 +73,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScreationUserInterfaceENDCLASS[] 
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject creationUserInterface::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject creationuserinterface::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_CLASScreationUserInterfaceENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASScreationUserInterfaceENDCLASS,
+    qt_meta_stringdata_CLASScreationuserinterfaceENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASScreationuserinterfaceENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASScreationUserInterfaceENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASScreationuserinterfaceENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<creationUserInterface, std::true_type>
+        QtPrivate::TypeAndForceComplete<creationuserinterface, std::true_type>
     >,
     nullptr
 } };
 
-void creationUserInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void creationuserinterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     (void)_o;
     (void)_id;
@@ -94,20 +94,20 @@ void creationUserInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c
     (void)_a;
 }
 
-const QMetaObject *creationUserInterface::metaObject() const
+const QMetaObject *creationuserinterface::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *creationUserInterface::qt_metacast(const char *_clname)
+void *creationuserinterface::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASScreationUserInterfaceENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASScreationuserinterfaceENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QWidget::qt_metacast(_clname);
 }
 
-int creationUserInterface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int creationuserinterface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     return _id;

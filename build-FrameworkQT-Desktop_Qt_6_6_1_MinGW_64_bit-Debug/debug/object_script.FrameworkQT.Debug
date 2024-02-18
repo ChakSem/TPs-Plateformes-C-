@@ -7,6 +7,7 @@ debug/data.o
 debug/CparserJson.o
 debug/encryption.o
 debug/exception.o
+debug/accountinterface.o
 debug/addprofileinterface.o
 debug/backbutton.o
 debug/connectionInterface.o
@@ -14,14 +15,12 @@ debug/creationuserinterface.o
 debug/deconnectionButton.o
 debug/dialogError.o
 debug/dialogValidation.o
-debug/gestionutilisateur.o
-debug/homebuttons.o
 debug/indexbdd.o
 debug/mainwindow.o
-debug/myaccountinterface.o
 debug/profilesinterface.o
-debug/tabledatausers.o
+debug/usermanagementinterface.o
 debug/qrc_forest-background.o
+debug/moc_accountinterface.o
 debug/moc_addprofileinterface.o
 debug/moc_backbutton.o
 debug/moc_connectionInterface.o
@@ -29,10 +28,7 @@ debug/moc_creationuserinterface.o
 debug/moc_deconnectionButton.o
 debug/moc_dialogError.o
 debug/moc_dialogValidation.o
-debug/moc_gestionutilisateur.o
-debug/moc_homebuttons.o
 debug/moc_indexbdd.o
 debug/moc_mainwindow.o
-debug/moc_myaccountinterface.o
 debug/moc_profilesinterface.o
-debug/moc_tabledatausers.o
+debug/moc_usermanagementinterface.o

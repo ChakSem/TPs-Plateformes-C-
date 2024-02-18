@@ -7,6 +7,7 @@ release/data.o
 release/CparserJson.o
 release/encryption.o
 release/exception.o
+release/accountinterface.o
 release/addprofileinterface.o
 release/backbutton.o
 release/connectionInterface.o
@@ -14,14 +15,12 @@ release/creationuserinterface.o
 release/deconnectionButton.o
 release/dialogError.o
 release/dialogValidation.o
-release/gestionutilisateur.o
-release/homebuttons.o
 release/indexbdd.o
 release/mainwindow.o
-release/myaccountinterface.o
 release/profilesinterface.o
-release/tabledatausers.o
+release/usermanagementinterface.o
 release/qrc_forest-background.o
+release/moc_accountinterface.o
 release/moc_addprofileinterface.o
 release/moc_backbutton.o
 release/moc_connectionInterface.o
@@ -29,10 +28,7 @@ release/moc_creationuserinterface.o
 release/moc_deconnectionButton.o
 release/moc_dialogError.o
 release/moc_dialogValidation.o
-release/moc_gestionutilisateur.o
-release/moc_homebuttons.o
 release/moc_indexbdd.o
 release/moc_mainwindow.o
-release/moc_myaccountinterface.o
 release/moc_profilesinterface.o
-release/moc_tabledatausers.o
+release/moc_usermanagementinterface.o

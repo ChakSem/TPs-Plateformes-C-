@@ -1,14 +1,14 @@
 #include "myaccountinterface.h"
 #include "ui_myaccountinterface.h"
 
-MyAccountInterface::MyAccountInterface(QWidget *parent)
+myaccountinterface::myaccountinterface(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::MyAccountInterface)
+    , ui(new Ui::myaccountinterface)
 {
     ui->setupUi(this);
 }
 
-MyAccountInterface::~MyAccountInterface()
+myaccountinterface::~myaccountinterface()
 {
     delete ui;
 }

@@ -1,5 +1,5 @@
-#ifndef GESTIONUTILISATEUR_H
-#define GESTIONUTILISATEUR_H
+#ifndef USERMANAGEMENTINTERFACE_H
+#define USERMANAGEMENTINTERFACE_H
 
 #include <QWidget>
 
@@ -19,4 +19,4 @@ private:
     Ui::GestionUtilisateur *ui;
 };
 
-#endif // GESTIONUTILISATEUR_H
+#endif // USERMANAGEMENTINTERFACE_H

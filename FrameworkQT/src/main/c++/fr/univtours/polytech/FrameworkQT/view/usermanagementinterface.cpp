@@ -1,5 +1,5 @@
-#include "gestionutilisateur.h"
-#include "ui_gestionutilisateur.h"
+#include "usermanagementinterface.h"
+#include "ui_usermanagementinterface.h"
 
 GestionUtilisateur::GestionUtilisateur(QWidget *parent)
     : QWidget(parent)

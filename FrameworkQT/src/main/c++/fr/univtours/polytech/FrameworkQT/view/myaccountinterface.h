@@ -4,19 +4,19 @@
 #include <QWidget>
 
 namespace Ui {
-class MyAccountInterface;
+class accountInterface;
 }
 
-class MyAccountInterface : public QWidget
+class accountInterface : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit MyAccountInterface(QWidget *parent = nullptr);
-    ~MyAccountInterface();
+    explicit accountInterface(QWidget *parent = nullptr);
+    ~accountInterface();
 
 private:
-    Ui::MyAccountInterface *ui;
+    Ui::accountInterface *ui;
 };
 
 #endif // MYACCOUNTINTERFACE_H
