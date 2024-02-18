@@ -5,7 +5,6 @@
 #include <QFile>
 
 #include "../model/User.h"
-#include "../model/Administrator.h"
 #include "../model/Data.h"
 #include "../utils/exception.h"
 #include "../utils/encryption.h"
@@ -15,7 +14,7 @@
 
 #define FILEPATHUSER "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/data/users.json"
 #define FILEPATHADMIN "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/data/admins.json"
-
+#define FILEPATHPASSWORDS "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/data/passwords.json"
 
 int CparserJson::saveData(Data& data) {
 
@@ -88,7 +87,7 @@ int CparserJson::saveData(Data& data) {
 
         // Créer un objet JSON pour l'utilisateur
         QJsonArray adminsArray;
-        for (Administrator* administrator : data.getAdministrators()) {
+        for (User* administrator : data.getAdministrators()) {
             QJsonObject adminObject;
             adminObject["id"] = administrator->getId();
             adminObject["firstname"] = administrator->getFirstname();
@@ -223,7 +222,7 @@ int CparserJson::updateData(Data& data) {
             {
                 // Parcours chaque utilisateur dans le tableau JSON
                 QJsonObject adminObject = adminValue.toObject();
-                Administrator* admin = new Administrator(QString::fromStdString(adminObject["id"].toString().toStdString()), QString::fromStdString(adminObject["firstname"].toString().toStdString())
+                User* admin = new User(QString::fromStdString(adminObject["id"].toString().toStdString()), QString::fromStdString(adminObject["firstname"].toString().toStdString())
                                                        , QString::fromStdString(adminObject["firstname"].toString().toStdString()));
 
                 QJsonArray profilesArray = adminObject["profiles"].toArray();
@@ -269,14 +268,43 @@ int CparserJson::updateData(Data& data) {
 
 
 
-void CparserJson::setPassword(User* user, QString password)
+void CparserJson::setPassword(QString id, QString password)
 {
-    // TODO : Ecrire dans password.json "user.id : Encryption.encrtypt(password)"
+    QFile file(FILEPATHPASSWORDS);
+    if (!file.open(QIODevice::ReadWrite)) {
+        qDebug() << "Erreur lors de l'ouverture du fichier";
+    } else {
+        QByteArray byteArray = file.readAll();
+        QJsonDocument doc = QJsonDocument::fromJson(byteArray);
+
+        if (doc.isNull() || doc.isEmpty())
+            doc = QJsonDocument::fromJson("{}");
+
+        QJsonObject obj = doc.object();
+        obj[id] = Encryption::encrypt(password);
+
+        file.resize(0);
+        file.write(QJsonDocument(obj).toJson());
+        file.close();
+    }
 }
 
 
-QString CparserJson::getPassword(User* user)
+QString CparserJson::getPassword(QString id)
 {
-	// TODO:  Implémenter la logique de décryptage du mot de passe
-    return "password";
+    QFile file(FILEPATHPASSWORDS);
+    if (!file.open(QIODevice::ReadWrite)) {
+        qDebug() << "Erreur lors de l'ouverture du fichier";
+        return NULL;
+    }
+
+    QByteArray byteArray = file.readAll();
+    QJsonDocument doc = QJsonDocument::fromJson(byteArray);
+
+    if (doc.isNull() || doc.isEmpty())
+        doc = QJsonDocument::fromJson("{}");
+
+    QJsonObject obj = doc.object();
+    return Encryption::decrypt(QString::fromStdString(obj[id].toString().toStdString()));
+
 }

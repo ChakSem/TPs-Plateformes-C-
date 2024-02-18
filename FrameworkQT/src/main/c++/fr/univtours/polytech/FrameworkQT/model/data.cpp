@@ -1,10 +1,25 @@
 #include "data.h"
 
 #include "../parseurJson/CparserJson.h"
+#include "../utils/Exception.h"
 
 User* Data::getUser(QString id)
 {
-    return users[id];
+    try {
+        if(users.contains(id)) {
+            return users[id];
+        }
+        if(administrators.contains(id)) {
+            return administrators[id];
+        }
+
+        throw new Exception(ERREURAUCUNUTILISATEURNECORRESPONDACETID);
+    }
+
+    catch(Exception* e) {
+        e->EXCAffichageErreur();
+        return NULL;
+    }
 }
 
 void Data::addUser(User* user) {
@@ -15,17 +30,13 @@ QMap<QString, User*> Data::getUsers() {
     return users;
 }
 
-Administrator* Data::getAdministrator(QString id)
-{
-    return administrators[id];
-}
-
-void Data::addAdministrator(Administrator* administrator) {
+void Data::addAdministrator(User* administrator) {
     users.insert(administrator->getId(), administrator);
     administrators.insert(administrator->getId(), administrator);
 }
 
-QMap<QString, Administrator*> Data::getAdministrators() {
+
+QMap<QString, User*> Data::getAdministrators() {
     return administrators;
 }
 
@@ -34,6 +45,9 @@ Data::~Data() {
 
     for(User* user : users) {
         delete user;
+    }
+    for(User* administrator : administrators) {
+        delete administrator;
     }
 }
 

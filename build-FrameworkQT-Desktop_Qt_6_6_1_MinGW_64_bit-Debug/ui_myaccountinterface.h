@@ -37,17 +37,18 @@ public:
     {
         if (MyAccountInterface->objectName().isEmpty())
             MyAccountInterface->setObjectName("MyAccountInterface");
-        MyAccountInterface->resize(173, 139);
+        MyAccountInterface->resize(800, 500);
         gridLayout_2 = new QGridLayout(MyAccountInterface);
         gridLayout_2->setObjectName("gridLayout_2");
         labelConnection = new QLabel(MyAccountInterface);
         labelConnection->setObjectName("labelConnection");
+        labelConnection->setMaximumSize(QSize(100, 40));
         QFont font;
         font.setPointSize(14);
         font.setBold(true);
         labelConnection->setFont(font);
 
-        gridLayout_2->addWidget(labelConnection, 0, 0, 1, 1);
+        gridLayout_2->addWidget(labelConnection, 0, 0, 1, 1, Qt::AlignHCenter);
 
         gridLayout = new QGridLayout();
         gridLayout->setObjectName("gridLayout");

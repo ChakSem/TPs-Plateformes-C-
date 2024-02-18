@@ -18,6 +18,7 @@
 #include <QtWidgets/QWidget>
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homebuttons.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,6 +28,7 @@ public:
     QWidget *centralwidget;
     QStackedWidget *MainWidget;
     Connection *connection;
+    HomeButtons *home;
     QStackedWidget *DeconnectionWidget;
     Deconnection *deconnection;
     QWidget *void_2;
@@ -84,6 +86,9 @@ public:
         connection = new Connection();
         connection->setObjectName("connection");
         MainWidget->addWidget(connection);
+        home = new HomeButtons();
+        home->setObjectName("home");
+        MainWidget->addWidget(home);
         DeconnectionWidget = new QStackedWidget(centralwidget);
         DeconnectionWidget->setObjectName("DeconnectionWidget");
         DeconnectionWidget->setGeometry(QRect(700, 0, 101, 41));

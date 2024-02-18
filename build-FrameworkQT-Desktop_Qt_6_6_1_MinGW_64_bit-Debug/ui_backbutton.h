@@ -25,10 +25,19 @@ public:
     {
         if (cancelButton->objectName().isEmpty())
             cancelButton->setObjectName("cancelButton");
-        cancelButton->resize(96, 19);
+        cancelButton->resize(137, 48);
         pushButton = new QPushButton(cancelButton);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(10, 0, 80, 18));
+        pushButton->setGeometry(QRect(10, 10, 121, 31));
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"background : grey;\n"
+"border-radius:15px;\n"
+"\n"
+"color : white;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"}"));
 
         retranslateUi(cancelButton);
 

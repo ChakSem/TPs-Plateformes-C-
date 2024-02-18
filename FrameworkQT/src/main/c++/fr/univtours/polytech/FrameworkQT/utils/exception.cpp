@@ -68,6 +68,15 @@ void Exception::EXCAffichageErreur()
     case ERREUROUVERTUREFICHIERPOURECRIREDANSLASAUVEGARDEADMIN :
         printf_s("ERREUR : L'ecriture dans fichier pour le sauvegarde des administrateurs a echoue");
         break;
+    case ERREURAUCUNUTILISATEURNECORRESPONDACETID :
+        printf_s("ERREUR : L'id ne correspond à aucuns utilisateur et admin existants");
+        break;
+    case ERREURAUCUNDROITCORRESPONDANT :
+        printf_s("ERREUR : L'id de droit ne correspond a aucun droit existant");
+        break;
+    case ERREURAUCUNROLECORRESPONDANT :
+        printf_s("ERREUR : L'id de role ne correspond a aucun droit existant");
+        break;
     default:
         printf_s("\n");
     }

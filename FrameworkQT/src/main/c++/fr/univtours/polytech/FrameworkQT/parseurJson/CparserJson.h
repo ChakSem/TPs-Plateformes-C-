@@ -42,7 +42,7 @@ public:
 	 *Sortie : std::string
 	 *Entrain : Retourne le mot de passe crypte
 	*/
-    void setPassword(User* user, QString password);
+    void static setPassword(QString id, QString password);
 
 	/*Methode qui permet de decrypter un mot de passe
 	 *Entree : std::string password
@@ -50,7 +50,7 @@ public:
 	 *Sortie : std::string
 	 *Entrain : Retourne le mot de passe decrypte
 	*/
-    QString getPassword(User* user);
+    QString static getPassword(QString id);
 };
 
 #endif // CPARSER_H

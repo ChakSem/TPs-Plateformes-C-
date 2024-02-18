@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/controller/controller.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/main.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Administrator.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Profile.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/tabledatausers.cpp
 
 HEADERS += \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/controller/controller.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Administrator.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Profile.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Rights.h \

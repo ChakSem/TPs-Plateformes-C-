@@ -1,12 +1,13 @@
 #include "Administrator.h"
 #include "Data.h"
 #include "Profile.h"
+#include "../parseurJson/CparserJson.h"
 
 void Administrator::createUser(const QString& newFirstname, const QString& newLastname, const QString& newPassword)
 {
     User* newUser = new User(newLastname, newFirstname);
     Data& data = Data::getInstance();
-    // ecrire mot de passe à "user.id : newPassword"
+    CparserJson::setPassword(newUser->getId(), newPassword);
 
     data.addUser(newUser);
 }
@@ -36,7 +37,7 @@ void Administrator::updateUser(const QString& userId, const QString& newFirstnam
         {
             iter.value()->setFirstname(newFirstname);
             iter.value()->setLastname(newLastName);
-            // ecrire mot de passe à "userId : newPassword"
+            CparserJson::setPassword(userId, newPassword);
 
             break;
         }
