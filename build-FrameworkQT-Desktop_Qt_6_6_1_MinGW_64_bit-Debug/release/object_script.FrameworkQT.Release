@@ -14,6 +14,8 @@ release/creationuserinterface.o
 release/deconnectionButton.o
 release/dialogError.o
 release/dialogValidation.o
+release/homeadmininterface.o
+release/homeuserinterface.o
 release/indexbdd.o
 release/mainwindow.o
 release/profilesinterface.o
@@ -26,6 +28,8 @@ release/moc_creationuserinterface.o
 release/moc_deconnectionButton.o
 release/moc_dialogError.o
 release/moc_dialogValidation.o
+release/moc_homeadmininterface.o
+release/moc_homeuserinterface.o
 release/moc_indexbdd.o
 release/moc_mainwindow.o
 release/moc_profilesinterface.o

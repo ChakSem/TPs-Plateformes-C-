@@ -45,7 +45,7 @@ public:
         addProfileInterface->resize(800, 500);
         frame = new QFrame(addProfileInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(110, 70, 600, 400));
+        frame->setGeometry(QRect(90, 70, 600, 400));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -630,14 +630,14 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(80, 340, 411, 31));
+        pushButton->setGeometry(QRect(100, 350, 400, 30));
         QFont font;
         font.setPointSize(12);
         pushButton->setFont(font);
         pushButton->setStyleSheet(QString::fromUtf8(""));
         labelConnection = new QLabel(frame);
         labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(220, 90, 151, 26));
+        labelConnection->setGeometry(QRect(215, 0, 600, 26));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

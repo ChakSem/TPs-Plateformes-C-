@@ -14,6 +14,8 @@ debug/creationuserinterface.o
 debug/deconnectionButton.o
 debug/dialogError.o
 debug/dialogValidation.o
+debug/homeadmininterface.o
+debug/homeuserinterface.o
 debug/indexbdd.o
 debug/mainwindow.o
 debug/profilesinterface.o
@@ -26,6 +28,8 @@ debug/moc_creationuserinterface.o
 debug/moc_deconnectionButton.o
 debug/moc_dialogError.o
 debug/moc_dialogValidation.o
+debug/moc_homeadmininterface.o
+debug/moc_homeuserinterface.o
 debug/moc_indexbdd.o
 debug/moc_mainwindow.o
 debug/moc_profilesinterface.o
