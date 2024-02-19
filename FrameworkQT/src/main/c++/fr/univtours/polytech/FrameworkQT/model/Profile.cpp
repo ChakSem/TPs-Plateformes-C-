@@ -31,7 +31,7 @@ int searchTitle(const QList<Profile*>& profiles, const QString& newTitle) {
 void Profile::setTitle(const QString& newTitle) {
     try {
         if(searchTitle(user->getProfiles(), newTitle) == TROUVE) {
-            throw new Exception(NOMPROFILEDEJAATTRIBUE);
+            throw new Exception(NOM_PROFIL_DEJA_ATTRIBUE);
         }
 
         title = newTitle;
@@ -69,7 +69,7 @@ void Profile::addDataBase(const QString& newDatabase) {
     std::for_each(databases.begin(), databases.end(), s);
     try {
         if(s.find > 0) {
-            throw new Exception(BASEDEDONNEEDEJAAJOUTEE);
+            throw new Exception(BASE_DE_DONNEE_DEJA_AJOUTEE);
         } else {
             databases.append(new QString(newDatabase));
         }

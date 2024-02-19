@@ -44,40 +44,40 @@ void Exception::EXCAffichageErreur()
     printf_s("ERREUR : ");
     switch (uiEXCCodeErreur)
     {
-    case NOMPROFILEDEJAATTRIBUE :
+    case NOM_PROFIL_DEJA_ATTRIBUE :
         printf_s("Le nom de profil saisi est deja affecte\n");
         break;
-    case BASEDEDONNEEDEJAAJOUTEE :
+    case BASE_DE_DONNEE_DEJA_AJOUTEE :
         printf_s("La base de donnee est deja ajoutee\n");
         break;
-    case ERREUROUVERTUREFICHIERPOURSAUVEGARDEUSER :
+    case ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_USER :
         printf_s("Le fichier pour la sauvegarde des utilisateurs n'a pu etre ouvert\n");
         break;
-    case ERREUROUVERTUREFICHIERPOURSAUVEGARDEADMIN :
+    case ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_ADMIN :
         printf_s("Le fichier pour la sauvegarde des administrateurs n'a pu etre ouvert\n");
         break;
-    case ERREUROUVERTUREFICHIERPOURCHARGERUSER :
+    case ERREUR_OUVERTURE_FICHIER_POUR_CHARGER_USER :
         printf_s("Le fichier pour le chargement des utilisateurs n'a pu etre ouvert\n");
         break;
-    case ERREUROUVERTUREFICHIERPOURCHARGERADMIN :
+    case ERREUR_OUVERTURE_FICHIER_POUR_CHARGER_ADMIN :
         printf_s("Le fichier pour le chargement des administrateurs n'a pu etre ouvert\n");
         break;
-    case ERREUROUVERTUREFICHIERPOURECRIREDANSLASAUVEGARDEUSER :
+    case ERREUR_OUVERTURE_FICHIER_POUR_ECRIRE_DANS_LA_SAUVEGARDE_USER:
         printf_s("L'ecriture dans fichier pour le sauvegarde des utilisateurs a echoue\n");
         break;
-    case ERREUROUVERTUREFICHIERPOURECRIREDANSLASAUVEGARDEADMIN :
+    case ERREUR_OUVERTURE_FICHIER_POUR_ECRIRE_DANS_LA_SAUVEGARDE_ADMIN :
         printf_s("L'ecriture dans fichier pour le sauvegarde des administrateurs a echoue\n");
         break;
-    case ERREURAUCUNUTILISATEURNECORRESPONDACETID :
+    case ERREUR_AUCUN_UTILISATEUR_NE_CORRESPOND_A_CET_ID :
         printf_s("L'id ne correspond à aucuns utilisateur et admin existants\n");
         break;
-    case ERREURAUCUNDROITCORRESPONDANT :
+    case ERREUR_AUCUN_DROIT_CORRESPONDANT :
         printf_s("L'id de droit ne correspond a aucun droit existant\n");
         break;
-    case ERREURAUCUNROLECORRESPONDANT :
+    case ERREUR_AUCUN_ROLE_CORRESPONDANT :
         printf_s("L'id de role ne correspond a aucun droit existant\n");
         break;
-    case ERREURISADMININCORRECT :
+    case ERREUR_ISADMIN_INCORRECT :
         printf_s("La valeur de isAdmin n'a aucun sens\n");
         break;
     default:

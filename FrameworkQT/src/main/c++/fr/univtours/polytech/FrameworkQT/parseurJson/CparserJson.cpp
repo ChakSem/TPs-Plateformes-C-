@@ -23,14 +23,14 @@ int CparserJson::saveData(Data& data) {
         if (!fileUser.open(QIODevice::ReadOnly))
         {
             // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
-            throw new Exception(ERREUROUVERTUREFICHIERPOURSAUVEGARDEUSER);
+            throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_USER);
         }
 
         QFile fileAdmin(FILEPATHADMIN);
         if (!fileAdmin.open(QIODevice::ReadOnly))
         {
             // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
-            throw new Exception(ERREUROUVERTUREFICHIERPOURSAUVEGARDEADMIN);
+            throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_ADMIN);
         }
 
         // Créer un objet JSON pour l'utilisateur
@@ -77,7 +77,7 @@ int CparserJson::saveData(Data& data) {
         if (!fileUser.open(QIODevice::WriteOnly))
         {
             // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON en écriture
-            throw new Exception(ERREUROUVERTUREFICHIERPOURECRIREDANSLASAUVEGARDEUSER);
+            throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_ECRIRE_DANS_LA_SAUVEGARDE_USER);
         }
 
         // Écrit le nouveau document JSON dans le fichier
@@ -128,7 +128,7 @@ int CparserJson::saveData(Data& data) {
         if (!fileAdmin.open(QIODevice::WriteOnly))
         {
             // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON en écriture
-            throw new Exception(ERREUROUVERTUREFICHIERPOURECRIREDANSLASAUVEGARDEADMIN);
+            throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_ECRIRE_DANS_LA_SAUVEGARDE_ADMIN);
             return ERROR;
         }
 
@@ -150,14 +150,14 @@ int CparserJson::updateData(Data& data) {
         if (!fileUser.open(QIODevice::ReadOnly))
         {
             // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
-            throw new Exception(ERREUROUVERTUREFICHIERPOURCHARGERUSER);
+            throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_CHARGER_USER);
         }
 
         QFile fileAdmin(FILEPATHADMIN);
         if (!fileAdmin.open(QIODevice::ReadOnly))
         {
             // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
-            throw new Exception(ERREUROUVERTUREFICHIERPOURCHARGERADMIN);
+            throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_CHARGER_ADMIN);
         }
 
         // Lit le contenu du fichier JSON
@@ -175,7 +175,7 @@ int CparserJson::updateData(Data& data) {
                 QJsonObject userObject = userValue.toObject();
 
                 User* user = new User(QString::fromStdString(userObject["id"].toString().toStdString()), QString::fromStdString(userObject["firstname"].toString().toStdString())
-                                      , QString::fromStdString(userObject["firstname"].toString().toStdString()));
+                                      , QString::fromStdString(userObject["lastname"].toString().toStdString()));
 
                 QJsonArray profilesArray = userObject["profiles"].toArray();
                 for (const QJsonValue &profileValue : profilesArray) {

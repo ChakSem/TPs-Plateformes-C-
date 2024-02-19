@@ -14,6 +14,11 @@ ConnectionInterface::ConnectionInterface(QWidget *parent)
     connect( ui->pushButton, &QPushButton::clicked, this, &ConnectionInterface::actionConnection);
 }
 
+ConnectionInterface::~ConnectionInterface()
+{
+    delete ui;
+}
+
 // Dans la fonction slot handleButtonClick() de la classe Connection
 void ConnectionInterface::actionConnection() {
 
@@ -31,9 +36,3 @@ void ConnectionInterface::actionConnection() {
     }
 
 }
-
-ConnectionInterface::~ConnectionInterface()
-{
-    delete ui;
-}
-

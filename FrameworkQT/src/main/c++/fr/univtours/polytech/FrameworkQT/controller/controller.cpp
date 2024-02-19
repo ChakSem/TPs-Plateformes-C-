@@ -32,7 +32,7 @@ void Controller::deleteUser(QString id) {
 
                 delete userToDelete;
             } else {
-                throw new Exception(ERREURAUCUNUTILISATEURNECORRESPONDACETID);
+                throw new Exception(ERREUR_AUCUN_UTILISATEUR_NE_CORRESPOND_A_CET_ID);
             }
         }
     }
@@ -54,7 +54,7 @@ User* Controller::createUser(QString firstname, QString lastname, QString passwo
             Data::getInstance().addUser(newUser);
             break;
         default :
-            throw new Exception(ERREURAUCUNROLECORRESPONDANT);
+            throw new Exception(ERREUR_AUCUN_ROLE_CORRESPONDANT);
         }
         CparserJson::setPassword(newUser->getId(), password);
 
@@ -82,7 +82,7 @@ Profile* Controller::createProfile(User* user, QString name, unsigned int rightV
             right = Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION;
             break;
         default :
-            throw new Exception(ERREURAUCUNDROITCORRESPONDANT);
+            throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
         }
 
         Profile* newProfile = new Profile(user, name, right);

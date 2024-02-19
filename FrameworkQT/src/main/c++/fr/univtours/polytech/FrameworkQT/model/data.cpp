@@ -13,7 +13,7 @@ User* Data::getUser(QString id)
             return administrators[id];
         }
 
-        throw new Exception(ERREURAUCUNUTILISATEURNECORRESPONDACETID);
+        throw new Exception(ERREUR_AUCUN_UTILISATEUR_NE_CORRESPOND_A_CET_ID);
     }
 
     catch(Exception* e) {
@@ -45,7 +45,7 @@ unsigned int Data::typeOfConnectedUser() {
 void Data::connect(User* user, unsigned int isAdminParam) {
     try {
         if(isAdminParam != NOTADMIN && isAdminParam != ADMIN) {
-            throw new Exception(ERREURISADMININCORRECT);
+            throw new Exception(ERREUR_ISADMIN_INCORRECT);
         }
 
         userConnected = user;
@@ -65,9 +65,6 @@ void connect(User* user, unsigned int isAdminParam);
 void disconnect();
 
 Data::~Data() {
-
-    qDebug() << "Destruction";
-
     CparserJson::saveData(*this);
 
     for(User* user : users) {
