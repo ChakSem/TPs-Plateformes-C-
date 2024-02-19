@@ -17,8 +17,11 @@ int main(int argc, char *argv[])
 
     CparserJson::saveData(Data::getInstance());
 
-    Controller::createUser("arthur", "crochemore", "password", ADMIN);
-    Controller::createUser("jhon", "doe", "maison", USER);
+    Controller::createUser("andre", "crochemore", "password", ADMIN);
+    Controller::createUser("jhonny", "doe", "maison", USER);
+
+    data.addUser(new User("jhon", "doe"));
+    data.addAdministrator(new User("patrick", "a"));
 
     return a.exec();
 }

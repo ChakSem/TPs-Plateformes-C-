@@ -50,7 +50,7 @@ Data::~Data() {
 }
 
 Data::Data() {
-    CparserJson::updateData(*this);
+    //CparserJson::updateData(*this);
 }
 
 Data::Data(const Data&) {
