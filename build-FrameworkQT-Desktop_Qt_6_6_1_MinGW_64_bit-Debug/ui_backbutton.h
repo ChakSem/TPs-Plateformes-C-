@@ -16,20 +16,20 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_cancelButton
+class Ui_BackButton
 {
 public:
-    QPushButton *pushButton;
+    QPushButton *backButton;
 
-    void setupUi(QWidget *cancelButton)
+    void setupUi(QWidget *BackButton)
     {
-        if (cancelButton->objectName().isEmpty())
-            cancelButton->setObjectName("cancelButton");
-        cancelButton->resize(137, 48);
-        pushButton = new QPushButton(cancelButton);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(10, 10, 121, 31));
-        pushButton->setStyleSheet(QString::fromUtf8("QToolButton {\n"
+        if (BackButton->objectName().isEmpty())
+            BackButton->setObjectName("BackButton");
+        BackButton->resize(400, 300);
+        backButton = new QPushButton(BackButton);
+        backButton->setObjectName("backButton");
+        backButton->setGeometry(QRect(270, 10, 121, 31));
+        backButton->setStyleSheet(QString::fromUtf8("QToolButton {\n"
 "	border-style: solid;\n"
 "	border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));\n"
 "	border-right-color: qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgb(217, 217, 217), stop:1 rgb(227, 227, 227));\n"
@@ -131,21 +131,21 @@ public:
 "	background-color: rgb(142,142,142);\n"
 "}"));
 
-        retranslateUi(cancelButton);
+        retranslateUi(BackButton);
 
-        QMetaObject::connectSlotsByName(cancelButton);
+        QMetaObject::connectSlotsByName(BackButton);
     } // setupUi
 
-    void retranslateUi(QWidget *cancelButton)
+    void retranslateUi(QWidget *BackButton)
     {
-        cancelButton->setWindowTitle(QCoreApplication::translate("cancelButton", "Form", nullptr));
-        pushButton->setText(QCoreApplication::translate("cancelButton", "Retour", nullptr));
+        BackButton->setWindowTitle(QCoreApplication::translate("BackButton", "Form", nullptr));
+        backButton->setText(QCoreApplication::translate("BackButton", "Retour", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class cancelButton: public Ui_cancelButton {};
+    class BackButton: public Ui_BackButton {};
 } // namespace Ui
 
 QT_END_NAMESPACE

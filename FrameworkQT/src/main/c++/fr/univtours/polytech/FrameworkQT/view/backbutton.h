@@ -12,6 +12,7 @@ class BackButton : public QWidget
     Q_OBJECT
 
 public:
+    void actionBack();
     explicit BackButton(QWidget *parent = nullptr);
     ~BackButton();
 

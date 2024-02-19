@@ -1,14 +1,23 @@
 #include "homeuserinterface.h"
 #include "ui_homeuserinterface.h"
 
-homeUserInterface::homeUserInterface(QWidget *parent)
+HomeUserInterface::HomeUserInterface(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::homeUserInterface)
+    , ui(new Ui::HomeUserInterface)
 {
     ui->setupUi(this);
+    connect( ui->pushButtonAccount, &QPushButton::clicked, this, &HomeUserInterface::actionAccount);
+    connect( ui->pushButtonProfile, &QPushButton::clicked, this, &HomeUserInterface::actionProfile);
 }
 
-homeUserInterface::~homeUserInterface()
+HomeUserInterface::~HomeUserInterface()
 {
     delete ui;
+}
+
+void HomeUserInterface::actionAccount() {
+
+}
+void HomeUserInterface::actionProfile() {
+
 }

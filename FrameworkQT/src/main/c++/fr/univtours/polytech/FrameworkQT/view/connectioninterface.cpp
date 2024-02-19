@@ -5,8 +5,6 @@
 
 #include <QStackedWidget>
 
-
-
 ConnectionInterface::ConnectionInterface(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::ConnectionInterface)

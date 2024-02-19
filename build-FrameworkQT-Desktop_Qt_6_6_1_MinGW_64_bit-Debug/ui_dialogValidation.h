@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'dialogValidation.ui'
+** Form generated from reading UI file 'dialogvalidation.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.6.1
 **
@@ -11,50 +11,50 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QDialog>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_DialogPopUpValidation
+class Ui_DialogValidation
 {
 public:
+    QPushButton *pushButtonValidate;
     QPlainTextEdit *plainTextEdit;
-    QPushButton *pushButtonValidation;
-    QPushButton *pushButton_2;
+    QPushButton *pushButtonCancel;
 
-    void setupUi(QDialog *DialogPopUpValidation)
+    void setupUi(QWidget *DialogValidation)
     {
-        if (DialogPopUpValidation->objectName().isEmpty())
-            DialogPopUpValidation->setObjectName("DialogPopUpValidation");
-        DialogPopUpValidation->resize(216, 101);
-        plainTextEdit = new QPlainTextEdit(DialogPopUpValidation);
+        if (DialogValidation->objectName().isEmpty())
+            DialogValidation->setObjectName("DialogValidation");
+        DialogValidation->resize(400, 300);
+        pushButtonValidate = new QPushButton(DialogValidation);
+        pushButtonValidate->setObjectName("pushButtonValidate");
+        pushButtonValidate->setGeometry(QRect(10, 80, 80, 18));
+        plainTextEdit = new QPlainTextEdit(DialogValidation);
         plainTextEdit->setObjectName("plainTextEdit");
         plainTextEdit->setGeometry(QRect(10, 10, 191, 61));
-        pushButtonValidation = new QPushButton(DialogPopUpValidation);
-        pushButtonValidation->setObjectName("pushButtonValidation");
-        pushButtonValidation->setGeometry(QRect(10, 80, 80, 18));
-        pushButton_2 = new QPushButton(DialogPopUpValidation);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(120, 80, 80, 18));
+        pushButtonCancel = new QPushButton(DialogValidation);
+        pushButtonCancel->setObjectName("pushButtonCancel");
+        pushButtonCancel->setGeometry(QRect(120, 80, 80, 18));
 
-        retranslateUi(DialogPopUpValidation);
+        retranslateUi(DialogValidation);
 
-        QMetaObject::connectSlotsByName(DialogPopUpValidation);
+        QMetaObject::connectSlotsByName(DialogValidation);
     } // setupUi
 
-    void retranslateUi(QDialog *DialogPopUpValidation)
+    void retranslateUi(QWidget *DialogValidation)
     {
-        DialogPopUpValidation->setWindowTitle(QCoreApplication::translate("DialogPopUpValidation", "Dialog", nullptr));
-        pushButtonValidation->setText(QCoreApplication::translate("DialogPopUpValidation", "Confirmer", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("DialogPopUpValidation", "Annuler", nullptr));
+        DialogValidation->setWindowTitle(QCoreApplication::translate("DialogValidation", "Form", nullptr));
+        pushButtonValidate->setText(QCoreApplication::translate("DialogValidation", "Confirmer", nullptr));
+        pushButtonCancel->setText(QCoreApplication::translate("DialogValidation", "Annuler", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class DialogPopUpValidation: public Ui_DialogPopUpValidation {};
+    class DialogValidation: public Ui_DialogValidation {};
 } // namespace Ui
 
 QT_END_NAMESPACE

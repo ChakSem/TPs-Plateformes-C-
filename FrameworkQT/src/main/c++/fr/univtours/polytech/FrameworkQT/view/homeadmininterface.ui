@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>homeAdminInterface</class>
- <widget class="QWidget" name="homeAdminInterface">
+ <class>HomeAdminInterface</class>
+ <widget class="QWidget" name="HomeAdminInterface">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,8 +16,8 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>50</y>
+     <x>60</x>
+     <y>30</y>
      <width>600</width>
      <height>400</height>
     </rect>
@@ -631,28 +631,28 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="4" column="0">
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="pushButtonAccount">
        <property name="text">
         <string>Mon compte</string>
        </property>
       </widget>
      </item>
      <item row="0" column="0">
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButtonUser">
        <property name="text">
         <string>Utilsateurs</string>
        </property>
       </widget>
      </item>
      <item row="5" column="0">
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="pushButtonDatabase">
        <property name="text">
         <string>Bdds</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="pushButtonProfile">
        <property name="text">
         <string>Mes profils</string>
        </property>

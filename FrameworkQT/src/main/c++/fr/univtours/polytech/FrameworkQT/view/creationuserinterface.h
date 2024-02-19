@@ -12,6 +12,7 @@ class CreationUserInterface : public QWidget
     Q_OBJECT
 
 public:
+    void actionAddUseer();
     explicit CreationUserInterface(QWidget *parent = nullptr);
     ~CreationUserInterface();
 

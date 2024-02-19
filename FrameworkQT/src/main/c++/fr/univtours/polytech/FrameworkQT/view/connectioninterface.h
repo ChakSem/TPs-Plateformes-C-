@@ -12,8 +12,8 @@ class ConnectionInterface : public QWidget
     Q_OBJECT
 
 public:
-    explicit ConnectionInterface(QWidget *parent = nullptr);
     void actionConnection();
+    explicit ConnectionInterface(QWidget *parent = nullptr);
     ~ConnectionInterface();
 
 private:

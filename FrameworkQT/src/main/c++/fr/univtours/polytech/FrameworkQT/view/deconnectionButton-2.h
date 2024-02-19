@@ -1,5 +1,5 @@
-#ifndef DECONNECTIONBUTTON_H
-#define DECONNECTIONBUTTON_H
+#ifndef DECONNECTIONBUTTON-2_H
+#define DECONNECTIONBUTTON-2_H
 
 #include <QWidget>
 
@@ -20,4 +20,4 @@ private:
     Ui::Deconnection *ui;
 };
 
-#endif // DECONNECTIONBUTTON_H
+#endif // DECONNECTIONBUTTON-2_H

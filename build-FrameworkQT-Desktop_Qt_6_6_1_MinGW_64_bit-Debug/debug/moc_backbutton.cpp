@@ -36,28 +36,28 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASScancelButtonENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASScancelButtonENDCLASS = QtMocHelpers::stringData(
-    "cancelButton"
+struct qt_meta_stringdata_CLASSBackButtonENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASSBackButtonENDCLASS = QtMocHelpers::stringData(
+    "BackButton"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASScancelButtonENDCLASS_t {
+struct qt_meta_stringdata_CLASSBackButtonENDCLASS_t {
     uint offsetsAndSizes[2];
-    char stringdata0[13];
+    char stringdata0[11];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASScancelButtonENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASScancelButtonENDCLASS_t qt_meta_stringdata_CLASScancelButtonENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASSBackButtonENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSBackButtonENDCLASS_t qt_meta_stringdata_CLASSBackButtonENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 12)   // "cancelButton"
+        QT_MOC_LITERAL(0, 10)   // "BackButton"
     },
-    "cancelButton"
+    "BackButton"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASScancelButtonENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSBackButtonENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -73,20 +73,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASScancelButtonENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject cancelButton::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject BackButton::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_CLASScancelButtonENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASScancelButtonENDCLASS,
+    qt_meta_stringdata_CLASSBackButtonENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSBackButtonENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASScancelButtonENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSBackButtonENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<cancelButton, std::true_type>
+        QtPrivate::TypeAndForceComplete<BackButton, std::true_type>
     >,
     nullptr
 } };
 
-void cancelButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void BackButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     (void)_o;
     (void)_id;
@@ -94,20 +94,20 @@ void cancelButton::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     (void)_a;
 }
 
-const QMetaObject *cancelButton::metaObject() const
+const QMetaObject *BackButton::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *cancelButton::qt_metacast(const char *_clname)
+void *BackButton::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASScancelButtonENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSBackButtonENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QWidget::qt_metacast(_clname);
 }
 
-int cancelButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int BackButton::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     return _id;

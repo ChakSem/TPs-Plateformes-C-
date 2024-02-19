@@ -1,14 +1,34 @@
 #include "homeadmininterface.h"
 #include "ui_homeadmininterface.h"
 
-homeAdminInterface::homeAdminInterface(QWidget *parent)
+HomeAdminInterface::HomeAdminInterface(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::homeAdminInterface)
+    , ui(new Ui::HomeAdminInterface)
 {
     ui->setupUi(this);
+    connect( ui->pushButtonAccount, &QPushButton::clicked, this, &HomeAdminInterface::actionAccount);
+    connect( ui->pushButtonDatabase, &QPushButton::clicked, this, &HomeAdminInterface::actionDatabase);
+    connect( ui->pushButtonProfile, &QPushButton::clicked, this, &HomeAdminInterface::actionProfile);
+    connect( ui->pushButtonUser, &QPushButton::clicked, this, &HomeAdminInterface::actionUser);
 }
 
-homeAdminInterface::~homeAdminInterface()
+HomeAdminInterface::~HomeAdminInterface()
 {
     delete ui;
+}
+
+void HomeAdminInterface::actionAccount() {
+
+}
+
+void HomeAdminInterface::actionDatabase() {
+
+}
+
+void HomeAdminInterface::actionProfile() {
+
+}
+
+void HomeAdminInterface::actionUser() {
+
 }

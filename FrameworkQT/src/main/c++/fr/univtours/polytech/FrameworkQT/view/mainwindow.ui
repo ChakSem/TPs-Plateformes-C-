@@ -1145,9 +1145,13 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    background: none;
 }</string>
     </property>
-    <widget class="Connection" name="connection"/>
-    <widget class="QWidget" name="home"/>
-    <widget class="homeUserInterface" name="homeUserInterface"/>
+    <widget class="ConnectionInterface" name="connection"/>
+    <widget class="UserManagementInterface" name="userManagement"/>
+    <widget class="CreationUserInterface" name="accountCreation"/>
+    <widget class="ProfilesInterface" name="profiles"/>
+    <widget class="AddProfileInterface" name="addProfile"/>
+    <widget class="HomeAdminInterface" name="homeAdmin"/>
+    <widget class="HomeUserInterface" name="homeUser"/>
    </widget>
    <widget class="QStackedWidget" name="DeconnectionWidget">
     <property name="geometry">
@@ -1169,7 +1173,7 @@ color : white;
 QPushButton:hover {
 }</string>
     </property>
-    <widget class="Deconnection" name="deconnection"/>
+    <widget class="QWidget" name="deconnection"/>
     <widget class="QWidget" name="void_2"/>
    </widget>
   </widget>
@@ -1179,7 +1183,7 @@ QPushButton:hover {
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>14</height>
+     <height>18</height>
     </rect>
    </property>
   </widget>
@@ -1187,21 +1191,45 @@ QPushButton:hover {
  </widget>
  <customwidgets>
   <customwidget>
-   <class>Connection</class>
+   <class>ConnectionInterface</class>
    <extends>QWidget</extends>
    <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>Deconnection</class>
+   <class>HomeAdminInterface</class>
    <extends>QWidget</extends>
-   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h</header>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>homeUserInterface</class>
+   <class>HomeUserInterface</class>
    <extends>QWidget</extends>
-   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h </header>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>UserManagementInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/usermanagementinterface.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>CreationUserInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ProfilesInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AddProfileInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

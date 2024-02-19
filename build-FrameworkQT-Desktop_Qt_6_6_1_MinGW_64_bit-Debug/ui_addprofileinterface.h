@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_addProfileInterface
+class Ui_AddProfileInterface
 {
 public:
     QFrame *frame;
@@ -38,14 +38,14 @@ public:
     QLabel *labelConnection_3;
     QRadioButton *radioButoonReadRight;
 
-    void setupUi(QWidget *addProfileInterface)
+    void setupUi(QWidget *AddProfileInterface)
     {
-        if (addProfileInterface->objectName().isEmpty())
-            addProfileInterface->setObjectName("addProfileInterface");
-        addProfileInterface->resize(800, 500);
-        frame = new QFrame(addProfileInterface);
+        if (AddProfileInterface->objectName().isEmpty())
+            AddProfileInterface->setObjectName("AddProfileInterface");
+        AddProfileInterface->resize(800, 500);
+        frame = new QFrame(AddProfileInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(90, 70, 600, 400));
+        frame->setGeometry(QRect(100, 50, 600, 400));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -679,7 +679,7 @@ public:
 
         gridLayoutWidget = new QWidget(frame);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(230, 200, 131, 80));
+        gridLayoutWidget->setGeometry(QRect(230, 200, 132, 80));
         gridLayout_2 = new QGridLayout(gridLayoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -705,27 +705,27 @@ public:
         gridLayout_2->addWidget(radioButoonReadRight, 1, 0, 1, 1);
 
 
-        retranslateUi(addProfileInterface);
+        retranslateUi(AddProfileInterface);
 
-        QMetaObject::connectSlotsByName(addProfileInterface);
+        QMetaObject::connectSlotsByName(AddProfileInterface);
     } // setupUi
 
-    void retranslateUi(QWidget *addProfileInterface)
+    void retranslateUi(QWidget *AddProfileInterface)
     {
-        addProfileInterface->setWindowTitle(QCoreApplication::translate("addProfileInterface", "Form", nullptr));
-        pushButton->setText(QCoreApplication::translate("addProfileInterface", "Valider", nullptr));
-        labelConnection->setText(QCoreApplication::translate("addProfileInterface", "Nouveau Profil", nullptr));
-        labelId->setText(QCoreApplication::translate("addProfileInterface", "Nom :", nullptr));
-        labelConnection_2->setText(QCoreApplication::translate("addProfileInterface", "Comment souhaitez vous appeler le profil ?", nullptr));
-        radioButoonReadUpdateRight->setText(QCoreApplication::translate("addProfileInterface", "Lecture/Modifcation", nullptr));
-        labelConnection_3->setText(QCoreApplication::translate("addProfileInterface", "Avec quelles droits ?", nullptr));
-        radioButoonReadRight->setText(QCoreApplication::translate("addProfileInterface", "Lecture", nullptr));
+        AddProfileInterface->setWindowTitle(QCoreApplication::translate("AddProfileInterface", "Form", nullptr));
+        pushButton->setText(QCoreApplication::translate("AddProfileInterface", "Valider", nullptr));
+        labelConnection->setText(QCoreApplication::translate("AddProfileInterface", "Nouveau Profil", nullptr));
+        labelId->setText(QCoreApplication::translate("AddProfileInterface", "Nom :", nullptr));
+        labelConnection_2->setText(QCoreApplication::translate("AddProfileInterface", "Comment souhaitez vous appeler le profil ?", nullptr));
+        radioButoonReadUpdateRight->setText(QCoreApplication::translate("AddProfileInterface", "Lecture/Modifcation", nullptr));
+        labelConnection_3->setText(QCoreApplication::translate("AddProfileInterface", "Avec quelles droits ?", nullptr));
+        radioButoonReadRight->setText(QCoreApplication::translate("AddProfileInterface", "Lecture", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class addProfileInterface: public Ui_addProfileInterface {};
+    class AddProfileInterface: public Ui_AddProfileInterface {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogPopUpValidation</class>
- <widget class="QDialog" name="DialogPopUpValidation">
+ <class>DialogValidation</class>
+ <widget class="QWidget" name="DialogValidation">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>216</width>
-    <height>101</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Form</string>
   </property>
-  <widget class="QPlainTextEdit" name="plainTextEdit">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>191</width>
-     <height>61</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButtonValidation">
+  <widget class="QPushButton" name="pushButtonValidate">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -36,7 +26,17 @@
     <string>Confirmer</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>191</width>
+     <height>61</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonCancel">
    <property name="geometry">
     <rect>
      <x>120</x>

@@ -4,19 +4,22 @@
 #include <QWidget>
 
 namespace Ui {
-class GestionUtilisateur;
+class UserManagementInterface;
 }
 
-class GestionUtilisateur : public QWidget
+class UserManagementInterface : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit GestionUtilisateur(QWidget *parent = nullptr);
-    ~GestionUtilisateur();
+    void actionAddUser();
+    void actionDeleteUser();
+    void actionUpdateUser();
+    explicit UserManagementInterface(QWidget *parent = nullptr);
+    ~UserManagementInterface();
 
 private:
-    Ui::GestionUtilisateur *ui;
+    Ui::UserManagementInterface *ui;
 };
 
 #endif // USERMANAGEMENTINTERFACE_H

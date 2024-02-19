@@ -16,9 +16,13 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h"
-#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/usermanagementinterface.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,11 +31,15 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QStackedWidget *MainWidget;
-    Connection *connection;
-    QWidget *home;
-    homeUserInterface *homeUserInterface;
+    ConnectionInterface *connection;
+    UserManagementInterface *userManagement;
+    CreationUserInterface *accountCreation;
+    ProfilesInterface *profiles;
+    AddProfileInterface *addProfile;
+    HomeAdminInterface *homeAdmin;
+    HomeUserInterface *homeUser;
     QStackedWidget *DeconnectionWidget;
-    Deconnection *deconnection;
+    QWidget *deconnection;
     QWidget *void_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -1206,15 +1214,27 @@ public:
                         "{\n"
 "   background: none;\n"
 "}"));
-        connection = new Connection();
+        connection = new ConnectionInterface();
         connection->setObjectName("connection");
         MainWidget->addWidget(connection);
-        home = new QWidget();
-        home->setObjectName("home");
-        MainWidget->addWidget(home);
-        homeUserInterface = new homeUserInterface();
-        homeUserInterface->setObjectName("homeUserInterface");
-        MainWidget->addWidget(homeUserInterface);
+        userManagement = new UserManagementInterface();
+        userManagement->setObjectName("userManagement");
+        MainWidget->addWidget(userManagement);
+        accountCreation = new CreationUserInterface();
+        accountCreation->setObjectName("accountCreation");
+        MainWidget->addWidget(accountCreation);
+        profiles = new ProfilesInterface();
+        profiles->setObjectName("profiles");
+        MainWidget->addWidget(profiles);
+        addProfile = new AddProfileInterface();
+        addProfile->setObjectName("addProfile");
+        MainWidget->addWidget(addProfile);
+        homeAdmin = new HomeAdminInterface();
+        homeAdmin->setObjectName("homeAdmin");
+        MainWidget->addWidget(homeAdmin);
+        homeUser = new HomeUserInterface();
+        homeUser->setObjectName("homeUser");
+        MainWidget->addWidget(homeUser);
         DeconnectionWidget = new QStackedWidget(centralwidget);
         DeconnectionWidget->setObjectName("DeconnectionWidget");
         DeconnectionWidget->setGeometry(QRect(640, 0, 161, 41));
@@ -1227,7 +1247,7 @@ public:
 "\n"
 "QPushButton:hover {\n"
 "}"));
-        deconnection = new Deconnection();
+        deconnection = new QWidget();
         deconnection->setObjectName("deconnection");
         DeconnectionWidget->addWidget(deconnection);
         void_2 = new QWidget();
@@ -1236,7 +1256,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 14));
+        menubar->setGeometry(QRect(0, 0, 800, 18));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

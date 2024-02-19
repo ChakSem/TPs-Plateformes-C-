@@ -4,19 +4,23 @@
 #include <QWidget>
 
 namespace Ui {
-class profilesInterface;
+class ProfilesInterface;
 }
 
-class profilesInterface : public QWidget
+class ProfilesInterface : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit profilesInterface(QWidget *parent = nullptr);
-    ~profilesInterface();
+    void actionAddInterface();
+    void actionDeleteInterface();
+    void actionManageInterface();
+    void actionUpdateInterface();
+    explicit ProfilesInterface(QWidget *parent = nullptr);
+    ~ProfilesInterface();
 
 private:
-    Ui::profilesInterface *ui;
+    Ui::ProfilesInterface *ui;
 };
 
 #endif // PROFILESINTERFACE_H

@@ -36,28 +36,28 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSGestionUtilisateurENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASSGestionUtilisateurENDCLASS = QtMocHelpers::stringData(
-    "GestionUtilisateur"
+struct qt_meta_stringdata_CLASSUserManagementInterfaceENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASSUserManagementInterfaceENDCLASS = QtMocHelpers::stringData(
+    "UserManagementInterface"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASSGestionUtilisateurENDCLASS_t {
+struct qt_meta_stringdata_CLASSUserManagementInterfaceENDCLASS_t {
     uint offsetsAndSizes[2];
-    char stringdata0[19];
+    char stringdata0[24];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASSGestionUtilisateurENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASSGestionUtilisateurENDCLASS_t qt_meta_stringdata_CLASSGestionUtilisateurENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASSUserManagementInterfaceENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSUserManagementInterfaceENDCLASS_t qt_meta_stringdata_CLASSUserManagementInterfaceENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 18)   // "GestionUtilisateur"
+        QT_MOC_LITERAL(0, 23)   // "UserManagementInterface"
     },
-    "GestionUtilisateur"
+    "UserManagementInterface"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSGestionUtilisateurENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSUserManagementInterfaceENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -73,20 +73,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGestionUtilisateurENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject GestionUtilisateur::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject UserManagementInterface::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_CLASSGestionUtilisateurENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSGestionUtilisateurENDCLASS,
+    qt_meta_stringdata_CLASSUserManagementInterfaceENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSUserManagementInterfaceENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSGestionUtilisateurENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSUserManagementInterfaceENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<GestionUtilisateur, std::true_type>
+        QtPrivate::TypeAndForceComplete<UserManagementInterface, std::true_type>
     >,
     nullptr
 } };
 
-void GestionUtilisateur::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void UserManagementInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     (void)_o;
     (void)_id;
@@ -94,20 +94,20 @@ void GestionUtilisateur::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
     (void)_a;
 }
 
-const QMetaObject *GestionUtilisateur::metaObject() const
+const QMetaObject *UserManagementInterface::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *GestionUtilisateur::qt_metacast(const char *_clname)
+void *UserManagementInterface::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSGestionUtilisateurENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSUserManagementInterfaceENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QWidget::qt_metacast(_clname);
 }
 
-int GestionUtilisateur::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int UserManagementInterface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     return _id;

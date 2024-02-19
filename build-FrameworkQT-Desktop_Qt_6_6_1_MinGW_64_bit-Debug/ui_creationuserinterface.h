@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_creationuserinterface
+class Ui_CreationUserInterface
 {
 public:
     QFrame *frame;
@@ -39,14 +39,14 @@ public:
     QPushButton *pushButton_2;
     QRadioButton *radioButton;
 
-    void setupUi(QWidget *creationuserinterface)
+    void setupUi(QWidget *CreationUserInterface)
     {
-        if (creationuserinterface->objectName().isEmpty())
-            creationuserinterface->setObjectName("creationuserinterface");
-        creationuserinterface->resize(800, 500);
-        frame = new QFrame(creationuserinterface);
+        if (CreationUserInterface->objectName().isEmpty())
+            CreationUserInterface->setObjectName("CreationUserInterface");
+        CreationUserInterface->resize(800, 500);
+        frame = new QFrame(CreationUserInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(100, 60, 600, 400));
+        frame->setGeometry(QRect(110, 50, 600, 400));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -701,28 +701,28 @@ public:
         radioButton->setObjectName("radioButton");
         radioButton->setGeometry(QRect(70, 506, 788, 18));
 
-        retranslateUi(creationuserinterface);
+        retranslateUi(CreationUserInterface);
 
-        QMetaObject::connectSlotsByName(creationuserinterface);
+        QMetaObject::connectSlotsByName(CreationUserInterface);
     } // setupUi
 
-    void retranslateUi(QWidget *creationuserinterface)
+    void retranslateUi(QWidget *CreationUserInterface)
     {
-        creationuserinterface->setWindowTitle(QCoreApplication::translate("creationuserinterface", "Form", nullptr));
-        pushButton->setText(QCoreApplication::translate("creationuserinterface", "Cr\303\251er", nullptr));
-        labelConnection->setText(QCoreApplication::translate("creationuserinterface", "Creation d'un compte", nullptr));
-        labelMdp->setText(QCoreApplication::translate("creationuserinterface", "Mot de Passe :", nullptr));
-        labelId->setText(QCoreApplication::translate("creationuserinterface", "Nom :", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("creationuserinterface", "Admin", nullptr));
+        CreationUserInterface->setWindowTitle(QCoreApplication::translate("CreationUserInterface", "Form", nullptr));
+        pushButton->setText(QCoreApplication::translate("CreationUserInterface", "Cr\303\251er", nullptr));
+        labelConnection->setText(QCoreApplication::translate("CreationUserInterface", "Creation d'un compte", nullptr));
+        labelMdp->setText(QCoreApplication::translate("CreationUserInterface", "Mot de Passe :", nullptr));
+        labelId->setText(QCoreApplication::translate("CreationUserInterface", "Nom :", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("CreationUserInterface", "Admin", nullptr));
         labelConnection_2->setText(QString());
-        pushButton_2->setText(QCoreApplication::translate("creationuserinterface", "Cr\303\251er", nullptr));
-        radioButton->setText(QCoreApplication::translate("creationuserinterface", "Admin", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("CreationUserInterface", "Cr\303\251er", nullptr));
+        radioButton->setText(QCoreApplication::translate("CreationUserInterface", "Admin", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class creationuserinterface: public Ui_creationuserinterface {};
+    class CreationUserInterface: public Ui_CreationUserInterface {};
 } // namespace Ui
 
 QT_END_NAMESPACE

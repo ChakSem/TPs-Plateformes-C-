@@ -6,16 +6,15 @@ BackButton::BackButton(QWidget *parent)
     , ui(new Ui::BackButton)
 {
     ui->setupUi(this);
-    connect(ui->backButton, &QPushButton::clicked, this, &BackButton::backButtonClicked);
+    connect(ui->backButton, &QPushButton::clicked, this, &BackButton::actionBack);
 }
-void BackButton::backButtonClicked()
-{
-    
-}
-
-
 
 BackButton::~BackButton()
 {
     delete ui;
+}
+
+void BackButton::actionBack()
+{
+
 }

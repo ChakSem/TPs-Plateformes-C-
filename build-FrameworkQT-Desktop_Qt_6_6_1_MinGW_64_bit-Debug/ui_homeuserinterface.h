@@ -19,24 +19,24 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_homeUserInterface
+class Ui_HomeUserInterface
 {
 public:
     QFrame *frame;
     QLabel *labelConnection;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_5;
+    QPushButton *pushButtonProfile;
+    QPushButton *pushButtonAccount;
 
-    void setupUi(QWidget *homeUserInterface)
+    void setupUi(QWidget *HomeUserInterface)
     {
-        if (homeUserInterface->objectName().isEmpty())
-            homeUserInterface->setObjectName("homeUserInterface");
-        homeUserInterface->resize(800, 500);
-        frame = new QFrame(homeUserInterface);
+        if (HomeUserInterface->objectName().isEmpty())
+            HomeUserInterface->setObjectName("HomeUserInterface");
+        HomeUserInterface->resize(800, 500);
+        frame = new QFrame(HomeUserInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(80, 80, 600, 400));
+        frame->setGeometry(QRect(110, 60, 600, 400));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -638,34 +638,34 @@ public:
         gridLayout_2 = new QGridLayout(gridLayoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButton_3 = new QPushButton(gridLayoutWidget);
-        pushButton_3->setObjectName("pushButton_3");
+        pushButtonProfile = new QPushButton(gridLayoutWidget);
+        pushButtonProfile->setObjectName("pushButtonProfile");
 
-        gridLayout_2->addWidget(pushButton_3, 0, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonProfile, 0, 0, 1, 1);
 
-        pushButton_5 = new QPushButton(gridLayoutWidget);
-        pushButton_5->setObjectName("pushButton_5");
+        pushButtonAccount = new QPushButton(gridLayoutWidget);
+        pushButtonAccount->setObjectName("pushButtonAccount");
 
-        gridLayout_2->addWidget(pushButton_5, 3, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonAccount, 3, 0, 1, 1);
 
 
-        retranslateUi(homeUserInterface);
+        retranslateUi(HomeUserInterface);
 
-        QMetaObject::connectSlotsByName(homeUserInterface);
+        QMetaObject::connectSlotsByName(HomeUserInterface);
     } // setupUi
 
-    void retranslateUi(QWidget *homeUserInterface)
+    void retranslateUi(QWidget *HomeUserInterface)
     {
-        homeUserInterface->setWindowTitle(QCoreApplication::translate("homeUserInterface", "Form", nullptr));
-        labelConnection->setText(QCoreApplication::translate("homeUserInterface", "Page Accueil", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("homeUserInterface", "Mes profils", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("homeUserInterface", "Mon compte", nullptr));
+        HomeUserInterface->setWindowTitle(QCoreApplication::translate("HomeUserInterface", "Form", nullptr));
+        labelConnection->setText(QCoreApplication::translate("HomeUserInterface", "Page Accueil", nullptr));
+        pushButtonProfile->setText(QCoreApplication::translate("HomeUserInterface", "Mes profils", nullptr));
+        pushButtonAccount->setText(QCoreApplication::translate("HomeUserInterface", "Mon compte", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class homeUserInterface: public Ui_homeUserInterface {};
+    class HomeUserInterface: public Ui_HomeUserInterface {};
 } // namespace Ui
 
 QT_END_NAMESPACE

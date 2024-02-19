@@ -20,7 +20,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_profilesInterface
+class Ui_ProfilesInterface
 {
 public:
     QFrame *frame;
@@ -29,19 +29,19 @@ public:
     QLabel *labelConnection_2;
     QWidget *layoutWidget;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButtonDelete_3;
-    QPushButton *pushButtonDelete_2;
-    QPushButton *pushButtonUpdate_2;
-    QPushButton *pushButtonAdd_2;
+    QPushButton *pushButtonManage;
+    QPushButton *pushButtonDelete;
+    QPushButton *pushButtonUpdate;
+    QPushButton *pushButtonAdd;
 
-    void setupUi(QWidget *profilesInterface)
+    void setupUi(QWidget *ProfilesInterface)
     {
-        if (profilesInterface->objectName().isEmpty())
-            profilesInterface->setObjectName("profilesInterface");
-        profilesInterface->resize(800, 500);
-        frame = new QFrame(profilesInterface);
+        if (ProfilesInterface->objectName().isEmpty())
+            ProfilesInterface->setObjectName("ProfilesInterface");
+        ProfilesInterface->resize(800, 500);
+        frame = new QFrame(ProfilesInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(100, 60, 600, 400));
+        frame->setGeometry(QRect(120, 50, 600, 400));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -659,47 +659,47 @@ public:
         gridLayout_2 = new QGridLayout(layoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButtonDelete_3 = new QPushButton(layoutWidget);
-        pushButtonDelete_3->setObjectName("pushButtonDelete_3");
+        pushButtonManage = new QPushButton(layoutWidget);
+        pushButtonManage->setObjectName("pushButtonManage");
 
-        gridLayout_2->addWidget(pushButtonDelete_3, 0, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonManage, 0, 0, 1, 1);
 
-        pushButtonDelete_2 = new QPushButton(layoutWidget);
-        pushButtonDelete_2->setObjectName("pushButtonDelete_2");
+        pushButtonDelete = new QPushButton(layoutWidget);
+        pushButtonDelete->setObjectName("pushButtonDelete");
 
-        gridLayout_2->addWidget(pushButtonDelete_2, 5, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonDelete, 5, 0, 1, 1);
 
-        pushButtonUpdate_2 = new QPushButton(layoutWidget);
-        pushButtonUpdate_2->setObjectName("pushButtonUpdate_2");
+        pushButtonUpdate = new QPushButton(layoutWidget);
+        pushButtonUpdate->setObjectName("pushButtonUpdate");
 
-        gridLayout_2->addWidget(pushButtonUpdate_2, 1, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonUpdate, 1, 0, 1, 1);
 
-        pushButtonAdd_2 = new QPushButton(layoutWidget);
-        pushButtonAdd_2->setObjectName("pushButtonAdd_2");
+        pushButtonAdd = new QPushButton(layoutWidget);
+        pushButtonAdd->setObjectName("pushButtonAdd");
 
-        gridLayout_2->addWidget(pushButtonAdd_2, 2, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonAdd, 2, 0, 1, 1);
 
 
-        retranslateUi(profilesInterface);
+        retranslateUi(ProfilesInterface);
 
-        QMetaObject::connectSlotsByName(profilesInterface);
+        QMetaObject::connectSlotsByName(ProfilesInterface);
     } // setupUi
 
-    void retranslateUi(QWidget *profilesInterface)
+    void retranslateUi(QWidget *ProfilesInterface)
     {
-        profilesInterface->setWindowTitle(QCoreApplication::translate("profilesInterface", "Form", nullptr));
-        labelConnection_3->setText(QCoreApplication::translate("profilesInterface", "Page Profils", nullptr));
-        labelConnection_2->setText(QCoreApplication::translate("profilesInterface", "Veuillez selectionner un profil : ", nullptr));
-        pushButtonDelete_3->setText(QCoreApplication::translate("profilesInterface", "G\303\251rer", nullptr));
-        pushButtonDelete_2->setText(QCoreApplication::translate("profilesInterface", "Supprimer", nullptr));
-        pushButtonUpdate_2->setText(QCoreApplication::translate("profilesInterface", "Modifier", nullptr));
-        pushButtonAdd_2->setText(QCoreApplication::translate("profilesInterface", "Ajouter", nullptr));
+        ProfilesInterface->setWindowTitle(QCoreApplication::translate("ProfilesInterface", "Form", nullptr));
+        labelConnection_3->setText(QCoreApplication::translate("ProfilesInterface", "Page Profils", nullptr));
+        labelConnection_2->setText(QCoreApplication::translate("ProfilesInterface", "Veuillez selectionner un profil : ", nullptr));
+        pushButtonManage->setText(QCoreApplication::translate("ProfilesInterface", "G\303\251rer", nullptr));
+        pushButtonDelete->setText(QCoreApplication::translate("ProfilesInterface", "Supprimer", nullptr));
+        pushButtonUpdate->setText(QCoreApplication::translate("ProfilesInterface", "Modifier", nullptr));
+        pushButtonAdd->setText(QCoreApplication::translate("ProfilesInterface", "Ajouter", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class profilesInterface: public Ui_profilesInterface {};
+    class ProfilesInterface: public Ui_ProfilesInterface {};
 } // namespace Ui
 
 QT_END_NAMESPACE

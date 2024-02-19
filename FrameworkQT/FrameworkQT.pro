@@ -22,9 +22,9 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogValidation.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogerror.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogvalidation.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.cpp \
@@ -92,9 +92,9 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogValidation.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogerror.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogvalidation.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.h \
@@ -111,9 +111,9 @@ FORMS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogValidation.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogerror.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogvalidation.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.ui \

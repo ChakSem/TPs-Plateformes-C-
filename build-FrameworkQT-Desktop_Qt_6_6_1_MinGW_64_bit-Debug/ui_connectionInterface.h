@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'connectionInterface.ui'
+** Form generated from reading UI file 'connectioninterface.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.6.1
 **
@@ -20,7 +20,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Connection
+class Ui_ConnectionInterface
 {
 public:
     QFrame *frame;
@@ -33,14 +33,14 @@ public:
     QLineEdit *idLogin;
     QLabel *labelMdp;
 
-    void setupUi(QWidget *Connection)
+    void setupUi(QWidget *ConnectionInterface)
     {
-        if (Connection->objectName().isEmpty())
-            Connection->setObjectName("Connection");
-        Connection->resize(800, 500);
-        frame = new QFrame(Connection);
+        if (ConnectionInterface->objectName().isEmpty())
+            ConnectionInterface->setObjectName("ConnectionInterface");
+        ConnectionInterface->resize(800, 500);
+        frame = new QFrame(ConnectionInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(100, 60, 600, 400));
+        frame->setGeometry(QRect(110, 50, 600, 400));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -673,24 +673,24 @@ public:
         gridLayout->addWidget(labelMdp, 3, 0, 1, 1);
 
 
-        retranslateUi(Connection);
+        retranslateUi(ConnectionInterface);
 
-        QMetaObject::connectSlotsByName(Connection);
+        QMetaObject::connectSlotsByName(ConnectionInterface);
     } // setupUi
 
-    void retranslateUi(QWidget *Connection)
+    void retranslateUi(QWidget *ConnectionInterface)
     {
-        Connection->setWindowTitle(QCoreApplication::translate("Connection", "Form", nullptr));
-        pushButton->setText(QCoreApplication::translate("Connection", "Connexion", nullptr));
-        labelConnection->setText(QCoreApplication::translate("Connection", "Connexion", nullptr));
-        labelId->setText(QCoreApplication::translate("Connection", "Identifiant :", nullptr));
-        labelMdp->setText(QCoreApplication::translate("Connection", "Mot de Passe :", nullptr));
+        ConnectionInterface->setWindowTitle(QCoreApplication::translate("ConnectionInterface", "Form", nullptr));
+        pushButton->setText(QCoreApplication::translate("ConnectionInterface", "Connexion", nullptr));
+        labelConnection->setText(QCoreApplication::translate("ConnectionInterface", "Connexion", nullptr));
+        labelId->setText(QCoreApplication::translate("ConnectionInterface", "Identifiant :", nullptr));
+        labelMdp->setText(QCoreApplication::translate("ConnectionInterface", "Mot de Passe :", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Connection: public Ui_Connection {};
+    class ConnectionInterface: public Ui_ConnectionInterface {};
 } // namespace Ui
 
 QT_END_NAMESPACE

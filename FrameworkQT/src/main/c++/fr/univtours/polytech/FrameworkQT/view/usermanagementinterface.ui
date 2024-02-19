@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GestionUtilisateur</class>
- <widget class="QWidget" name="GestionUtilisateur">
+ <class>UserManagementInterface</class>
+ <widget class="QWidget" name="UserManagementInterface">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,8 +16,8 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>60</y>
+     <x>110</x>
+     <y>40</y>
      <width>600</width>
      <height>400</height>
     </rect>

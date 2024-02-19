@@ -36,28 +36,28 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASShomeAdminInterfaceENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASShomeAdminInterfaceENDCLASS = QtMocHelpers::stringData(
-    "homeAdminInterface"
+struct qt_meta_stringdata_CLASSHomeAdminInterfaceENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASSHomeAdminInterfaceENDCLASS = QtMocHelpers::stringData(
+    "HomeAdminInterface"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASShomeAdminInterfaceENDCLASS_t {
+struct qt_meta_stringdata_CLASSHomeAdminInterfaceENDCLASS_t {
     uint offsetsAndSizes[2];
     char stringdata0[19];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASShomeAdminInterfaceENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASShomeAdminInterfaceENDCLASS_t qt_meta_stringdata_CLASShomeAdminInterfaceENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASSHomeAdminInterfaceENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSHomeAdminInterfaceENDCLASS_t qt_meta_stringdata_CLASSHomeAdminInterfaceENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 18)   // "homeAdminInterface"
+        QT_MOC_LITERAL(0, 18)   // "HomeAdminInterface"
     },
-    "homeAdminInterface"
+    "HomeAdminInterface"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASShomeAdminInterfaceENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSHomeAdminInterfaceENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -73,20 +73,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASShomeAdminInterfaceENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject homeAdminInterface::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject HomeAdminInterface::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_CLASShomeAdminInterfaceENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASShomeAdminInterfaceENDCLASS,
+    qt_meta_stringdata_CLASSHomeAdminInterfaceENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSHomeAdminInterfaceENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASShomeAdminInterfaceENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSHomeAdminInterfaceENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<homeAdminInterface, std::true_type>
+        QtPrivate::TypeAndForceComplete<HomeAdminInterface, std::true_type>
     >,
     nullptr
 } };
 
-void homeAdminInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void HomeAdminInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     (void)_o;
     (void)_id;
@@ -94,20 +94,20 @@ void homeAdminInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
     (void)_a;
 }
 
-const QMetaObject *homeAdminInterface::metaObject() const
+const QMetaObject *HomeAdminInterface::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *homeAdminInterface::qt_metacast(const char *_clname)
+void *HomeAdminInterface::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASShomeAdminInterfaceENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSHomeAdminInterfaceENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QWidget::qt_metacast(_clname);
 }
 
-int homeAdminInterface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int HomeAdminInterface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     return _id;

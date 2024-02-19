@@ -36,28 +36,28 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSprofilesInterfaceENDCLASS_t {};
-static constexpr auto qt_meta_stringdata_CLASSprofilesInterfaceENDCLASS = QtMocHelpers::stringData(
-    "profilesInterface"
+struct qt_meta_stringdata_CLASSProfilesInterfaceENDCLASS_t {};
+static constexpr auto qt_meta_stringdata_CLASSProfilesInterfaceENDCLASS = QtMocHelpers::stringData(
+    "ProfilesInterface"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
-struct qt_meta_stringdata_CLASSprofilesInterfaceENDCLASS_t {
+struct qt_meta_stringdata_CLASSProfilesInterfaceENDCLASS_t {
     uint offsetsAndSizes[2];
     char stringdata0[18];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_CLASSprofilesInterfaceENDCLASS_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_CLASSprofilesInterfaceENDCLASS_t qt_meta_stringdata_CLASSprofilesInterfaceENDCLASS = {
+    uint(sizeof(qt_meta_stringdata_CLASSProfilesInterfaceENDCLASS_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_CLASSProfilesInterfaceENDCLASS_t qt_meta_stringdata_CLASSProfilesInterfaceENDCLASS = {
     {
-        QT_MOC_LITERAL(0, 17)   // "profilesInterface"
+        QT_MOC_LITERAL(0, 17)   // "ProfilesInterface"
     },
-    "profilesInterface"
+    "ProfilesInterface"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSprofilesInterfaceENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSProfilesInterfaceENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -73,20 +73,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSprofilesInterfaceENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject profilesInterface::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject ProfilesInterface::staticMetaObject = { {
     QMetaObject::SuperData::link<QWidget::staticMetaObject>(),
-    qt_meta_stringdata_CLASSprofilesInterfaceENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSprofilesInterfaceENDCLASS,
+    qt_meta_stringdata_CLASSProfilesInterfaceENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSProfilesInterfaceENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSprofilesInterfaceENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSProfilesInterfaceENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<profilesInterface, std::true_type>
+        QtPrivate::TypeAndForceComplete<ProfilesInterface, std::true_type>
     >,
     nullptr
 } };
 
-void profilesInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void ProfilesInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     (void)_o;
     (void)_id;
@@ -94,20 +94,20 @@ void profilesInterface::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
     (void)_a;
 }
 
-const QMetaObject *profilesInterface::metaObject() const
+const QMetaObject *ProfilesInterface::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *profilesInterface::qt_metacast(const char *_clname)
+void *ProfilesInterface::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSprofilesInterfaceENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSProfilesInterfaceENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QWidget::qt_metacast(_clname);
 }
 
-int profilesInterface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int ProfilesInterface::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     return _id;

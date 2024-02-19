@@ -4,19 +4,23 @@
 #include <QWidget>
 
 namespace Ui {
-class homeAdminInterface;
+class HomeAdminInterface;
 }
 
-class homeAdminInterface : public QWidget
+class HomeAdminInterface : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit homeAdminInterface(QWidget *parent = nullptr);
-    ~homeAdminInterface();
+    void actionAccount();
+    void actionDatabase();
+    void actionProfile();
+    void actionUser();
+    explicit HomeAdminInterface(QWidget *parent = nullptr);
+    ~HomeAdminInterface();
 
 private:
-    Ui::homeAdminInterface *ui;
+    Ui::HomeAdminInterface *ui;
 };
 
 #endif // HOMEADMININTERFACE_H

@@ -23,7 +23,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_GestionUtilisateur
+class Ui_UserManagementInterface
 {
 public:
     QFrame *frame;
@@ -39,14 +39,14 @@ public:
     QPushButton *pushButtonAdd;
     QTableView *tableView;
 
-    void setupUi(QWidget *GestionUtilisateur)
+    void setupUi(QWidget *UserManagementInterface)
     {
-        if (GestionUtilisateur->objectName().isEmpty())
-            GestionUtilisateur->setObjectName("GestionUtilisateur");
-        GestionUtilisateur->resize(800, 500);
-        frame = new QFrame(GestionUtilisateur);
+        if (UserManagementInterface->objectName().isEmpty())
+            UserManagementInterface->setObjectName("UserManagementInterface");
+        UserManagementInterface->resize(800, 500);
+        frame = new QFrame(UserManagementInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(100, 60, 600, 400));
+        frame->setGeometry(QRect(110, 40, 600, 400));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -684,27 +684,27 @@ public:
         tableView->setObjectName("tableView");
         tableView->setGeometry(QRect(20, 130, 261, 261));
 
-        retranslateUi(GestionUtilisateur);
+        retranslateUi(UserManagementInterface);
 
-        QMetaObject::connectSlotsByName(GestionUtilisateur);
+        QMetaObject::connectSlotsByName(UserManagementInterface);
     } // setupUi
 
-    void retranslateUi(QWidget *GestionUtilisateur)
+    void retranslateUi(QWidget *UserManagementInterface)
     {
-        GestionUtilisateur->setWindowTitle(QCoreApplication::translate("GestionUtilisateur", "Form", nullptr));
-        labelConnection->setText(QCoreApplication::translate("GestionUtilisateur", "Gestion des utilisateurs", nullptr));
+        UserManagementInterface->setWindowTitle(QCoreApplication::translate("UserManagementInterface", "Form", nullptr));
+        labelConnection->setText(QCoreApplication::translate("UserManagementInterface", "Gestion des utilisateurs", nullptr));
         labelConnection_2->setText(QString());
-        pushButton_2->setText(QCoreApplication::translate("GestionUtilisateur", "Cr\303\251er", nullptr));
-        radioButton->setText(QCoreApplication::translate("GestionUtilisateur", "Admin", nullptr));
-        pushButtonUpdate->setText(QCoreApplication::translate("GestionUtilisateur", "Modifier", nullptr));
-        pushButtonDelete->setText(QCoreApplication::translate("GestionUtilisateur", "Supprimer", nullptr));
-        pushButtonAdd->setText(QCoreApplication::translate("GestionUtilisateur", "Ajouter", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("UserManagementInterface", "Cr\303\251er", nullptr));
+        radioButton->setText(QCoreApplication::translate("UserManagementInterface", "Admin", nullptr));
+        pushButtonUpdate->setText(QCoreApplication::translate("UserManagementInterface", "Modifier", nullptr));
+        pushButtonDelete->setText(QCoreApplication::translate("UserManagementInterface", "Supprimer", nullptr));
+        pushButtonAdd->setText(QCoreApplication::translate("UserManagementInterface", "Ajouter", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class GestionUtilisateur: public Ui_GestionUtilisateur {};
+    class UserManagementInterface: public Ui_UserManagementInterface {};
 } // namespace Ui
 
 QT_END_NAMESPACE

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>profilesInterface</class>
- <widget class="QWidget" name="profilesInterface">
+ <class>ProfilesInterface</class>
+ <widget class="QWidget" name="ProfilesInterface">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,8 +16,8 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>60</y>
+     <x>120</x>
+     <y>50</y>
      <width>600</width>
      <height>400</height>
     </rect>
@@ -687,28 +687,28 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="0" column="0">
-      <widget class="QPushButton" name="pushButtonDelete_3">
+      <widget class="QPushButton" name="pushButtonManage">
        <property name="text">
         <string>Gérer</string>
        </property>
       </widget>
      </item>
      <item row="5" column="0">
-      <widget class="QPushButton" name="pushButtonDelete_2">
+      <widget class="QPushButton" name="pushButtonDelete">
        <property name="text">
         <string>Supprimer</string>
        </property>
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QPushButton" name="pushButtonUpdate_2">
+      <widget class="QPushButton" name="pushButtonUpdate">
        <property name="text">
         <string>Modifier</string>
        </property>
       </widget>
      </item>
      <item row="2" column="0">
-      <widget class="QPushButton" name="pushButtonAdd_2">
+      <widget class="QPushButton" name="pushButtonAdd">
        <property name="text">
         <string>Ajouter</string>
        </property>

@@ -12,6 +12,7 @@ class AddProfileInterface : public QWidget
     Q_OBJECT
 
 public:
+    void actionCreateProfile();
     explicit AddProfileInterface(QWidget *parent = nullptr);
     ~AddProfileInterface();
 
