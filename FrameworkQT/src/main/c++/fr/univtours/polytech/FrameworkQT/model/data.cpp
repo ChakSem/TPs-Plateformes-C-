@@ -39,6 +39,9 @@ QMap<QString, User*> Data::getAdministrators() {
 }
 
 Data::~Data() {
+
+    qDebug() << "Destruction";
+
     CparserJson::saveData(*this);
 
     for(User* user : users) {
