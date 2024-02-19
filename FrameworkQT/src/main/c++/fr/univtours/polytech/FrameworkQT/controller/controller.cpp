@@ -7,12 +7,6 @@
 #include "../model/Data.h"
 #include "../utils/exception.h"
 
-#define ADMIN 0
-#define USER 1
-
-#define DROIT_LECTURE 2
-#define DROIT_LECTURE_MODIFICATION 3
-#define DROIT_LECTURE_MODIFICATION_ECRITURE_SUPPRESSION 4
 
 User* Controller::Connection(const QString id, QString password) {
     if(CparserJson::getPassword(id) != password) {
@@ -54,10 +48,10 @@ User* Controller::createUser(QString firstname, QString lastname, QString passwo
     try {
         switch(roleValue) {
         case ADMIN:
-            Data::getInstance().addUser(newUser);
+            Data::getInstance().addAdministrator(newUser);
             break;
         case USER:
-            Data::getInstance().addAdministrator(newUser);
+            Data::getInstance().addUser(newUser);
             break;
         default :
             throw new Exception(ERREURAUCUNROLECORRESPONDANT);

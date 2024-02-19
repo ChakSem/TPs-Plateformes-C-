@@ -31,10 +31,8 @@ QMap<QString, User*> Data::getUsers() {
 }
 
 void Data::addAdministrator(User* administrator) {
-    users.insert(administrator->getId(), administrator);
     administrators.insert(administrator->getId(), administrator);
 }
-
 
 QMap<QString, User*> Data::getAdministrators() {
     return administrators;

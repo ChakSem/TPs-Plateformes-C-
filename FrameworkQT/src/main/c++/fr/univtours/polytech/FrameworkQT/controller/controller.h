@@ -3,6 +3,13 @@
 #include "QString"
 #include "../model/User.h"
 
+#define ADMIN 0
+#define USER 1
+
+#define DROIT_LECTURE 2
+#define DROIT_LECTURE_MODIFICATION 3
+#define DROIT_LECTURE_MODIFICATION_ECRITURE_SUPPRESSION 4
+
 class Controller
 {
 public:

@@ -1,8 +1,15 @@
 [
     {
-        "firstname": "admin",
-        "id": "b720beff-8d98-4030-b272-d1ba9c1de19c",
-        "lastname": "admin",
+        "firstname": "arthur",
+        "id": "d9041271-b0fd-46c5-a88e-9232a12ab6ca",
+        "lastname": "crochemore",
+        "profiles": [
+        ]
+    },
+    {
+        "firstname": "arthur",
+        "id": "e1f9e403-3a57-4170-b136-82f025ab3050",
+        "lastname": "arthur",
         "profiles": [
         ]
     }
