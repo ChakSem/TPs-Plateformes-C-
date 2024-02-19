@@ -3,8 +3,8 @@
 #include "QString"
 #include "../model/User.h"
 
-#define ADMIN 0
-#define USER 1
+#define ROLE_ADMIN 0
+#define ROLE_USER 1
 
 #define DROIT_LECTURE 2
 #define DROIT_LECTURE_MODIFICATION 3

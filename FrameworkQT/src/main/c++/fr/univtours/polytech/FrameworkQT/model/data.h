@@ -6,9 +6,16 @@
 #ifndef DATA_H
 #define DATA_H 1
 
+#define ERROR 0
+#define ADMIN 1
+#define NOTADMIN 2
+
 class Data
 {
 private:
+    User* userConnected;
+    unsigned int isAdmin;
+
     //Map des données des utilisateurs ( clé: id de l'utilisateur, valeur: l'utilisateur)
     QMap<QString, User*> users;
     QMap<QString, User*> administrators;
@@ -31,6 +38,10 @@ public:
 
     /* Accesseur commun */
     User* getUser(QString id);
+
+    unsigned int typeOfConnectedUser();
+    void connect(User* user, unsigned int isAdminParam);
+    void disconnect();
 
 private :
 /* Destructeur, sera appelé automatiquement à la fin du programme */

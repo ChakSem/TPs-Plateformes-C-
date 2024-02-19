@@ -9,8 +9,8 @@
 #include "../utils/exception.h"
 #include "../utils/encryption.h"
 
-#define ERROR 1
-#define SUCCESS 0
+#define ERROR 0
+#define SUCCESS 1
 
 #define FILEPATHUSER "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/data/users.json"
 #define FILEPATHADMIN "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/data/admins.json"
@@ -264,9 +264,6 @@ int CparserJson::updateData(Data& data) {
         return ERROR;
     }
 }
-
-
-
 
 void CparserJson::setPassword(QString id, QString password)
 {
