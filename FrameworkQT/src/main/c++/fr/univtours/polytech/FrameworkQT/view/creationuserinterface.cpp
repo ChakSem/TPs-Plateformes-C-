@@ -1,14 +1,14 @@
 #include "creationuserinterface.h"
 #include "ui_creationuserinterface.h"
 
-creationuserinterface::creationuserinterface(QWidget *parent)
+CreationUserInterface::CreationUserInterface(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::creationuserinterface)
+    , ui(new Ui::CreationUserInterface)
 {
     ui->setupUi(this);
 }
 
-creationuserinterface::~creationuserinterface()
+CreationUserInterface::~CreationUserInterface()
 {
     delete ui;
 }

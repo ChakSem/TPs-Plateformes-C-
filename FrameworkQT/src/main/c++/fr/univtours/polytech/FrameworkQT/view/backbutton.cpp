@@ -1,14 +1,15 @@
 #include "backbutton.h"
 #include "ui_backbutton.h"
 
-cancelButton::cancelButton(QWidget *parent)
+BackButton::BackButton(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::cancelButton)
+    , ui(new Ui::BackButton)
 {
     ui->setupUi(this);
+    connect(ui->backButton, &QPushButton::clicked, this, &BackButton::backButtonClicked);
 }
 
-cancelButton::~cancelButton()
+BackButton::~BackButton()
 {
     delete ui;
 }

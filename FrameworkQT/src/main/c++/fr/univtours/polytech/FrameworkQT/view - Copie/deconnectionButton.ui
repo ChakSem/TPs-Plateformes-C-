@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>BackButton</class>
- <widget class="QWidget" name="BackButton">
+ <class>Deconnection</class>
+ <widget class="QWidget" name="Deconnection">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>118</width>
+    <height>44</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pushButtonDeconnection">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>10</x>
      <y>10</y>
-     <width>121</width>
+     <width>101</width>
      <height>31</height>
     </rect>
    </property>
@@ -121,7 +121,7 @@ QPushButton:disabled{
 }</string>
    </property>
    <property name="text">
-    <string>Retour</string>
+    <string>Se Déconnecter</string>
    </property>
   </widget>
  </widget>

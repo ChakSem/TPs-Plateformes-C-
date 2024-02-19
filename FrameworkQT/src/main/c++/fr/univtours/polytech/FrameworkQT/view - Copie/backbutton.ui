@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>BackButton</class>
- <widget class="QWidget" name="BackButton">
+ <class>cancelButton</class>
+ <widget class="QWidget" name="cancelButton">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>137</width>
+    <height>48</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>10</x>
      <y>10</y>
      <width>121</width>
      <height>31</height>

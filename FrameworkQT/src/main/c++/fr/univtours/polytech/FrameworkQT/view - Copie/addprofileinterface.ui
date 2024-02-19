@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreationUserInterface</class>
- <widget class="QWidget" name="CreationUserInterface">
+ <class>addProfileInterface</class>
+ <widget class="QWidget" name="addProfileInterface">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,8 +16,8 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>50</y>
+     <x>90</x>
+     <y>70</y>
      <width>600</width>
      <height>400</height>
     </rect>
@@ -592,10 +592,10 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>340</y>
-      <width>411</width>
-      <height>31</height>
+      <x>100</x>
+      <y>350</y>
+      <width>400</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="font">
@@ -607,15 +607,15 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      <string notr="true"/>
     </property>
     <property name="text">
-     <string>Créer</string>
+     <string>Valider</string>
     </property>
    </widget>
    <widget class="QLabel" name="labelConnection">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>215</x>
       <y>0</y>
-      <width>211</width>
+      <width>600</width>
       <height>26</height>
      </rect>
     </property>
@@ -638,38 +638,19 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </font>
     </property>
     <property name="text">
-     <string>Creation d'un compte</string>
+     <string>Nouveau Profil</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>140</y>
+      <y>150</y>
       <width>371</width>
-      <height>161</height>
+      <height>40</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="3" column="0">
-      <widget class="QLabel" name="labelMdp">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Mot de Passe :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="idLogin">
-       <property name="long" stdset="0">
-        <longLong>0</longLong>
-       </property>
-      </widget>
-     </item>
      <item row="2" column="0">
       <widget class="QLabel" name="labelId">
        <property name="font">
@@ -682,78 +663,80 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="passwordLogin"/>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="idLogin">
+       <property name="long" stdset="0">
+        <longLong>0</longLong>
+       </property>
+      </widget>
      </item>
-     <item row="4" column="1">
-      <widget class="QRadioButton" name="radioButton_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelConnection_2">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>10</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="text">
-        <string>Admin</string>
+        <string>Comment souhaitez vous appeler le profil ?</string>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
-   <widget class="QLineEdit" name="passwordLogin_2">
+   <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>480</y>
-      <width>788</width>
-      <height>22</height>
+      <x>230</x>
+      <y>200</y>
+      <width>131</width>
+      <height>80</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QLabel" name="labelConnection_2">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>58</y>
-      <width>150</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>150</width>
-      <height>50</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>528</y>
-      <width>788</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Créer</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>506</y>
-      <width>788</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Admin</string>
-    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="2" column="0">
+      <widget class="QRadioButton" name="radioButoonReadUpdateRight">
+       <property name="text">
+        <string>Lecture/Modifcation</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelConnection_3">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>10</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <italic>true</italic>
+         <bold>true</bold>
+         <underline>true</underline>
+        </font>
+       </property>
+       <property name="text">
+        <string>Avec quelles droits ?</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QRadioButton" name="radioButoonReadRight">
+       <property name="text">
+        <string>Lecture</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
  </widget>

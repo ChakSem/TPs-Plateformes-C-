@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreationUserInterface</class>
- <widget class="QWidget" name="CreationUserInterface">
+ <class>GestionUtilisateur</class>
+ <widget class="QWidget" name="GestionUtilisateur">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,8 +16,8 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>50</y>
+     <x>100</x>
+     <y>60</y>
      <width>600</width>
      <height>400</height>
     </rect>
@@ -589,33 +589,12 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>340</y>
-      <width>411</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>Créer</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="labelConnection">
     <property name="geometry">
      <rect>
       <x>200</x>
       <y>0</y>
-      <width>211</width>
+      <width>221</width>
       <height>26</height>
      </rect>
     </property>
@@ -638,61 +617,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </font>
     </property>
     <property name="text">
-     <string>Creation d'un compte</string>
+     <string>Gestion des utilisateurs</string>
     </property>
-   </widget>
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>140</y>
-      <width>371</width>
-      <height>161</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="3" column="0">
-      <widget class="QLabel" name="labelMdp">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Mot de Passe :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="idLogin">
-       <property name="long" stdset="0">
-        <longLong>0</longLong>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="labelId">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Nom :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="passwordLogin"/>
-     </item>
-     <item row="4" column="1">
-      <widget class="QRadioButton" name="radioButton_2">
-       <property name="text">
-        <string>Admin</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
    </widget>
    <widget class="QLineEdit" name="passwordLogin_2">
     <property name="geometry">
@@ -753,6 +679,49 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     </property>
     <property name="text">
      <string>Admin</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>180</y>
+      <width>281</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="3" column="0">
+      <widget class="QPushButton" name="pushButtonUpdate">
+       <property name="text">
+        <string>Modifier</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButtonDelete">
+       <property name="text">
+        <string>Supprimer</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButtonAdd">
+       <property name="text">
+        <string>Ajouter</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>261</width>
+      <height>261</height>
+     </rect>
     </property>
    </widget>
   </widget>

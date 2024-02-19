@@ -4,19 +4,19 @@
 #include <QWidget>
 
 namespace Ui {
-class creationuserinterface;
+class CreationUserInterface;
 }
 
-class creationuserinterface : public QWidget
+class CreationUserInterface : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit creationuserinterface(QWidget *parent = nullptr);
-    ~creationuserinterface();
+    explicit CreationUserInterface(QWidget *parent = nullptr);
+    ~CreationUserInterface();
 
 private:
-    Ui::creationuserinterface *ui;
+    Ui::CreationUserInterface *ui;
 };
 
 #endif // CREATIONUSERINTERFACE_H

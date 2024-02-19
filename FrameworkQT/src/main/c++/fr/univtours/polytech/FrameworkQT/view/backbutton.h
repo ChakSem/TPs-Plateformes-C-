@@ -4,19 +4,19 @@
 #include <QWidget>
 
 namespace Ui {
-class cancelButton;
+class BackButton;
 }
 
-class cancelButton : public QWidget
+class BackButton : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit cancelButton(QWidget *parent = nullptr);
-    ~cancelButton();
+    explicit BackButton(QWidget *parent = nullptr);
+    ~BackButton();
 
 private:
-    Ui::cancelButton *ui;
+    Ui::BackButton *ui;
 };
 
 #endif // BACKBUTTON_H

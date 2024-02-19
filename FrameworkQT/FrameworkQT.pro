@@ -20,7 +20,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionInterface.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.cpp \
@@ -88,7 +88,7 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionInterface.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.h \
@@ -105,7 +105,7 @@ FORMS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/BROUILLONmyaccount.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectionInterface.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogError.ui \
