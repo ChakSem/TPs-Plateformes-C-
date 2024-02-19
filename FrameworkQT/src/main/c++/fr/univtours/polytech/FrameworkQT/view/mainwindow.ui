@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>550</height>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1147,13 +1147,14 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     </property>
     <widget class="Connection" name="connection"/>
     <widget class="QWidget" name="home"/>
+    <widget class="homeUserInterface" name="homeUserInterface"/>
    </widget>
    <widget class="QStackedWidget" name="DeconnectionWidget">
     <property name="geometry">
      <rect>
-      <x>700</x>
+      <x>640</x>
       <y>0</y>
-      <width>101</width>
+      <width>161</width>
       <height>41</height>
      </rect>
     </property>
@@ -1178,7 +1179,7 @@ QPushButton:hover {
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>18</height>
+     <height>14</height>
     </rect>
    </property>
   </widget>
@@ -1195,6 +1196,12 @@ QPushButton:hover {
    <class>Deconnection</class>
    <extends>QWidget</extends>
    <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>homeUserInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h </header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -18,6 +18,7 @@
 #include <QtWidgets/QWidget>
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectionButton.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,6 +28,8 @@ public:
     QWidget *centralwidget;
     QStackedWidget *MainWidget;
     Connection *connection;
+    QWidget *home;
+    homeUserInterface *homeUserInterface;
     QStackedWidget *DeconnectionWidget;
     Deconnection *deconnection;
     QWidget *void_2;
@@ -37,7 +40,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 550);
+        MainWindow->resize(800, 500);
         MainWindow->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -1206,9 +1209,15 @@ public:
         connection = new Connection();
         connection->setObjectName("connection");
         MainWidget->addWidget(connection);
+        home = new QWidget();
+        home->setObjectName("home");
+        MainWidget->addWidget(home);
+        homeUserInterface = new homeUserInterface();
+        homeUserInterface->setObjectName("homeUserInterface");
+        MainWidget->addWidget(homeUserInterface);
         DeconnectionWidget = new QStackedWidget(centralwidget);
         DeconnectionWidget->setObjectName("DeconnectionWidget");
-        DeconnectionWidget->setGeometry(QRect(700, 0, 101, 41));
+        DeconnectionWidget->setGeometry(QRect(640, 0, 161, 41));
         DeconnectionWidget->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "background : grey;\n"
 "border-radius:15px;\n"
