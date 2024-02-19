@@ -38,6 +38,32 @@ QMap<QString, User*> Data::getAdministrators() {
     return administrators;
 }
 
+unsigned int Data::typeOfConnectedUser() {
+    return isAdmin;
+}
+
+void Data::connect(User* user, unsigned int isAdminParam) {
+    try {
+        if(isAdminParam != NOTADMIN && isAdminParam != ADMIN) {
+            throw new Exception(ERREURISADMININCORRECT);
+        }
+
+        userConnected = user;
+        isAdmin = isAdminParam;
+    }
+    catch (Exception* e) {
+        e->EXCAffichageErreur();
+    }
+}
+
+void Data::disconnect() {
+    userConnected = NULL;
+    isAdmin = ERROR;
+}
+
+void connect(User* user, unsigned int isAdminParam);
+void disconnect();
+
 Data::~Data() {
 
     qDebug() << "Destruction";
@@ -53,7 +79,7 @@ Data::~Data() {
 }
 
 Data::Data() {
-    //CparserJson::updateData(*this);
+    CparserJson::updateData(*this);
 }
 
 Data::Data(const Data&) {

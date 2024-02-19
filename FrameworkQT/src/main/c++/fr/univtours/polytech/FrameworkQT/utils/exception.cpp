@@ -41,44 +41,47 @@ void Exception::EXCModifierValeur(unsigned int uiValeur)
 ********************************************************************/
 void Exception::EXCAffichageErreur()
 {
-    printf_s("Erreur : ");
+    printf_s("ERREUR : ");
     switch (uiEXCCodeErreur)
     {
     case NOMPROFILEDEJAATTRIBUE :
-        printf_s("ERREUR : Le nom de profil saisi est deja affecte");
+        printf_s("Le nom de profil saisi est deja affecte\n");
         break;
     case BASEDEDONNEEDEJAAJOUTEE :
-        printf_s("ERREUR : La base de donnee est deja ajoutee");
+        printf_s("La base de donnee est deja ajoutee\n");
         break;
     case ERREUROUVERTUREFICHIERPOURSAUVEGARDEUSER :
-        printf_s("ERREUR : Le fichier pour la sauvegarde des utilisateurs n'a pu etre ouvert");
+        printf_s("Le fichier pour la sauvegarde des utilisateurs n'a pu etre ouvert\n");
         break;
     case ERREUROUVERTUREFICHIERPOURSAUVEGARDEADMIN :
-        printf_s("ERREUR : Le fichier pour la sauvegarde des administrateurs n'a pu etre ouvert");
+        printf_s("Le fichier pour la sauvegarde des administrateurs n'a pu etre ouvert\n");
         break;
     case ERREUROUVERTUREFICHIERPOURCHARGERUSER :
-        printf_s("ERREUR : Le fichier pour le chargement des utilisateurs n'a pu etre ouvert");
+        printf_s("Le fichier pour le chargement des utilisateurs n'a pu etre ouvert\n");
         break;
     case ERREUROUVERTUREFICHIERPOURCHARGERADMIN :
-        printf_s("ERREUR : Le fichier pour le chargement des administrateurs n'a pu etre ouvert");
+        printf_s("Le fichier pour le chargement des administrateurs n'a pu etre ouvert\n");
         break;
     case ERREUROUVERTUREFICHIERPOURECRIREDANSLASAUVEGARDEUSER :
-        printf_s("ERREUR : L'ecriture dans fichier pour le sauvegarde des utilisateurs a echoue");
+        printf_s("L'ecriture dans fichier pour le sauvegarde des utilisateurs a echoue\n");
         break;
     case ERREUROUVERTUREFICHIERPOURECRIREDANSLASAUVEGARDEADMIN :
-        printf_s("ERREUR : L'ecriture dans fichier pour le sauvegarde des administrateurs a echoue");
+        printf_s("L'ecriture dans fichier pour le sauvegarde des administrateurs a echoue\n");
         break;
     case ERREURAUCUNUTILISATEURNECORRESPONDACETID :
-        printf_s("ERREUR : L'id ne correspond à aucuns utilisateur et admin existants");
+        printf_s("L'id ne correspond à aucuns utilisateur et admin existants\n");
         break;
     case ERREURAUCUNDROITCORRESPONDANT :
-        printf_s("ERREUR : L'id de droit ne correspond a aucun droit existant");
+        printf_s("L'id de droit ne correspond a aucun droit existant\n");
         break;
     case ERREURAUCUNROLECORRESPONDANT :
-        printf_s("ERREUR : L'id de role ne correspond a aucun droit existant");
+        printf_s("L'id de role ne correspond a aucun droit existant\n");
+        break;
+    case ERREURISADMININCORRECT :
+        printf_s("La valeur de isAdmin n'a aucun sens\n");
         break;
     default:
-        printf_s("\n");
+        printf_s("INCONNUE");
     }
 }
 

@@ -47,10 +47,10 @@ User* Controller::createUser(QString firstname, QString lastname, QString passwo
 
     try {
         switch(roleValue) {
-        case ADMIN:
+        case ROLE_ADMIN:
             Data::getInstance().addAdministrator(newUser);
             break;
-        case USER:
+        case ROLE_USER:
             Data::getInstance().addUser(newUser);
             break;
         default :
