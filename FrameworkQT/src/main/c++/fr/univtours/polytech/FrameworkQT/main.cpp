@@ -13,12 +13,14 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    Data& data = Data::getInstance();
 
     CparserJson::saveData(Data::getInstance());
 
     Controller::createUser("andre", "crochemore", "password", ADMIN);
     Controller::createUser("jhonny", "doe", "maison", USER);
+
+
+    Data& data = Data::getInstance();
 
     data.addUser(new User("jhon", "doe"));
     data.addAdministrator(new User("patrick", "a"));
