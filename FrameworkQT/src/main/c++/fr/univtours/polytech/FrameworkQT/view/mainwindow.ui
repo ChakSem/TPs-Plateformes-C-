@@ -1173,7 +1173,7 @@ color : white;
 QPushButton:hover {
 }</string>
     </property>
-    <widget class="QWidget" name="deconnection"/>
+    <widget class="DeconnectionInterface" name="deconnection"/>
     <widget class="QWidget" name="void_2"/>
    </widget>
   </widget>
@@ -1230,6 +1230,12 @@ QPushButton:hover {
    <class>AddProfileInterface</class>
    <extends>QWidget</extends>
    <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DeconnectionInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

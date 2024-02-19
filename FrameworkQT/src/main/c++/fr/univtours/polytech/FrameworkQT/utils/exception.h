@@ -22,6 +22,9 @@
 #define ERREUR_AUCUN_DROIT_CORRESPONDANT 10
 #define ERREUR_AUCUN_ROLE_CORRESPONDANT 11
 
+/* Vues */
+#define ERREUR_MAINWINDOW_NON_TROUVE 13
+
 class Exception {
 private:
     unsigned int uiEXCCodeErreur;

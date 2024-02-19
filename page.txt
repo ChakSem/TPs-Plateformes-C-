@@ -3,18 +3,19 @@ Prefixe pour les header :
 
 MainWidget : (800 x 500)
 	0. Connexion : ConnectionInterface / connectioninterface.h
-	1. Home : HomeAdminInterface / homeadmininterface.h
-	2. 	  HomeUserInterface / homeuserinterface.h
-	3. Gestion Utilisateurs : UserManagementInterface / usermanagementinterface.h
-	4. Création d'un compte : CreationUserInterface / creationuserinterface.h
-	5. Profiles : ProfilesInterface / profilesinterface.h
-	6. Nouveau Profil : AddProfileInterface / addprofileinterface.h
+	1. Gestion Utilisateurs : UserManagementInterface / usermanagementinterface.h
+	2. Création d'un compte : CreationUserInterface / creationuserinterface.h
+	3. Profiles : ProfilesInterface / profilesinterface.h 
+	4. Nouveau Profil : AddProfileInterface / addprofileinterface.h 
+	5. Home : HomeAdminInterface / homeadmininterface.h 
+	6. 	  HomeUserInterface / homeuserinterface.h 
+
 	. Profil de :
 
 
 DeconnexionWidget : 
-	0. Deconnexion : Deconnection / deconnectionButton.h
-	1. Rien .
+	0. Rien .
+	1. Deconnexion : DeconnectionInterface / deconnectioninterface.h
 
 BackWidget :
 	0. Retour : cancelButton / backbutton.h

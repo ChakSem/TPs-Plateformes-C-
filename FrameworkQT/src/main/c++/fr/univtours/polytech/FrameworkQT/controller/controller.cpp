@@ -7,13 +7,23 @@
 #include "../model/Data.h"
 #include "../utils/exception.h"
 
-
-User* Controller::Connection(const QString id, QString password) {
+unsigned int Controller::connection(const QString id, QString password) {
     if(CparserJson::getPassword(id) != password) {
-        return NULL;
+        return ERROR;
     }
 
-    return Data::getInstance().getUser(id);
+    User* user = Data::getInstance().getUser(id);
+
+    if(Data::getInstance().getUsers().contains(id)) {
+        Data::getInstance().connect(user, ADMIN);
+
+        return SUCCESS_ADMIN;
+    } else {
+        Data::getInstance().connect(user, USER);
+
+        return SUCCESS_USER;
+    }
+    return ERROR;
 }
 
 void Controller::deleteUser(QString id) {
@@ -101,3 +111,6 @@ void Controller::deleteProfile(QString idUser, QString profileName) {
     user->deleteProfile(profileName);
 }
 
+void Controller::Deconnection() {
+    Data::getInstance().disconnect();
+}

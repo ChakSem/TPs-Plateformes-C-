@@ -19,6 +19,7 @@
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.h"
@@ -39,7 +40,7 @@ public:
     HomeAdminInterface *homeAdmin;
     HomeUserInterface *homeUser;
     QStackedWidget *DeconnectionWidget;
-    QWidget *deconnection;
+    DeconnectionInterface *deconnection;
     QWidget *void_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -1247,7 +1248,7 @@ public:
 "\n"
 "QPushButton:hover {\n"
 "}"));
-        deconnection = new QWidget();
+        deconnection = new DeconnectionInterface();
         deconnection->setObjectName("deconnection");
         DeconnectionWidget->addWidget(deconnection);
         void_2 = new QWidget();

@@ -26,6 +26,8 @@ public:
     QStackedWidget* getWidgetDeconnection();
     void displayDeconnection();
     void displayBack();
+    void actionConnection(QString id, QString password);
+    void actionDeconnection();
     explicit MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow();

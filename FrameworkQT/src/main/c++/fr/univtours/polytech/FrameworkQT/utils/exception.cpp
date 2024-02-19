@@ -80,6 +80,9 @@ void Exception::EXCAffichageErreur()
     case ERREUR_ISADMIN_INCORRECT :
         printf_s("La valeur de isAdmin n'a aucun sens\n");
         break;
+    case ERREUR_MAINWINDOW_NON_TROUVE :
+        printf_s("La vue n'a pas pu acceder a MainWindow\n");
+        break;
     default:
         printf_s("INCONNUE");
     }

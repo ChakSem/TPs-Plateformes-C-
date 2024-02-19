@@ -26,9 +26,9 @@ void ConnectionInterface::actionConnection() {
         QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
         MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
         if (mainWindow) {
-            mainWindow->displayDeconnection(); // On affiche le bouton deconnexion
+            mainWindow->actionConnection(ui->idLogin->text(), ui->passwordLogin->text()); // On affiche le bouton deconnexion
         } else {
-            throw new Exception(1);
+            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
         }
     }
     catch (Exception* e) {
