@@ -22,7 +22,10 @@ public:
     static User* createUser(QString firstname, QString lastname, QString password, unsigned int roleValue);
     static Profile* createProfile(User* user, QString name, unsigned int rightValue);
     static void deleteProfile(QString idUser, QString profileName);
-    static void Deconnection();
+    static void deconnection();
+    static void openUserProfilesForCurrentUser();
+    static void openUserProfiles(User* userProfiles);
+    static void closeUserProfiles();
 
 private:
     Controller();

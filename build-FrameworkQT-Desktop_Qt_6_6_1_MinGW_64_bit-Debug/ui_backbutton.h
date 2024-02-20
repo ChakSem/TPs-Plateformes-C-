@@ -25,10 +25,10 @@ public:
     {
         if (BackButton->objectName().isEmpty())
             BackButton->setObjectName("BackButton");
-        BackButton->resize(400, 300);
+        BackButton->resize(134, 38);
         backButton = new QPushButton(BackButton);
         backButton->setObjectName("backButton");
-        backButton->setGeometry(QRect(270, 10, 121, 31));
+        backButton->setGeometry(QRect(0, 0, 121, 31));
         backButton->setStyleSheet(QString::fromUtf8("QToolButton {\n"
 "	border-style: solid;\n"
 "	border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));\n"

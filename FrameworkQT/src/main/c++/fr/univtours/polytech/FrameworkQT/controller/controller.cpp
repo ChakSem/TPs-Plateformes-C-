@@ -111,6 +111,28 @@ void Controller::deleteProfile(QString idUser, QString profileName) {
     user->deleteProfile(profileName);
 }
 
-void Controller::Deconnection() {
+void Controller::deconnection() {
     Data::getInstance().disconnect();
+}
+
+void Controller::openUserProfilesForCurrentUser() {
+    User* userConnected = Data::getInstance().getUserConnected();
+    try {
+        if(userConnected == NULL) {
+            // TODO : Exception
+        }
+
+        openUserProfiles(userConnected);
+    }
+    catch (Exception* e) {
+        e->EXCAffichageErreur();
+    }
+}
+
+void Controller::openUserProfiles(User* userProfiles) {
+    Data::getInstance().setUserProfiles(userProfiles);
+}
+
+void Controller::closeUserProfiles() {
+    Data::getInstance().clearUserProfiles();
 }

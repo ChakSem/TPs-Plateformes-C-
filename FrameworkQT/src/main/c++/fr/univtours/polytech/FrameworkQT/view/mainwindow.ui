@@ -1176,6 +1176,18 @@ QPushButton:hover {
     <widget class="DeconnectionInterface" name="deconnection"/>
     <widget class="QWidget" name="void_2"/>
    </widget>
+   <widget class="QStackedWidget" name="BackWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>141</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <widget class="BackButton" name="back"/>
+    <widget class="QWidget" name="void_3"/>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -1236,6 +1248,12 @@ QPushButton:hover {
    <class>DeconnectionInterface</class>
    <extends>QWidget</extends>
    <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BackButton</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

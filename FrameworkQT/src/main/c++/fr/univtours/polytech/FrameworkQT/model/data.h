@@ -13,8 +13,11 @@
 class Data
 {
 private:
+    /* On stocke l'utilisateur qui est connecté ainsi que son role */
     User* userConnected;
     unsigned int isAdmin;
+
+    User* userProfiles; // Permettra de stocké l'utilisateur dont on visionne les profils pour la vue Profiles
 
     //Map des données des utilisateurs ( clé: id de l'utilisateur, valeur: l'utilisateur)
     QMap<QString, User*> users;
@@ -39,9 +42,15 @@ public:
     /* Accesseur commun */
     User* getUser(QString id);
 
+    /* Méthode avec la gestion de sessions */
     unsigned int typeOfConnectedUser();
     void connect(User* user, unsigned int isAdminParam);
     void disconnect();
+    User* getUserConnected();
+
+    /* Accesseur de l'attibut userProfiles */
+    void setUserProfiles(User* user);
+    void clearUserProfiles();
 
 private :
 /* Destructeur, sera appelé automatiquement à la fin du programme */

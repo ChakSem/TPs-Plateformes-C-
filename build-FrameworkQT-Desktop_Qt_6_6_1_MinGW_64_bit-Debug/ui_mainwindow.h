@@ -17,6 +17,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h"
@@ -42,6 +43,9 @@ public:
     QStackedWidget *DeconnectionWidget;
     DeconnectionInterface *deconnection;
     QWidget *void_2;
+    QStackedWidget *BackWidget;
+    BackButton *back;
+    QWidget *void_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -1254,6 +1258,15 @@ public:
         void_2 = new QWidget();
         void_2->setObjectName("void_2");
         DeconnectionWidget->addWidget(void_2);
+        BackWidget = new QStackedWidget(centralwidget);
+        BackWidget->setObjectName("BackWidget");
+        BackWidget->setGeometry(QRect(0, 0, 141, 41));
+        back = new BackButton();
+        back->setObjectName("back");
+        BackWidget->addWidget(back);
+        void_3 = new QWidget();
+        void_3->setObjectName("void_3");
+        BackWidget->addWidget(void_3);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");

@@ -657,6 +657,7 @@ public:
 
         passwordLogin = new QLineEdit(layoutWidget);
         passwordLogin->setObjectName("passwordLogin");
+        passwordLogin->setEchoMode(QLineEdit::Password);
 
         gridLayout->addWidget(passwordLogin, 3, 1, 1, 1);
 

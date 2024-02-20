@@ -42,6 +42,11 @@ unsigned int Data::typeOfConnectedUser() {
     return isAdmin;
 }
 
+
+User* Data::getUserConnected() {
+    return userConnected;
+}
+
 void Data::connect(User* user, unsigned int isAdminParam) {
     try {
         if(isAdminParam != NOTADMIN && isAdminParam != ADMIN) {
@@ -61,8 +66,13 @@ void Data::disconnect() {
     isAdmin = ERROR;
 }
 
-void connect(User* user, unsigned int isAdminParam);
-void disconnect();
+void Data::setUserProfiles(User* user) {
+    userProfiles = user;
+}
+
+void Data::clearUserProfiles() {
+    userProfiles = NULL;
+}
 
 Data::~Data() {
     CparserJson::saveData(*this);

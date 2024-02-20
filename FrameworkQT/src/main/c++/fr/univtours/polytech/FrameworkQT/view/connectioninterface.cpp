@@ -1,7 +1,7 @@
 #include "connectioninterface.h"
+#include "ui_connectioninterface.h"
 #include "../utils/exception.h"
 #include "mainwindow.h"
-#include "ui_connectioninterface.h"
 
 #include <QStackedWidget>
 
@@ -19,14 +19,14 @@ ConnectionInterface::~ConnectionInterface()
     delete ui;
 }
 
-// Dans la fonction slot handleButtonClick() de la classe Connection
 void ConnectionInterface::actionConnection() {
 
     try {
         QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
         MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
         if (mainWindow) {
-            mainWindow->actionConnection(ui->idLogin->text(), ui->passwordLogin->text()); // On affiche le bouton deconnexion
+            mainWindow->actionConnection(ui->idLogin->text(), ui->passwordLogin->text()); // On appelle la methode de MainWindow qui gere la connexion
+            ui->passwordLogin->setText(""); // On efface le mot de passe
         } else {
             throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
         }

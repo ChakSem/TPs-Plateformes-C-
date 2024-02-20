@@ -18,7 +18,7 @@ DeconnexionWidget :
 	1. Deconnexion : DeconnectionInterface / deconnectioninterface.h
 
 BackWidget :
-	0. Retour : cancelButton / backbutton.h
+	0. Retour : BackButton / backbutton.h
 	1. Rien .
 
 PopupWidget : 
