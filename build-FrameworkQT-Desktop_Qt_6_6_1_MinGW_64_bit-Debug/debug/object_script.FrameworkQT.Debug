@@ -7,7 +7,9 @@ debug/data.o
 debug/CparserJson.o
 debug/encryption.o
 debug/exception.o
+debug/addprofileadmininterface.o
 debug/addprofileinterface.o
+debug/addprofileuserinterface.o
 debug/backbutton.o
 debug/connectioninterface.o
 debug/creationuserinterface.o
@@ -21,7 +23,9 @@ debug/mainwindow.o
 debug/profilesinterface.o
 debug/usermanagementinterface.o
 debug/qrc_forest-background.o
+debug/moc_addprofileadmininterface.o
 debug/moc_addprofileinterface.o
+debug/moc_addprofileuserinterface.o
 debug/moc_backbutton.o
 debug/moc_connectioninterface.o
 debug/moc_creationuserinterface.o
