@@ -71,7 +71,7 @@ void MainWindow::openAccount() {
     // ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
 }
 
-void MainWindow::openProfiles() {
+void MainWindow::openMyProfiles() {
     // TODO : Gerer la recuperation de l'utilisateur dont on visione les profils
     ui->MainWidget->setCurrentIndex(MAINWIDGET_PROFILES); // Access à la page de gestion des profils
     ui->BackWidget->setCurrentIndex(BACKWIDGET_VISIBLE);
@@ -84,19 +84,49 @@ void MainWindow::openDatabases() {
     // ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
 }
 
+void MainWindow::openCreateUser() {
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_ACCOUNT_CREATION); // Access à la page de creation d'utilisateurs
+}
+
+void MainWindow::openAddProfilesFromProfiles() {
+    previousPage = MAINWIDGET_PROFILES;
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_ACCOUNT_CREATION); // Access à la page d'ajout de profils
+}
+
+void MainWindow::openAddProfiles(User* user) {
+    Controller::openUserProfiles(user);
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_ACCOUNT_CREATION); // Access à la page d'ajout de profils
+}
+
+void MainWindow::openProfiles(User* user) {
+    Controller::openUserProfiles(user);
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_PROFILES); // Access à la page de gestion des profils d'un utilisateur
+}
+
+
 void MainWindow::returnOnPreviousView() {
     ui->MainWidget->setCurrentIndex(previousPage);
 
     switch(previousPage) {
-    case 1:
+    case MAINWIDGET_USER_MANAGEMENT:
         Controller::closeUserProfiles();
-        // TODO : Gerer changer le retour sur HomeAdmin ou HomeUser, en fonction du type d'utilisateur connecte
+
+        if(Controller::isAdmin() == ADMIN) {
+            previousPage = MAINWIDGET_HOME_ADMIN;
+        } else {
+            previousPage = MAINWIDGET_HOME_USER;
+        }
+
         break;
-    case 5:
-    case 6:
+    case MAINWIDGET_PROFILES:
+        //if(Controller::getUserProfiles()->getId() == Controller::getUserConnected()->getId()) //
+        // TODO : Gerer comment on a acceder a newProfile
+        previousPage = MAINWIDGET_USER_MANAGEMENT;
+        break;
+    case MAINWIDGET_HOME_ADMIN:
+    case MAINWIDGET_HOME_USER:
         ui->BackWidget->setCurrentIndex(BACKWIDGET_VOID);
         Controller::closeUserProfiles();
         break;
     }
 }
-

@@ -83,6 +83,12 @@ void Exception::EXCAffichageErreur()
     case ERREUR_MAINWINDOW_NON_TROUVE :
         printf_s("La vue n'a pas pu acceder a MainWindow\n");
         break;
+    case ERREUR_ALL_TOUS_LES_CHAMPS_NE_SONT_PAS_REMPLIS :
+        printf_s("Tout les champs ne sont pas remplis\n");
+        break;
+    case ERREUR_USER_MANAGEMENT_AUCUNES_LIGNES_SELECTIONNEES :
+        printf_s("Aucunes lignes n'est selectionnees\n");
+        break;
     default:
         printf_s("INCONNUE");
     }

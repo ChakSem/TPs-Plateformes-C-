@@ -1,11 +1,12 @@
 #include "addprofileinterface.h"
 #include "ui_addprofileinterface.h"
 #include "../utils/exception.h"
-#include "../utils/parserjson.h"
+#include "../parseurJson/CparserJson.h"
 #include "../model/data.h"
 #include <QMessageBox>
-
-
+#include "../controller/controller.h"
+#include "../utils/exception.h"
+#include "mainwindow.h"
 
 
 AddProfileInterface::AddProfileInterface(QWidget *parent)
@@ -25,26 +26,34 @@ AddProfileInterface::~AddProfileInterface()
 void AddProfileInterface::actionCreateProfile() {
     try {
         QString name = ui->idLogin->text();
-        QString profileRights = ui->radioButoonReadRight->isChecked() ? "Lecture" : ui->radioButoonReadUpdateRight->isChecked() ? "Lecture/Modification" : ""; // On recupere les droits du profil
-        if (id.isEmpty() || profileRights.isEmpty()) {
-            throw Exception(ERREUR_TOUS_LES_CHAMPS_NE_SONT_PAS_REMPLIS);
+        QString profileRightsString = ui->radioButoonReadRight->isChecked() ? "Lecture" : ui->radioButoonReadUpdateRight->isChecked() ? "Lecture/Modification" : ""; // On recupere les droits du profil
+
+        unsigned int profileRightsValue = ERROR;
+        if (name == "") {
+            throw new Exception(ERREUR_ALL_TOUS_LES_CHAMPS_NE_SONT_PAS_REMPLIS);
         }
-        if (profileRights == "Lecture") {
-            profileRights = "LECTURE";
-        } else if (profileRights == "Lecture/Modification") {
-            profileRights = "LECTURE_MODIFICATION";
+        if (profileRightsString == "Lecture") {
+            profileRightsValue = DROIT_LECTURE;
+        } else if (profileRightsString == "Lecture/Modification") {
+            profileRightsValue = DROIT_LECTURE_MODIFICATION;
         } else {
-            throw Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
+            throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
         }
-        Data data;
-        CparserJson::saveData(data);
-        Profile profile(id, profileRights);
-        data.addProfile(profile);
-        CparserJson::updateData(data);
-        QMessageBox::information(this, "Succes", "Profil cree avec succes");
+
+        Controller::createProfile(Controller::getUserProfiles(), name, profileRightsValue);
+
+        Controller::closeUserProfiles();
+
+        QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
+        MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
+        if (mainWindow) {
+            mainWindow->returnOnPreviousView();
+        } else {
+            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
+        }
     }
-    catch (Exception e) {
-        e.EXCAffichageErreur();
+    catch (Exception* e) {
+        e->EXCAffichageErreur();
     }
     
 }

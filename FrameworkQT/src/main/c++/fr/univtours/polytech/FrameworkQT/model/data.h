@@ -41,6 +41,7 @@ public:
 
     /* Accesseur commun */
     User* getUser(QString id);
+    void removeUser(QString id);
 
     /* Méthode avec la gestion de sessions */
     unsigned int typeOfConnectedUser();
@@ -51,6 +52,7 @@ public:
     /* Accesseur de l'attibut userProfiles */
     void setUserProfiles(User* user);
     void clearUserProfiles();
+    User* getUserProfiles();
 
 private :
 /* Destructeur, sera appelé automatiquement à la fin du programme */

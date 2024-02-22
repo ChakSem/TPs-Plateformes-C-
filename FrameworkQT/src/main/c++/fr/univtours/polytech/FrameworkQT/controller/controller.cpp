@@ -26,30 +26,20 @@ unsigned int Controller::connection(const QString id, QString password) {
     return ERROR;
 }
 
+static unsigned int isAdmin() {
+    return Data::getInstance().typeOfConnectedUser();
+}
+
+User* Controller::getUserConnected() {
+    return Data::getInstance().getUserConnected();
+}
+
+User* Controller::getUser(QString id) {
+    return Data::getInstance().getUser(id);
+}
+
 void Controller::deleteUser(QString id) {
-    try {
-        QMap<QString, User*> users = Data::getInstance().getUsers();
-        if(users.contains(id)) {
-            User* userToDelete = users[id];
-            users.remove(id);
-
-            delete userToDelete;
-        } else {
-            QMap<QString, User*> admins = Data::getInstance().getAdministrators();
-            if (admins.contains(id)) {
-                User* userToDelete = admins[id];
-                users.remove(id);
-
-                delete userToDelete;
-            } else {
-                throw new Exception(ERREUR_AUCUN_UTILISATEUR_NE_CORRESPOND_A_CET_ID);
-            }
-        }
-    }
-
-    catch(Exception* e) {
-        e->EXCAffichageErreur();
-    }
+    Data::getInstance().removeUser(id);
 }
 
 User* Controller::createUser(QString firstname, QString lastname, QString password, unsigned int roleValue) {
@@ -135,4 +125,8 @@ void Controller::openUserProfiles(User* userProfiles) {
 
 void Controller::closeUserProfiles() {
     Data::getInstance().clearUserProfiles();
+}
+
+User* Controller::getUserProfiles() {
+    Data::getInstance().getUserProfiles();
 }

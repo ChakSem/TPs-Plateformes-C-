@@ -19,6 +19,8 @@
 
 class QStackedWidget;
 
+class User;
+
 namespace Ui {
 class MainWindow;
 }
@@ -42,11 +44,18 @@ public:
     void displayBack();
     void actionConnection(QString id, QString password);
     void actionDeconnection();
+
     void openUsers();
     void openAccount();
-    void openProfiles();
+    void openMyProfiles();
     void openDatabases();
+    void openCreateUser();
+    void openAddProfiles(User* user);
+    void openAddProfilesFromProfiles();
+    void openProfiles(User* user);
+
     void returnOnPreviousView();
+
     explicit MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow();

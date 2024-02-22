@@ -54,7 +54,7 @@ void HomeAdminInterface::actionProfile() {
         QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
         MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
         if (mainWindow) {
-            mainWindow->openProfiles(); // On affiche le bouton deconnexion
+            mainWindow->openMyProfiles(); // On affiche le bouton deconnexion
         } else {
             throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
         }

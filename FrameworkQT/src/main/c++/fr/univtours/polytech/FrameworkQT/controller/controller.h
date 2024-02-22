@@ -14,10 +14,16 @@
 #define DROIT_LECTURE_MODIFICATION 6
 #define DROIT_LECTURE_MODIFICATION_ECRITURE_SUPPRESSION 7
 
+#define ADMIN 1
+#define NOTADMIN 2
+
 class Controller
 {
 public:
     static unsigned int connection(QString id, QString password);
+    static unsigned int isAdmin();
+    static User* getUserConnected();
+    static User* getUser(QString id);
     static void deleteUser(QString id);
     static User* createUser(QString firstname, QString lastname, QString password, unsigned int roleValue);
     static Profile* createProfile(User* user, QString name, unsigned int rightValue);
@@ -26,6 +32,7 @@ public:
     static void openUserProfilesForCurrentUser();
     static void openUserProfiles(User* userProfiles);
     static void closeUserProfiles();
+    static User* getUserProfiles();
 
 private:
     Controller();

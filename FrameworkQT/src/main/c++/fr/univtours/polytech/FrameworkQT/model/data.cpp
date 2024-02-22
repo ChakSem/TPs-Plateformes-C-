@@ -22,6 +22,31 @@ User* Data::getUser(QString id)
     }
 }
 
+
+void Data::removeUser(QString id) {
+    try {
+        if(users.contains(id)) {
+            User* userToDelete = users[id];
+            users.remove(id);
+
+            delete userToDelete;
+        } else {
+            if (administrators.contains(id)) {
+                User* userToDelete = administrators[id];
+                users.remove(id);
+
+                delete userToDelete;
+            } else {
+                throw new Exception(ERREUR_AUCUN_UTILISATEUR_NE_CORRESPOND_A_CET_ID);
+            }
+        }
+    }
+
+    catch(Exception* e) {
+        e->EXCAffichageErreur();
+    }
+}
+
 void Data::addUser(User* user) {
     users.insert(user->getId(), user);
 }
@@ -72,6 +97,10 @@ void Data::setUserProfiles(User* user) {
 
 void Data::clearUserProfiles() {
     userProfiles = NULL;
+}
+
+User* Data::getUserProfiles() {
+    return userProfiles;
 }
 
 Data::~Data() {

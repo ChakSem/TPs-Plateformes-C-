@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#define NO_LINE_SELECTED -1
+
 namespace Ui {
 class UserManagementInterface;
 }
@@ -19,6 +21,7 @@ public:
     ~UserManagementInterface();
 
 private:
+    int init();
     Ui::UserManagementInterface *ui;
 };
 
