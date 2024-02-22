@@ -7,6 +7,30 @@
 #include "../model/Data.h"
 #include "../utils/exception.h"
 
+
+/* Accesseurs en lecture des attributs de Data */
+User* Controller::getUserConnected() {
+    return Data::getInstance().getUserConnected();
+}
+
+User* Controller::getUserProfiles() {
+    Data::getInstance().getUserProfiles();
+}
+
+User* Controller::getUser(QString id) {
+    return Data::getInstance().getUser(id);
+}
+
+
+/* Gestion de la session */
+/**
+ * Verifie que les logins sont correctes puis réalise la connection
+ * Entree : id, QString
+ *          password, QString
+ * Sortie : unsigned int :  - SUCCESS_ADMIN : si les logins sont bons et s'il s'agit d'un admin
+ *                          - SUCCESS_USER : si les logins sont bons et qu'il s'agit d'un user
+ *                          - ERROR : si ca s'est mal passé
+ */
 unsigned int Controller::connection(const QString id, QString password) {
     if(CparserJson::getPassword(id) != password) {
         return ERROR;
@@ -26,22 +50,62 @@ unsigned int Controller::connection(const QString id, QString password) {
     return ERROR;
 }
 
-static unsigned int isAdmin() {
+int Controller::isAdmin() {
     return Data::getInstance().typeOfConnectedUser();
 }
 
-User* Controller::getUserConnected() {
-    return Data::getInstance().getUserConnected();
+void Controller::deconnection() {
+    Data::getInstance().disconnect();
 }
 
-User* Controller::getUser(QString id) {
-    return Data::getInstance().getUser(id);
+/* Gestion des données nécessaires aux interfaces liés aux objets Profile */
+/**
+ * Initialise userProfiles par rapport à l'utilisateur connecté
+ * Entree :
+ * Sortie :
+ */
+void Controller::openUserProfilesForCurrentUser() {
+    User* userConnected = Data::getInstance().getUserConnected();
+    try {
+        if(userConnected == NULL) {
+            // TODO : Exception
+        }
+
+        openUserProfiles(userConnected);
+    }
+    catch (Exception* e) {
+        e->EXCAffichageErreur();
+    }
 }
 
-void Controller::deleteUser(QString id) {
-    Data::getInstance().removeUser(id);
+/**
+ * Initialise userProfiles par rapport à l'utilisateur en paramètre
+ * Entree : userProfiles, User*
+ * Sortie :
+ */
+void Controller::openUserProfiles(User* userProfiles) {
+    Data::getInstance().setUserProfiles(userProfiles);
 }
 
+/**
+ * Ré-initialise userProfiles
+ * Entree :
+ * Sortie :
+ */
+void Controller::closeUserProfiles() {
+    Data::getInstance().clearUserProfiles();
+}
+
+/* Gestion d'objets User */
+/**
+ * Crée un nouvel objet User vis à vis des données en parametre
+ * Entree : firstname, QString
+ *          lastname, QString
+ *          password, QString
+ *          roleValue, unsigned int :   - ROLE_ADMIN s'il faut créer un admin
+ *                                      - ROLE_USER sinon
+ * Sortie : User*
+ */
 User* Controller::createUser(QString firstname, QString lastname, QString password, unsigned int roleValue) {
     User* newUser = new User(firstname, lastname);
 
@@ -67,8 +131,24 @@ User* Controller::createUser(QString firstname, QString lastname, QString passwo
     }
 }
 
-Profile* Controller::createProfile(User* user, QString name, unsigned int rightValue) {
+/**
+ * Supprime l'objet User correspondant à l'id en paramètre
+ * Entree : id, QString
+ * Sortie : User*
+ */
+void Controller::deleteUser(QString id) {
+    Data::getInstance().removeUser(id);
+}
+
+/* Gestion d'objets Profile */
+/**
+ * Crée un nouvel objet Profile vis à vis des données en parametre
+ * Entree : id, QString
+ * Sortie : User*
+ */
+void Controller::createProfile(QString name, unsigned int rightValue) {
     Rights right;
+    User* user = Data::getInstance().getUserProfiles();
 
     try {
         switch(rightValue) {
@@ -87,46 +167,26 @@ Profile* Controller::createProfile(User* user, QString name, unsigned int rightV
 
         Profile* newProfile = new Profile(user, name, right);
 
-        return newProfile;
+        user->addProfile(*newProfile);
+        delete newProfile;
     }
 
     catch (Exception* e) {
         e->EXCAffichageErreur();
-        return NULL;
     }
 }
 
+/**
+ * Supprime l'objet Profile correspondant à l'id en paramètre
+ * Entree : id, QString
+ * Sortie : User*
+ */
 void Controller::deleteProfile(QString idUser, QString profileName) {
-    User* user = Data::getInstance().getUser(idUser);
-    user->deleteProfile(profileName);
+    Data::getInstance().getUser(idUser)->deleteProfile(profileName);
 }
 
-void Controller::deconnection() {
-    Data::getInstance().disconnect();
-}
 
-void Controller::openUserProfilesForCurrentUser() {
-    User* userConnected = Data::getInstance().getUserConnected();
-    try {
-        if(userConnected == NULL) {
-            // TODO : Exception
-        }
 
-        openUserProfiles(userConnected);
-    }
-    catch (Exception* e) {
-        e->EXCAffichageErreur();
-    }
-}
 
-void Controller::openUserProfiles(User* userProfiles) {
-    Data::getInstance().setUserProfiles(userProfiles);
-}
 
-void Controller::closeUserProfiles() {
-    Data::getInstance().clearUserProfiles();
-}
 
-User* Controller::getUserProfiles() {
-    Data::getInstance().getUserProfiles();
-}

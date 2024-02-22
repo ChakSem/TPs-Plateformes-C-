@@ -20,61 +20,37 @@ HomeAdminInterface::~HomeAdminInterface()
 }
 
 void HomeAdminInterface::actionAccount() {
-    try {
-        QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
-        MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
-        if (mainWindow) {
-            mainWindow->openAccount(); // On affiche le bouton deconnexion
-        } else {
-            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
-        }
-    }
-    catch (Exception* e) {
-        e->EXCAffichageErreur();
+    MainWindow *mainWindow = MainWindow::accessToParent(this);
+
+    /* S'il n'y a pas eu d'erreur */
+    if (mainWindow != NULL) {
+        mainWindow->openAccount(); // On ouvre l'interface de visionage du compte
     }
 }
 
 void HomeAdminInterface::actionDatabase() {
-    try {
-        QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
-        MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
-        if (mainWindow) {
-            mainWindow->openDatabases(); // On affiche le bouton deconnexion
-        } else {
-            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
-        }
-    }
-    catch (Exception* e) {
-        e->EXCAffichageErreur();
+    MainWindow *mainWindow = MainWindow::accessToParent(this);
+
+    /* S'il n'y a pas eu d'erreur */
+    if (mainWindow != NULL) {
+        mainWindow->openDatabases(); // On ouvre l'interface pour les base de données
     }
 }
 
 void HomeAdminInterface::actionProfile() {
-    try {
-        QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
-        MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
-        if (mainWindow) {
-            mainWindow->openMyProfiles(); // On affiche le bouton deconnexion
-        } else {
-            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
-        }
-    }
-    catch (Exception* e) {
-        e->EXCAffichageErreur();
+    MainWindow *mainWindow = MainWindow::accessToParent(this);
+
+    /* S'il n'y a pas eu d'erreur */
+    if (mainWindow != NULL) {
+        mainWindow->openMyProfiles(); // On ouvre l'interface des profils pour l'utilisateur connecté
     }
 }
 
 void HomeAdminInterface::actionUser() {
-    try {
-        QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
-        MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
-        if (mainWindow) {
-            mainWindow->openUsers(); // On affiche le bouton deconnexion
-        } else {
-            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
-        }
-    }
-    catch (Exception* e) {
-        e->EXCAffichageErreur();
+    MainWindow *mainWindow = MainWindow::accessToParent(this);
+
+    /* S'il n'y a pas eu d'erreur */
+    if (mainWindow != NULL) {
+        mainWindow->openUsers(); // On ouvre l'interface de gestion des utilisateurs
     }
 }

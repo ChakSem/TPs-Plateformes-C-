@@ -20,20 +20,30 @@
 class Controller
 {
 public:
-    static unsigned int connection(QString id, QString password);
-    static unsigned int isAdmin();
+    /* Accesseurs en lecture des attributs de Data */
     static User* getUserConnected();
+    static User* getUserProfiles();
     static User* getUser(QString id);
-    static void deleteUser(QString id);
-    static User* createUser(QString firstname, QString lastname, QString password, unsigned int roleValue);
-    static Profile* createProfile(User* user, QString name, unsigned int rightValue);
-    static void deleteProfile(QString idUser, QString profileName);
+
+    /* Gestion de la session */
+    static unsigned int connection(QString id, QString password);
+    static int isAdmin();
     static void deconnection();
+
+    /* Gestion des données nécessaires aux interfaces liés aux objets Profile */
     static void openUserProfilesForCurrentUser();
     static void openUserProfiles(User* userProfiles);
     static void closeUserProfiles();
-    static User* getUserProfiles();
 
+    /* Gestion d'objets User */
+    static User* createUser(QString firstname, QString lastname, QString password, unsigned int roleValue);
+    static void deleteUser(QString id);
+
+    /* Gestion d'objets Profile */
+    static void createProfile(QString name, unsigned int rightValue);
+    static void deleteProfile(QString idUser, QString profileName);
+
+    /* Contient uniquement des méthodes statiques, donc inutile de créer des objets de ce Controller */
 private:
     Controller();
     Controller(Controller& copy);

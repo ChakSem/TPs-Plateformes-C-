@@ -34,7 +34,7 @@ public:
     QRadioButton *radioButton;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QPushButton *pushButtonUpdate;
+    QPushButton *pushButtonProfiles;
     QPushButton *pushButtonDelete;
     QPushButton *pushButtonAdd;
     QTableView *tableView;
@@ -665,10 +665,10 @@ public:
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        pushButtonUpdate = new QPushButton(layoutWidget);
-        pushButtonUpdate->setObjectName("pushButtonUpdate");
+        pushButtonProfiles = new QPushButton(layoutWidget);
+        pushButtonProfiles->setObjectName("pushButtonProfiles");
 
-        gridLayout->addWidget(pushButtonUpdate, 3, 0, 1, 1);
+        gridLayout->addWidget(pushButtonProfiles, 3, 0, 1, 1);
 
         pushButtonDelete = new QPushButton(layoutWidget);
         pushButtonDelete->setObjectName("pushButtonDelete");
@@ -682,7 +682,7 @@ public:
 
         tableView = new QTableView(frame);
         tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(20, 130, 261, 261));
+        tableView->setGeometry(QRect(0, 130, 301, 271));
 
         retranslateUi(UserManagementInterface);
 
@@ -696,9 +696,9 @@ public:
         labelConnection_2->setText(QString());
         pushButton_2->setText(QCoreApplication::translate("UserManagementInterface", "Cr\303\251er", nullptr));
         radioButton->setText(QCoreApplication::translate("UserManagementInterface", "Admin", nullptr));
-        pushButtonUpdate->setText(QCoreApplication::translate("UserManagementInterface", "Modifier", nullptr));
-        pushButtonDelete->setText(QCoreApplication::translate("UserManagementInterface", "Supprimer", nullptr));
-        pushButtonAdd->setText(QCoreApplication::translate("UserManagementInterface", "Ajouter", nullptr));
+        pushButtonProfiles->setText(QCoreApplication::translate("UserManagementInterface", "G\303\251rer ses profils", nullptr));
+        pushButtonDelete->setText(QCoreApplication::translate("UserManagementInterface", "Supprimer l'utilisateur", nullptr));
+        pushButtonAdd->setText(QCoreApplication::translate("UserManagementInterface", "Ajouter un Utilisateur", nullptr));
     } // retranslateUi
 
 };

@@ -1,7 +1,25 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "../controller/controller.h"
+#include "../utils/exception.h"
 #include <QLabel>
+
+MainWindow* MainWindow::accessToParent(QWidget* widget) {
+    try {
+        QWidget *parentWidget = widget->parentWidget()->parentWidget()->parentWidget();
+        MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
+        if (mainWindow) {
+            return mainWindow;
+        } else {
+            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
+        }
+    }
+    catch (Exception* e) {
+        e->EXCAffichageErreur();
+        return NULL;
+    }
+}
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -15,13 +33,6 @@ MainWindow::MainWindow(QWidget *parent)
     previousPage = MAINWIDGET_CONNECTION;
     
     qDebug() << "Stacked Widget Deconnection initialized with current index:" << ui->DeconnectionWidget->currentIndex();
-}
-QStackedWidget* MainWindow::getWidgetCenter() {
-    return ui->MainWidget;
-}
-
-QStackedWidget* MainWindow::getWidgetDeconnection() {
-    return ui->DeconnectionWidget;
 }
 
 MainWindow::~MainWindow()
@@ -62,8 +73,12 @@ void MainWindow::actionDeconnection() {
 }
 
 void MainWindow::openUsers() {
-    ui->MainWidget->setCurrentIndex(1); // Access à la page de gestion des utilisateurs
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_USER_MANAGEMENT); // Access à la page de gestion des utilisateurs
     ui->BackWidget->setCurrentIndex(BACKWIDGET_VISIBLE);
+
+    /* On initialise son élement tableview */
+    QWidget* widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_USER_MANAGEMENT);
+    qobject_cast<UserManagementInterface*>(widgetToRefresh)->initializeTableView();
 }
 
 void MainWindow::openAccount() {
@@ -77,6 +92,10 @@ void MainWindow::openMyProfiles() {
     ui->BackWidget->setCurrentIndex(BACKWIDGET_VISIBLE);
 
     Controller::openUserProfilesForCurrentUser();
+
+    /* On initialise son élement combobox */
+    QWidget* widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_PROFILES);
+    qobject_cast<ProfilesInterface*>(widgetToRefresh)->initializeComboBox();
 }
 
 void MainWindow::openDatabases() {
@@ -95,12 +114,16 @@ void MainWindow::openAddProfilesFromProfiles() {
 
 void MainWindow::openAddProfiles(User* user) {
     Controller::openUserProfiles(user);
-    ui->MainWidget->setCurrentIndex(MAINWIDGET_ACCOUNT_CREATION); // Access à la page d'ajout de profils
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_ADD_PROFILE); // Access à la page d'ajout de profils
 }
 
 void MainWindow::openProfiles(User* user) {
     Controller::openUserProfiles(user);
     ui->MainWidget->setCurrentIndex(MAINWIDGET_PROFILES); // Access à la page de gestion des profils d'un utilisateur
+
+    /* On initialise son élement combobox */
+    QWidget* widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_PROFILES);
+    qobject_cast<ProfilesInterface*>(widgetToRefresh)->initializeComboBox();
 }
 
 

@@ -7,12 +7,7 @@
 #include "../controller/controller.h"
 #include "mainwindow.h"
 
-UserManagementInterface::UserManagementInterface(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::UserManagementInterface)
-{
-    ui->setupUi(this);
-
+void UserManagementInterface::initializeTableView() {
     Data& data = Data::getInstance();
     QMap<QString, User*> users = data.getUsers();
     QMap<QString, User*> administrators = data.getAdministrators();
@@ -52,13 +47,22 @@ UserManagementInterface::UserManagementInterface(QWidget *parent)
 
     // Configurer le QTableView pour utiliser le modèle de données
     ui->tableView->setModel(model);
+}
+
+UserManagementInterface::UserManagementInterface(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::UserManagementInterface)
+{
+    ui->setupUi(this);
+
+
 
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
 
     connect( ui->pushButtonAdd, &QPushButton::clicked, this, &UserManagementInterface::actionAddUser);
     connect( ui->pushButtonDelete, &QPushButton::clicked, this, &UserManagementInterface::actionDeleteUser);
-    connect( ui->pushButtonUpdate, &QPushButton::clicked, this, &UserManagementInterface::actionUpdateUser);
+    connect( ui->pushButtonProfiles, &QPushButton::clicked, this, &UserManagementInterface::actionUpdateUser);
 }
 
 UserManagementInterface::~UserManagementInterface()
@@ -66,63 +70,72 @@ UserManagementInterface::~UserManagementInterface()
     delete ui;
 }
 
+/**
+ * Check qu'une ligne est selectionnée puis initialise row si c'est bon
+ * Entrée :
+ * Sortie : row, int : N° de la ligné sélectionnée ou NO_LINE_SELECTED si aucune ligne n'est selectionnée
+ */
 int UserManagementInterface::init() {
     QModelIndexList selectedRows = ui->tableView->selectionModel()->selectedRows();
 
-    if(selectedRows.size() != 1) {
-        QMessageBox::warning(this, "Erreur", "Veuillez sélectionner une seule ligne à supprimer.");
+    try {
+        /* Si aucunes lignes n'est selectionnées */
+        if(selectedRows.size() != 1) {
+            throw new Exception(ERREUR_USER_MANAGEMENT_AUCUNES_LIGNES_SELECTIONNEES);
+        }
+
+        int row = selectedRows.at(0).row();
+
+        return row;
+    }
+    /* Sortie erreur */
+    catch (Exception* e) {
+        e->EXCAffichageErreur();
         return NO_LINE_SELECTED;
     }
-
-    int row = selectedRows.at(0).row();
-
-    return row;
 }
 
 void UserManagementInterface::actionAddUser() {
-    try {
-        int row = init();
-        if (row == NO_LINE_SELECTED) {
-            throw new Exception(ERREUR_USER_MANAGEMENT_AUCUNES_LIGNES_SELECTIONNEES);
-        }
-
-        QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
-        MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
-        if (mainWindow) {
-
-            QString id = ui->tableView->model()->data(ui->tableView->model()->index(row, 0)).toString();
-            mainWindow->openProfiles(Controller::getUser(id));
-        } else {
-            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
-        }
-    }
-    catch (Exception* e) {
-        e->EXCAffichageErreur();
-    }
+    // TODO : Acces à la création d'utilisateur
 }
 
 void UserManagementInterface::actionDeleteUser() {
-    try {
-        int row = init();
-        if (row == NO_LINE_SELECTED) {
-            throw new Exception(ERREUR_USER_MANAGEMENT_AUCUNES_LIGNES_SELECTIONNEES);
-        }
+    int row = init(); // Initialisation de row
 
-        QString id = ui->tableView->model()->data(ui->tableView->model()->index(row, 0)).toString();
-        qDebug() << "ID sélectionné à supprimer :" << id;
+    /* Si init() s'est bien passé */
+    if (row > NO_LINE_SELECTED) {
+        QString id = ui->tableView->model()->data(ui->tableView->model()->index(row, 0)).toString(); // On lit l'id de l'utilisateur selectionné
 
-        Controller::deleteUser(id);
+        Controller::deleteUser(id); // On le supprime
 
         // Supprimer la ligne du modèle de données
         ui->tableView->model()->removeRow(row);
     }
-    catch (Exception* e) {
-        e->EXCAffichageErreur();
-    }
 }
 
 void UserManagementInterface::actionUpdateUser() {
+    int row = init(); // Initialisation de row
 
+    /* Si init() s'est bien passé */
+    if (row > NO_LINE_SELECTED) {
+        MainWindow *mainWindow = MainWindow::accessToParent(this); // On récupère une réference sur MainWindow
+
+        /* Si accessToParent() s'est bien passé */
+        if (mainWindow != NULL) {
+            QString id = ui->tableView->model()->data(ui->tableView->model()->index(row, 0)).toString(); // On lit l'id de l'utilisateur selectionné
+
+            User* userSelected = Controller::getUser(id);
+
+            /* Si l'utilisateur selectionné n'a pas encore de profils */
+            if(userSelected->getProfiles().size() == 0) {
+                mainWindow->openAddProfiles(userSelected); // On ouvre l'interface de création de profil
+            }
+            /* Sinon */
+            else {
+                mainWindow->openProfiles(userSelected); // On ouvre l'interface des profils
+            }
+        }
+    }
 }
 
 

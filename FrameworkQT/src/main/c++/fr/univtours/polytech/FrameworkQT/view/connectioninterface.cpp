@@ -20,19 +20,10 @@ ConnectionInterface::~ConnectionInterface()
 }
 
 void ConnectionInterface::actionConnection() {
+    MainWindow *mainWindow = MainWindow::accessToParent(this);
 
-    try {
-        QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
-        MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
-        if (mainWindow) {
-            mainWindow->actionConnection(ui->idLogin->text(), ui->passwordLogin->text()); // On appelle la methode de MainWindow qui gere la connexion
-            ui->passwordLogin->setText(""); // On efface le mot de passe
-        } else {
-            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
-        }
+    if (mainWindow != NULL) {
+        mainWindow->actionConnection(ui->idLogin->text(), ui->passwordLogin->text()); // On appelle la methode de MainWindow qui gere la connexion
+        ui->passwordLogin->setText(""); // On efface le mot de passe
     }
-    catch (Exception* e) {
-        e->EXCAffichageErreur();
-    }
-
 }

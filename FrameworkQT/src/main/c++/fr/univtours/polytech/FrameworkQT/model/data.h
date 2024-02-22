@@ -49,7 +49,7 @@ public:
     void disconnect();
     User* getUserConnected();
 
-    /* Accesseur de l'attibut userProfiles */
+    /* Accesseurs de l'attibut userProfiles */
     void setUserProfiles(User* user);
     void clearUserProfiles();
     User* getUserProfiles();

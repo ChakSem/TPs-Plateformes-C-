@@ -12,6 +12,8 @@ class ProfilesInterface : public QWidget
     Q_OBJECT
 
 public:
+    void initializeComboBox();
+
     void actionAddInterface();
     void actionDeleteInterface();
     void actionManageInterface();

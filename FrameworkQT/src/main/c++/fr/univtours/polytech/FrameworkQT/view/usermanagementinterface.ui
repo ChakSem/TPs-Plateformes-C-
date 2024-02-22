@@ -692,23 +692,23 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="3" column="0">
-      <widget class="QPushButton" name="pushButtonUpdate">
+      <widget class="QPushButton" name="pushButtonProfiles">
        <property name="text">
-        <string>Modifier</string>
+        <string>Gérer ses profils</string>
        </property>
       </widget>
      </item>
      <item row="2" column="0">
       <widget class="QPushButton" name="pushButtonDelete">
        <property name="text">
-        <string>Supprimer</string>
+        <string>Supprimer l'utilisateur</string>
        </property>
       </widget>
      </item>
      <item row="0" column="0">
       <widget class="QPushButton" name="pushButtonAdd">
        <property name="text">
-        <string>Ajouter</string>
+        <string>Ajouter un Utilisateur</string>
        </property>
       </widget>
      </item>
@@ -717,10 +717,10 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>0</x>
       <y>130</y>
-      <width>261</width>
-      <height>261</height>
+      <width>301</width>
+      <height>271</height>
      </rect>
     </property>
    </widget>

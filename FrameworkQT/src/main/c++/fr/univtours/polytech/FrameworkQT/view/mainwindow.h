@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+/* Réference sur les pages des StackedWidget */
 #define MAINWIDGET_CONNECTION 0
 #define MAINWIDGET_USER_MANAGEMENT 1
 #define MAINWIDGET_ACCOUNT_CREATION 2
@@ -28,18 +29,13 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
 public:
-    //Singleton
-    static MainWindow& getInstance()
-    {
-        static MainWindow instance;
-        return instance;
-    }
+
 private:
     Q_OBJECT
 
 public:
-    QStackedWidget* getWidgetCenter();
-    QStackedWidget* getWidgetDeconnection();
+    static MainWindow* accessToParent(QWidget* widget);
+
     void displayDeconnection();
     void displayBack();
     void actionConnection(QString id, QString password);

@@ -40,16 +40,13 @@ void AddProfileInterface::actionCreateProfile() {
             throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
         }
 
-        Controller::createProfile(Controller::getUserProfiles(), name, profileRightsValue);
+        Controller::createProfile(name, profileRightsValue);
 
         Controller::closeUserProfiles();
 
-        QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
-        MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
-        if (mainWindow) {
+        MainWindow *mainWindow = MainWindow::accessToParent(this);
+        if (mainWindow != NULL) {
             mainWindow->returnOnPreviousView();
-        } else {
-            throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
         }
     }
     catch (Exception* e) {

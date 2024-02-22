@@ -14,6 +14,8 @@ class UserManagementInterface : public QWidget
     Q_OBJECT
 
 public:
+    void initializeTableView();
+
     void actionAddUser();
     void actionDeleteUser();
     void actionUpdateUser();
