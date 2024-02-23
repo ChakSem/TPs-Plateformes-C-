@@ -21,7 +21,6 @@ public:
     void actionAddInterface();
     void actionDeleteInterface();
     void actionManageInterface();
-    void actionUpdateInterface();
 
 private:
     Ui::ProfilesInterface *ui;

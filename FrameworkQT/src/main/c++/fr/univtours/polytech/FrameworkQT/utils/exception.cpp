@@ -89,6 +89,9 @@ void Exception::EXCAffichageErreur()
     case ERREUR_USER_MANAGEMENT_AUCUNES_LIGNES_SELECTIONNEES :
         printf_s("Aucunes lignes n'est selectionnees\n");
         break;
+    case ERREUR_AUCUN_PROFIL_CORRESPONDANT :
+        printf_s("Aucun profil ne correspond a l'id\n");
+        break;
     default:
         printf_s("INCONNUE");
     }
