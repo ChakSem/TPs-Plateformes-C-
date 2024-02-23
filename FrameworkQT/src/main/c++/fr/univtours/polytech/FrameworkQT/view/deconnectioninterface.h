@@ -12,9 +12,11 @@ class DeconnectionInterface : public QWidget
     Q_OBJECT
 
 public:
-    void actionDeconnection();
     explicit DeconnectionInterface(QWidget *parent = nullptr);
     ~DeconnectionInterface();
+
+    /* Actions réalisées par les boutons */
+    void actionDeconnection();
 
 private:
     Ui::DeconnectionInterface *ui;

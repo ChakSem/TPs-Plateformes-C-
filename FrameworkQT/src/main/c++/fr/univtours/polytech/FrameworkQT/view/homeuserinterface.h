@@ -12,10 +12,12 @@ class HomeUserInterface : public QWidget
     Q_OBJECT
 
 public:
-    void actionAccount();
-    void actionProfile();
     explicit HomeUserInterface(QWidget *parent = nullptr);
     ~HomeUserInterface();
+
+    /* Actions réalisées par les boutons */
+    void actionAccount();
+    void actionProfile();
 
 private:
     Ui::HomeUserInterface *ui;

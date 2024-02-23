@@ -12,9 +12,11 @@ class AddProfileInterface : public QWidget
     Q_OBJECT
 
 public:
-    void actionCreateProfile();
     explicit AddProfileInterface(QWidget *parent = nullptr);
     ~AddProfileInterface();
+
+    /* Actions réalisées par les boutons */
+    void actionCreateProfile();
 
 private:
     Ui::AddProfileInterface *ui;

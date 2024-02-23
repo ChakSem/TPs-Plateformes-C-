@@ -4,10 +4,6 @@
         "id": "59b1fca3-4be5-40a5-b3a1-db79e7a5b4f8",
         "lastname": "arthur",
         "profiles": [
-            {
-                "right": "LECTURE",
-                "title": "pro"
-            }
         ]
     },
     {
@@ -15,10 +11,6 @@
         "id": "f46971c1-bb0c-4933-92e1-c38fbe5dea8f",
         "lastname": "andre",
         "profiles": [
-            {
-                "right": "LECTURE",
-                "title": "perso"
-            }
         ]
     }
 ]

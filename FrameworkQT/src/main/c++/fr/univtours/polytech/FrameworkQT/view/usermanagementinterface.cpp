@@ -7,6 +7,11 @@
 #include "../controller/controller.h"
 #include "mainwindow.h"
 
+/**
+ * Permet d'initialiser l'objet TableView à partir des données de Data
+ * Entrée :
+ * Sortie :
+ */
 void UserManagementInterface::initializeTableView() {
     Data& data = Data::getInstance();
     QMap<QString, User*> users = data.getUsers();
@@ -47,7 +52,11 @@ void UserManagementInterface::initializeTableView() {
 
     // Configurer le QTableView pour utiliser le modèle de données
     ui->tableView->setModel(model);
+
+    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
 }
+
 
 UserManagementInterface::UserManagementInterface(QWidget *parent)
     : QWidget(parent)
@@ -55,10 +64,7 @@ UserManagementInterface::UserManagementInterface(QWidget *parent)
 {
     ui->setupUi(this);
 
-
-
-    ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
-    ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
+    initializeTableView();
 
     connect( ui->pushButtonAdd, &QPushButton::clicked, this, &UserManagementInterface::actionAddUser);
     connect( ui->pushButtonDelete, &QPushButton::clicked, this, &UserManagementInterface::actionDeleteUser);
@@ -126,14 +132,7 @@ void UserManagementInterface::actionUpdateUser() {
 
             User* userSelected = Controller::getUser(id);
 
-            /* Si l'utilisateur selectionné n'a pas encore de profils */
-            if(userSelected->getProfiles().size() == 0) {
-                mainWindow->openAddProfiles(userSelected); // On ouvre l'interface de création de profil
-            }
-            /* Sinon */
-            else {
-                mainWindow->openProfiles(userSelected); // On ouvre l'interface des profils
-            }
+            mainWindow->openProfiles(userSelected);
         }
     }
 }

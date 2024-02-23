@@ -12,9 +12,11 @@ class CreationUserInterface : public QWidget
     Q_OBJECT
 
 public:
-    void actionAddUseer();
     explicit CreationUserInterface(QWidget *parent = nullptr);
     ~CreationUserInterface();
+
+    /* Actions réalisées par les boutons */
+    void actionAddUseer();
 
 private:
     Ui::CreationUserInterface *ui;

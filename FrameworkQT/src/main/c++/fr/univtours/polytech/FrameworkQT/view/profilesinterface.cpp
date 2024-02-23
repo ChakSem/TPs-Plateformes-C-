@@ -36,7 +36,7 @@ void ProfilesInterface::actionAddInterface() {
         QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
         MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
         if (mainWindow) {
-            mainWindow->openAddProfilesFromProfiles();
+            mainWindow->openAddProfiles();
         } else {
             throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
         }

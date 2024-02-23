@@ -12,13 +12,15 @@ class ProfilesInterface : public QWidget
     Q_OBJECT
 
 public:
+    explicit ProfilesInterface(QWidget *parent = nullptr);
+    ~ProfilesInterface();
+
     void initializeComboBox();
 
+    /* Actions réalisées par les boutons */
     void actionAddInterface();
     void actionDeleteInterface();
     void actionManageInterface();
-    explicit ProfilesInterface(QWidget *parent = nullptr);
-    ~ProfilesInterface();
 
 private:
     Ui::ProfilesInterface *ui;

@@ -96,6 +96,16 @@ void Controller::closeUserProfiles() {
     Data::getInstance().clearUserProfiles();
 }
 
+unsigned int Controller::hasProfiles() {
+    User* userProfiles = getUserProfiles();
+
+    if(userProfiles->getProfiles().size() == 0) {
+        return NO_PROFILES;
+    } else {
+        return SOME_PROFILES;
+    }
+}
+
 /* Gestion d'objets User */
 /**
  * Crée un nouvel objet User vis à vis des données en parametre

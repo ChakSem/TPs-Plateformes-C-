@@ -12,9 +12,11 @@ class ConnectionInterface : public QWidget
     Q_OBJECT
 
 public:
-    void actionConnection();
     explicit ConnectionInterface(QWidget *parent = nullptr);
     ~ConnectionInterface();
+
+    /* Actions réalisées par les boutons */
+    void actionConnection();
 
 private:
     Ui::ConnectionInterface *ui;
