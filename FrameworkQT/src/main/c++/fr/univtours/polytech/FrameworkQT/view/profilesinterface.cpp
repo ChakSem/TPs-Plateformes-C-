@@ -46,6 +46,8 @@ void ProfilesInterface::actionAddInterface() {
     }
 }
 
+
+
 //methode qui permet de supprimer directement un profil 
 void ProfilesInterface::actionDeleteInterface() {
     try {
@@ -58,7 +60,7 @@ void ProfilesInterface::actionDeleteInterface() {
             // if (reply == QMessageBox::No) {
             //     return;
             // }
-            Controller::deleteProfile(profile);
+            Controller::deleteProfile(profile->getUser()->getId(), profileTitle);
             initializeComboBox();
         }
         else {
