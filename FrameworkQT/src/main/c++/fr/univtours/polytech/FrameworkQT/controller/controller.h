@@ -38,6 +38,7 @@ public:
     static void openUserProfiles(User* userProfiles);
     static void closeUserProfiles();
     static unsigned int hasProfiles();
+    static Profile* getProfileByTitle(QString profileTitle);
 
     /* Gestion d'objets User */
     static User* createUser(QString firstname, QString lastname, QString password, unsigned int roleValue);

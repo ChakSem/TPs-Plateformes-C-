@@ -10,11 +10,15 @@
             },
             {
                 "right": "LECTURE",
-                "title": "pro"
+                "title": "1"
             },
             {
                 "right": "LECTURE",
-                "title": "pro1"
+                "title": "2"
+            },
+            {
+                "right": "LECTURE",
+                "title": "pro"
             }
         ]
     }

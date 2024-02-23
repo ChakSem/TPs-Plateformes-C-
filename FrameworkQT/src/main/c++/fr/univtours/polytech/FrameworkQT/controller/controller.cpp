@@ -106,6 +106,16 @@ unsigned int Controller::hasProfiles() {
     }
 }
 
+Profile* Controller::getProfileByTitle(QString profileTitle) {
+    for(Profile* profile : getUserProfiles()->getProfiles()) {
+        if(profile->getTitle() == profileTitle) {
+            return profile;
+        }
+    }
+
+    return NULL;
+}
+
 /* Gestion d'objets User */
 /**
  * Crée un nouvel objet User vis à vis des données en parametre

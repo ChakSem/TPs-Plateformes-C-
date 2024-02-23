@@ -30,7 +30,11 @@ ProfilesInterface::~ProfilesInterface()
     delete ui;
 }
 
-//Methode qui permet de rediriger vers l'interface d'ajout de profil
+/**
+ *  Methode qui permet de rediriger vers l'interface d'ajout de profil
+ *  Entrée :
+ *  Sortie :
+ */
 void ProfilesInterface::actionAddInterface() {
     try {
         QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
@@ -46,21 +50,23 @@ void ProfilesInterface::actionAddInterface() {
     }
 }
 
-
-
-//methode qui permet de supprimer directement un profil 
+/**
+ * Methode qui permet de supprimer directement un profil
+ * Entrée :
+ * Sortie :
+ */
 void ProfilesInterface::actionDeleteInterface() {
     try {
         QString profileTitle = ui->comboBoxProfiles->currentText();
-        Profile* profile = Controller::getUserProfiles()->getProfileByTitle(profileTitle);
+        Profile* profile = Controller::getProfileByTitle(profileTitle);
         if (profile != NULL) {
-            // //on demande une confirmation
+            // TODO : on demande une confirmation
             // QMessageBox::StandardButton reply;
             // reply = QMessageBox::question(this, "Suppression de profil", "Etes-vous sûr de vouloir supprimer le profil " + profileTitle + " ?", QMessageBox::Yes|QMessageBox::No);
             // if (reply == QMessageBox::No) {
             //     return;
             // }
-            Controller::deleteProfile(profile->getUser()->getId(), profileTitle);
+            Controller::deleteProfile(Controller::getUserProfiles()->getId(), profileTitle);
             initializeComboBox();
         }
         else {
@@ -70,29 +76,22 @@ void ProfilesInterface::actionDeleteInterface() {
     catch (Exception* e) {
         e->EXCAffichageErreur();
     }
-
-
 }
-//methode qui permet de rediriger vers l'interface de gestion de profil (ou l'on va gerer les connexions avec les BDDs)
-void ProfilesInterface::actionManageInterface() {
-    try {
-        QString profileTitle = ui->comboBoxProfiles->currentText();
-        Profile* profile = Controller::getUserProfiles()->getProfileByTitle(profileTitle);
-        if (profile != NULL) {
-            QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
-            MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
-            if (mainWindow) {
-                mainWindow->openManageProfile(profile)
-            } else {
-                throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
-            }
-        }
-        else {
-            throw new Exception(ERREUR_AUCUN_PROFIL_CORRESPONDANT);
-        }
-    }
-    catch (Exception* e) {
-        e->EXCAffichageErreur();
-    }
 
+/**
+ * Methode qui permet de rediriger vers l'interface de gestion de profil (ou l'on va gerer les connexions avec les BDDs)
+ * Entrée :
+ * Sortie :
+ */
+void ProfilesInterface::actionManageInterface() {
+    QString profileTitle = ui->comboBoxProfiles->currentText();
+    Profile* profile = Controller::getProfileByTitle(profileTitle);
+    if (profile != NULL) {
+        MainWindow *mainWindow = MainWindow::accessToParent(this);
+
+        if (mainWindow != NULL) {
+            // TODO : ouvrir l'interface ManageProfile
+            // mainWindow->openManageProfile(profile);
+        }
+    }
 }

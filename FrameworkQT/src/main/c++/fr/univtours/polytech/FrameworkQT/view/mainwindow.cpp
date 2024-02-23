@@ -135,7 +135,6 @@ void MainWindow::openCreateUser() {
 }
 
 void MainWindow::openAddProfiles() {
-    Controller::openUserProfilesForCurrentUser();
     ui->MainWidget->setCurrentIndex(MAINWIDGET_ADD_PROFILE); // Access à la page d'ajout de profils
 }
 

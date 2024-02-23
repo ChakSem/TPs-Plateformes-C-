@@ -52,16 +52,6 @@ User& User::operator=(const User& user) {
     return *this;
 }
 
-
-Profile:: Profile* getProfileByTitle(QString profileTitle) {
-    for(Profile* profile : profiles) {
-        if(profile->getTitle() == profileTitle) {
-            return profile;
-        }
-    }
-    return NULL;
-}
-
 User::User() {} // Méthode privé, inutile de la définir
 
 User::User(const User& user){
