@@ -12,10 +12,12 @@ class DialogValidation : public QWidget
     Q_OBJECT
 
 public:
-    void actionCancel();
-    void actionValidate();
     explicit DialogValidation(QWidget *parent = nullptr);
     ~DialogValidation();
+
+    /* Actions réalisées par les boutons */
+    void actionCancel();
+    void actionValidate();
 
 private:
     Ui::DialogValidation *ui;

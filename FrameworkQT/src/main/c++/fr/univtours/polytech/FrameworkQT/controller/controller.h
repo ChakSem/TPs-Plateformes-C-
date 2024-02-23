@@ -17,6 +17,9 @@
 #define ADMIN 1
 #define NOTADMIN 2
 
+#define NO_PROFILES 0
+#define SOME_PROFILES 1
+
 class Controller
 {
 public:
@@ -34,6 +37,7 @@ public:
     static void openUserProfilesForCurrentUser();
     static void openUserProfiles(User* userProfiles);
     static void closeUserProfiles();
+    static unsigned int hasProfiles();
 
     /* Gestion d'objets User */
     static User* createUser(QString firstname, QString lastname, QString password, unsigned int roleValue);

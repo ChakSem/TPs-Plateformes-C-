@@ -4,6 +4,18 @@
         "id": "2efe9d08-d30e-46bf-bcb3-d699c4631f0d",
         "lastname": "jones",
         "profiles": [
+            {
+                "right": "LECTURE",
+                "title": ""
+            },
+            {
+                "right": "LECTURE",
+                "title": "pro"
+            },
+            {
+                "right": "LECTURE",
+                "title": "pro1"
+            }
         ]
     }
 ]

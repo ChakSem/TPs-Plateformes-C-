@@ -44,11 +44,10 @@ public:
     void openUsers();
     void openAccount();
     void openMyProfiles();
+    void openProfiles(User* user);
     void openDatabases();
     void openCreateUser();
-    void openAddProfiles(User* user);
-    void openAddProfilesFromProfiles();
-    void openProfiles(User* user);
+    void openAddProfiles();
 
     void returnOnPreviousView();
 
@@ -57,8 +56,9 @@ public:
     ~MainWindow();
 
 private:
+    void openProfiles();
     Ui::MainWindow *ui;
-    int previousPage; // Sera utilisé par le bouton de retour en arriere
+    QList<int> previousPages; // Sera utilisé par le bouton de retour en arriere
 };
 
 #endif // MAINWINDOW_H

@@ -14,15 +14,17 @@ class UserManagementInterface : public QWidget
     Q_OBJECT
 
 public:
-    void initializeTableView();
-
-    void actionAddUser();
-    void actionDeleteUser();
-    void actionUpdateUser();
     explicit UserManagementInterface(QWidget *parent = nullptr);
     ~UserManagementInterface();
 
+    /* Actions réalisées par les boutons */
+    void actionAddUser();
+    void actionDeleteUser();
+    void actionUpdateUser();
+
 private:
+    void initializeTableView();
+
     int init();
     Ui::UserManagementInterface *ui;
 };

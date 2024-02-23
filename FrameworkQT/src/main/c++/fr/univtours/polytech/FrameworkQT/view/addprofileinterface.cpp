@@ -42,11 +42,9 @@ void AddProfileInterface::actionCreateProfile() {
 
         Controller::createProfile(name, profileRightsValue);
 
-        Controller::closeUserProfiles();
-
         MainWindow *mainWindow = MainWindow::accessToParent(this);
         if (mainWindow != NULL) {
-            mainWindow->returnOnPreviousView();
+            mainWindow->openProfiles(Controller::getUserProfiles());
         }
     }
     catch (Exception* e) {

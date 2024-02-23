@@ -12,12 +12,14 @@ class HomeAdminInterface : public QWidget
     Q_OBJECT
 
 public:
+    explicit HomeAdminInterface(QWidget *parent = nullptr);
+    ~HomeAdminInterface();
+
+    /* Actions réalisées par les boutons */
     void actionAccount();
     void actionDatabase();
     void actionProfile();
     void actionUser();
-    explicit HomeAdminInterface(QWidget *parent = nullptr);
-    ~HomeAdminInterface();
 
 private:
     Ui::HomeAdminInterface *ui;
