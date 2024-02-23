@@ -17,7 +17,6 @@ public:
     void actionAddInterface();
     void actionDeleteInterface();
     void actionManageInterface();
-    void actionUpdateInterface();
     explicit ProfilesInterface(QWidget *parent = nullptr);
     ~ProfilesInterface();
 

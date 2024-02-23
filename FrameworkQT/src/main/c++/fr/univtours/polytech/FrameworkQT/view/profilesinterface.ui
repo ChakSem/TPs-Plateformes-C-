@@ -686,14 +686,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0">
-      <widget class="QPushButton" name="pushButtonManage">
-       <property name="text">
-        <string>Gérer</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
+     <item row="4" column="0">
       <widget class="QPushButton" name="pushButtonDelete">
        <property name="text">
         <string>Supprimer</string>
@@ -701,16 +694,16 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="QPushButton" name="pushButtonUpdate">
-       <property name="text">
-        <string>Modifier</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
       <widget class="QPushButton" name="pushButtonAdd">
        <property name="text">
         <string>Ajouter</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButtonManage">
+       <property name="text">
+        <string>Gérer</string>
        </property>
       </widget>
      </item>

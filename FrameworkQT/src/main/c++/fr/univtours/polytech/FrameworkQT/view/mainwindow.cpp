@@ -126,6 +126,13 @@ void MainWindow::openProfiles(User* user) {
     qobject_cast<ProfilesInterface*>(widgetToRefresh)->initializeComboBox();
 }
 
+void MainWindow::openManageProfile(Profile* profile) {
+    previousPage = MAINWIDGET_PROFILES;
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_ADD_PROFILE); // Access à la page de gestion de profils
+    QWidget* widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_ADD_PROFILE);
+    qobject_cast<AddProfileInterface*>(widgetToRefresh)->initializeProfile(profile);
+}
+
 
 void MainWindow::returnOnPreviousView() {
     ui->MainWidget->setCurrentIndex(previousPage);

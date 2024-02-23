@@ -49,6 +49,7 @@ public:
     void openAddProfiles(User* user);
     void openAddProfilesFromProfiles();
     void openProfiles(User* user);
+    void openManageProfile(Profile* profile);
 
     void returnOnPreviousView();
 
