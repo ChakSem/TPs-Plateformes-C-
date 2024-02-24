@@ -1221,9 +1221,9 @@ public:
                         "{\n"
 "   background: none;\n"
 "}"));
-        firstUserInsctiption = new FirstUserInscription();
-        firstUserInsctiption->setObjectName("firstUserInsctiption");
-        MainWidget->addWidget(firstUserInsctiption);
+        firstUserInscription = new FirstUserInscription();
+        firstUserInscription->setObjectName("firstUserInsctiption");
+        MainWidget->addWidget(firstUserInscription);
         connection = new ConnectionInterface();
         connection->setObjectName("connection");
         MainWidget->addWidget(connection);
