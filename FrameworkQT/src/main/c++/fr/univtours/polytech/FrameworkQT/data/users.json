@@ -1,20 +1,5 @@
 [
     {
-        "firstname": "benoit",
-        "id": "d827d486-e86f-4ac5-8c91-471ed44f1d3a",
-        "lastname": "phillipe",
-        "profiles": [
-            {
-                "right": "LECTURE",
-                "title": ""
-            },
-            {
-                "right": "LECTURE",
-                "title": "1"
-            }
-        ]
-    },
-    {
         "firstname": "zkdazd",
         "id": "48a311b2-532b-459d-a1e4-847632375137",
         "lastname": "test",
@@ -33,6 +18,21 @@
         "id": "c664b532-6d49-4fb4-b7f0-289e376729c2",
         "lastname": "test",
         "profiles": [
+        ]
+    },
+    {
+        "firstname": "benoit",
+        "id": "d827d486-e86f-4ac5-8c91-471ed44f1d3a",
+        "lastname": "phillipe",
+        "profiles": [
+            {
+                "right": "LECTURE",
+                "title": ""
+            },
+            {
+                "right": "LECTURE",
+                "title": "1"
+            }
         ]
     },
     {
