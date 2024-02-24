@@ -29,10 +29,9 @@ public:
     QLabel *labelConnection_2;
     QWidget *layoutWidget;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButtonManage;
     QPushButton *pushButtonDelete;
-    QPushButton *pushButtonUpdate;
     QPushButton *pushButtonAdd;
+    QPushButton *pushButtonManage;
 
     void setupUi(QWidget *ProfilesInterface)
     {
@@ -659,25 +658,20 @@ public:
         gridLayout_2 = new QGridLayout(layoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButtonManage = new QPushButton(layoutWidget);
-        pushButtonManage->setObjectName("pushButtonManage");
-
-        gridLayout_2->addWidget(pushButtonManage, 0, 0, 1, 1);
-
         pushButtonDelete = new QPushButton(layoutWidget);
         pushButtonDelete->setObjectName("pushButtonDelete");
 
-        gridLayout_2->addWidget(pushButtonDelete, 5, 0, 1, 1);
-
-        pushButtonUpdate = new QPushButton(layoutWidget);
-        pushButtonUpdate->setObjectName("pushButtonUpdate");
-
-        gridLayout_2->addWidget(pushButtonUpdate, 1, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonDelete, 4, 0, 1, 1);
 
         pushButtonAdd = new QPushButton(layoutWidget);
         pushButtonAdd->setObjectName("pushButtonAdd");
 
-        gridLayout_2->addWidget(pushButtonAdd, 2, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonAdd, 1, 0, 1, 1);
+
+        pushButtonManage = new QPushButton(layoutWidget);
+        pushButtonManage->setObjectName("pushButtonManage");
+
+        gridLayout_2->addWidget(pushButtonManage, 0, 0, 1, 1);
 
 
         retranslateUi(ProfilesInterface);
@@ -690,10 +684,9 @@ public:
         ProfilesInterface->setWindowTitle(QCoreApplication::translate("ProfilesInterface", "Form", nullptr));
         labelConnection_3->setText(QCoreApplication::translate("ProfilesInterface", "Page Profils", nullptr));
         labelConnection_2->setText(QCoreApplication::translate("ProfilesInterface", "Veuillez selectionner un profil : ", nullptr));
-        pushButtonManage->setText(QCoreApplication::translate("ProfilesInterface", "G\303\251rer", nullptr));
         pushButtonDelete->setText(QCoreApplication::translate("ProfilesInterface", "Supprimer", nullptr));
-        pushButtonUpdate->setText(QCoreApplication::translate("ProfilesInterface", "Modifier", nullptr));
         pushButtonAdd->setText(QCoreApplication::translate("ProfilesInterface", "Ajouter", nullptr));
+        pushButtonManage->setText(QCoreApplication::translate("ProfilesInterface", "G\303\251rer", nullptr));
     } // retranslateUi
 
 };

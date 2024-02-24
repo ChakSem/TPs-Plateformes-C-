@@ -96,6 +96,7 @@ int UserManagementInterface::init() {
     }
 }
 
+//methode qui redirige vers la page de creation d'utilisateur
 void UserManagementInterface::actionAddUser() {
     MainWindow *mainWindow = MainWindow::accessToParent(this); // On récupère une réference sur MainWindow
 

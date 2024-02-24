@@ -30,6 +30,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainwindow.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/popup.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/usermanagementinterface.cpp
 
@@ -101,6 +102,7 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/mainwindow.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/popup.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/usermanagementinterface.h
     QT+=widgets

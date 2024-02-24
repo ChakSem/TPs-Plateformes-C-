@@ -19,6 +19,7 @@ debug/homeadmininterface.o
 debug/homeuserinterface.o
 debug/indexbdd.o
 debug/mainwindow.o
+debug/popup.o
 debug/profilesinterface.o
 debug/usermanagementinterface.o
 debug/qrc_forest-background.o
@@ -34,5 +35,6 @@ debug/moc_homeadmininterface.o
 debug/moc_homeuserinterface.o
 debug/moc_indexbdd.o
 debug/moc_mainwindow.o
+debug/moc_popup.o
 debug/moc_profilesinterface.o
 debug/moc_usermanagementinterface.o
