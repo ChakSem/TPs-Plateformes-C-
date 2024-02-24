@@ -101,29 +101,16 @@ int UserManagementInterface::init() {
     }
 }
 
-
-// /**
-//  *  Methode qui permet de rediriger vers l'interface d'ajout de profil
-//  *  Entrée :
-//  *  Sortie :
-//  */
-// void ProfilesInterface::actionAddInterface() {
-//     try {
-//         QWidget *parentWidget = this->parentWidget()->parentWidget()->parentWidget();
-//         MainWindow *mainWindow = qobject_cast<MainWindow*>(parentWidget);
-//         if (mainWindow) {
-//             mainWindow->openAddProfiles();
-//         } else {
-//             throw new Exception(ERREUR_MAINWINDOW_NON_TROUVE);
-//         }
-//     }
-//     catch (Exception* e) {
-//         e->EXCAffichageErreur();
-//     }
-// }
 //methode qui redirige vers la page de creation d'utilisateur
 void UserManagementInterface::actionAddUser() {
-    
+    MainWindow *mainWindow = MainWindow::accessToParent(this); // On récupère une réference sur MainWindow
+
+    /* Si accessToParent() s'est bien passé */
+    if (mainWindow != NULL) {
+        mainWindow->openCreateUser();
+    }
+}
+
 void UserManagementInterface::actionDeleteUser() {
     int row = init(); // Initialisation de row
 
