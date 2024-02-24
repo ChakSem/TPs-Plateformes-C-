@@ -5,6 +5,7 @@
 #include <QStandardItemModel>
 
 #define NO_LINE_SELECTED -1
+#define SUPER_ADMIN "59b1fca3-4be5-40a5-b3a1-db79e7a5b4f8"
 
 class User;
 
@@ -24,11 +25,11 @@ public:
     void actionAddUser();
     void actionDeleteUser();
     void actionUpdateUser();
+    void insertNewUser(User* user);
 
 private:
     void initializeTableView();
     int init();
-    void insertNewUser(User* user);
 
     QStandardItemModel *model;
     int row;

@@ -52,6 +52,8 @@ public:
     void openCreateUser();
     void openAddProfiles();
 
+    void updateTableView(User* user);
+
     void returnOnPreviousView();
 
     explicit MainWindow(QWidget *parent = nullptr);

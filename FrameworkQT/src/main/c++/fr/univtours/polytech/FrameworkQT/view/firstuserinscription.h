@@ -12,9 +12,11 @@ class FirstUserInscription : public QWidget
     Q_OBJECT
 
 public:
-    explicit FirstUserInscription(QWidget *parent = nullptr);
-    void actionAddUser();
+    explicit FirstUserInscription(QWidget *parent = nullptr); 
     ~FirstUserInscription();
+
+    /* Actions réalisées par les boutons */
+    void actionAddUser();
 
 private:
     Ui::FirstUserInscription *ui;
