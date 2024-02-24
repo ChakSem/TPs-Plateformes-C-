@@ -4,6 +4,7 @@
 #include "../utils/exception.h"
 #include <QLabel>
 #include <QDebug>
+#include <QMessageBox>
 
 /**
  * Permet de récupérer une réference sur l'objet parent MainWindow depuis un QWidget d'un StackedWidget du MainWindow
@@ -141,9 +142,10 @@ void MainWindow::openProfiles() {
 }
 
 void MainWindow::openDatabases() {
+    QMessageBox::information(this, "Information", "Cette fonctionnalité sera implémentée plus tard(Partie 2)." );
+
     // TODO : partie 2
     // ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
-
     // previousPages.push_front(MAINWIDGET_CONNECTION); // On ajoute MAINWIDGET_CONNECTION au chemin pour le retour
 }
 

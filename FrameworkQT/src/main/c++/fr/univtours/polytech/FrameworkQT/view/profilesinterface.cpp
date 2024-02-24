@@ -4,7 +4,7 @@
 #include "../controller/controller.h"
 #include "../model/profile.h"
 #include "mainwindow.h"
-
+#include <QMessageBox>
 void ProfilesInterface::initializeComboBox() {
     ui->comboBoxProfiles->clear(); // On vide le comboBox
 
@@ -57,15 +57,16 @@ void ProfilesInterface::actionAddInterface() {
  */
 void ProfilesInterface::actionDeleteInterface() {
     try {
+        //demande de confirmation
         QString profileTitle = ui->comboBoxProfiles->currentText();
         Profile* profile = Controller::getProfileByTitle(profileTitle);
         if (profile != NULL) {
-            // TODO : on demande une confirmation
-            // QMessageBox::StandardButton reply;
-            // reply = QMessageBox::question(this, "Suppression de profil", "Etes-vous sûr de vouloir supprimer le profil " + profileTitle + " ?", QMessageBox::Yes|QMessageBox::No);
-            // if (reply == QMessageBox::No) {
-            //     return;
-            // }
+            //TODO : on demande une confirmation
+            QMessageBox::StandardButton reply;
+            reply = QMessageBox::question(this, "Suppression de profil", "Etes-vous sûr de vouloir supprimer le profil " + profileTitle + " ?", QMessageBox::Yes|QMessageBox::No);
+            if (reply == QMessageBox::No) {
+                return;
+            }
             Controller::deleteProfile(Controller::getUserProfiles()->getId(), profileTitle);
             initializeComboBox();
         }
@@ -90,6 +91,7 @@ void ProfilesInterface::actionManageInterface() {
         MainWindow *mainWindow = MainWindow::accessToParent(this);
 
         if (mainWindow != NULL) {
+            QMessageBox::information(this, "Information", "Cette fonctionnalité sera implémentée plus tard(Partie 2)." );
             // TODO : ouvrir l'interface ManageProfile
             // mainWindow->openManageProfile(profile);
         }

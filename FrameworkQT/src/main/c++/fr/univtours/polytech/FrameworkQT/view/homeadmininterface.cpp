@@ -33,6 +33,7 @@ void HomeAdminInterface::actionDatabase() {
 
     /* S'il n'y a pas eu d'erreur */
     if (mainWindow != NULL) {
+
         mainWindow->openDatabases(); // On ouvre l'interface pour les base de données
     }
 }
