@@ -25,7 +25,7 @@ public:
     {
         if (BackButton->objectName().isEmpty())
             BackButton->setObjectName("BackButton");
-        BackButton->resize(134, 38);
+        BackButton->resize(135, 40);
         backButton = new QPushButton(BackButton);
         backButton->setObjectName("backButton");
         backButton->setGeometry(QRect(0, 0, 121, 31));

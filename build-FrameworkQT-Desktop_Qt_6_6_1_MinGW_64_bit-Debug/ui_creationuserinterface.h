@@ -26,25 +26,25 @@ class Ui_CreationUserInterface
 public:
     QFrame *frame;
     QPushButton *pushButton;
-    QLabel *labelConnection;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QLabel *labelLastName;
-    QLineEdit *lastNameUser;
-    QLabel *labelMdp;
-    QRadioButton *radioButtonIsAdmin;
-    QLineEdit *passwordLogin;
     QLineEdit *firstNameUser;
     QLabel *labelIFirstName;
+    QLineEdit *passwordLogin;
+    QRadioButton *radioButtonIsAdmin;
+    QLabel *labelLastName;
+    QLabel *labelMdp;
+    QLineEdit *lastNameUser;
+    QLabel *labelConnection;
 
     void setupUi(QWidget *CreationUserInterface)
     {
         if (CreationUserInterface->objectName().isEmpty())
             CreationUserInterface->setObjectName("CreationUserInterface");
-        CreationUserInterface->resize(800, 500);
+        CreationUserInterface->resize(600, 400);
         frame = new QFrame(CreationUserInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(110, 50, 600, 400));
+        frame->setGeometry(QRect(0, 100, 600, 300));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -629,58 +629,17 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(80, 340, 411, 31));
+        pushButton->setGeometry(QRect(90, 190, 400, 30));
         QFont font;
         font.setPointSize(12);
         pushButton->setFont(font);
         pushButton->setStyleSheet(QString::fromUtf8(""));
-        labelConnection = new QLabel(frame);
-        labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(200, 0, 211, 26));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
-        labelConnection->setSizePolicy(sizePolicy);
-        labelConnection->setMinimumSize(QSize(0, 13));
-        QFont font1;
-        font1.setPointSize(20);
-        font1.setBold(true);
-        labelConnection->setFont(font1);
         layoutWidget = new QWidget(frame);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(110, 140, 371, 161));
+        layoutWidget->setGeometry(QRect(110, 2, 371, 151));
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        labelLastName = new QLabel(layoutWidget);
-        labelLastName->setObjectName("labelLastName");
-        labelLastName->setFont(font);
-
-        gridLayout->addWidget(labelLastName, 2, 0, 1, 1);
-
-        lastNameUser = new QLineEdit(layoutWidget);
-        lastNameUser->setObjectName("lastNameUser");
-        lastNameUser->setProperty("long", QVariant(Q_INT64_C(0)));
-
-        gridLayout->addWidget(lastNameUser, 2, 1, 1, 1);
-
-        labelMdp = new QLabel(layoutWidget);
-        labelMdp->setObjectName("labelMdp");
-        labelMdp->setFont(font);
-
-        gridLayout->addWidget(labelMdp, 4, 0, 1, 1);
-
-        radioButtonIsAdmin = new QRadioButton(layoutWidget);
-        radioButtonIsAdmin->setObjectName("radioButtonIsAdmin");
-
-        gridLayout->addWidget(radioButtonIsAdmin, 5, 1, 1, 1);
-
-        passwordLogin = new QLineEdit(layoutWidget);
-        passwordLogin->setObjectName("passwordLogin");
-
-        gridLayout->addWidget(passwordLogin, 4, 1, 1, 1);
-
         firstNameUser = new QLineEdit(layoutWidget);
         firstNameUser->setObjectName("firstNameUser");
         firstNameUser->setProperty("long", QVariant(Q_INT64_C(0)));
@@ -689,10 +648,58 @@ public:
 
         labelIFirstName = new QLabel(layoutWidget);
         labelIFirstName->setObjectName("labelIFirstName");
-        labelIFirstName->setFont(font);
+        QFont font1;
+        font1.setPointSize(12);
+        font1.setBold(true);
+        labelIFirstName->setFont(font1);
 
-        gridLayout->addWidget(labelIFirstName, 3, 0, 1, 1);
+        gridLayout->addWidget(labelIFirstName, 3, 0, 1, 1, Qt::AlignRight);
 
+        passwordLogin = new QLineEdit(layoutWidget);
+        passwordLogin->setObjectName("passwordLogin");
+
+        gridLayout->addWidget(passwordLogin, 4, 1, 1, 1);
+
+        radioButtonIsAdmin = new QRadioButton(layoutWidget);
+        radioButtonIsAdmin->setObjectName("radioButtonIsAdmin");
+        QFont font2;
+        font2.setBold(true);
+        font2.setItalic(true);
+        radioButtonIsAdmin->setFont(font2);
+
+        gridLayout->addWidget(radioButtonIsAdmin, 5, 1, 1, 1);
+
+        labelLastName = new QLabel(layoutWidget);
+        labelLastName->setObjectName("labelLastName");
+        labelLastName->setFont(font1);
+
+        gridLayout->addWidget(labelLastName, 2, 0, 1, 1, Qt::AlignRight);
+
+        labelMdp = new QLabel(layoutWidget);
+        labelMdp->setObjectName("labelMdp");
+        labelMdp->setFont(font1);
+
+        gridLayout->addWidget(labelMdp, 4, 0, 1, 1, Qt::AlignRight);
+
+        lastNameUser = new QLineEdit(layoutWidget);
+        lastNameUser->setObjectName("lastNameUser");
+        lastNameUser->setProperty("long", QVariant(Q_INT64_C(0)));
+
+        gridLayout->addWidget(lastNameUser, 2, 1, 1, 1);
+
+        labelConnection = new QLabel(CreationUserInterface);
+        labelConnection->setObjectName("labelConnection");
+        labelConnection->setGeometry(QRect(190, 0, 211, 26));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
+        labelConnection->setSizePolicy(sizePolicy);
+        labelConnection->setMinimumSize(QSize(0, 13));
+        QFont font3;
+        font3.setPointSize(20);
+        font3.setBold(true);
+        labelConnection->setFont(font3);
 
         retranslateUi(CreationUserInterface);
 
@@ -703,11 +710,11 @@ public:
     {
         CreationUserInterface->setWindowTitle(QCoreApplication::translate("CreationUserInterface", "Form", nullptr));
         pushButton->setText(QCoreApplication::translate("CreationUserInterface", "Cr\303\251er", nullptr));
-        labelConnection->setText(QCoreApplication::translate("CreationUserInterface", "Creation d'un compte", nullptr));
+        labelIFirstName->setText(QCoreApplication::translate("CreationUserInterface", "Pr\303\251nom:", nullptr));
+        radioButtonIsAdmin->setText(QCoreApplication::translate("CreationUserInterface", "Admin", nullptr));
         labelLastName->setText(QCoreApplication::translate("CreationUserInterface", "Nom :", nullptr));
         labelMdp->setText(QCoreApplication::translate("CreationUserInterface", "Mot de Passe :", nullptr));
-        radioButtonIsAdmin->setText(QCoreApplication::translate("CreationUserInterface", "Admin", nullptr));
-        labelIFirstName->setText(QCoreApplication::translate("CreationUserInterface", "Pr\303\251nom:", nullptr));
+        labelConnection->setText(QCoreApplication::translate("CreationUserInterface", "Creation d'un compte", nullptr));
     } // retranslateUi
 
 };

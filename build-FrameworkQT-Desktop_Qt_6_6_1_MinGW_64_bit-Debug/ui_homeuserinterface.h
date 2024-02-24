@@ -23,20 +23,20 @@ class Ui_HomeUserInterface
 {
 public:
     QFrame *frame;
-    QLabel *labelConnection;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout_2;
     QPushButton *pushButtonProfile;
     QPushButton *pushButtonAccount;
+    QLabel *labelConnection;
 
     void setupUi(QWidget *HomeUserInterface)
     {
         if (HomeUserInterface->objectName().isEmpty())
             HomeUserInterface->setObjectName("HomeUserInterface");
-        HomeUserInterface->resize(800, 500);
+        HomeUserInterface->resize(600, 400);
         frame = new QFrame(HomeUserInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(110, 60, 600, 400));
+        frame->setGeometry(QRect(0, 100, 600, 300));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -619,22 +619,9 @@ public:
 "}"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        labelConnection = new QLabel(frame);
-        labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(215, 0, 600, 26));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
-        labelConnection->setSizePolicy(sizePolicy);
-        labelConnection->setMinimumSize(QSize(0, 13));
-        QFont font;
-        font.setPointSize(20);
-        font.setBold(true);
-        labelConnection->setFont(font);
         gridLayoutWidget = new QWidget(frame);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(120, 100, 341, 231));
+        gridLayoutWidget->setGeometry(QRect(120, 0, 341, 301));
         gridLayout_2 = new QGridLayout(gridLayoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -648,6 +635,19 @@ public:
 
         gridLayout_2->addWidget(pushButtonAccount, 3, 0, 1, 1);
 
+        labelConnection = new QLabel(HomeUserInterface);
+        labelConnection->setObjectName("labelConnection");
+        labelConnection->setGeometry(QRect(225, 0, 371, 27));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
+        labelConnection->setSizePolicy(sizePolicy);
+        labelConnection->setMinimumSize(QSize(0, 13));
+        QFont font;
+        font.setPointSize(20);
+        font.setBold(true);
+        labelConnection->setFont(font);
 
         retranslateUi(HomeUserInterface);
 
@@ -657,9 +657,9 @@ public:
     void retranslateUi(QWidget *HomeUserInterface)
     {
         HomeUserInterface->setWindowTitle(QCoreApplication::translate("HomeUserInterface", "Form", nullptr));
-        labelConnection->setText(QCoreApplication::translate("HomeUserInterface", "Page Accueil", nullptr));
         pushButtonProfile->setText(QCoreApplication::translate("HomeUserInterface", "Mes profils", nullptr));
         pushButtonAccount->setText(QCoreApplication::translate("HomeUserInterface", "Mon compte", nullptr));
+        labelConnection->setText(QCoreApplication::translate("HomeUserInterface", "Page Accueil", nullptr));
     } // retranslateUi
 
 };

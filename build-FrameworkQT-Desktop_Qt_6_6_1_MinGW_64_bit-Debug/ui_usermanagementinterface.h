@@ -27,7 +27,6 @@ class Ui_UserManagementInterface
 {
 public:
     QFrame *frame;
-    QLabel *labelConnection;
     QLineEdit *passwordLogin_2;
     QLabel *labelConnection_2;
     QPushButton *pushButton_2;
@@ -38,15 +37,16 @@ public:
     QPushButton *pushButtonDelete;
     QPushButton *pushButtonAdd;
     QTableView *tableView;
+    QLabel *labelConnection;
 
     void setupUi(QWidget *UserManagementInterface)
     {
         if (UserManagementInterface->objectName().isEmpty())
             UserManagementInterface->setObjectName("UserManagementInterface");
-        UserManagementInterface->resize(800, 500);
+        UserManagementInterface->resize(600, 400);
         frame = new QFrame(UserManagementInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(110, 40, 600, 400));
+        frame->setGeometry(QRect(0, 40, 600, 300));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -629,19 +629,6 @@ public:
 "}"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        labelConnection = new QLabel(frame);
-        labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(200, 0, 221, 26));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
-        labelConnection->setSizePolicy(sizePolicy);
-        labelConnection->setMinimumSize(QSize(0, 13));
-        QFont font;
-        font.setPointSize(20);
-        font.setBold(true);
-        labelConnection->setFont(font);
         passwordLogin_2 = new QLineEdit(frame);
         passwordLogin_2->setObjectName("passwordLogin_2");
         passwordLogin_2->setGeometry(QRect(70, 480, 788, 22));
@@ -649,10 +636,10 @@ public:
         labelConnection_2->setObjectName("labelConnection_2");
         labelConnection_2->setGeometry(QRect(70, 58, 150, 50));
         labelConnection_2->setMaximumSize(QSize(150, 50));
-        QFont font1;
-        font1.setPointSize(14);
-        font1.setBold(true);
-        labelConnection_2->setFont(font1);
+        QFont font;
+        font.setPointSize(14);
+        font.setBold(true);
+        labelConnection_2->setFont(font);
         pushButton_2 = new QPushButton(frame);
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setGeometry(QRect(70, 528, 788, 18));
@@ -661,7 +648,7 @@ public:
         radioButton->setGeometry(QRect(70, 506, 788, 18));
         layoutWidget = new QWidget(frame);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(310, 180, 281, 131));
+        layoutWidget->setGeometry(QRect(320, 0, 281, 301));
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -682,7 +669,20 @@ public:
 
         tableView = new QTableView(frame);
         tableView->setObjectName("tableView");
-        tableView->setGeometry(QRect(0, 130, 301, 271));
+        tableView->setGeometry(QRect(10, 0, 300, 291));
+        labelConnection = new QLabel(UserManagementInterface);
+        labelConnection->setObjectName("labelConnection");
+        labelConnection->setGeometry(QRect(195, 0, 401, 27));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
+        labelConnection->setSizePolicy(sizePolicy);
+        labelConnection->setMinimumSize(QSize(0, 13));
+        QFont font1;
+        font1.setPointSize(20);
+        font1.setBold(true);
+        labelConnection->setFont(font1);
 
         retranslateUi(UserManagementInterface);
 
@@ -692,13 +692,13 @@ public:
     void retranslateUi(QWidget *UserManagementInterface)
     {
         UserManagementInterface->setWindowTitle(QCoreApplication::translate("UserManagementInterface", "Form", nullptr));
-        labelConnection->setText(QCoreApplication::translate("UserManagementInterface", "Gestion des utilisateurs", nullptr));
         labelConnection_2->setText(QString());
         pushButton_2->setText(QCoreApplication::translate("UserManagementInterface", "Cr\303\251er", nullptr));
         radioButton->setText(QCoreApplication::translate("UserManagementInterface", "Admin", nullptr));
         pushButtonProfiles->setText(QCoreApplication::translate("UserManagementInterface", "G\303\251rer ses profils", nullptr));
         pushButtonDelete->setText(QCoreApplication::translate("UserManagementInterface", "Supprimer l'utilisateur", nullptr));
         pushButtonAdd->setText(QCoreApplication::translate("UserManagementInterface", "Ajouter un Utilisateur", nullptr));
+        labelConnection->setText(QCoreApplication::translate("UserManagementInterface", "Gestion des utilisateurs", nullptr));
     } // retranslateUi
 
 };

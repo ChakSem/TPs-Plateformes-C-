@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>600</width>
     <height>500</height>
    </rect>
   </property>
@@ -16,10 +16,10 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>50</y>
+     <x>0</x>
+     <y>100</y>
      <width>600</width>
-     <height>400</height>
+     <height>300</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -589,52 +589,12 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="labelConnection_3">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>110</y>
-      <width>121</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>13</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>16777215</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Page Profils</string>
-    </property>
-   </widget>
    <widget class="QComboBox" name="comboBoxProfiles">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>200</y>
-      <width>289</width>
+      <x>5</x>
+      <y>150</y>
+      <width>300</width>
       <height>22</height>
      </rect>
     </property>
@@ -642,9 +602,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <widget class="QLabel" name="labelConnection_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>180</y>
-      <width>151</width>
+      <x>10</x>
+      <y>130</y>
+      <width>141</width>
       <height>13</height>
      </rect>
     </property>
@@ -668,8 +628,10 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
-      <bold>false</bold>
+      <pointsize>9</pointsize>
+      <italic>true</italic>
+      <bold>true</bold>
+      <underline>true</underline>
      </font>
     </property>
     <property name="text">
@@ -679,10 +641,10 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>160</y>
+      <x>320</x>
+      <y>0</y>
       <width>281</width>
-      <height>131</height>
+      <height>301</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -709,6 +671,46 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </item>
     </layout>
    </widget>
+  </widget>
+  <widget class="QLabel" name="labelConnection_3">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>225</x>
+     <y>0</y>
+     <width>381</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>13</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>16777215</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Page Profils</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>500</height>
+    <width>600</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>110</x>
-     <y>50</y>
+     <x>0</x>
+     <y>100</y>
      <width>600</width>
-     <height>400</height>
+     <height>300</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -592,10 +592,10 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>340</y>
-      <width>411</width>
-      <height>31</height>
+      <x>90</x>
+      <y>190</y>
+      <width>400</width>
+      <height>30</height>
      </rect>
     </property>
     <property name="font">
@@ -610,56 +610,75 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      <string>Créer</string>
     </property>
    </widget>
-   <widget class="QLabel" name="labelConnection">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>0</y>
-      <width>211</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>13</height>
-     </size>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Creation d'un compte</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>140</y>
+      <y>2</y>
       <width>371</width>
-      <height>161</height>
+      <height>151</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="0">
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="firstNameUser">
+       <property name="long" stdset="0">
+        <longLong>0</longLong>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="labelIFirstName">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Prénom:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="passwordLogin"/>
+     </item>
+     <item row="5" column="1">
+      <widget class="QRadioButton" name="radioButtonIsAdmin">
+       <property name="font">
+        <font>
+         <italic>true</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Admin</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="labelLastName">
        <property name="font">
         <font>
          <pointsize>12</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="text">
         <string>Nom :</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="labelMdp">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Mot de Passe :</string>
        </property>
       </widget>
      </item>
@@ -670,49 +689,39 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="labelMdp">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Mot de Passe :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="1">
-      <widget class="QRadioButton" name="radioButtonIsAdmin">
-       <property name="text">
-        <string>Admin</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="passwordLogin"/>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="firstNameUser">
-       <property name="long" stdset="0">
-        <longLong>0</longLong>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="labelIFirstName">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Prénom:</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
+  </widget>
+  <widget class="QLabel" name="labelConnection">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>0</y>
+     <width>211</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>13</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Creation d'un compte</string>
+   </property>
   </widget>
  </widget>
  <resources/>

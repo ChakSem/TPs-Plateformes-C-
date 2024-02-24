@@ -25,24 +25,24 @@ class Ui_FirstUserInscription
 public:
     QFrame *frame;
     QPushButton *pushButton;
-    QLabel *labelConnection;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QLineEdit *passwordLogin;
-    QLineEdit *lastNameUser;
     QLabel *labelILastName;
-    QLabel *labelMdp;
-    QLineEdit *firstNameUser;
+    QLineEdit *lastNameUser;
     QLabel *labelIFirstName;
+    QLineEdit *firstNameUser;
+    QLabel *labelMdp;
+    QLineEdit *passwordLogin;
+    QLabel *labelConnection;
 
     void setupUi(QWidget *FirstUserInscription)
     {
         if (FirstUserInscription->objectName().isEmpty())
             FirstUserInscription->setObjectName("FirstUserInscription");
-        FirstUserInscription->resize(800, 500);
+        FirstUserInscription->resize(600, 400);
         frame = new QFrame(FirstUserInscription);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(100, 50, 600, 400));
+        frame->setGeometry(QRect(0, 100, 600, 400));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -627,12 +627,53 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(80, 340, 411, 31));
+        pushButton->setGeometry(QRect(90, 190, 400, 30));
         QFont font;
         font.setPointSize(12);
         pushButton->setFont(font);
         pushButton->setStyleSheet(QString::fromUtf8(""));
-        labelConnection = new QLabel(frame);
+        layoutWidget = new QWidget(frame);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(110, 0, 371, 131));
+        gridLayout = new QGridLayout(layoutWidget);
+        gridLayout->setObjectName("gridLayout");
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        labelILastName = new QLabel(layoutWidget);
+        labelILastName->setObjectName("labelILastName");
+        labelILastName->setFont(font);
+
+        gridLayout->addWidget(labelILastName, 0, 0, 1, 1, Qt::AlignRight);
+
+        lastNameUser = new QLineEdit(layoutWidget);
+        lastNameUser->setObjectName("lastNameUser");
+        lastNameUser->setProperty("long", QVariant(Q_INT64_C(0)));
+
+        gridLayout->addWidget(lastNameUser, 0, 1, 1, 1);
+
+        labelIFirstName = new QLabel(layoutWidget);
+        labelIFirstName->setObjectName("labelIFirstName");
+        labelIFirstName->setFont(font);
+
+        gridLayout->addWidget(labelIFirstName, 1, 0, 1, 1, Qt::AlignRight);
+
+        firstNameUser = new QLineEdit(layoutWidget);
+        firstNameUser->setObjectName("firstNameUser");
+        firstNameUser->setProperty("long", QVariant(Q_INT64_C(0)));
+
+        gridLayout->addWidget(firstNameUser, 1, 1, 1, 1);
+
+        labelMdp = new QLabel(layoutWidget);
+        labelMdp->setObjectName("labelMdp");
+        labelMdp->setFont(font);
+
+        gridLayout->addWidget(labelMdp, 2, 0, 1, 1, Qt::AlignRight);
+
+        passwordLogin = new QLineEdit(layoutWidget);
+        passwordLogin->setObjectName("passwordLogin");
+
+        gridLayout->addWidget(passwordLogin, 2, 1, 1, 1);
+
+        labelConnection = new QLabel(FirstUserInscription);
         labelConnection->setObjectName("labelConnection");
         labelConnection->setGeometry(QRect(200, 0, 211, 26));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
@@ -645,47 +686,6 @@ public:
         font1.setPointSize(20);
         font1.setBold(true);
         labelConnection->setFont(font1);
-        layoutWidget = new QWidget(frame);
-        layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(110, 120, 371, 161));
-        gridLayout = new QGridLayout(layoutWidget);
-        gridLayout->setObjectName("gridLayout");
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        passwordLogin = new QLineEdit(layoutWidget);
-        passwordLogin->setObjectName("passwordLogin");
-
-        gridLayout->addWidget(passwordLogin, 4, 1, 1, 1);
-
-        lastNameUser = new QLineEdit(layoutWidget);
-        lastNameUser->setObjectName("lastNameUser");
-        lastNameUser->setProperty("long", QVariant(Q_INT64_C(0)));
-
-        gridLayout->addWidget(lastNameUser, 2, 1, 1, 1);
-
-        labelILastName = new QLabel(layoutWidget);
-        labelILastName->setObjectName("labelILastName");
-        labelILastName->setFont(font);
-
-        gridLayout->addWidget(labelILastName, 2, 0, 1, 1);
-
-        labelMdp = new QLabel(layoutWidget);
-        labelMdp->setObjectName("labelMdp");
-        labelMdp->setFont(font);
-
-        gridLayout->addWidget(labelMdp, 4, 0, 1, 1);
-
-        firstNameUser = new QLineEdit(layoutWidget);
-        firstNameUser->setObjectName("firstNameUser");
-        firstNameUser->setProperty("long", QVariant(Q_INT64_C(0)));
-
-        gridLayout->addWidget(firstNameUser, 3, 1, 1, 1);
-
-        labelIFirstName = new QLabel(layoutWidget);
-        labelIFirstName->setObjectName("labelIFirstName");
-        labelIFirstName->setFont(font);
-
-        gridLayout->addWidget(labelIFirstName, 3, 0, 1, 1);
-
 
         retranslateUi(FirstUserInscription);
 
@@ -696,10 +696,10 @@ public:
     {
         FirstUserInscription->setWindowTitle(QCoreApplication::translate("FirstUserInscription", "Form", nullptr));
         pushButton->setText(QCoreApplication::translate("FirstUserInscription", "Cr\303\251er", nullptr));
-        labelConnection->setText(QCoreApplication::translate("FirstUserInscription", "Creation d'un compte", nullptr));
         labelILastName->setText(QCoreApplication::translate("FirstUserInscription", "Nom :", nullptr));
-        labelMdp->setText(QCoreApplication::translate("FirstUserInscription", "Mot de Passe :", nullptr));
         labelIFirstName->setText(QCoreApplication::translate("FirstUserInscription", "Pr\303\251nom :", nullptr));
+        labelMdp->setText(QCoreApplication::translate("FirstUserInscription", "Mot de Passe :", nullptr));
+        labelConnection->setText(QCoreApplication::translate("FirstUserInscription", "Creation d'un compte", nullptr));
     } // retranslateUi
 
 };

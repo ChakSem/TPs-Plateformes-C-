@@ -25,22 +25,22 @@ class Ui_ConnectionInterface
 public:
     QFrame *frame;
     QPushButton *pushButton;
-    QLabel *labelConnection;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
     QLabel *labelId;
     QLineEdit *passwordLogin;
     QLineEdit *idLogin;
     QLabel *labelMdp;
+    QLabel *labelConnection;
 
     void setupUi(QWidget *ConnectionInterface)
     {
         if (ConnectionInterface->objectName().isEmpty())
             ConnectionInterface->setObjectName("ConnectionInterface");
-        ConnectionInterface->resize(800, 500);
+        ConnectionInterface->resize(600, 400);
         frame = new QFrame(ConnectionInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(110, 50, 600, 400));
+        frame->setGeometry(QRect(0, 100, 600, 300));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -625,35 +625,25 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(80, 340, 411, 31));
+        pushButton->setGeometry(QRect(90, 190, 400, 30));
         QFont font;
         font.setPointSize(12);
         pushButton->setFont(font);
         pushButton->setStyleSheet(QString::fromUtf8(""));
-        labelConnection = new QLabel(frame);
-        labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(250, 0, 381, 31));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
-        labelConnection->setSizePolicy(sizePolicy);
-        labelConnection->setMinimumSize(QSize(0, 13));
-        QFont font1;
-        font1.setPointSize(20);
-        font1.setBold(true);
-        labelConnection->setFont(font1);
         layoutWidget = new QWidget(frame);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(110, 140, 371, 161));
+        layoutWidget->setGeometry(QRect(100, 40, 371, 81));
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
         labelId = new QLabel(layoutWidget);
         labelId->setObjectName("labelId");
-        labelId->setFont(font);
+        QFont font1;
+        font1.setPointSize(12);
+        font1.setBold(true);
+        labelId->setFont(font1);
 
-        gridLayout->addWidget(labelId, 2, 0, 1, 1);
+        gridLayout->addWidget(labelId, 2, 0, 1, 1, Qt::AlignRight);
 
         passwordLogin = new QLineEdit(layoutWidget);
         passwordLogin->setObjectName("passwordLogin");
@@ -669,10 +659,23 @@ public:
 
         labelMdp = new QLabel(layoutWidget);
         labelMdp->setObjectName("labelMdp");
-        labelMdp->setFont(font);
+        labelMdp->setFont(font1);
 
         gridLayout->addWidget(labelMdp, 3, 0, 1, 1);
 
+        labelConnection = new QLabel(ConnectionInterface);
+        labelConnection->setObjectName("labelConnection");
+        labelConnection->setGeometry(QRect(250, 0, 351, 27));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
+        labelConnection->setSizePolicy(sizePolicy);
+        labelConnection->setMinimumSize(QSize(0, 13));
+        QFont font2;
+        font2.setPointSize(20);
+        font2.setBold(true);
+        labelConnection->setFont(font2);
 
         retranslateUi(ConnectionInterface);
 
@@ -683,9 +686,9 @@ public:
     {
         ConnectionInterface->setWindowTitle(QCoreApplication::translate("ConnectionInterface", "Form", nullptr));
         pushButton->setText(QCoreApplication::translate("ConnectionInterface", "Connexion", nullptr));
-        labelConnection->setText(QCoreApplication::translate("ConnectionInterface", "Connexion", nullptr));
         labelId->setText(QCoreApplication::translate("ConnectionInterface", "Identifiant :", nullptr));
         labelMdp->setText(QCoreApplication::translate("ConnectionInterface", "Mot de Passe :", nullptr));
+        labelConnection->setText(QCoreApplication::translate("ConnectionInterface", "Connexion", nullptr));
     } // retranslateUi
 
 };

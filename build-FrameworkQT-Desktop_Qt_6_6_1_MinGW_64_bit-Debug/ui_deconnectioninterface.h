@@ -25,10 +25,10 @@ public:
     {
         if (DeconnectionInterface->objectName().isEmpty())
             DeconnectionInterface->setObjectName("DeconnectionInterface");
-        DeconnectionInterface->resize(119, 49);
+        DeconnectionInterface->resize(109, 34);
         pushButtonDeconnection = new QPushButton(DeconnectionInterface);
         pushButtonDeconnection->setObjectName("pushButtonDeconnection");
-        pushButtonDeconnection->setGeometry(QRect(10, 10, 101, 31));
+        pushButtonDeconnection->setGeometry(QRect(0, 0, 101, 31));
         pushButtonDeconnection->setStyleSheet(QString::fromUtf8("QToolButton {\n"
 "	border-style: solid;\n"
 "	border-top-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgb(215, 215, 215), stop:1 rgb(222, 222, 222));\n"

@@ -26,7 +26,6 @@ class Ui_AddProfileInterface
 public:
     QFrame *frame;
     QPushButton *pushButton;
-    QLabel *labelConnection;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
     QLabel *labelId;
@@ -35,17 +34,21 @@ public:
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout_2;
     QRadioButton *radioButoonReadUpdateRight;
-    QLabel *labelConnection_3;
     QRadioButton *radioButoonReadRight;
+    QLabel *labelConnection_3;
+    QLabel *labelConnection;
 
     void setupUi(QWidget *AddProfileInterface)
     {
         if (AddProfileInterface->objectName().isEmpty())
             AddProfileInterface->setObjectName("AddProfileInterface");
-        AddProfileInterface->resize(800, 500);
+        AddProfileInterface->resize(600, 400);
         frame = new QFrame(AddProfileInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(100, 50, 600, 400));
+        frame->setGeometry(QRect(0, 100, 600, 300));
+        QFont font;
+        font.setPointSize(14);
+        frame->setFont(font);
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -630,35 +633,25 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(100, 350, 400, 30));
-        QFont font;
-        font.setPointSize(12);
-        pushButton->setFont(font);
-        pushButton->setStyleSheet(QString::fromUtf8(""));
-        labelConnection = new QLabel(frame);
-        labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(215, 0, 600, 26));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
-        labelConnection->setSizePolicy(sizePolicy);
-        labelConnection->setMinimumSize(QSize(0, 13));
+        pushButton->setGeometry(QRect(90, 190, 400, 30));
         QFont font1;
-        font1.setPointSize(20);
-        font1.setBold(true);
-        labelConnection->setFont(font1);
+        font1.setPointSize(12);
+        pushButton->setFont(font1);
+        pushButton->setStyleSheet(QString::fromUtf8(""));
         layoutWidget = new QWidget(frame);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(110, 150, 371, 40));
+        layoutWidget->setGeometry(QRect(110, 40, 371, 40));
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
         labelId = new QLabel(layoutWidget);
         labelId->setObjectName("labelId");
-        labelId->setFont(font);
+        QFont font2;
+        font2.setPointSize(12);
+        font2.setBold(true);
+        labelId->setFont(font2);
 
-        gridLayout->addWidget(labelId, 2, 0, 1, 1);
+        gridLayout->addWidget(labelId, 2, 0, 1, 1, Qt::AlignRight);
 
         idLogin = new QLineEdit(layoutWidget);
         idLogin->setObjectName("idLogin");
@@ -669,41 +662,85 @@ public:
         labelConnection_2 = new QLabel(layoutWidget);
         labelConnection_2->setObjectName("labelConnection_2");
         labelConnection_2->setMaximumSize(QSize(200, 10));
-        QFont font2;
-        font2.setPointSize(9);
-        font2.setBold(true);
-        font2.setItalic(true);
-        labelConnection_2->setFont(font2);
+        QFont font3;
+        font3.setPointSize(7);
+        font3.setBold(true);
+        font3.setItalic(true);
+        font3.setUnderline(true);
+        labelConnection_2->setFont(font3);
 
         gridLayout->addWidget(labelConnection_2, 0, 0, 1, 1);
 
         gridLayoutWidget = new QWidget(frame);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(230, 200, 132, 80));
+        gridLayoutWidget->setGeometry(QRect(230, 90, 132, 80));
         gridLayout_2 = new QGridLayout(gridLayoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
         radioButoonReadUpdateRight = new QRadioButton(gridLayoutWidget);
         radioButoonReadUpdateRight->setObjectName("radioButoonReadUpdateRight");
+        QFont font4;
+        font4.setBold(true);
+        font4.setItalic(true);
+        radioButoonReadUpdateRight->setFont(font4);
 
         gridLayout_2->addWidget(radioButoonReadUpdateRight, 2, 0, 1, 1);
+
+        radioButoonReadRight = new QRadioButton(gridLayoutWidget);
+        radioButoonReadRight->setObjectName("radioButoonReadRight");
+        radioButoonReadRight->setFont(font4);
+
+        gridLayout_2->addWidget(radioButoonReadRight, 1, 0, 1, 1);
 
         labelConnection_3 = new QLabel(gridLayoutWidget);
         labelConnection_3->setObjectName("labelConnection_3");
         labelConnection_3->setMaximumSize(QSize(100, 10));
-        QFont font3;
-        font3.setBold(true);
-        font3.setItalic(true);
-        font3.setUnderline(true);
-        labelConnection_3->setFont(font3);
+        QPalette palette;
+        QBrush brush(QColor(0, 0, 0, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush);
+        QBrush brush1(QColor(0, 0, 0, 128));
+        brush1.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush1);
+#endif
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush1);
+#endif
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush1);
+#endif
+        labelConnection_3->setPalette(palette);
+        QFont font5;
+        font5.setPointSize(8);
+        font5.setBold(true);
+        font5.setItalic(true);
+        font5.setUnderline(true);
+        labelConnection_3->setFont(font5);
 
         gridLayout_2->addWidget(labelConnection_3, 0, 0, 1, 1);
 
-        radioButoonReadRight = new QRadioButton(gridLayoutWidget);
-        radioButoonReadRight->setObjectName("radioButoonReadRight");
-
-        gridLayout_2->addWidget(radioButoonReadRight, 1, 0, 1, 1);
-
+        labelConnection = new QLabel(AddProfileInterface);
+        labelConnection->setObjectName("labelConnection");
+        labelConnection->setGeometry(QRect(225, 0, 831, 27));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(labelConnection->sizePolicy().hasHeightForWidth());
+        labelConnection->setSizePolicy(sizePolicy);
+        labelConnection->setMinimumSize(QSize(0, 13));
+        QFont font6;
+        font6.setPointSize(20);
+        font6.setBold(true);
+        labelConnection->setFont(font6);
 
         retranslateUi(AddProfileInterface);
 
@@ -714,12 +751,12 @@ public:
     {
         AddProfileInterface->setWindowTitle(QCoreApplication::translate("AddProfileInterface", "Form", nullptr));
         pushButton->setText(QCoreApplication::translate("AddProfileInterface", "Valider", nullptr));
-        labelConnection->setText(QCoreApplication::translate("AddProfileInterface", "Nouveau Profil", nullptr));
         labelId->setText(QCoreApplication::translate("AddProfileInterface", "Nom :", nullptr));
         labelConnection_2->setText(QCoreApplication::translate("AddProfileInterface", "Comment souhaitez vous appeler le profil ?", nullptr));
         radioButoonReadUpdateRight->setText(QCoreApplication::translate("AddProfileInterface", "Lecture/Modifcation", nullptr));
-        labelConnection_3->setText(QCoreApplication::translate("AddProfileInterface", "Avec quelles droits ?", nullptr));
         radioButoonReadRight->setText(QCoreApplication::translate("AddProfileInterface", "Lecture", nullptr));
+        labelConnection_3->setText(QCoreApplication::translate("AddProfileInterface", "Avec quelles droits ?", nullptr));
+        labelConnection->setText(QCoreApplication::translate("AddProfileInterface", "Nouveau Profil", nullptr));
     } // retranslateUi
 
 };

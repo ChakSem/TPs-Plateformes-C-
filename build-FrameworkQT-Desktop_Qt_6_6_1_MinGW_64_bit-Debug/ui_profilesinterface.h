@@ -24,7 +24,6 @@ class Ui_ProfilesInterface
 {
 public:
     QFrame *frame;
-    QLabel *labelConnection_3;
     QComboBox *comboBoxProfiles;
     QLabel *labelConnection_2;
     QWidget *layoutWidget;
@@ -32,15 +31,16 @@ public:
     QPushButton *pushButtonDelete;
     QPushButton *pushButtonAdd;
     QPushButton *pushButtonManage;
+    QLabel *labelConnection_3;
 
     void setupUi(QWidget *ProfilesInterface)
     {
         if (ProfilesInterface->objectName().isEmpty())
             ProfilesInterface->setObjectName("ProfilesInterface");
-        ProfilesInterface->resize(800, 500);
+        ProfilesInterface->resize(600, 500);
         frame = new QFrame(ProfilesInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(120, 50, 600, 400));
+        frame->setGeometry(QRect(0, 100, 600, 300));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -623,38 +623,28 @@ public:
 "}"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        labelConnection_3 = new QLabel(frame);
-        labelConnection_3->setObjectName("labelConnection_3");
-        labelConnection_3->setEnabled(true);
-        labelConnection_3->setGeometry(QRect(230, 110, 121, 30));
+        comboBoxProfiles = new QComboBox(frame);
+        comboBoxProfiles->setObjectName("comboBoxProfiles");
+        comboBoxProfiles->setGeometry(QRect(5, 150, 300, 22));
+        labelConnection_2 = new QLabel(frame);
+        labelConnection_2->setObjectName("labelConnection_2");
+        labelConnection_2->setGeometry(QRect(10, 130, 141, 13));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(labelConnection_3->sizePolicy().hasHeightForWidth());
-        labelConnection_3->setSizePolicy(sizePolicy);
-        labelConnection_3->setMinimumSize(QSize(0, 13));
-        labelConnection_3->setMaximumSize(QSize(16777215, 30));
-        QFont font;
-        font.setPointSize(20);
-        font.setBold(true);
-        labelConnection_3->setFont(font);
-        comboBoxProfiles = new QComboBox(frame);
-        comboBoxProfiles->setObjectName("comboBoxProfiles");
-        comboBoxProfiles->setGeometry(QRect(10, 200, 289, 22));
-        labelConnection_2 = new QLabel(frame);
-        labelConnection_2->setObjectName("labelConnection_2");
-        labelConnection_2->setGeometry(QRect(80, 180, 151, 13));
         sizePolicy.setHeightForWidth(labelConnection_2->sizePolicy().hasHeightForWidth());
         labelConnection_2->setSizePolicy(sizePolicy);
         labelConnection_2->setMinimumSize(QSize(0, 13));
         labelConnection_2->setMaximumSize(QSize(16777215, 0));
-        QFont font1;
-        font1.setPointSize(10);
-        font1.setBold(false);
-        labelConnection_2->setFont(font1);
+        QFont font;
+        font.setPointSize(9);
+        font.setBold(true);
+        font.setItalic(true);
+        font.setUnderline(true);
+        labelConnection_2->setFont(font);
         layoutWidget = new QWidget(frame);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(310, 160, 281, 131));
+        layoutWidget->setGeometry(QRect(320, 0, 281, 301));
         gridLayout_2 = new QGridLayout(layoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -673,6 +663,18 @@ public:
 
         gridLayout_2->addWidget(pushButtonManage, 0, 0, 1, 1);
 
+        labelConnection_3 = new QLabel(ProfilesInterface);
+        labelConnection_3->setObjectName("labelConnection_3");
+        labelConnection_3->setEnabled(true);
+        labelConnection_3->setGeometry(QRect(225, 0, 381, 30));
+        sizePolicy.setHeightForWidth(labelConnection_3->sizePolicy().hasHeightForWidth());
+        labelConnection_3->setSizePolicy(sizePolicy);
+        labelConnection_3->setMinimumSize(QSize(0, 13));
+        labelConnection_3->setMaximumSize(QSize(16777215, 30));
+        QFont font1;
+        font1.setPointSize(20);
+        font1.setBold(true);
+        labelConnection_3->setFont(font1);
 
         retranslateUi(ProfilesInterface);
 
@@ -682,11 +684,11 @@ public:
     void retranslateUi(QWidget *ProfilesInterface)
     {
         ProfilesInterface->setWindowTitle(QCoreApplication::translate("ProfilesInterface", "Form", nullptr));
-        labelConnection_3->setText(QCoreApplication::translate("ProfilesInterface", "Page Profils", nullptr));
         labelConnection_2->setText(QCoreApplication::translate("ProfilesInterface", "Veuillez selectionner un profil : ", nullptr));
         pushButtonDelete->setText(QCoreApplication::translate("ProfilesInterface", "Supprimer", nullptr));
         pushButtonAdd->setText(QCoreApplication::translate("ProfilesInterface", "Ajouter", nullptr));
         pushButtonManage->setText(QCoreApplication::translate("ProfilesInterface", "G\303\251rer", nullptr));
+        labelConnection_3->setText(QCoreApplication::translate("ProfilesInterface", "Page Profils", nullptr));
     } // retranslateUi
 
 };
