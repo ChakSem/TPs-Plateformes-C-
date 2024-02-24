@@ -16,7 +16,7 @@ public:
     ~CreationUserInterface();
 
     /* Actions réalisées par les boutons */
-    void actionAddUseer();
+    void actionAddUser();
 
 private:
     Ui::CreationUserInterface *ui;

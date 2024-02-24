@@ -14,10 +14,12 @@ release/creationuserinterface.o
 release/deconnectioninterface.o
 release/dialogerror.o
 release/dialogvalidation.o
+release/firstuserinscription.o
 release/homeadmininterface.o
 release/homeuserinterface.o
 release/indexbdd.o
 release/mainwindow.o
+release/popup.o
 release/profilesinterface.o
 release/usermanagementinterface.o
 release/qrc_forest-background.o
@@ -28,9 +30,11 @@ release/moc_creationuserinterface.o
 release/moc_deconnectioninterface.o
 release/moc_dialogerror.o
 release/moc_dialogvalidation.o
+release/moc_firstuserinscription.o
 release/moc_homeadmininterface.o
 release/moc_homeuserinterface.o
 release/moc_indexbdd.o
 release/moc_mainwindow.o
+release/moc_popup.o
 release/moc_profilesinterface.o
 release/moc_usermanagementinterface.o

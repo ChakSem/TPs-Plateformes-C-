@@ -29,15 +29,13 @@ public:
     QLabel *labelConnection;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
+    QLabel *labelLastName;
+    QLineEdit *lastNameUser;
     QLabel *labelMdp;
-    QLineEdit *idLogin;
-    QLabel *labelId;
+    QRadioButton *radioButtonIsAdmin;
     QLineEdit *passwordLogin;
-    QRadioButton *radioButton_2;
-    QLineEdit *passwordLogin_2;
-    QLabel *labelConnection_2;
-    QPushButton *pushButton_2;
-    QRadioButton *radioButton;
+    QLineEdit *firstNameUser;
+    QLabel *labelIFirstName;
 
     void setupUi(QWidget *CreationUserInterface)
     {
@@ -655,51 +653,46 @@ public:
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        labelLastName = new QLabel(layoutWidget);
+        labelLastName->setObjectName("labelLastName");
+        labelLastName->setFont(font);
+
+        gridLayout->addWidget(labelLastName, 2, 0, 1, 1);
+
+        lastNameUser = new QLineEdit(layoutWidget);
+        lastNameUser->setObjectName("lastNameUser");
+        lastNameUser->setProperty("long", QVariant(Q_INT64_C(0)));
+
+        gridLayout->addWidget(lastNameUser, 2, 1, 1, 1);
+
         labelMdp = new QLabel(layoutWidget);
         labelMdp->setObjectName("labelMdp");
         labelMdp->setFont(font);
 
-        gridLayout->addWidget(labelMdp, 3, 0, 1, 1);
+        gridLayout->addWidget(labelMdp, 4, 0, 1, 1);
 
-        idLogin = new QLineEdit(layoutWidget);
-        idLogin->setObjectName("idLogin");
-        idLogin->setProperty("long", QVariant(Q_INT64_C(0)));
+        radioButtonIsAdmin = new QRadioButton(layoutWidget);
+        radioButtonIsAdmin->setObjectName("radioButtonIsAdmin");
 
-        gridLayout->addWidget(idLogin, 2, 1, 1, 1);
-
-        labelId = new QLabel(layoutWidget);
-        labelId->setObjectName("labelId");
-        labelId->setFont(font);
-
-        gridLayout->addWidget(labelId, 2, 0, 1, 1);
+        gridLayout->addWidget(radioButtonIsAdmin, 5, 1, 1, 1);
 
         passwordLogin = new QLineEdit(layoutWidget);
         passwordLogin->setObjectName("passwordLogin");
 
-        gridLayout->addWidget(passwordLogin, 3, 1, 1, 1);
+        gridLayout->addWidget(passwordLogin, 4, 1, 1, 1);
 
-        radioButton_2 = new QRadioButton(layoutWidget);
-        radioButton_2->setObjectName("radioButton_2");
+        firstNameUser = new QLineEdit(layoutWidget);
+        firstNameUser->setObjectName("firstNameUser");
+        firstNameUser->setProperty("long", QVariant(Q_INT64_C(0)));
 
-        gridLayout->addWidget(radioButton_2, 4, 1, 1, 1);
+        gridLayout->addWidget(firstNameUser, 3, 1, 1, 1);
 
-        passwordLogin_2 = new QLineEdit(frame);
-        passwordLogin_2->setObjectName("passwordLogin_2");
-        passwordLogin_2->setGeometry(QRect(70, 480, 788, 22));
-        labelConnection_2 = new QLabel(frame);
-        labelConnection_2->setObjectName("labelConnection_2");
-        labelConnection_2->setGeometry(QRect(70, 58, 150, 50));
-        labelConnection_2->setMaximumSize(QSize(150, 50));
-        QFont font2;
-        font2.setPointSize(14);
-        font2.setBold(true);
-        labelConnection_2->setFont(font2);
-        pushButton_2 = new QPushButton(frame);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(70, 528, 788, 18));
-        radioButton = new QRadioButton(frame);
-        radioButton->setObjectName("radioButton");
-        radioButton->setGeometry(QRect(70, 506, 788, 18));
+        labelIFirstName = new QLabel(layoutWidget);
+        labelIFirstName->setObjectName("labelIFirstName");
+        labelIFirstName->setFont(font);
+
+        gridLayout->addWidget(labelIFirstName, 3, 0, 1, 1);
+
 
         retranslateUi(CreationUserInterface);
 
@@ -711,12 +704,10 @@ public:
         CreationUserInterface->setWindowTitle(QCoreApplication::translate("CreationUserInterface", "Form", nullptr));
         pushButton->setText(QCoreApplication::translate("CreationUserInterface", "Cr\303\251er", nullptr));
         labelConnection->setText(QCoreApplication::translate("CreationUserInterface", "Creation d'un compte", nullptr));
+        labelLastName->setText(QCoreApplication::translate("CreationUserInterface", "Nom :", nullptr));
         labelMdp->setText(QCoreApplication::translate("CreationUserInterface", "Mot de Passe :", nullptr));
-        labelId->setText(QCoreApplication::translate("CreationUserInterface", "Nom :", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("CreationUserInterface", "Admin", nullptr));
-        labelConnection_2->setText(QString());
-        pushButton_2->setText(QCoreApplication::translate("CreationUserInterface", "Cr\303\251er", nullptr));
-        radioButton->setText(QCoreApplication::translate("CreationUserInterface", "Admin", nullptr));
+        radioButtonIsAdmin->setText(QCoreApplication::translate("CreationUserInterface", "Admin", nullptr));
+        labelIFirstName->setText(QCoreApplication::translate("CreationUserInterface", "Pr\303\251nom:", nullptr));
     } // retranslateUi
 
 };
