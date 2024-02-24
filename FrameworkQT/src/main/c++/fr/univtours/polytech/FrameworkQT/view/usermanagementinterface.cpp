@@ -96,7 +96,11 @@ int UserManagementInterface::init() {
     }
 }
 
-//methode qui redirige vers la page de creation d'utilisateur
+/**
+ * Redirige vers la page de creation d'utilisateur
+ * Entrée :
+ * Sortie :
+ */
 void UserManagementInterface::actionAddUser() {
     MainWindow *mainWindow = MainWindow::accessToParent(this); // On récupère une réference sur MainWindow
 
@@ -106,22 +110,51 @@ void UserManagementInterface::actionAddUser() {
     }
 }
 
+/**
+ * Supprime l'utilisateur selectionné
+ * Entrée :
+ * Sortie :
+ */
 void UserManagementInterface::actionDeleteUser() {
-    int selectedRow = init(); // Initialisation de selectedRow
+    try {
+        int selectedRow = init(); // Initialisation de selectedRow
 
-    /* Si init() s'est bien passé */
-    if (selectedRow > NO_LINE_SELECTED) {
-        QString id = ui->tableView->model()->data(ui->tableView->model()->index(selectedRow, 0)).toString(); // On lit l'id de l'utilisateur selectionné
+        /* Si init() s'est bien passé */
+        if (selectedRow > NO_LINE_SELECTED) {
+            QString id = ui->tableView->model()->data(ui->tableView->model()->index(selectedRow, 0)).toString(); // On lit l'id de l'utilisateur selectionné
 
-        Controller::deleteUser(id); // On le supprime
+            if (id == SUPER_ADMIN) {
+                throw new Exception(ERREUR_USER_MANAGEMENT_SUPPRESSION_SUPER_ADMIN);
+            }
 
-        // Supprimer la ligne du modèle de données
-        ui->tableView->model()->removeRow(selectedRow);
+            Controller::deleteUser(id); // On le supprime
 
-        row -= 1;
+            // Supprimer la ligne du modèle de données
+            ui->tableView->model()->removeRow(selectedRow);
+
+            row -= 1;
+
+            if(id == Controller::getUserConnected()->getId()) {
+                MainWindow *mainWindow = MainWindow::accessToParent(this); // On récupère une réference sur MainWindow
+
+                /* Si accessToParent() s'est bien passé */
+                if (mainWindow != NULL) {
+                    mainWindow->actionDeconnection();
+                }
+            }
+        }
+    }
+    catch (Exception* e) {
+        e->EXCAffichageErreur();
     }
 }
 
+
+/**
+ * Ouvre l'interface de gestion des profils pour l'utilisateur selectionné
+ * Entrée :
+ * Sortie :
+ */
 void UserManagementInterface::actionUpdateUser() {
     int selectedRow = init(); // Initialisation de row
 

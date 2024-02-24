@@ -2,6 +2,7 @@
 
 #include "../parseurJson/CparserJson.h"
 #include "../utils/Exception.h"
+#include <QDebug>
 
 /* Accesseurs de l'attribut users */
 void Data::addUser(User* user) {
@@ -59,14 +60,15 @@ void Data::removeUser(QString id) {
         /* Si il s'agit d'un utilisateur */
         if(users.contains(id)) {
             User* userToDelete = users[id];
-            users.remove(id);
+
+            qDebug() << users.size();
 
             delete userToDelete;
         } else {
             /* Sinon, s'il s'agit d'un admin */
             if (administrators.contains(id)) {
                 User* userToDelete = administrators[id];
-                users.remove(id);
+                administrators.remove(id);
 
                 delete userToDelete;
             }

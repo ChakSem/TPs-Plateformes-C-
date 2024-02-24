@@ -26,7 +26,6 @@
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/usermanagementinterface.h"
-#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -45,7 +44,6 @@ public:
     HomeUserInterface *homeUser;
     QStackedWidget *DeconnectionWidget;
     DeconnectionInterface *deconnection;
-    FirstUserInscription *firstUserInscription;
     QWidget *void_2;
     QStackedWidget *BackWidget;
     BackButton *back;
@@ -1223,9 +1221,6 @@ public:
                         "{\n"
 "   background: none;\n"
 "}"));
-        firstUserInscription = new FirstUserInscription();
-        firstUserInscription->setObjectName("firstUserInsctiption");
-        MainWidget->addWidget(firstUserInscription);
         connection = new ConnectionInterface();
         connection->setObjectName("connection");
         MainWidget->addWidget(connection);

@@ -92,6 +92,9 @@ void Exception::EXCAffichageErreur()
     case ERREUR_AUCUN_PROFIL_CORRESPONDANT :
         printf_s("Aucun profil ne correspond a l'id\n");
         break;
+    case ERREUR_USER_MANAGEMENT_SUPPRESSION_SUPER_ADMIN :
+        printf_s("Le super admin ne peut pas être supprimé\n");
+        break;
     default:
         printf_s("INCONNUE");
     }

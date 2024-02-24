@@ -43,6 +43,8 @@ MainWindow::MainWindow(QWidget *parent)
         ui->MainWidget->setCurrentIndex(MAINWIDGET_FIRST_USER_REGISTRATION);
     }
 
+    openConnection();
+
     ui->DeconnectionWidget->setCurrentIndex(DECONNECTIONWIDGET_VOID);
     ui->BackWidget->setCurrentIndex(BACKWIDGET_VOID);
 
@@ -101,7 +103,13 @@ void MainWindow::openUsers()
 }
 
 void MainWindow::openConnection() {
-    ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION); // Access à la page de gestion des utilisateurs
+
+    /* Si aucun compte user n'existent, on est amené sur une page de création d'un compte user */
+    if(Controller::isThereUsers() == SOME_USERS) {
+        ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
+    } else {
+        ui->MainWidget->setCurrentIndex(MAINWIDGET_FIRST_USER_REGISTRATION);
+    }
 }
 
 void MainWindow::openUsers() {
@@ -186,6 +194,11 @@ void MainWindow::openAddProfiles()
     ui->MainWidget->setCurrentIndex(MAINWIDGET_ADD_PROFILE); // Access à la page d'ajout de profils
 
     previousPages.push_front(MAINWIDGET_ADD_PROFILE); // On ajoute MAINWIDGET_ADD_PROFILE au chemin pour le retour
+}
+
+void MainWindow::updateTableView(User* user){
+    UserManagementInterface* userManagementInterface = qobject_cast<UserManagementInterface*>(this->ui->MainWidget->widget(1));
+    userManagementInterface->insertNewUser(user);
 }
 
 /**
