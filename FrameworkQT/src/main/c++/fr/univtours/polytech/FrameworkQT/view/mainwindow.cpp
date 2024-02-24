@@ -36,7 +36,13 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
+
+    if(Controller::isThereUsers() == SOME_USERS) {
+        ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
+    } else {
+        ui->MainWidget->setCurrentIndex(MAINWIDGET_FIRST_USER_REGISTRATION);
+    }
+
     ui->DeconnectionWidget->setCurrentIndex(DECONNECTIONWIDGET_VOID);
     ui->BackWidget->setCurrentIndex(BACKWIDGET_VOID);
 
@@ -94,6 +100,17 @@ void MainWindow::openUsers()
     previousPages.push_front(MAINWIDGET_USER_MANAGEMENT); // On ajoute MAINWIDGET_USER_MANAGEMENT au chemin pour le retour
 }
 
+void MainWindow::openConnection() {
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION); // Access à la page de gestion des utilisateurs
+}
+
+void MainWindow::openUsers() {
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_USER_MANAGEMENT); // Access à la page de gestion des utilisateurs
+    ui->BackWidget->setCurrentIndex(BACKWIDGET_VISIBLE);
+
+    previousPages.push_front(MAINWIDGET_USER_MANAGEMENT); // On ajoute MAINWIDGET_USER_MANAGEMENT au chemin pour le retour
+}
+
 void MainWindow::openAccount()
 {
     // TODO : visualiser compte (optionnel)
@@ -121,6 +138,7 @@ void MainWindow::openProfiles()
 {
     ui->MainWidget->setCurrentIndex(MAINWIDGET_PROFILES); // Access à la page de gestion des profils
 
+<<<<<<< HEAD
     if (previousPages.front() != MAINWIDGET_PROFILES)
     {
         previousPages.push_front(MAINWIDGET_PROFILES); // On ajoute MAINWIDGET_PROFILES au chemin pour le retour
@@ -132,6 +150,16 @@ void MainWindow::openProfiles()
     }
     else
     {
+=======
+    if(Controller::hasProfiles() == NO_PROFILES) {
+        openAddProfiles(); // Si l'utilisateur n'a pas encore de profils, on est emmené sur la page de création de profils
+    } else {
+        /* Si MAINWIDGET_PROFILES n'est pas déjà empilé */
+        if(previousPages.front() != MAINWIDGET_PROFILES) {
+            previousPages.push_front(MAINWIDGET_PROFILES); // On ajoute MAINWIDGET_PROFILES au chemin pour le retour
+        }
+
+>>>>>>> 23edaf1d62e4c08ed4ae476366866c6f86409e2a
         /* On initialise son élement combobox */
         QWidget *widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_PROFILES);
         qobject_cast<ProfilesInterface *>(widgetToRefresh)->initializeComboBox();
@@ -156,6 +184,8 @@ void MainWindow::openCreateUser()
 void MainWindow::openAddProfiles()
 {
     ui->MainWidget->setCurrentIndex(MAINWIDGET_ADD_PROFILE); // Access à la page d'ajout de profils
+
+    previousPages.push_front(MAINWIDGET_ADD_PROFILE); // On ajoute MAINWIDGET_ADD_PROFILE au chemin pour le retour
 }
 
 /**

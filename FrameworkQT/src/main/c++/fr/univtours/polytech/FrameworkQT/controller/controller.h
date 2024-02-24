@@ -20,6 +20,9 @@
 #define NO_PROFILES 0
 #define SOME_PROFILES 1
 
+#define NO_USERS 0
+#define SOME_USERS 1
+
 class Controller
 {
 public:
@@ -47,6 +50,9 @@ public:
     /* Gestion d'objets Profile */
     static void createProfile(QString name, unsigned int rightValue);
     static void deleteProfile(QString idUser, QString profileName);
+
+    /* Méthode pour le lancement de l'app */
+    static unsigned int isThereUsers();
 
     /* Contient uniquement des méthodes statiques, donc inutile de créer des objets de ce Controller */
 private:

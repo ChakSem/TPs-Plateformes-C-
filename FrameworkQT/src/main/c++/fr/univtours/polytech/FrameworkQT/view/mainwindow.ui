@@ -1145,8 +1145,12 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    background: none;
 }</string>
     </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
     <widget class="ConnectionInterface" name="connection"/>
     <widget class="UserManagementInterface" name="userManagement"/>
+    <widget class="FirstUserInscription" name="firstUserRegistration"/>
     <widget class="CreationUserInterface" name="accountCreation"/>
     <widget class="ProfilesInterface" name="profiles"/>
     <widget class="AddProfileInterface" name="addProfile"/>
@@ -1254,6 +1258,12 @@ QPushButton:hover {
    <class>BackButton</class>
    <extends>QWidget</extends>
    <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FirstUserInscription</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

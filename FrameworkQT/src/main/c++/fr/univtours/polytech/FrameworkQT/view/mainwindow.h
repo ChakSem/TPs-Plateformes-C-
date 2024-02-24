@@ -6,11 +6,13 @@
 /* Réference sur les pages des StackedWidget */
 #define MAINWIDGET_CONNECTION 0
 #define MAINWIDGET_USER_MANAGEMENT 1
-#define MAINWIDGET_ACCOUNT_CREATION 2
-#define MAINWIDGET_PROFILES 3
-#define MAINWIDGET_ADD_PROFILE 4
-#define MAINWIDGET_HOME_ADMIN 5
-#define MAINWIDGET_HOME_USER 6
+#define MAINWIDGET_FIRST_USER_REGISTRATION 2
+#define MAINWIDGET_ACCOUNT_CREATION 3
+#define MAINWIDGET_PROFILES 4
+#define MAINWIDGET_ADD_PROFILE 5
+#define MAINWIDGET_HOME_ADMIN 6
+#define MAINWIDGET_HOME_USER 7
+
 
 #define BACKWIDGET_VOID 1
 #define BACKWIDGET_VISIBLE 0
@@ -41,6 +43,7 @@ public:
     void actionConnection(QString id, QString password);
     void actionDeconnection();
 
+    void openConnection();
     void openUsers();
     void openAccount();
     void openMyProfiles();

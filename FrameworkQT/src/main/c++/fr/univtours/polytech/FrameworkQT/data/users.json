@@ -1,22 +1,8 @@
 [
     {
-        "firstname": "zkdazd",
-        "id": "0fb5ab5f-cd5a-4a4f-b969-60fa3986acbc",
-        "lastname": "test",
-        "profiles": [
-        ]
-    },
-    {
-        "firstname": "zkdazd",
-        "id": "2911f842-47b3-463d-949f-e0147b41bb1b",
-        "lastname": "test",
-        "profiles": [
-        ]
-    },
-    {
-        "firstname": "jhonny",
-        "id": "2efe9d08-d30e-46bf-bcb3-d699c4631f0d",
-        "lastname": "jones",
+        "firstname": "benoit",
+        "id": "d827d486-e86f-4ac5-8c91-471ed44f1d3a",
+        "lastname": "phillipe",
         "profiles": [
             {
                 "right": "LECTURE",

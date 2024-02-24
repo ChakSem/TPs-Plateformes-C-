@@ -21,6 +21,7 @@
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.h"
@@ -36,6 +37,7 @@ public:
     QStackedWidget *MainWidget;
     ConnectionInterface *connection;
     UserManagementInterface *userManagement;
+    FirstUserInscription *firstUserRegistration;
     CreationUserInterface *accountCreation;
     ProfilesInterface *profiles;
     AddProfileInterface *addProfile;
@@ -1230,6 +1232,9 @@ public:
         userManagement = new UserManagementInterface();
         userManagement->setObjectName("userManagement");
         MainWidget->addWidget(userManagement);
+        firstUserRegistration = new FirstUserInscription();
+        firstUserRegistration->setObjectName("firstUserRegistration");
+        MainWidget->addWidget(firstUserRegistration);
         accountCreation = new CreationUserInterface();
         accountCreation->setObjectName("accountCreation");
         MainWidget->addWidget(accountCreation);
@@ -1282,6 +1287,9 @@ public:
         MainWindow->setStatusBar(statusbar);
 
         retranslateUi(MainWindow);
+
+        MainWidget->setCurrentIndex(3);
+
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi

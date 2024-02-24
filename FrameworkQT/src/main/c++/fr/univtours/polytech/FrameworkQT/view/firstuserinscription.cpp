@@ -2,6 +2,7 @@
 #include "ui_firstuserinscription.h"
 #include "../controller/controller.h"
 #include "../utils/exception.h"
+#include "../view/mainwindow.h"
 
 FirstUserInscription::FirstUserInscription(QWidget *parent)
     : QWidget(parent)
@@ -29,6 +30,12 @@ void FirstUserInscription::actionAddUser()
             throw new Exception(ERREUR_ALL_TOUS_LES_CHAMPS_NE_SONT_PAS_REMPLIS);
         }
         Controller::createUser(prenom, nom, mdp, roleValue);
+
+        MainWindow *mainWindow = MainWindow::accessToParent(this);
+
+        if (mainWindow != NULL) {
+            mainWindow->openConnection();
+        }
     }
     catch (Exception *e)
     {

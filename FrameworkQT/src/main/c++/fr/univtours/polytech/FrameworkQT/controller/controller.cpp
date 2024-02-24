@@ -38,7 +38,7 @@ unsigned int Controller::connection(const QString id, QString password) {
 
     User* user = Data::getInstance().getUser(id);
 
-    if(Data::getInstance().getUsers().contains(id)) {
+    if(Data::getInstance().getAdministrators().contains(id)) {
         Data::getInstance().connect(user, ADMIN);
 
         return SUCCESS_ADMIN;
@@ -205,6 +205,13 @@ void Controller::deleteProfile(QString idUser, QString profileName) {
     Data::getInstance().getUser(idUser)->deleteProfile(profileName);
 }
 
+unsigned int Controller::isThereUsers() {
+    if(Data::getInstance().getUsers().size() == 0) {
+        return NO_USERS;
+    } else {
+        return SOME_USERS;
+    }
+}
 
 
 
