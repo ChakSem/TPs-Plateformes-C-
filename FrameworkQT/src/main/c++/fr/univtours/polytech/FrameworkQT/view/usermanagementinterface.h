@@ -2,8 +2,11 @@
 #define USERMANAGEMENTINTERFACE_H
 
 #include <QWidget>
+#include <QStandardItemModel>
 
 #define NO_LINE_SELECTED -1
+
+class User;
 
 namespace Ui {
 class UserManagementInterface;
@@ -24,8 +27,11 @@ public:
 
 private:
     void initializeTableView();
-
     int init();
+    void insertNewUser(User* user);
+
+    QStandardItemModel *model;
+    int row;
     Ui::UserManagementInterface *ui;
 };
 

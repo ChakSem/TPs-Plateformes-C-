@@ -17,37 +17,17 @@ void UserManagementInterface::initializeTableView() {
     QMap<QString, User*> users = data.getUsers();
     QMap<QString, User*> administrators = data.getAdministrators();
 
-    QStandardItemModel *model = new QStandardItemModel(users.size() + administrators.size(), 2, this);
+    model = new QStandardItemModel(users.size() + administrators.size(), 2, this);
 
     model->setHorizontalHeaderLabels(QStringList() << "ID" << "Nom");
 
-    int row = 0;
+    row = 0;
     for (auto it = users.begin(); it != users.end(); ++it) {
-        User* user = it.value();
-
-        // Création des items pour chaque colonne
-        QStandardItem *idItem = new QStandardItem(user->getId());
-        QStandardItem *nameItem = new QStandardItem(user->getFirstname() +  " " + user->getLastname());
-
-        // Ajout des items à la rangée
-        model->setItem(row, 0, idItem);
-        model->setItem(row, 1, nameItem);
-
-        ++row;
+        insertNewUser(it.value());
     }
 
     for (auto it = administrators.begin(); it != administrators.end(); ++it) {
-        User* admin = it.value();
-
-        // Création des items pour chaque colonne
-        QStandardItem *idItem = new QStandardItem(admin->getId());
-        QStandardItem *nameItem = new QStandardItem(admin->getFirstname() +  " " + admin->getLastname());
-
-        // Ajout des items à la rangée
-        model->setItem(row, 0, idItem);
-        model->setItem(row, 1, nameItem);
-
-        ++row;
+        insertNewUser(it.value());
     }
 
     // Configurer le QTableView pour utiliser le modèle de données
@@ -55,6 +35,21 @@ void UserManagementInterface::initializeTableView() {
 
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
+}
+
+void UserManagementInterface::insertNewUser(User* user) {
+    // Création des items pour chaque colonne
+    QStandardItem *idItem = new QStandardItem(user->getId());
+    QStandardItem *nameItem = new QStandardItem(user->getFirstname() +  " " + user->getLastname());
+
+    // Ajout des items à la rangée
+    model->setItem(row, 0, idItem);
+    model->setItem(row, 1, nameItem);
+
+    idItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+    nameItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+
+    ++row;
 }
 
 
@@ -79,7 +74,7 @@ UserManagementInterface::~UserManagementInterface()
 /**
  * Check qu'une ligne est selectionnée puis initialise row si c'est bon
  * Entrée :
- * Sortie : row, int : N° de la ligné sélectionnée ou NO_LINE_SELECTED si aucune ligne n'est selectionnée
+ * Sortie : selectedRow, int : N° de la ligné sélectionnée ou NO_LINE_SELECTED si aucune ligne n'est selectionnée
  */
 int UserManagementInterface::init() {
     QModelIndexList selectedRows = ui->tableView->selectionModel()->selectedRows();
@@ -90,9 +85,9 @@ int UserManagementInterface::init() {
             throw new Exception(ERREUR_USER_MANAGEMENT_AUCUNES_LIGNES_SELECTIONNEES);
         }
 
-        int row = selectedRows.at(0).row();
+        int selectedRow = selectedRows.at(0).row();
 
-        return row;
+        return selectedRow;
     }
     /* Sortie erreur */
     catch (Exception* e) {
@@ -102,33 +97,40 @@ int UserManagementInterface::init() {
 }
 
 void UserManagementInterface::actionAddUser() {
-    // TODO : Acces à la création d'utilisateur
+    MainWindow *mainWindow = MainWindow::accessToParent(this); // On récupère une réference sur MainWindow
+
+    /* Si accessToParent() s'est bien passé */
+    if (mainWindow != NULL) {
+        mainWindow->openCreateUser();
+    }
 }
 
 void UserManagementInterface::actionDeleteUser() {
-    int row = init(); // Initialisation de row
+    int selectedRow = init(); // Initialisation de selectedRow
 
     /* Si init() s'est bien passé */
-    if (row > NO_LINE_SELECTED) {
-        QString id = ui->tableView->model()->data(ui->tableView->model()->index(row, 0)).toString(); // On lit l'id de l'utilisateur selectionné
+    if (selectedRow > NO_LINE_SELECTED) {
+        QString id = ui->tableView->model()->data(ui->tableView->model()->index(selectedRow, 0)).toString(); // On lit l'id de l'utilisateur selectionné
 
         Controller::deleteUser(id); // On le supprime
 
         // Supprimer la ligne du modèle de données
-        ui->tableView->model()->removeRow(row);
+        ui->tableView->model()->removeRow(selectedRow);
+
+        row -= 1;
     }
 }
 
 void UserManagementInterface::actionUpdateUser() {
-    int row = init(); // Initialisation de row
+    int selectedRow = init(); // Initialisation de row
 
     /* Si init() s'est bien passé */
-    if (row > NO_LINE_SELECTED) {
+    if (selectedRow > NO_LINE_SELECTED) {
         MainWindow *mainWindow = MainWindow::accessToParent(this); // On récupère une réference sur MainWindow
 
         /* Si accessToParent() s'est bien passé */
         if (mainWindow != NULL) {
-            QString id = ui->tableView->model()->data(ui->tableView->model()->index(row, 0)).toString(); // On lit l'id de l'utilisateur selectionné
+            QString id = ui->tableView->model()->data(ui->tableView->model()->index(selectedRow, 0)).toString(); // On lit l'id de l'utilisateur selectionné
 
             User* userSelected = Controller::getUser(id);
 

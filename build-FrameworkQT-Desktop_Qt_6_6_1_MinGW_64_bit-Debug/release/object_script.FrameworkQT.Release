@@ -14,6 +14,7 @@ release/creationuserinterface.o
 release/deconnectioninterface.o
 release/dialogerror.o
 release/dialogvalidation.o
+release/firstuserinscription.o
 release/homeadmininterface.o
 release/homeuserinterface.o
 release/indexbdd.o
@@ -28,6 +29,7 @@ release/moc_creationuserinterface.o
 release/moc_deconnectioninterface.o
 release/moc_dialogerror.o
 release/moc_dialogvalidation.o
+release/moc_firstuserinscription.o
 release/moc_homeadmininterface.o
 release/moc_homeuserinterface.o
 release/moc_indexbdd.o

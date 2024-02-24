@@ -6,7 +6,7 @@
         "profiles": [
             {
                 "right": "LECTURE",
-                "title": "pro"
+                "title": ""
             }
         ]
     },
@@ -15,6 +15,14 @@
         "id": "f46971c1-bb0c-4933-92e1-c38fbe5dea8f",
         "lastname": "andre",
         "profiles": [
+            {
+                "right": "LECTURE",
+                "title": ""
+            },
+            {
+                "right": "LECTURE",
+                "title": "1"
+            }
         ]
     }
 ]

@@ -44,7 +44,10 @@ void AddProfileInterface::actionCreateProfile() {
 
         MainWindow *mainWindow = MainWindow::accessToParent(this);
         if (mainWindow != NULL) {
-            mainWindow->openProfiles(Controller::getUserProfiles());
+            User* userProfiles = Controller::getUserProfiles();
+
+            mainWindow->returnOnPreviousView();
+            mainWindow->openProfiles(userProfiles);
         }
     }
     catch (Exception* e) {

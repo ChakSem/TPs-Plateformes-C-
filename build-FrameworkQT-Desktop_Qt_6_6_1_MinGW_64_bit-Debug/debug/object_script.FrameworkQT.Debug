@@ -14,6 +14,7 @@ debug/creationuserinterface.o
 debug/deconnectioninterface.o
 debug/dialogerror.o
 debug/dialogvalidation.o
+debug/firstuserinscription.o
 debug/homeadmininterface.o
 debug/homeuserinterface.o
 debug/indexbdd.o
@@ -28,6 +29,7 @@ debug/moc_creationuserinterface.o
 debug/moc_deconnectioninterface.o
 debug/moc_dialogerror.o
 debug/moc_dialogvalidation.o
+debug/moc_firstuserinscription.o
 debug/moc_homeadmininterface.o
 debug/moc_homeuserinterface.o
 debug/moc_indexbdd.o

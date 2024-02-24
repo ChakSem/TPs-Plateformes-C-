@@ -9,6 +9,7 @@ MainWidget : (800 x 500)
 	4. Nouveau Profil : AddProfileInterface / addprofileinterface.h 
 	5. Home : HomeAdminInterface / homeadmininterface.h 
 	6. 	  HomeUserInterface / homeuserinterface.h 
+	7. firstUserRegistration : firstUserRegistration / firstUserRegistration.h
 
 	. Profil de :
 

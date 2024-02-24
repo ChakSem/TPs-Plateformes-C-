@@ -25,7 +25,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogerror.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogvalidation.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserregistration.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.cpp \
@@ -96,7 +96,7 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogerror.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogvalidation.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserregistration.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.h \
@@ -116,7 +116,7 @@ FORMS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogerror.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/dialogvalidation.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserregistration.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/indexbdd.ui \
