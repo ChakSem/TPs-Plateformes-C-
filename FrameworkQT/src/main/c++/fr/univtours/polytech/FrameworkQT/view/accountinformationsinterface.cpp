@@ -10,7 +10,6 @@
 
 void AccountInformationsInterface::setAccountInformations()
 {
-
     Data& data = Data::getInstance();
     User* user = data.getUserConnected();
 
@@ -44,7 +43,6 @@ AccountInformationsInterface::AccountInformationsInterface(QWidget *parent)
 {
     
     ui->setupUi(this);
-    setAccountInformations();
 }
 
 AccountInformationsInterface::~AccountInformationsInterface()

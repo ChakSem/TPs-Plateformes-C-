@@ -678,8 +678,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    </property>
    <property name="geometry">
     <rect>
-     <x>225</x>
-     <y>0</y>
+     <x>240</x>
+     <y>30</y>
      <width>381</width>
      <height>30</height>
     </rect>

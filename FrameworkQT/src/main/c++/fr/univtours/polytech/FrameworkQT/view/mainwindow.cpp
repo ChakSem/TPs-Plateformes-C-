@@ -121,10 +121,13 @@ void MainWindow::openUsers()
 
 void MainWindow::openAccount()
 {
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_MY_ACCOUNT);
 
-    ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
+    previousPages.push_front(MAINWIDGET_MY_ACCOUNT); // On ajoute MAINWIDGET_USER_MANAGEMENT au chemin pour le retour
 
-    previousPages.push_front(MAINWIDGET_CONNECTION); // On ajoute MAINWIDGET_USER_MANAGEMENT au chemin pour le retour
+    AccountInformationsInterface *accountInformationsInterface = qobject_cast<AccountInformationsInterface *>(this->ui->MainWidget->widget(MAINWIDGET_MY_ACCOUNT));
+
+    accountInformationsInterface->setAccountInformations();
 }
 
 void MainWindow::openMyProfiles()
@@ -191,7 +194,7 @@ void MainWindow::openAddProfiles()
 
 void MainWindow::updateTableView(User *user)
 {
-    UserManagementInterface *userManagementInterface = qobject_cast<UserManagementInterface *>(this->ui->MainWidget->widget(1));
+    UserManagementInterface *userManagementInterface = qobject_cast<UserManagementInterface *>(this->ui->MainWidget->widget(MAINWIDGET_USER_MANAGEMENT));
     userManagementInterface->insertNewUser(user);
 }
 

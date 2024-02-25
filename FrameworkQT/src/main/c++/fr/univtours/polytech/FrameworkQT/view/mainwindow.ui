@@ -962,7 +962,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>8</number>
     </property>
     <widget class="ConnectionInterface" name="connection"/>
     <widget class="UserManagementInterface" name="userManagement"/>
@@ -972,6 +972,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     <widget class="AddProfileInterface" name="addProfile"/>
     <widget class="HomeAdminInterface" name="homeAdmin"/>
     <widget class="HomeUserInterface" name="homeUser"/>
+    <widget class="AccountInformationsInterface" name="myAcount"/>
    </widget>
    <widget class="QStackedWidget" name="DeconnectionWidget">
     <property name="geometry">
@@ -1015,7 +1016,7 @@ QPushButton:hover {
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>14</height>
+     <height>18</height>
     </rect>
    </property>
   </widget>
@@ -1080,6 +1081,12 @@ QPushButton:hover {
    <class>FirstUserInscription</class>
    <extends>QWidget</extends>
    <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>AccountInformationsInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/accountinformationsinterface.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -13,9 +13,9 @@ class AccountInformationsInterface : public QWidget
 public:
     explicit AccountInformationsInterface(QWidget *parent = nullptr);
     ~AccountInformationsInterface();
+    void setAccountInformations();
 
 private:
-    void setAccountInformations();
     Ui::AccountInformationsInterface *ui;
 
 

@@ -679,8 +679,8 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
   <widget class="QLabel" name="labelConnection">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>-30</y>
+     <x>170</x>
+     <y>0</y>
      <width>441</width>
      <height>91</height>
     </rect>

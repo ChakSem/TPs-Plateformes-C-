@@ -16,6 +16,7 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/accountinformationsinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h"
@@ -42,6 +43,7 @@ public:
     AddProfileInterface *addProfile;
     HomeAdminInterface *homeAdmin;
     HomeUserInterface *homeUser;
+    AccountInformationsInterface *myAcount;
     QStackedWidget *DeconnectionWidget;
     DeconnectionInterface *deconnection;
     QWidget *void_2;
@@ -1053,6 +1055,9 @@ public:
         homeUser = new HomeUserInterface();
         homeUser->setObjectName("homeUser");
         MainWidget->addWidget(homeUser);
+        myAcount = new AccountInformationsInterface();
+        myAcount->setObjectName("myAcount");
+        MainWidget->addWidget(myAcount);
         DeconnectionWidget = new QStackedWidget(centralwidget);
         DeconnectionWidget->setObjectName("DeconnectionWidget");
         DeconnectionWidget->setGeometry(QRect(500, 0, 151, 41));
@@ -1083,7 +1088,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 600, 14));
+        menubar->setGeometry(QRect(0, 0, 600, 18));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1091,7 +1096,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        MainWidget->setCurrentIndex(3);
+        MainWidget->setCurrentIndex(8);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
