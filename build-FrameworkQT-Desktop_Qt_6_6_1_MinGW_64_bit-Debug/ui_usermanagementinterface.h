@@ -672,7 +672,7 @@ public:
         tableView->setGeometry(QRect(10, 0, 300, 291));
         labelConnection = new QLabel(UserManagementInterface);
         labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(195, 0, 401, 27));
+        labelConnection->setGeometry(QRect(160, 0, 401, 27));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

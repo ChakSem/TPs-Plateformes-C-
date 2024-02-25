@@ -666,7 +666,7 @@ public:
         labelConnection_3 = new QLabel(ProfilesInterface);
         labelConnection_3->setObjectName("labelConnection_3");
         labelConnection_3->setEnabled(true);
-        labelConnection_3->setGeometry(QRect(225, 0, 381, 30));
+        labelConnection_3->setGeometry(QRect(240, 30, 381, 30));
         sizePolicy.setHeightForWidth(labelConnection_3->sizePolicy().hasHeightForWidth());
         labelConnection_3->setSizePolicy(sizePolicy);
         labelConnection_3->setMinimumSize(QSize(0, 13));

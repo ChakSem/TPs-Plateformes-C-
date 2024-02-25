@@ -665,7 +665,7 @@ public:
 
         labelConnection = new QLabel(ConnectionInterface);
         labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(250, 0, 351, 27));
+        labelConnection->setGeometry(QRect(230, 20, 351, 27));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

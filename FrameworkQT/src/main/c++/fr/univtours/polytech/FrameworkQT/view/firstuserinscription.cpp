@@ -38,6 +38,7 @@ void FirstUserInscription::actionAddUser()
 
         MainWindow *mainWindow = MainWindow::accessToParent(this);
 
+        /* S'il n'y a pas eu d'erreur */
         if (mainWindow != NULL)
         {
             mainWindow->openConnection();

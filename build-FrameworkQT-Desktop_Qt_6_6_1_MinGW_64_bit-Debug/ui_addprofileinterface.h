@@ -673,7 +673,7 @@ public:
 
         gridLayoutWidget = new QWidget(frame);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(230, 90, 132, 80));
+        gridLayoutWidget->setGeometry(QRect(230, 90, 138, 80));
         gridLayout_2 = new QGridLayout(gridLayoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -730,7 +730,7 @@ public:
 
         labelConnection = new QLabel(AddProfileInterface);
         labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(225, 0, 831, 27));
+        labelConnection->setGeometry(QRect(200, 20, 831, 27));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

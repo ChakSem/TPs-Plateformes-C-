@@ -59,8 +59,7 @@ int CparserJson::saveData(Data& data) {
                     rightString = "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION";
                     break;
                 default:
-                    qDebug() << "ERREUR_DROIT_INCONNU";
-                    return ERROR;
+                    throw new Exception(ERREUR_DROIT_INCONNU);
                 }
                 profileObject["right"] = rightString;
                 // TODO : Gérer les bases de données
@@ -110,7 +109,7 @@ int CparserJson::saveData(Data& data) {
                     rightString = "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION";
                     break;
                 default:
-                    qDebug() << "ERREUR_DROIT_INCONNU";
+                    throw new Exception(ERREUR_DROIT_INCONNU);
                     return ERROR;
                 }
                 profileObject["right"] = rightString;
@@ -191,13 +190,13 @@ int CparserJson::updateData(Data& data) {
                             if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION") {
                                 right = Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION;
                             } else {
-                                qDebug() << "ERREUR_DROIT_INCONNU";
-                                return ERROR;
+                                throw new Exception(ERREUR_DROIT_INCONNU);
                             }
                         }
                     }
 
-                    Profile* profile = new Profile(user, QString::fromStdString(userObject["title"].toString().toStdString()), right);
+                    Profile* profile = new Profile(user, QString::fromStdString(profileObject["title"].toString().toStdString()), right);
+
                     // TODO : Gérer les bases de données
 
                     user->addProfile(*profile);
@@ -239,13 +238,12 @@ int CparserJson::updateData(Data& data) {
                             if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION") {
                                 right = Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION;
                             } else {
-                                qDebug() << "ERREUR_DROIT_INCONNU";
-                                return ERROR;
+                                throw new Exception(ERREUR_DROIT_INCONNU);
                             }
                         }
                     }
 
-                    Profile* profile = new Profile(admin, QString::fromStdString(adminObject["title"].toString().toStdString()), right);
+                    Profile* profile = new Profile(admin, QString::fromStdString(profileObject["title"].toString().toStdString()), right);
                     // TODO : Gérer les bases de données
 
                     admin->addProfile(*profile);
@@ -267,10 +265,11 @@ int CparserJson::updateData(Data& data) {
 
 void CparserJson::setPassword(QString id, QString password)
 {
-    QFile file(FILEPATHPASSWORDS);
-    if (!file.open(QIODevice::ReadWrite)) {
-        qDebug() << "Erreur lors de l'ouverture du fichier";
-    } else {
+    try {
+        QFile file(FILEPATHPASSWORDS);
+        if (!file.open(QIODevice::ReadWrite)) {
+            throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_MOTS_DE_PASSE);
+        }
         QByteArray byteArray = file.readAll();
         QJsonDocument doc = QJsonDocument::fromJson(byteArray);
 
@@ -284,24 +283,31 @@ void CparserJson::setPassword(QString id, QString password)
         file.write(QJsonDocument(obj).toJson());
         file.close();
     }
+    catch (Exception* e) {
+        e->EXCAffichageErreur();
+    }
+
 }
 
 
 QString CparserJson::getPassword(QString id)
 {
-    QFile file(FILEPATHPASSWORDS);
-    if (!file.open(QIODevice::ReadWrite)) {
-        qDebug() << "Erreur lors de l'ouverture du fichier";
-        return NULL;
+    try {
+        QFile file(FILEPATHPASSWORDS);
+        if (!file.open(QIODevice::ReadWrite)) {
+            throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_MOTS_DE_PASSE);
+        }
+
+        QByteArray byteArray = file.readAll();
+        QJsonDocument doc = QJsonDocument::fromJson(byteArray);
+
+        if (doc.isNull() || doc.isEmpty())
+            doc = QJsonDocument::fromJson("{}");
+
+        QJsonObject obj = doc.object();
+        return Encryption::decrypt(QString::fromStdString(obj[id].toString().toStdString()));
     }
-
-    QByteArray byteArray = file.readAll();
-    QJsonDocument doc = QJsonDocument::fromJson(byteArray);
-
-    if (doc.isNull() || doc.isEmpty())
-        doc = QJsonDocument::fromJson("{}");
-
-    QJsonObject obj = doc.object();
-    return Encryption::decrypt(QString::fromStdString(obj[id].toString().toStdString()));
-
+    catch (Exception* e) {
+        e->EXCAffichageErreur();
+    }
 }
