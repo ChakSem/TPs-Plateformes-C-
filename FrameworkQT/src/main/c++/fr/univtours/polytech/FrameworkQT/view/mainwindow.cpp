@@ -126,6 +126,7 @@ void MainWindow::openProfiles(User* user) {
 
 void MainWindow::openProfiles() {
     ui->MainWidget->setCurrentIndex(MAINWIDGET_PROFILES); // Access à la page de gestion des profils
+    ui->BackWidget->setCurrentIndex(BACKWIDGET_VISIBLE); // On l'affiche si ce n'est pas encore le cas
 
     if(Controller::hasProfiles() == NO_PROFILES) {
         openAddProfiles(); // Si l'utilisateur n'a pas encore de profils, on est emmené sur la page de création de profils
