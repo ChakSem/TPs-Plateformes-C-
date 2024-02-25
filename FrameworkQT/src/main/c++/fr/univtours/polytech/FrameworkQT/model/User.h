@@ -23,7 +23,7 @@ public :
     QString getLastname();
     void setLastname(const QString& newLastname);
 
-
+   
     /* Accesseurs de l'attribut firstname */
     QString getFirstname();
     void setFirstname(const QString& newFirstname);
@@ -32,6 +32,9 @@ public :
     QList<Profile*> getProfiles();
     void addProfile(const Profile& profile);
     void deleteProfile(const QString intitule);
+     /* Méthode pour connaitre le rôle d'un utilisateur  */
+    QString getRole();
+
 
     /* Surcharge de l'opérateur = */
     User& operator=(const User& user);

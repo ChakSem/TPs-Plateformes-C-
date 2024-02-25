@@ -1,5 +1,16 @@
 [
     {
+        "firstname": "test",
+        "id": "3e7b87c5-478c-40fd-bfb6-5dc08c105227",
+        "lastname": "test",
+        "profiles": [
+            {
+                "right": "LECTURE",
+                "title": ""
+            }
+        ]
+    },
+    {
         "firstname": "super",
         "id": "59b1fca3-4be5-40a5-b3a1-db79e7a5b4f8",
         "lastname": "super",

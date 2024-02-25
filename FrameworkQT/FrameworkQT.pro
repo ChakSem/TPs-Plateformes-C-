@@ -19,6 +19,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/qaesencryption.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/encryption.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/accountinformationsinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.cpp \
@@ -96,6 +97,7 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/qaesencryption.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/encryption.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/accountinformationsinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h \
@@ -116,7 +118,7 @@ HEADERS += \
     QT+=gui
 
 FORMS += \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/BROUILLONmyaccount.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/accountinformationsinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.ui \

@@ -17,6 +17,7 @@ QString User::getFirstname() {
     return firstname;
 }
 
+
 void User::setFirstname(const QString& newFirstname) {
     firstname = newFirstname;
 }

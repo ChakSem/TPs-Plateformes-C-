@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>AccountInformationsInterface</class>
+ <widget class="QWidget" name="AccountInformationsInterface">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -599,16 +599,19 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="passwordLogin_3"/>
+     <item row="0" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="labelId_2">
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>ID:</string>
+       </property>
+      </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="passwordLogin_5"/>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="passwordLogin_6"/>
-     </item>
-     <item row="1" column="0">
+     <item row="1" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="labelId_3">
        <property name="font">
         <font>
@@ -620,7 +623,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
+     <item row="2" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="labelId_4">
        <property name="font">
         <font>
@@ -632,7 +635,19 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="myPassword"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="myLastName"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="myRole"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="myId"/>
+     </item>
+     <item row="4" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="labelId_5">
        <property name="font">
         <font>
@@ -644,18 +659,18 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="passwordLogin_4"/>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="myFirstName"/>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="labelId_2">
+     <item row="3" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="labelId_6">
        <property name="font">
         <font>
          <bold>true</bold>
         </font>
        </property>
        <property name="text">
-        <string>ID:</string>
+        <string>Prénom: </string>
        </property>
       </widget>
      </item>
