@@ -104,10 +104,10 @@ void MainWindow::openUsers() {
 }
 
 void MainWindow::openAccount() {
-    // TODO : visualiser compte (optionnel)
-    // ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
+   
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
 
-    // previousPages.push_front(MAINWIDGET_CONNECTION); // On ajoute MAINWIDGET_USER_MANAGEMENT au chemin pour le retour
+    previousPages.push_front(MAINWIDGET_CONNECTION); // On ajoute MAINWIDGET_USER_MANAGEMENT au chemin pour le retour
 }
 
 void MainWindow::openMyProfiles() {
