@@ -25,6 +25,8 @@ debug/popup.o
 debug/profilesinterface.o
 debug/usermanagementinterface.o
 debug/qrc_forest-background.o
+debug/qrc_res.o
+debug/moc_qaesencryption.o
 debug/moc_accountinformationsinterface.o
 debug/moc_addprofileinterface.o
 debug/moc_backbutton.o

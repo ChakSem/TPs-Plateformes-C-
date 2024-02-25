@@ -628,7 +628,7 @@ public:
         comboBoxProfiles->setGeometry(QRect(5, 150, 300, 22));
         labelConnection_2 = new QLabel(frame);
         labelConnection_2->setObjectName("labelConnection_2");
-        labelConnection_2->setGeometry(QRect(10, 130, 141, 13));
+        labelConnection_2->setGeometry(QRect(10, 130, 631, 13));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

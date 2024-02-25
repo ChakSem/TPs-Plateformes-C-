@@ -25,6 +25,8 @@ release/popup.o
 release/profilesinterface.o
 release/usermanagementinterface.o
 release/qrc_forest-background.o
+release/qrc_res.o
+release/moc_qaesencryption.o
 release/moc_accountinformationsinterface.o
 release/moc_addprofileinterface.o
 release/moc_backbutton.o

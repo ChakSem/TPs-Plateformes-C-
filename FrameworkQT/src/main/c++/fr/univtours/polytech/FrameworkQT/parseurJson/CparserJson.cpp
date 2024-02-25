@@ -223,7 +223,7 @@ int CparserJson::updateData(Data& data) {
                 // Parcours chaque utilisateur dans le tableau JSON
                 QJsonObject adminObject = adminValue.toObject();
                 User* admin = new User(QString::fromStdString(adminObject["id"].toString().toStdString()), QString::fromStdString(adminObject["firstname"].toString().toStdString())
-                                                       , QString::fromStdString(adminObject["firstname"].toString().toStdString()));
+                                                       , QString::fromStdString(adminObject["lastname"].toString().toStdString()));
 
                 QJsonArray profilesArray = adminObject["profiles"].toArray();
                 for (const QJsonValue &profileValue : profilesArray) {
@@ -278,7 +278,7 @@ void CparserJson::setPassword(QString id, QString password)
             doc = QJsonDocument::fromJson("{}");
 
         QJsonObject obj = doc.object();
-        obj[id] = Encryption::decrypt(password);
+        obj[id] = Encryption::encrypt(password);
 
         file.resize(0);
         file.write(QJsonDocument(obj).toJson());
