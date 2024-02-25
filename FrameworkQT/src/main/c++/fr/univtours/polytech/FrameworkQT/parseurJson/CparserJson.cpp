@@ -278,7 +278,7 @@ void CparserJson::setPassword(QString id, QString password)
             doc = QJsonDocument::fromJson("{}");
 
         QJsonObject obj = doc.object();
-        obj[id] = Encryption::encrypt(password);
+        obj[id] = Encryption::decrypt(password);
 
         file.resize(0);
         file.write(QJsonDocument(obj).toJson());

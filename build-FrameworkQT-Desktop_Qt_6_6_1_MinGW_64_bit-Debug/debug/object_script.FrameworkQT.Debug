@@ -5,6 +5,7 @@ debug/Profile.o
 debug/User.o
 debug/data.o
 debug/CparserJson.o
+debug/qaesencryption.o
 debug/encryption.o
 debug/exception.o
 debug/addprofileinterface.o
@@ -23,6 +24,8 @@ debug/popup.o
 debug/profilesinterface.o
 debug/usermanagementinterface.o
 debug/qrc_forest-background.o
+debug/qrc_res.o
+debug/moc_qaesencryption.o
 debug/moc_addprofileinterface.o
 debug/moc_backbutton.o
 debug/moc_connectioninterface.o

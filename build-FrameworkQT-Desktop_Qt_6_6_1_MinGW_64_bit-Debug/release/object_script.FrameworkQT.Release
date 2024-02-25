@@ -5,6 +5,7 @@ release/Profile.o
 release/User.o
 release/data.o
 release/CparserJson.o
+release/qaesencryption.o
 release/encryption.o
 release/exception.o
 release/addprofileinterface.o
@@ -23,6 +24,8 @@ release/popup.o
 release/profilesinterface.o
 release/usermanagementinterface.o
 release/qrc_forest-background.o
+release/qrc_res.o
+release/moc_qaesencryption.o
 release/moc_addprofileinterface.o
 release/moc_backbutton.o
 release/moc_connectioninterface.o

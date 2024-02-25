@@ -16,6 +16,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/User.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/data.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/CparserJson.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/qaesencryption.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/encryption.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.cpp \
@@ -88,6 +89,11 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/ordered_map.hpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/thirdparty/hedley/hedley.hpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/aesni/aesni-enc-cbc.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/aesni/aesni-enc-ecb.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/aesni/aesni-key-exp.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/aesni/aesni-key-init.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/qaesencryption.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/encryption.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/addprofileinterface.h \
@@ -142,7 +148,20 @@ DISTFILES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/data/users.json \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/Adminstateur.json \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/ProfilUser.json \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/Utilsateur.json
+    src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/Utilsateur.json \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/CMakeLists.txt \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/CONTRIBUTING.md \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/LICENSE \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/QtAESConfig.cmake.in \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/README.md \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/unit_test/alices-in-wonderland.txt \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/unit_test/la-divina-commedia.txt \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/unit_test/moby-dick.txt \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/unit_test/shakespeare-complete-works.txt
 
 RESOURCES += \
-    forest-background.qrc
+    forest-background.qrc \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/res.qrc
+
+SUBDIRS += \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/qaesencryption.pro

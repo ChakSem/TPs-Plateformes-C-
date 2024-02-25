@@ -4,8 +4,11 @@
 #include "model/data.h"
 #include "parseurJson/CparserJson.h"
 #include "controller/controller.h"
+#include "utils/encryption.h"
 
 #include <QApplication>
+#include <QDebug>
+
 
 int main(int argc, char *argv[])
 {
@@ -13,5 +16,12 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
+    QString passwordEnc = Encryption::encrypt("123Soleil");
+
+    qDebug() << passwordEnc << " - " << Encryption::decrypt(passwordEnc);
+
+    passwordEnc = Encryption::encrypt("super_password");
+
+    qDebug() << passwordEnc << " - " << Encryption::decrypt(passwordEnc);
     return a.exec();
 }
