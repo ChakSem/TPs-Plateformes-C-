@@ -5,6 +5,7 @@
 #include "../model/profile.h"
 #include "mainwindow.h"
 #include <QMessageBox>
+
 void ProfilesInterface::initializeComboBox() {
     ui->comboBoxProfiles->clear(); // On vide le comboBox
 

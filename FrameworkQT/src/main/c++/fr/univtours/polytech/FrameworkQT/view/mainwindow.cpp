@@ -122,6 +122,7 @@ void MainWindow::openUsers()
 void MainWindow::openAccount()
 {
     ui->MainWidget->setCurrentIndex(MAINWIDGET_MY_ACCOUNT);
+    ui->BackWidget->setCurrentIndex(BACKWIDGET_VISIBLE);
 
     previousPages.push_front(MAINWIDGET_MY_ACCOUNT); // On ajoute MAINWIDGET_USER_MANAGEMENT au chemin pour le retour
 

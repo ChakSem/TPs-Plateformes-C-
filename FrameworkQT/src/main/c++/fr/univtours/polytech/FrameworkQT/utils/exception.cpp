@@ -95,6 +95,12 @@ void Exception::EXCAffichageErreur()
     case ERREUR_USER_MANAGEMENT_SUPPRESSION_SUPER_ADMIN :
         printf_s("Le super admin ne peut pas être supprimé\n");
         break;
+    case ERREUR_DROIT_INCONNU :
+        printf_s("Le droit lu n'existe pas\n");
+        break;
+    case ERREUR_OUVERTURE_FICHIER_POUR_MOTS_DE_PASSE :
+        printf_s("Impossible d'ouvrir le fichier des mots de passe\n");
+        break;
     default:
         printf_s("INCONNUE");
     }
