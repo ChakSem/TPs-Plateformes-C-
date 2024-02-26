@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "exception.h"
+#include "qdebug.h"
+#include "qlogging.h"
 
 
 /********************************************************************
@@ -41,68 +43,68 @@ void Exception::EXCModifierValeur(unsigned int uiValeur)
 ********************************************************************/
 void Exception::EXCAffichageErreur()
 {
-    printf_s("ERREUR : ");
+    qDebug() << "ERREUR : ";
     switch (uiEXCCodeErreur)
     {
     case NOM_PROFIL_DEJA_ATTRIBUE :
-        printf_s("Le nom de profil saisi est deja affecte\n");
+         qDebug() << "Le nom de profil saisi est deja affecte";
         break;
     case BASE_DE_DONNEE_DEJA_AJOUTEE :
-        printf_s("La base de donnee est deja ajoutee\n");
+         qDebug() << "La base de donnee est deja ajoutee";
         break;
     case ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_USER :
-        printf_s("Le fichier pour la sauvegarde des utilisateurs n'a pu etre ouvert\n");
+         qDebug() << "Le fichier pour la sauvegarde des utilisateurs n'a pu etre ouvert";
         break;
     case ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_ADMIN :
-        printf_s("Le fichier pour la sauvegarde des administrateurs n'a pu etre ouvert\n");
+         qDebug() << "Le fichier pour la sauvegarde des administrateurs n'a pu etre ouvert";
         break;
     case ERREUR_OUVERTURE_FICHIER_POUR_CHARGER_USER :
-        printf_s("Le fichier pour le chargement des utilisateurs n'a pu etre ouvert\n");
+         qDebug() << "Le fichier pour le chargement des utilisateurs n'a pu etre ouvert";
         break;
     case ERREUR_OUVERTURE_FICHIER_POUR_CHARGER_ADMIN :
-        printf_s("Le fichier pour le chargement des administrateurs n'a pu etre ouvert\n");
+         qDebug() << "Le fichier pour le chargement des administrateurs n'a pu etre ouvert";
         break;
     case ERREUR_OUVERTURE_FICHIER_POUR_ECRIRE_DANS_LA_SAUVEGARDE_USER:
-        printf_s("L'ecriture dans fichier pour le sauvegarde des utilisateurs a echoue\n");
+         qDebug() << "L'ecriture dans fichier pour le sauvegarde des utilisateurs a echoue";
         break;
     case ERREUR_OUVERTURE_FICHIER_POUR_ECRIRE_DANS_LA_SAUVEGARDE_ADMIN :
-        printf_s("L'ecriture dans fichier pour le sauvegarde des administrateurs a echoue\n");
+         qDebug() << "L'ecriture dans fichier pour le sauvegarde des administrateurs a echoue";
         break;
     case ERREUR_AUCUN_UTILISATEUR_NE_CORRESPOND_A_CET_ID :
-        printf_s("L'id ne correspond à aucuns utilisateur et admin existants\n");
+         qDebug() << "L'id ne correspond à aucuns utilisateur et admin existants";
         break;
     case ERREUR_AUCUN_DROIT_CORRESPONDANT :
-        printf_s("L'id de droit ne correspond a aucun droit existant\n");
+         qDebug() << "L'id de droit ne correspond a aucun droit existant";
         break;
     case ERREUR_AUCUN_ROLE_CORRESPONDANT :
-        printf_s("L'id de role ne correspond a aucun droit existant\n");
+         qDebug() << "L'id de role ne correspond a aucun droit existant";
         break;
     case ERREUR_ISADMIN_INCORRECT :
-        printf_s("La valeur de isAdmin n'a aucun sens\n");
+         qDebug() << "La valeur de isAdmin n'a aucun sens";
         break;
     case ERREUR_MAINWINDOW_NON_TROUVE :
-        printf_s("La vue n'a pas pu acceder a MainWindow\n");
+         qDebug() << "La vue n'a pas pu acceder a MainWindow";
         break;
     case ERREUR_ALL_TOUS_LES_CHAMPS_NE_SONT_PAS_REMPLIS :
-        printf_s("Tout les champs ne sont pas remplis\n");
+         qDebug() << "Tout les champs ne sont pas remplis";
         break;
     case ERREUR_USER_MANAGEMENT_AUCUNES_LIGNES_SELECTIONNEES :
-        printf_s("Aucunes lignes n'est selectionnees\n");
+         qDebug() << "Aucunes lignes n'est selectionnees";
         break;
     case ERREUR_AUCUN_PROFIL_CORRESPONDANT :
-        printf_s("Aucun profil ne correspond a l'id\n");
+         qDebug() << "Aucun profil ne correspond a l'id";
         break;
     case ERREUR_USER_MANAGEMENT_SUPPRESSION_SUPER_ADMIN :
-        printf_s("Le super admin ne peut pas être supprimé\n");
+         qDebug() << "Le super admin ne peut pas être supprimé";
         break;
     case ERREUR_DROIT_INCONNU :
-        printf_s("Le droit lu n'existe pas\n");
+         qDebug() << "Le droit lu n'existe pas";
         break;
     case ERREUR_OUVERTURE_FICHIER_POUR_MOTS_DE_PASSE :
-        printf_s("Impossible d'ouvrir le fichier des mots de passe\n");
+         qDebug() << "Impossible d'ouvrir le fichier des mots de passe";
         break;
     default:
-        printf_s("INCONNUE");
+         qDebug() << "INCONNUE";
     }
 }
 

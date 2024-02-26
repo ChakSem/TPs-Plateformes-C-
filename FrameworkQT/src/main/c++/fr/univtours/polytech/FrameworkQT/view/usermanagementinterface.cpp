@@ -122,14 +122,18 @@ void UserManagementInterface::actionDeleteUser() {
         /* Si init() s'est bien passé */
         if (selectedRow > NO_LINE_SELECTED) {
             QString id = ui->tableView->model()->data(ui->tableView->model()->index(selectedRow, 0)).toString(); // On lit l'id de l'utilisateur selectionné
-
             if (id == SUPER_ADMIN) {
                 throw new Exception(ERREUR_USER_MANAGEMENT_SUPPRESSION_SUPER_ADMIN);
+            }
+            QMessageBox::StandardButton reply;
+            reply = QMessageBox::question(this, "Suppression de profil", "Etes-vous sûr de vouloir supprimer l'utilisateur " + id + " ?", QMessageBox::Yes|QMessageBox::No);
+            if (reply == QMessageBox::No) {
+                return;
             }
 
             Controller::deleteUser(id); // On le supprime
 
-            // Supprimer la ligne du modèle de données
+            /* Supprimer la ligne du modèle de données*/
             ui->tableView->model()->removeRow(selectedRow);
 
             row -= 1;

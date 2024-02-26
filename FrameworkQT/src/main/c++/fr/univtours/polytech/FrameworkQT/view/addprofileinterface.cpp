@@ -8,12 +8,12 @@
 #include "../utils/exception.h"
 #include "mainwindow.h"
 
-
 AddProfileInterface::AddProfileInterface(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AddProfileInterface)
 {
     ui->setupUi(this);
+    /*On connecte le bouton de création de profil à la méthode actionCreateProfile*/
     connect(ui->pushButton, &QPushButton::clicked, this, &AddProfileInterface::actionCreateProfile);
 }
 

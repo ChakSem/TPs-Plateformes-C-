@@ -20,7 +20,7 @@ ProfilesInterface::ProfilesInterface(QWidget *parent)
     , ui(new Ui::ProfilesInterface)
 {
     ui->setupUi(this);
-
+    /*On connecte les boutons aux méthodes (ajout, suppression, gestion)*/
     connect( ui->pushButtonAdd, &QPushButton::clicked, this, &ProfilesInterface::actionAddInterface);
     connect( ui->pushButtonDelete, &QPushButton::clicked, this, &ProfilesInterface::actionDeleteInterface);
     connect( ui->pushButtonManage, &QPushButton::clicked, this, &ProfilesInterface::actionManageInterface);
@@ -58,11 +58,10 @@ void ProfilesInterface::actionAddInterface() {
  */
 void ProfilesInterface::actionDeleteInterface() {
     try {
-        //demande de confirmation
+        /*Demande de confirmation*/
         QString profileTitle = ui->comboBoxProfiles->currentText();
         Profile* profile = Controller::getProfileByTitle(profileTitle);
         if (profile != NULL) {
-            //TODO : on demande une confirmation
             QMessageBox::StandardButton reply;
             reply = QMessageBox::question(this, "Suppression de profil", "Etes-vous sûr de vouloir supprimer le profil " + profileTitle + " ?", QMessageBox::Yes|QMessageBox::No);
             if (reply == QMessageBox::No) {

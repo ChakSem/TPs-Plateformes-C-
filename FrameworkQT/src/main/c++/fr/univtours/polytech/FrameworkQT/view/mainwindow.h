@@ -37,6 +37,7 @@ private:
 
 public:
     static MainWindow* accessToParent(QWidget* widget);
+    static void messageReply(QString message, QString title, int type);
 
     void displayDeconnection();
     void displayBack();

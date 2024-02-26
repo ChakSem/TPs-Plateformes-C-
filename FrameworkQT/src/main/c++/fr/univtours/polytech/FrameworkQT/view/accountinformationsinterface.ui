@@ -599,17 +599,23 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
-     <item row="0" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="labelId_2">
+     <item row="2" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="labelId_4">
        <property name="font">
         <font>
          <bold>true</bold>
         </font>
        </property>
        <property name="text">
-        <string>ID:</string>
+        <string>Nom: </string>
        </property>
       </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="myRole"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="myId"/>
      </item>
      <item row="1" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="labelId_3">
@@ -623,44 +629,20 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        </property>
       </widget>
      </item>
-     <item row="2" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="labelId_4">
-       <property name="font">
-        <font>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Nom: </string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="myPassword"/>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="myLastName"/>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="myRole"/>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="myId"/>
-     </item>
-     <item row="4" column="0" alignment="Qt::AlignRight">
-      <widget class="QLabel" name="labelId_5">
-       <property name="font">
-        <font>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Mot de passe:</string>
-       </property>
-      </widget>
-     </item>
      <item row="3" column="1">
       <widget class="QLineEdit" name="myFirstName"/>
+     </item>
+     <item row="0" column="0" alignment="Qt::AlignRight">
+      <widget class="QLabel" name="labelId_2">
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>ID:</string>
+       </property>
+      </widget>
      </item>
      <item row="3" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="labelId_6">
@@ -673,6 +655,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
         <string>Prénom: </string>
        </property>
       </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="myLastName"/>
      </item>
     </layout>
    </widget>

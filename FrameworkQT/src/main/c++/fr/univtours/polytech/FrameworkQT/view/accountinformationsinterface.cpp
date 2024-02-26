@@ -24,11 +24,6 @@ void AccountInformationsInterface::setAccountInformations()
     ui->myLastName->setReadOnly(true);
     ui->myFirstName->setReadOnly(true);
 
-    /*On change la couleur des champs*/
-    ui->myLastName->setPalette(Qt::gray);
-    ui->myFirstName->setPalette(Qt::gray);
-    ui->myRole->setPalette(Qt::gray);
-    ui->myId->setPalette(Qt::gray);
     
     ui->myId->setText(user->getId());
 

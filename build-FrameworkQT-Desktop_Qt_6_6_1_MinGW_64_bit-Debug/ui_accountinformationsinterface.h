@@ -25,16 +25,14 @@ public:
     QFrame *frame;
     QWidget *layoutWidget_2;
     QGridLayout *gridLayout_2;
-    QLabel *labelId_2;
-    QLabel *labelId_3;
     QLabel *labelId_4;
-    QLineEdit *myPassword;
-    QLineEdit *myLastName;
     QLineEdit *myRole;
     QLineEdit *myId;
-    QLabel *labelId_5;
+    QLabel *labelId_3;
     QLineEdit *myFirstName;
+    QLabel *labelId_2;
     QLabel *labelId_6;
+    QLineEdit *myLastName;
     QLabel *labelConnection;
 
     void setupUi(QWidget *AccountInformationsInterface)
@@ -633,35 +631,13 @@ public:
         gridLayout_2 = new QGridLayout(layoutWidget_2);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        labelId_2 = new QLabel(layoutWidget_2);
-        labelId_2->setObjectName("labelId_2");
-        QFont font;
-        font.setBold(true);
-        labelId_2->setFont(font);
-
-        gridLayout_2->addWidget(labelId_2, 0, 0, 1, 1, Qt::AlignRight);
-
-        labelId_3 = new QLabel(layoutWidget_2);
-        labelId_3->setObjectName("labelId_3");
-        labelId_3->setFont(font);
-
-        gridLayout_2->addWidget(labelId_3, 1, 0, 1, 1, Qt::AlignRight);
-
         labelId_4 = new QLabel(layoutWidget_2);
         labelId_4->setObjectName("labelId_4");
+        QFont font;
+        font.setBold(true);
         labelId_4->setFont(font);
 
         gridLayout_2->addWidget(labelId_4, 2, 0, 1, 1, Qt::AlignRight);
-
-        myPassword = new QLineEdit(layoutWidget_2);
-        myPassword->setObjectName("myPassword");
-
-        gridLayout_2->addWidget(myPassword, 4, 1, 1, 1);
-
-        myLastName = new QLineEdit(layoutWidget_2);
-        myLastName->setObjectName("myLastName");
-
-        gridLayout_2->addWidget(myLastName, 2, 1, 1, 1);
 
         myRole = new QLineEdit(layoutWidget_2);
         myRole->setObjectName("myRole");
@@ -673,22 +649,33 @@ public:
 
         gridLayout_2->addWidget(myId, 0, 1, 1, 1);
 
-        labelId_5 = new QLabel(layoutWidget_2);
-        labelId_5->setObjectName("labelId_5");
-        labelId_5->setFont(font);
+        labelId_3 = new QLabel(layoutWidget_2);
+        labelId_3->setObjectName("labelId_3");
+        labelId_3->setFont(font);
 
-        gridLayout_2->addWidget(labelId_5, 4, 0, 1, 1, Qt::AlignRight);
+        gridLayout_2->addWidget(labelId_3, 1, 0, 1, 1, Qt::AlignRight);
 
         myFirstName = new QLineEdit(layoutWidget_2);
         myFirstName->setObjectName("myFirstName");
 
         gridLayout_2->addWidget(myFirstName, 3, 1, 1, 1);
 
+        labelId_2 = new QLabel(layoutWidget_2);
+        labelId_2->setObjectName("labelId_2");
+        labelId_2->setFont(font);
+
+        gridLayout_2->addWidget(labelId_2, 0, 0, 1, 1, Qt::AlignRight);
+
         labelId_6 = new QLabel(layoutWidget_2);
         labelId_6->setObjectName("labelId_6");
         labelId_6->setFont(font);
 
         gridLayout_2->addWidget(labelId_6, 3, 0, 1, 1, Qt::AlignRight);
+
+        myLastName = new QLineEdit(layoutWidget_2);
+        myLastName->setObjectName("myLastName");
+
+        gridLayout_2->addWidget(myLastName, 2, 1, 1, 1);
 
         labelConnection = new QLabel(AccountInformationsInterface);
         labelConnection->setObjectName("labelConnection");
@@ -712,10 +699,9 @@ public:
     void retranslateUi(QWidget *AccountInformationsInterface)
     {
         AccountInformationsInterface->setWindowTitle(QCoreApplication::translate("AccountInformationsInterface", "Form", nullptr));
-        labelId_2->setText(QCoreApplication::translate("AccountInformationsInterface", "ID:", nullptr));
-        labelId_3->setText(QCoreApplication::translate("AccountInformationsInterface", "R\303\264le/Statut", nullptr));
         labelId_4->setText(QCoreApplication::translate("AccountInformationsInterface", "Nom: ", nullptr));
-        labelId_5->setText(QCoreApplication::translate("AccountInformationsInterface", "Mot de passe:", nullptr));
+        labelId_3->setText(QCoreApplication::translate("AccountInformationsInterface", "R\303\264le/Statut", nullptr));
+        labelId_2->setText(QCoreApplication::translate("AccountInformationsInterface", "ID:", nullptr));
         labelId_6->setText(QCoreApplication::translate("AccountInformationsInterface", "Pr\303\251nom: ", nullptr));
         labelConnection->setText(QCoreApplication::translate("AccountInformationsInterface", "Mon compte", nullptr));
     } // retranslateUi
