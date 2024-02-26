@@ -16,6 +16,7 @@ void Administrator::deleteUser(const QString& userId)
 {
     QMap<QString, User*> users = Data::getInstance().getUsers();
 
+    // On parcourt la liste des utilisateurs pour trouver celui à supprimer
     for(QMap<QString, User*>::const_iterator iter = users.constBegin(); iter != users.constEnd(); ++iter)
     {
         if (iter.key() == userId)
@@ -31,6 +32,7 @@ void Administrator::updateUser(const QString& userId, const QString& newFirstnam
 {
     QMap<QString, User*> users = Data::getInstance().getUsers();
     
+    // On parcourt la liste des utilisateurs pour trouver celui à modifier
     for(QMap<QString, User*>::iterator iter = users.begin(); iter != users.end(); ++iter)
     {
         if (iter.key() == userId)

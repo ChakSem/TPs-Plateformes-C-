@@ -84,7 +84,7 @@ int UserManagementInterface::init() {
         if(selectedRows.size() != 1) {
             throw new Exception(ERREUR_USER_MANAGEMENT_AUCUNES_LIGNES_SELECTIONNEES);
         }
-
+        
         int selectedRow = selectedRows.at(0).row();
 
         return selectedRow;

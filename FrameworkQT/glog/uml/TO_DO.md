@@ -1,7 +1,8 @@
-# Diagramme de Classes
+# Mini Projet 
+
 Objectif : Creation d'un visualisatuer SQLLite + Json (pour la gestion des sessions (engistrement des comptes))
 
-## Classes
+# UML
 Classes :
 
 Enum Droits (Utilisateur / Admin ...)
@@ -25,8 +26,7 @@ ConnectionView
 
 MainView
 
+# TO DO 
 
-## Schéma BDD
 
-Utilisateur(__id__, nom, prenom, motDePasse, profil)
 

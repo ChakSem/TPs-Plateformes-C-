@@ -32,6 +32,7 @@ User* Controller::getUser(QString id) {
  *                          - ERROR : si ca s'est mal passé
  */
 unsigned int Controller::connection(const QString id, QString password) {
+ 
     if(CparserJson::getPassword(id) != password) {
         return ERROR;
     }

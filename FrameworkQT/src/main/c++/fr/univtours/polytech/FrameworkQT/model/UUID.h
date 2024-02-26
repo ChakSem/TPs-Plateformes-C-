@@ -7,7 +7,7 @@
 
 #ifndef UUID_H
 #define UUID_H 1
-
+/* Classe permettant de générer des UUID v4 */
 namespace uuid
 {
     static std::random_device rd;

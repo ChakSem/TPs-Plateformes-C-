@@ -7,6 +7,7 @@
 class Encryption {
 
 public:
+    /*Methodes de cryptage et de décryptage*/
     static QString encrypt(const QString& str);
     static QString decrypt(const QString& encryptedText) ;
 
