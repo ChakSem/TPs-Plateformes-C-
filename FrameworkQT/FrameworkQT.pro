@@ -11,7 +11,6 @@ CONFIG += c++17
 SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/controller/controller.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/main.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/model/Administrator.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Profile.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/User.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/data.cpp \
@@ -34,7 +33,6 @@ SOURCES += \
 
 HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/controller/controller.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/model/Administrator.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Profile.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Rights.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/UUID.h \

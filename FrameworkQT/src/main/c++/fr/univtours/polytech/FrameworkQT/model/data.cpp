@@ -60,8 +60,7 @@ void Data::removeUser(QString id) {
         /* Si il s'agit d'un utilisateur */
         if(users.contains(id)) {
             User* userToDelete = users[id];
-
-            qDebug() << users.size();
+            users.remove(id);
 
             delete userToDelete;
         } else {
@@ -153,12 +152,4 @@ Data::~Data() {
 /* Constructeurs et opérateur = à ne pas utiliser (Singleton) */
 Data::Data() {
     CparserJson::updateData(*this);
-}
-
-Data::Data(const Data&) {
-
-}
-
-Data& Data::operator=(const Data&) {
-    return *this;
 }
