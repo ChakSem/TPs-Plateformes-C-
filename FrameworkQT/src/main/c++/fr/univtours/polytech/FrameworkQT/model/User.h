@@ -32,7 +32,8 @@ public :
     QList<Profile*> getProfiles();
     void addProfile(const Profile& profile);
     void deleteProfile(const QString intitule);
-     /* Méthode pour connaitre le rôle d'un utilisateur  */
+
+    /* Méthode pour connaitre le rôle d'un utilisateur */
     QString getRole();
 
 

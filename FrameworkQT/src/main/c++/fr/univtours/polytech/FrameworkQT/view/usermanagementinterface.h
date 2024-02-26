@@ -5,7 +5,7 @@
 #include <QStandardItemModel>
 
 #define NO_LINE_SELECTED -1
-#define SUPER_ADMIN "59b1fca3-4be5-40a5-b3a1-db79e7a5b4f8"
+#define SUPER_ADMIN "59b1fca3"
 
 class User;
 
