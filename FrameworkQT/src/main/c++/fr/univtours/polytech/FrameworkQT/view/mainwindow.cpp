@@ -65,28 +65,28 @@ void MainWindow::displayDeconnection()
     ui->DeconnectionWidget->setCurrentIndex(DECONNECTIONWIDGET_VISIBLE); // On affiche le bouton deconnexion
 }
 
-void MainWindow::actionConnection(QString id, QString password)
-{
-    unsigned int success = Controller::connection(id, password);
-
-    switch (success)
+    void MainWindow::actionConnection(QString id, QString password)
     {
-    case SUCCESS_ADMIN:
-        ui->MainWidget->setCurrentIndex(MAINWIDGET_HOME_ADMIN); // Access au Home Admin
-        displayDeconnection();
+        unsigned int success = Controller::connection(id, password);
 
-        previousPages.push_front(MAINWIDGET_HOME_ADMIN); // On ajoute MAINWIDGET_HOME_ADMIN au chemin pour le retour
-        break;
-    case SUCCESS_USER:
-        ui->MainWidget->setCurrentIndex(MAINWIDGET_HOME_USER); // Access au Home User
-        displayDeconnection();
+        switch (success)
+        {
+        case SUCCESS_ADMIN:
+            ui->MainWidget->setCurrentIndex(MAINWIDGET_HOME_ADMIN); // Access au Home Admin
+            displayDeconnection();
 
-        previousPages.push_front(MAINWIDGET_HOME_USER); // On ajoute MAINWIDGET_HOME_USER au chemin pour le retour
-        break;
-    default:
-        QMessageBox::information(this, "Information", "Echec de la connexion, l'identifiant ou le mot de passe est incorrect \n Si vous n'avez pas de compte, veuillez contacter un administrateur.");
+            previousPages.push_front(MAINWIDGET_HOME_ADMIN); // On ajoute MAINWIDGET_HOME_ADMIN au chemin pour le retour
+            break;
+        case SUCCESS_USER:
+            ui->MainWidget->setCurrentIndex(MAINWIDGET_HOME_USER); // Access au Home User
+            displayDeconnection();
+
+            previousPages.push_front(MAINWIDGET_HOME_USER); // On ajoute MAINWIDGET_HOME_USER au chemin pour le retour
+            break;
+        default:
+            QMessageBox::information(this, "Information", "Echec de la connexion, l'identifiant ou le mot de passe est incorrect \n Si vous n'avez pas de compte, veuillez contacter un administrateur.");
+        }
     }
-}
 
 void MainWindow::actionDeconnection()
 {

@@ -4,6 +4,12 @@
 #include <QRandomGenerator>
 #include "encryption.h"
 
+
+/**
+ * Methode qui permet de crypter une chaine de caractere
+ * Entree : str, const QString&
+ * Sortie : QString
+ */
 QString Encryption::encrypt(const QString& str) {
     QByteArray byteData = str.toUtf8();
 
@@ -13,7 +19,11 @@ QString Encryption::encrypt(const QString& str) {
     // Convert encrypted data back to QString
     return QString::fromUtf8(encryptedData.toBase64());
 }
-
+/**
+ * Methode qui permet de décrypter une chaine de caractere
+ * Entree : encryptedText, const QString&
+ * Sortie : QString
+ */
 QString Encryption::decrypt(const QString& encryptedText) {
     // Decode Base64
     QByteArray encryptedData = QByteArray::fromBase64(encryptedText.toUtf8());

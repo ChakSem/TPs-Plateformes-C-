@@ -8,6 +8,11 @@
 #include "../utils/Exception.h"
 #include <QDebug>
 
+/**
+ * Méthode pour mettre à jour les labels avec les informations de l'utilisateur connecté
+ * Entrée : widget, QWidget* : le QWidget qui appelle cette méthode
+ * Sortie : MainWindow*
+ */
 void AccountInformationsInterface::setAccountInformations()
 {
     Data& data = Data::getInstance();
@@ -26,6 +31,8 @@ void AccountInformationsInterface::setAccountInformations()
     ui->myId->setPalette(Qt::gray);
     
     ui->myId->setText(user->getId());
+
+    //On regarde si l'utilisateur est un admin en vérifiant si son id est dans la liste des administrateurs
     if(data.getAdministrators().contains(user->getId())) {
         ui->myRole->setText("admin");
     }

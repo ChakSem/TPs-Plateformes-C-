@@ -692,7 +692,7 @@ public:
 
         labelConnection = new QLabel(AccountInformationsInterface);
         labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(240, -20, 151, 61));
+        labelConnection->setGeometry(QRect(230, -10, 191, 61));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);

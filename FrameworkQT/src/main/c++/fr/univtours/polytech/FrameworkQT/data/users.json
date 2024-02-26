@@ -1,9 +1,13 @@
 [
     {
-        "firstname": "Crochemore",
-        "id": "03c13257-0c21-4d93-891f-9c4abce2b863",
-        "lastname": "Arthur",
+        "firstname": "Chakori Semmane",
+        "id": "9efb9350-5f78-444d-ac3e-52e8605d8567",
+        "lastname": "Alaâ",
         "profiles": [
+            {
+                "right": "LECTURE",
+                "title": "test"
+            }
         ]
     }
 ]
