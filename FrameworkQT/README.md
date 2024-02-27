@@ -10,3 +10,9 @@ Les logins peuvent être trouvé dans le fichier *passwords.json* (bien que les 
 # Fonctionnalités supplémentaires
 
 Nous avons ajouté une fonctionnalité qui permet de visualiser le détail de son compte.
+
+# Documentation et Maquettes
+
+Vous trouverez dans le dossier glog les differentes maquettes et une ebauche du diagramme de classe, ainsi que un fichier Choix.md qui explique certains 
+
+de nos choix que nous avons fait pour la réalisation de ce projet.

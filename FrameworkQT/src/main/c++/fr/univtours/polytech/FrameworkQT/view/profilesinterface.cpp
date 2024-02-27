@@ -51,24 +51,19 @@ void ProfilesInterface::actionAddInterface() {
     }
 }
 
-/**
- * Methode qui permet de supprimer directement un profil
- * Entrée :
- * Sortie :
- */
+
 void ProfilesInterface::actionDeleteInterface() {
     try {
         /*Demande de confirmation*/
         QString profileTitle = ui->comboBoxProfiles->currentText();
         Profile* profile = Controller::getProfileByTitle(profileTitle);
         if (profile != NULL) {
-            QMessageBox::StandardButton reply;
-            reply = QMessageBox::question(this, "Suppression de profil", "Etes-vous sûr de vouloir supprimer le profil " + profileTitle + " ?", QMessageBox::Yes|QMessageBox::No);
-            if (reply == QMessageBox::No) {
-                return;
-            }
-            Controller::deleteProfile(Controller::getUserProfiles()->getId(), profileTitle);
-            initializeComboBox();
+
+                if (MainWindow::messageDialog("Voulez-vous vraiment supprimer le profil " + profileTitle + " ?", "Confirmation", MESSAGEBOX_REPLY)) {
+                    Controller::deleteProfile(Controller::getUserProfiles()->getId(), profileTitle);
+                    initializeComboBox();
+                }
+            }F
         }
         else {
             throw new Exception(ERREUR_AUCUN_PROFIL_CORRESPONDANT);

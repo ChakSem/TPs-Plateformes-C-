@@ -33,6 +33,38 @@ MainWindow *MainWindow::accessToParent(QWidget *widget)
     }
 }
 
+//static void messageReply(QString message, QString title, int type);
+/**
+ * permet d'afficher un message d'erreur en fonction du type
+ * Entrée : - message, QString : le message à afficher
+ *         - title, QString : le titre du message
+ *        - type, int : le type de message de message 
+ *          (0: Ok, 1: Reply (Yes/No))
+ * Sortie : 
+ */
+bool MainWindow::messageDialog(QString message, QString title, int type)
+{
+    switch (type)
+    {
+    case MESSAGEBOX_OK:
+        QMessageBox::information(this, title, message);
+        break;
+    case MESSAGEBOX_REPLY:
+        QMessageBox::StandardButton reply;
+        reply = QMessageBox::question(this, title, message, QMessageBox::Yes | QMessageBox::No);
+        if (reply == QMessageBox::Yes)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        break;
+    }
+}
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {

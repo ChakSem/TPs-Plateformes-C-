@@ -27,7 +27,7 @@ void AccountInformationsInterface::setAccountInformations()
     
     ui->myId->setText(user->getId());
 
-    //On regarde si l'utilisateur est un admin en vérifiant si son id est dans la liste des administrateurs
+    /*On regarde si l'utilisateur est un admin en vérifiant si son id est dans la liste des administrateurs*/
     if(data.getAdministrators().contains(user->getId())) {
         ui->myRole->setText("admin");
     }

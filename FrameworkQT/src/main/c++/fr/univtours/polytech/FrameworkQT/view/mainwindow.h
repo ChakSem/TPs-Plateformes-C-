@@ -20,6 +20,9 @@
 #define DECONNECTIONWIDGET_VOID 1
 #define DECONNECTIONWIDGET_VISIBLE 0
 
+#define MESSAGEBOX_OK 0
+#define MESSAGEBOX_REPLY 1
+
 class QStackedWidget;
 
 class User;
@@ -37,7 +40,7 @@ private:
 
 public:
     static MainWindow* accessToParent(QWidget* widget);
-    static void messageReply(QString message, QString title, int type);
+    static bool messageDialog(QString message, QString title, int type);
 
     void displayDeconnection();
     void displayBack();
