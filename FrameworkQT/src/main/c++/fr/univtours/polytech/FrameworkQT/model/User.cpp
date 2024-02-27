@@ -2,12 +2,10 @@
 #include "Profile.h"
 
 
-/*Getteur de l'attribut Id */
 QString User::getId() {
     return id;
 }
 
-/*Accesseur de l'attribut lastname */
 QString User::getLastname() {
     return lastname;
 }
@@ -16,7 +14,6 @@ void User::setLastname(const QString& newLastname) {
     lastname = newLastname;
 }
 
-/*Accesseur de l'attribut firstname */
 QString User::getFirstname() {
     return firstname;
 }
@@ -28,11 +25,20 @@ QList<Profile*> User::getProfiles() {
     return profiles;
 }
 
+/**
+ * "Accesseur en lecture" de l'attribut profiles de User, ajoute l'élement en parametre à l'attribut profiles
+ * Entrée : profile, Profile&
+ * Sortie :
+ */
 void User::addProfile(const Profile& profile) {
     profiles.push_back(new Profile(profile));
 }
 
-/*Méthode pour supprimer un profil (en fonction de son titre) */
+/**
+ * Méthode pour supprimer un profil à partir du titre passé en paramètre
+ * Entrée : title, QString
+ * Sortie :
+ */
 void User::deleteProfile(const QString title) {
     for(QList<Profile*>::const_iterator iter = profiles.constBegin(); iter != profiles.constEnd(); ++iter) {
         if(title == (*iter)->getTitle()) {
@@ -43,7 +49,11 @@ void User::deleteProfile(const QString title) {
     }
 }
 
-/*Surcharge de l'opérateur = , pour copier un utilisateur */
+/**
+ * Surcharge de l'opérateur =
+ * Entrée : user, User&
+ * Sortie : User&
+ */
 User& User::operator=(const User& user) {
     // On ne recopie pas l'id (Pas la même personne)
     lastname = QString(user.lastname);

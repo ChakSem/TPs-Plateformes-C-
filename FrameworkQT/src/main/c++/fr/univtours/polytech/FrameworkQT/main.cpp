@@ -1,6 +1,5 @@
 #include "view/mainwindow.h"
 #include "model/User.h"
-#include "model/Administrator.h"
 #include "model/data.h"
 #include "parseurJson/CparserJson.h"
 #include "controller/controller.h"

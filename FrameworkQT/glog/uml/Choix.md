@@ -21,8 +21,6 @@ Fonctionnement similaire
 ### Singleton Data
 Nous avons fait le choix de faire de la classe Data un singleton, car il est important que les données soient partagées entre les differentes vues, et que l'on puisse acceder a ces données de n'importe ou dans le programme.
 
-### Sonarlint
-
 ### Non utilisation du namespace (Qstring, QMap, ...)
 Pour une clarte du code, nous avons fait le choix de ne pas utiliser les namespace, pour que le code soit plus lisible.
 De cette maniere on sait exactement d'ou viennent les fonctions et les classes utilisees.

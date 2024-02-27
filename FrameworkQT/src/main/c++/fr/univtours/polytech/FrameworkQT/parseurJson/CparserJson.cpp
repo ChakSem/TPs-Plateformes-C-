@@ -16,6 +16,12 @@
 #define FILEPATHADMIN "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/data/admins.json"
 #define FILEPATHPASSWORDS "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/data/passwords.json"
 
+/**
+ * Methode qui permet de lire les profils dans le fichier json d'un utilisateur
+ * Entree : std::string id
+ * Sortie : std::vector<Profile>
+ * Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json d'un utilisateur
+ */
 int CparserJson::saveData(Data& data) {
 
     try {
@@ -143,6 +149,12 @@ int CparserJson::saveData(Data& data) {
     }
 }
 
+/**
+ * Methode qui permet de sauvegarder un utilisateur dans le fichier json et son mot de passe dans le fichier json (on va le crypter avant de le sauvegarder)
+ * Entree : User user, std::string password
+ * Sortie : Rien
+ * Entrain : Sauvegarde l'utilisateur dans le fichier json et son mot de passe dans le fichier json (on va le crypter avant de le sauvegarder)
+ */
 int CparserJson::updateData(Data& data) {
     try {
         QFile fileUser(FILEPATHUSER);
@@ -263,8 +275,13 @@ int CparserJson::updateData(Data& data) {
     }
 }
 
-void CparserJson::setPassword(QString id, QString password)
-{
+/**
+ * Methode qui permet de crypter un mot de passe
+ * Entree : std::string password
+ * Sortie : std::string
+ * Entrain : Retourne le mot de passe crypte
+ */
+void CparserJson::setPassword(QString id, QString password) {
     try {
         QFile file(FILEPATHPASSWORDS);
         if (!file.open(QIODevice::ReadWrite)) {
@@ -289,7 +306,12 @@ void CparserJson::setPassword(QString id, QString password)
 
 }
 
-
+/**
+ * Methode qui permet de decrypter un mot de passe
+ * Entree : std::string password
+ * Sortie : std::string
+ * Entrain : Retourne le mot de passe decrypte
+ */
 QString CparserJson::getPassword(QString id)
 {
     try {
