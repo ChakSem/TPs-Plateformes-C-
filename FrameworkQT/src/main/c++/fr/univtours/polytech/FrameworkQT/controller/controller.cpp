@@ -7,20 +7,34 @@
 #include "../model/Data.h"
 #include "../utils/exception.h"
 
-
 /* Accesseurs en lecture des attributs de Data */
-User* Controller::getUserConnected() {
+/**
+ * "Accesseur en lecture" de l'attribut profiles de User, ajoute l'élement en parametre à l'attribut profiles
+ * Entrée : profile, Profile&
+ * Sortie :
+ */
+User *Controller::getUserConnected()
+{
     return Data::getInstance().getUserConnected();
 }
-
-User* Controller::getUserProfiles() {
+/**
+ * "Accesseur en lecture" de l'attribut profiles de User, ajoute l'élement en parametre à l'attribut profiles
+ * Entrée : profile, Profile&
+ * Sortie :
+ */
+User *Controller::getUserProfiles()
+{
     Data::getInstance().getUserProfiles();
 }
-
-User* Controller::getUser(QString id) {
+/**
+ * "Accesseur en lecture" de l'attribut profiles de User, ajoute l'élement en parametre à l'attribut profiles
+ * Entrée :
+ * Sortie :
+ */
+User *Controller::getUser(QString id)
+{
     return Data::getInstance().getUser(id);
 }
-
 
 /* Gestion de la session */
 /**
@@ -31,19 +45,24 @@ User* Controller::getUser(QString id) {
  *                          - SUCCESS_USER : si les logins sont bons et qu'il s'agit d'un user
  *                          - ERROR : si ca s'est mal passé
  */
-unsigned int Controller::connection(const QString id, QString password) {
- 
-    if(CparserJson::getPassword(id) != password) {
+unsigned int Controller::connection(const QString id, QString password)
+{
+
+    if (CparserJson::getPassword(id) != password)
+    {
         return ERROR;
     }
 
-    User* user = Data::getInstance().getUser(id);
+    User *user = Data::getInstance().getUser(id);
 
-    if(Data::getInstance().getAdministrators().contains(id)) {
+    if (Data::getInstance().getAdministrators().contains(id))
+    {
         Data::getInstance().connect(user, ADMIN);
 
         return SUCCESS_ADMIN;
-    } else {
+    }
+    else
+    {
         Data::getInstance().connect(user, USER);
 
         return SUCCESS_USER;
@@ -51,11 +70,13 @@ unsigned int Controller::connection(const QString id, QString password) {
     return ERROR;
 }
 
-int Controller::isAdmin() {
+int Controller::isAdmin()
+{
     return Data::getInstance().typeOfConnectedUser();
 }
 
-void Controller::deconnection() {
+void Controller::deconnection()
+{
     Data::getInstance().disconnect();
 }
 
@@ -65,16 +86,20 @@ void Controller::deconnection() {
  * Entree :
  * Sortie :
  */
-void Controller::openUserProfilesForCurrentUser() {
-    User* userConnected = Data::getInstance().getUserConnected();
-    try {
-        if(userConnected == NULL) {
+void Controller::openUserProfilesForCurrentUser()
+{
+    User *userConnected = Data::getInstance().getUserConnected();
+    try
+    {
+        if (userConnected == NULL)
+        {
             // TODO : Exception
         }
 
         openUserProfiles(userConnected);
     }
-    catch (Exception* e) {
+    catch (Exception *e)
+    {
         e->EXCAffichageErreur();
     }
 }
@@ -84,7 +109,8 @@ void Controller::openUserProfilesForCurrentUser() {
  * Entree : userProfiles, User*
  * Sortie :
  */
-void Controller::openUserProfiles(User* userProfiles) {
+void Controller::openUserProfiles(User *userProfiles)
+{
     Data::getInstance().setUserProfiles(userProfiles);
 }
 
@@ -93,23 +119,31 @@ void Controller::openUserProfiles(User* userProfiles) {
  * Entree :
  * Sortie :
  */
-void Controller::closeUserProfiles() {
+void Controller::closeUserProfiles()
+{
     Data::getInstance().clearUserProfiles();
 }
 
-unsigned int Controller::hasProfiles() {
-    User* userProfiles = getUserProfiles();
+unsigned int Controller::hasProfiles()
+{
+    User *userProfiles = getUserProfiles();
 
-    if(userProfiles->getProfiles().size() == 0) {
+    if (userProfiles->getProfiles().size() == 0)
+    {
         return NO_PROFILES;
-    } else {
+    }
+    else
+    {
         return SOME_PROFILES;
     }
 }
 
-Profile* Controller::getProfileByTitle(QString profileTitle) {
-    for(Profile* profile : getUserProfiles()->getProfiles()) {
-        if(profile->getTitle() == profileTitle) {
+Profile *Controller::getProfileByTitle(QString profileTitle)
+{
+    for (Profile *profile : getUserProfiles()->getProfiles())
+    {
+        if (profile->getTitle() == profileTitle)
+        {
             return profile;
         }
     }
@@ -127,18 +161,21 @@ Profile* Controller::getProfileByTitle(QString profileTitle) {
  *                                      - ROLE_USER sinon
  * Sortie : User*
  */
-User* Controller::createUser(QString firstname, QString lastname, QString password, unsigned int roleValue) {
-    User* newUser = new User(firstname, lastname);
+User *Controller::createUser(QString firstname, QString lastname, QString password, unsigned int roleValue)
+{
+    User *newUser = new User(firstname, lastname);
 
-    try {
-        switch(roleValue) {
+    try
+    {
+        switch (roleValue)
+        {
         case ROLE_ADMIN:
             Data::getInstance().addAdministrator(newUser);
             break;
         case ROLE_USER:
             Data::getInstance().addUser(newUser);
             break;
-        default :
+        default:
             throw new Exception(ERREUR_AUCUN_ROLE_CORRESPONDANT);
         }
         CparserJson::setPassword(newUser->getId(), password);
@@ -146,7 +183,8 @@ User* Controller::createUser(QString firstname, QString lastname, QString passwo
         return newUser;
     }
 
-    catch (Exception* e) {
+    catch (Exception *e)
+    {
         e->EXCAffichageErreur();
         return NULL;
     }
@@ -157,22 +195,29 @@ User* Controller::createUser(QString firstname, QString lastname, QString passwo
  * Entree : id, QString
  * Sortie : User*
  */
-void Controller::deleteUser(QString id) {
+void Controller::deleteUser(QString id)
+{
     Data::getInstance().removeUser(id);
 }
 
 /* Gestion d'objets Profile */
 /**
  * Crée un nouvel objet Profile vis à vis des données en parametre
- * Entree : id, QString
+ * Entree : name, QString
+ *         rightValue, unsigned int :   - DROIT_LECTURE Permet d'avoir le droit de lire
+ *                                     - DROIT_LECTURE_MODIFICATION Permet d'avoir le droit de lire et de modifier
+ *                                    - DROIT_LECTURE_MODIFICATION_ECRITURE_SUPPRESSION Permet d'avoir le droit de lire, de modifier, d'écrire et de supprimer (Droit reservé à l'admin uniquement)
  * Sortie : User*
  */
-void Controller::createProfile(QString name, unsigned int rightValue) {
+void Controller::createProfile(QString name, unsigned int rightValue)
+{
     Rights right;
-    User* user = Data::getInstance().getUserProfiles();
+    User *user = Data::getInstance().getUserProfiles();
 
-    try {
-        switch(rightValue) {
+    try
+    {
+        switch (rightValue)
+        {
         case DROIT_LECTURE:
             right = Rights::LECTURE;
             break;
@@ -182,17 +227,18 @@ void Controller::createProfile(QString name, unsigned int rightValue) {
         case DROIT_LECTURE_MODIFICATION_ECRITURE_SUPPRESSION:
             right = Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION;
             break;
-        default :
+        default:
             throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
         }
 
-        Profile* newProfile = new Profile(user, name, right);
+        Profile *newProfile = new Profile(user, name, right);
 
         user->addProfile(*newProfile);
         delete newProfile;
     }
 
-    catch (Exception* e) {
+    catch (Exception *e)
+    {
         e->EXCAffichageErreur();
     }
 }
@@ -202,19 +248,24 @@ void Controller::createProfile(QString name, unsigned int rightValue) {
  * Entree : id, QString
  * Sortie : User*
  */
-void Controller::deleteProfile(QString idUser, QString profileName) {
+void Controller::deleteProfile(QString idUser, QString profileName)
+{
     Data::getInstance().getUser(idUser)->deleteProfile(profileName);
 }
-
-unsigned int Controller::isThereUsers() {
-    if(Data::getInstance().getUsers().size() == 0) {
+/**
+ *Méthode pour vérifier si des utilisateurs sont présents
+ * Entrée :
+ * Sortie : unsigned int :  - NO_USERS : s'il n'y a pas d'utilisateurs
+ *                         - SOME_USERS : s'il y a des utilisateurs
+ */
+unsigned int Controller::isThereUsers()
+{
+    if (Data::getInstance().getUsers().size() == 0)
+    {
         return NO_USERS;
-    } else {
+    }
+    else
+    {
         return SOME_USERS;
     }
 }
-
-
-
-
-

@@ -41,9 +41,10 @@ private:
 public:
     static MainWindow* accessToParent(QWidget* widget);
     static bool messageDialog(QString message, QString title, int type);
-
+    
     void displayDeconnection();
     void displayBack();
+    
     void actionConnection(QString id, QString password);
     void actionDeconnection();
 

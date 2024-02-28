@@ -116,6 +116,8 @@ Profile &Profile::operator=(const Profile &profile)
 
     QString uniqueTitle = profile.title;
     int copyCount = 1;
+    
+    /* On incremente un entier, ajouté à la fin de newTile, jusqu'à avoir une chaîne unique */
     while (searchTitle(user->getProfiles(), uniqueTitle) == TROUVE)
     {
         uniqueTitle = profile.title + QString::number(copyCount);

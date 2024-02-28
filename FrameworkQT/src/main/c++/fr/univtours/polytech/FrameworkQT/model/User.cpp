@@ -1,32 +1,59 @@
 #include "User.h"
 #include "Profile.h"
 
-
+/**
+ * Méthode pour récupurer l'id d'un utilisateur
+ * Entrée : 
+ * Sortie :
+ */
 QString User::getId() {
     return id;
 }
 
+/**
+ * Méthode pour récuperer le rôle d'un utilisateur
+ * Entrée : 
+ * Sortie :
+ */
 QString User::getLastname() {
     return lastname;
 }
 
+/**
+ * "Accesseur en ecriture" de l'attribut lastname de User, ajoute l'élement en parametre à l'attribut lastname
+ * Entrée :  newLastname, QString
+ * Sortie :
+ */
 void User::setLastname(const QString& newLastname) {
     lastname = newLastname;
 }
-
+/**
+ * "Accesseur en lecture" de l'attribut firstname de User, ajoute l'élement en parametre à l'attribut firstname
+ * Entrée : 
+ * Sortie :
+ */
 QString User::getFirstname() {
     return firstname;
 }
+/**
+ * "Accesseur en ecriture" de l'attribut firstname de User, ajoute l'élement en parametre à l'attribut firstname
+ * Entrée : newFirstname, QString
+ * Sortie :
+ */
 void User::setFirstname(const QString& newFirstname) {
     firstname = newFirstname;
 }
-
+/**
+ * "Accesseur en lecture" de l'attribut profiles de User, permet de récupérer la liste des profils de l'utilisateur
+ * Entrée : 
+ * Sortie :
+ */
 QList<Profile*> User::getProfiles() {
     return profiles;
 }
 
 /**
- * "Accesseur en lecture" de l'attribut profiles de User, ajoute l'élement en parametre à l'attribut profiles
+ * "Accesseur en ecriture" de l'attribut profiles de User, permet d'ajouter un profil à la liste des profils de l'utilisateur
  * Entrée : profile, Profile&
  * Sortie :
  */
@@ -40,7 +67,9 @@ void User::addProfile(const Profile& profile) {
  * Sortie :
  */
 void User::deleteProfile(const QString title) {
+    /* On parcourt la liste des profils */
     for(QList<Profile*>::const_iterator iter = profiles.constBegin(); iter != profiles.constEnd(); ++iter) {
+        /* Si on trouve le profil, on le supprime */
         if(title == (*iter)->getTitle()) {
             delete *iter;
             profiles.erase(iter);

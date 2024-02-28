@@ -18,6 +18,9 @@ L'administrateur aura le droit suivant :
 On part du principe qur l'administrateur est le seul a pouvoir creer des comptes, et donc l'utilisateur ne peut pas creer de compte ( hormis lors de la premiere utilisation du programme, ou on autorise l'utilisateur a se creer un compte).
 Fonctionnement similaire
 
+## Creation de comptes administrateurs
+Un administrateur peut creer des comptes administrateurs, mais il existe un administrateur par defaut, celui ci ne POURRA PAS être supprimé (une Exception sera levée si on essaye de le supprimer).
+
 ### Singleton Data
 Nous avons fait le choix de faire de la classe Data un singleton, car il est important que les données soient partagées entre les differentes vues, et que l'on puisse acceder a ces données de n'importe ou dans le programme.
 

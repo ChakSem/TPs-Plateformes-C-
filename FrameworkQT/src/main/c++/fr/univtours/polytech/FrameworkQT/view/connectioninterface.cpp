@@ -10,7 +10,6 @@ ConnectionInterface::ConnectionInterface(QWidget *parent)
     , ui(new Ui::ConnectionInterface)
 {
     ui->setupUi(this);
-
     connect( ui->pushButton, &QPushButton::clicked, this, &ConnectionInterface::actionConnection);
 }
 

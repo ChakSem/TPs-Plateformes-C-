@@ -1,6 +1,5 @@
 debug/controller.o
 debug/main.o
-debug/Administrator.o
 debug/Profile.o
 debug/User.o
 debug/data.o

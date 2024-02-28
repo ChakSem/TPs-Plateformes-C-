@@ -48,6 +48,8 @@ void AddProfileInterface::actionCreateProfile() {
 
         // On crée le profil
         Controller::createProfile(name, profileRightsValue);
+        MainWindow::messageDialog("Vous avez bien créé le profil", "Information", MESSAGEBOX_OK);
+        
 
         MainWindow *mainWindow = MainWindow::accessToParent(this);
         if (mainWindow != NULL) {

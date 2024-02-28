@@ -16,20 +16,26 @@ CreationUserInterface::~CreationUserInterface()
     delete ui;
 }
 
+/**
+ * Méthode pour ajouter un utilisateur ou un administrateur dans la base de données
+ * Entrée :
+ * Sortie :
+ */
 void CreationUserInterface::actionAddUser() {
     try
     {
+        /* Récupération des informations */
         QString nom = ui->lastNameUser->text();
         QString prenom = ui->firstNameUser->text();
         QString mdp = ui->passwordLogin->text();
-        unsigned int roleValue = ui->radioButtonIsAdmin->isChecked() ? ROLE_ADMIN : ROLE_USER;
+        unsigned int roleValue = ui->radioButtonIsAdmin->isChecked() ? ROLE_ADMIN : ROLE_USER;//on récupère le role de l'utilisateur
         if (nom == "" || mdp == "")
         {
             throw new Exception(ERREUR_ALL_TOUS_LES_CHAMPS_NE_SONT_PAS_REMPLIS);
         }
+        /* On crée l'utilisateur dans la base de données */
         User* newUser = Controller::createUser(prenom, nom, mdp, roleValue);
-
-        // TODO : update le tableView
+        MainWindow::messageDialog("L'utilisateur a bien été créé", "Information", MESSAGEBOX_OK);
 
         MainWindow *mainWindow = MainWindow::accessToParent(this);
 

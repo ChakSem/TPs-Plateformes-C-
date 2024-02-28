@@ -1,6 +1,5 @@
 release/controller.o
 release/main.o
-release/Administrator.o
 release/Profile.o
 release/User.o
 release/data.o

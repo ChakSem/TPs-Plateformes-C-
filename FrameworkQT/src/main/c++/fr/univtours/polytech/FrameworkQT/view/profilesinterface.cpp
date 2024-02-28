@@ -51,28 +51,30 @@ void ProfilesInterface::actionAddInterface() {
     }
 }
 
-
+/**
+ * Methode qui permet de supprimer un profil
+ * Entrée :
+ * Sortie :
+ */
 void ProfilesInterface::actionDeleteInterface() {
     try {
-        /*Demande de confirmation*/
+        /*On récupère le profil selectionné*/
         QString profileTitle = ui->comboBoxProfiles->currentText();
         Profile* profile = Controller::getProfileByTitle(profileTitle);
         if (profile != NULL) {
-
+                /*On demande confirmation à l'utilisateur*/
                 if (MainWindow::messageDialog("Voulez-vous vraiment supprimer le profil " + profileTitle + " ?", "Confirmation", MESSAGEBOX_REPLY)) {
                     Controller::deleteProfile(Controller::getUserProfiles()->getId(), profileTitle);
                     initializeComboBox();
                 }
-            }F
-        }
-        else {
-            throw new Exception(ERREUR_AUCUN_PROFIL_CORRESPONDANT);
         }
     }
     catch (Exception* e) {
         e->EXCAffichageErreur();
     }
 }
+
+         
 
 /**
  * Methode qui permet de rediriger vers l'interface de gestion de profil (ou l'on va gerer les connexions avec les BDDs)
@@ -86,7 +88,7 @@ void ProfilesInterface::actionManageInterface() {
         MainWindow *mainWindow = MainWindow::accessToParent(this);
 
         if (mainWindow != NULL) {
-            QMessageBox::information(this, "Information", "Cette fonctionnalité sera implémentée plus tard(Partie 2)." );
+            MainWindow::messageDialog("Cette fonctionnalité sera implémentée plus tard(Partie 2).", "Information", MESSAGEBOX_OK);
             // TODO : ouvrir l'interface ManageProfile
             // mainWindow->openManageProfile(profile);
         }

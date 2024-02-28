@@ -33,25 +33,25 @@ MainWindow *MainWindow::accessToParent(QWidget *widget)
     }
 }
 
-//static void messageReply(QString message, QString title, int type);
 /**
  * permet d'afficher un message d'erreur en fonction du type
  * Entrée : - message, QString : le message à afficher
  *         - title, QString : le titre du message
- *        - type, int : le type de message de message 
+ *        - type, int : le type de message de message
  *          (0: Ok, 1: Reply (Yes/No))
- * Sortie : 
+ * Sortie : bool : true si le message est de type Reply et que l'utilisateur a cliqué sur Yes, false sinon
  */
 bool MainWindow::messageDialog(QString message, QString title, int type)
 {
+    /* En fonction du type de message on affiche un QMessageBox différent */
     switch (type)
     {
     case MESSAGEBOX_OK:
-        QMessageBox::information(this, title, message);
+        QMessageBox::information(nullptr, title, message); // nullprt car on est dans un static et qu'on ne peut pas acceder à this
         break;
     case MESSAGEBOX_REPLY:
         QMessageBox::StandardButton reply;
-        reply = QMessageBox::question(this, title, message, QMessageBox::Yes | QMessageBox::No);
+        reply = QMessageBox::question(nullptr, title, message, QMessageBox::Yes | QMessageBox::No);
         if (reply == QMessageBox::Yes)
         {
             return true;
@@ -64,12 +64,15 @@ bool MainWindow::messageDialog(QString message, QString title, int type)
     }
 }
 
-
+/**
+ * Constructeur de la classe MainWindow
+ * Entrée :
+ * Sortie :
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
     if (Controller::isThereUsers() == SOME_USERS)
     {
         ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
@@ -92,34 +95,51 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/**
+ * Permet d'afficher le bouton de deconnexion
+ * Entrée :
+ * Sortie :
+ */
 void MainWindow::displayDeconnection()
 {
     ui->DeconnectionWidget->setCurrentIndex(DECONNECTIONWIDGET_VISIBLE); // On affiche le bouton deconnexion
 }
 
-    void MainWindow::actionConnection(QString id, QString password)
+/**
+ * Permet de gérer la connexion de l'utilisateur et de le rediriger vers l'interface (home) correspondante (Admin ou User)
+ * Entrée : id, QString : l'identifiant de l'utilisateur
+ *         password, QString : le mot de passe de l'utilisateur
+ * Sortie :
+ */
+void MainWindow::actionConnection(QString id, QString password)
+{
+    unsigned int success = Controller::connection(id, password);
+
+    switch (success)
     {
-        unsigned int success = Controller::connection(id, password);
+    case SUCCESS_ADMIN:
+        ui->MainWidget->setCurrentIndex(MAINWIDGET_HOME_ADMIN); // Access au Home Admin
+        displayDeconnection();
 
-        switch (success)
-        {
-        case SUCCESS_ADMIN:
-            ui->MainWidget->setCurrentIndex(MAINWIDGET_HOME_ADMIN); // Access au Home Admin
-            displayDeconnection();
+        previousPages.push_front(MAINWIDGET_HOME_ADMIN); // On ajoute MAINWIDGET_HOME_ADMIN au chemin pour le retour
+        break;
+    case SUCCESS_USER:
+        ui->MainWidget->setCurrentIndex(MAINWIDGET_HOME_USER); // Access au Home User
+        displayDeconnection();
 
-            previousPages.push_front(MAINWIDGET_HOME_ADMIN); // On ajoute MAINWIDGET_HOME_ADMIN au chemin pour le retour
-            break;
-        case SUCCESS_USER:
-            ui->MainWidget->setCurrentIndex(MAINWIDGET_HOME_USER); // Access au Home User
-            displayDeconnection();
-
-            previousPages.push_front(MAINWIDGET_HOME_USER); // On ajoute MAINWIDGET_HOME_USER au chemin pour le retour
-            break;
-        default:
-            QMessageBox::information(this, "Information", "Echec de la connexion, l'identifiant ou le mot de passe est incorrect \n Si vous n'avez pas de compte, veuillez contacter un administrateur.");
-        }
+        previousPages.push_front(MAINWIDGET_HOME_USER); // On ajoute MAINWIDGET_HOME_USER au chemin pour le retour
+        break;
+    default:
+        MainWindow::messageDialog("Echec de la connexion, l'identifiant ou le mot de passe est incorrect \n Si vous n'avez pas de compte, veuillez contacter un administrateur.", "Information", MESSAGEBOX_OK);
+        break;
     }
+}
 
+/**
+ * Permet de la deconnexion de l'utilisateur
+ * Entrée :
+ * Sortie :
+ */
 void MainWindow::actionDeconnection()
 {
     Controller::deconnection(); // On gere la deconnexion pour les donnees
@@ -142,7 +162,11 @@ void MainWindow::openConnection()
         ui->MainWidget->setCurrentIndex(MAINWIDGET_FIRST_USER_REGISTRATION);
     }
 }
-
+/**
+ * Permet de rediriger vers l'interface de gestion des utilisateurs
+ * Entrée :
+ * Sortie :
+ */
 void MainWindow::openUsers()
 {
     ui->MainWidget->setCurrentIndex(MAINWIDGET_USER_MANAGEMENT); // Access à la page de gestion des utilisateurs
@@ -172,6 +196,11 @@ void MainWindow::openMyProfiles()
     openProfiles();
 }
 
+/**
+ * Permet d'ouvrir les profils d'un utilisateur
+ * Entrée : user, User* : l'utilisateur pour lequel on veut ouvrir les profils
+ * Sortie :
+ */
 void MainWindow::openProfiles(User *user)
 {
     Controller::openUserProfiles(user);
@@ -179,6 +208,12 @@ void MainWindow::openProfiles(User *user)
     openProfiles();
 }
 
+/**
+ * Permet de rediriger vers l'interface des profils
+ * si l'utilisateur n'a pas de profils, on est redirigé vers l'interface de création de profils
+ * Entrée :
+ * Sortie :
+ */
 void MainWindow::openProfiles()
 {
     ui->MainWidget->setCurrentIndex(MAINWIDGET_PROFILES); // Access à la page de gestion des profils
@@ -202,29 +237,45 @@ void MainWindow::openProfiles()
     }
 }
 
+/**
+ * TODO : partie 2 (Permettra de rediriger vers l'interface de connexion avec les BDDs)
+ * Entrée :
+ * Sortie :
+ */
 void MainWindow::openDatabases()
 {
-    QMessageBox::information(this, "Information", "Cette fonctionnalité sera implémentée plus tard(Partie 2).");
-
+    // QMessageBox::information(this, "Information", "Cette fonctionnalité sera implémentée plus tard(Partie 2).");
+    MainWindow::messageDialog("Cette fonctionnalité sera implémentée plus tard(Partie 2).", "Information", MESSAGEBOX_OK);
     // TODO : partie 2
     // ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
     // previousPages.push_front(MAINWIDGET_CONNECTION); // On ajoute MAINWIDGET_CONNECTION au chemin pour le retour
 }
-
+/**
+ * Permet de rediriger vers l'inteface de création d'utilisateur
+ * Entrée :
+ * Sortie :
+ */
 void MainWindow::openCreateUser()
 {
     ui->MainWidget->setCurrentIndex(MAINWIDGET_ACCOUNT_CREATION); // Access à la page de creation d'utilisateurs
-
-    previousPages.push_front(MAINWIDGET_ACCOUNT_CREATION); // On ajoute MAINWIDGET_ACCOUNT_CREATION au chemin pour le retour
+    previousPages.push_front(MAINWIDGET_ACCOUNT_CREATION);        // On ajoute MAINWIDGET_ACCOUNT_CREATION au chemin pour le retour
 }
-
+/**
+ * Permet de rediriger vers l'interface d'ajout de profil
+ * Entrée :
+ * Sortie :
+ */
 void MainWindow::openAddProfiles()
 {
     ui->MainWidget->setCurrentIndex(MAINWIDGET_ADD_PROFILE); // Access à la page d'ajout de profils
-
-    previousPages.push_front(MAINWIDGET_ADD_PROFILE); // On ajoute MAINWIDGET_ADD_PROFILE au chemin pour le retour
+    previousPages.push_front(MAINWIDGET_ADD_PROFILE);        // On ajoute MAINWIDGET_ADD_PROFILE au chemin pour le retour
 }
 
+/**
+ * Permet de mettre à jour le tableau des utilisateurs
+ * Entrée : user, User* : le nouvel utilisateur à ajouter
+ * Sortie :
+ */
 void MainWindow::updateTableView(User *user)
 {
     UserManagementInterface *userManagementInterface = qobject_cast<UserManagementInterface *>(this->ui->MainWidget->widget(MAINWIDGET_USER_MANAGEMENT));

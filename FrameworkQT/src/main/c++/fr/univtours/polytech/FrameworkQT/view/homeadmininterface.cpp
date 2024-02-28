@@ -8,6 +8,7 @@ HomeAdminInterface::HomeAdminInterface(QWidget *parent)
     , ui(new Ui::HomeAdminInterface)
 {
     ui->setupUi(this);
+    /* Connexion des boutons aux méthodes(Redirecction vers les informations du compte, les bases de données, les profils et les utilisateurs) */
     connect( ui->pushButtonAccount, &QPushButton::clicked, this, &HomeAdminInterface::actionAccount);
     connect( ui->pushButtonDatabase, &QPushButton::clicked, this, &HomeAdminInterface::actionDatabase);
     connect( ui->pushButtonProfile, &QPushButton::clicked, this, &HomeAdminInterface::actionProfile);
@@ -19,6 +20,11 @@ HomeAdminInterface::~HomeAdminInterface()
     delete ui;
 }
 
+/**
+ * Permet de rediriger vers la page de gestion du compte
+ * Entrée :
+ * Sortie :
+ */
 void HomeAdminInterface::actionAccount() {
     MainWindow *mainWindow = MainWindow::accessToParent(this);
 
@@ -28,6 +34,11 @@ void HomeAdminInterface::actionAccount() {
     }
 }
 
+/**
+ * Permet de rediriger vers la page de gestion des bases de données
+ * Entrée :
+ * Sortie :
+ */
 void HomeAdminInterface::actionDatabase() {
     MainWindow *mainWindow = MainWindow::accessToParent(this);
 
@@ -38,6 +49,11 @@ void HomeAdminInterface::actionDatabase() {
     }
 }
 
+/**
+ * Permet de rediriger  vers la page de gestion des profils
+ * Entrée :
+ * Sortie :
+ */
 void HomeAdminInterface::actionProfile() {
     MainWindow *mainWindow = MainWindow::accessToParent(this);
 
@@ -47,6 +63,11 @@ void HomeAdminInterface::actionProfile() {
     }
 }
 
+/**
+ * Permet de rediriger vers la page de gestion des utilisateurs
+ * Entrée :
+ * Sortie :
+ */
 void HomeAdminInterface::actionUser() {
     MainWindow *mainWindow = MainWindow::accessToParent(this);
 

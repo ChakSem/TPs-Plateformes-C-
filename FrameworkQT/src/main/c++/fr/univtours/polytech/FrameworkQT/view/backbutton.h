@@ -3,8 +3,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class BackButton;
+namespace Ui
+{
+    class BackButton;
 }
 
 class BackButton : public QWidget

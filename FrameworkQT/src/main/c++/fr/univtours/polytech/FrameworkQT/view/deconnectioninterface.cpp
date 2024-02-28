@@ -8,6 +8,7 @@ DeconnectionInterface::DeconnectionInterface(QWidget *parent)
     , ui(new Ui::DeconnectionInterface)
 {
     ui->setupUi(this);
+    /* Connexion du bouton de déconnection à la méthode de déconnection */
     connect( ui->pushButtonDeconnection, &QPushButton::clicked, this, &DeconnectionInterface::actionDeconnection);
 }
 
@@ -15,11 +16,18 @@ DeconnectionInterface::~DeconnectionInterface()
 {
     delete ui;
 }
-
+/**
+ * Méthode pour se déconnecter (ça redirige vers la méthode de déconnection de MainWindow)
+ * Entrée :
+ * Sortie :
+ */
 void DeconnectionInterface::actionDeconnection() {
+    //Demander une comfirmation pour la déconnection
+    MainWindow::messageDialog("Voulez-vous vraiment vous déconnecter ?", "Confirmation", MESSAGEBOX_REPLY);
     MainWindow *mainWindow = MainWindow::accessToParent(this);
-
+    
     if (mainWindow != NULL) {
             mainWindow->actionDeconnection();
     }
+   
 }

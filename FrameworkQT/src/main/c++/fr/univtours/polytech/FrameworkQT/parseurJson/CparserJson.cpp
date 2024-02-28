@@ -20,7 +20,6 @@
  * Methode qui permet de lire les profils dans le fichier json d'un utilisateur
  * Entree : std::string id
  * Sortie : std::vector<Profile>
- * Entrain : Retourne un vecteur de profils qui contient tous les profils dans le fichier json d'un utilisateur
  */
 int CparserJson::saveData(Data& data) {
 
@@ -153,7 +152,6 @@ int CparserJson::saveData(Data& data) {
  * Methode qui permet de sauvegarder un utilisateur dans le fichier json et son mot de passe dans le fichier json (on va le crypter avant de le sauvegarder)
  * Entree : User user, std::string password
  * Sortie : Rien
- * Entrain : Sauvegarde l'utilisateur dans le fichier json et son mot de passe dans le fichier json (on va le crypter avant de le sauvegarder)
  */
 int CparserJson::updateData(Data& data) {
     try {
@@ -209,7 +207,7 @@ int CparserJson::updateData(Data& data) {
 
                     Profile* profile = new Profile(user, QString::fromStdString(profileObject["title"].toString().toStdString()), right);
 
-                    // TODO : Gérer les bases de données
+                    // TO DO : Gérer les bases de données
 
                     user->addProfile(*profile);
                 }
@@ -264,9 +262,7 @@ int CparserJson::updateData(Data& data) {
                 data.addAdministrator(admin);
             }
         }
-
         fileAdmin.close();
-
         return SUCCESS;
 
     } catch (Exception* e) {
@@ -310,24 +306,24 @@ void CparserJson::setPassword(QString id, QString password) {
  * Methode qui permet de decrypter un mot de passe
  * Entree : std::string password
  * Sortie : std::string
- * Entrain : Retourne le mot de passe decrypte
  */
 QString CparserJson::getPassword(QString id)
 {
     try {
+        /* On ouvre le fichier des mots de passe */
         QFile file(FILEPATHPASSWORDS);
         if (!file.open(QIODevice::ReadWrite)) {
             throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_MOTS_DE_PASSE);
         }
-
+        /* On lit le contenu du fichier */
         QByteArray byteArray = file.readAll();
-        QJsonDocument doc = QJsonDocument::fromJson(byteArray);
+        QJsonDocument doc = QJsonDocument::fromJson(byteArray);// On le convertit en document JSON
 
         if (doc.isNull() || doc.isEmpty())
-            doc = QJsonDocument::fromJson("{}");
+            doc = QJsonDocument::fromJson("{}");// Si le document est vide, on le remplit avec un objet vide
 
         QJsonObject obj = doc.object();
-        return Encryption::decrypt(QString::fromStdString(obj[id].toString().toStdString()));
+        return Encryption::decrypt(QString::fromStdString(obj[id].toString().toStdString()));// On retourne le mot de passe decrypte
     }
     catch (Exception* e) {
         e->EXCAffichageErreur();
