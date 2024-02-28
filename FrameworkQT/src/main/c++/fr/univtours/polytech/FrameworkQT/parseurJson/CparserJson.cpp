@@ -25,20 +25,19 @@ int CparserJson::saveData(Data& data) {
 
     try {
         QFile fileUser(FILEPATHUSER);
-        if (!fileUser.open(QIODevice::ReadOnly))
-        {
-            // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
+        if (!fileUser.open(QIODevice::ReadOnly)) {
+            /* Affiche un message d'erreur en cas d'échec d'ouverture du fichier .json */
             throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_USER);
         }
 
         QFile fileAdmin(FILEPATHADMIN);
-        if (!fileAdmin.open(QIODevice::ReadOnly))
-        {
-            // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
+        if (!fileAdmin.open(QIODevice::ReadOnly)) {
+        if (!fileAdmin.open(QIODevice::ReadOnly)) {
+            /* Affiche un message d'erreur en cas d'échec d'ouverture du fichier .json */
             throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_ADMIN);
         }
 
-        // Créer un objet JSON pour l'utilisateur
+        /* Créer un objet .json pour les utilisateurs */
         QJsonArray usersArray;
         for (User* user : data.getUsers()) {
             QJsonObject userObject;
@@ -51,7 +50,7 @@ int CparserJson::saveData(Data& data) {
 
                 QJsonObject profileObject;
                 profileObject["title"] = profile->getTitle();
-                // Convert Rights enum to string
+                /* On convertit l'enum Rights en string */
                 QString rightString;
                 switch (profile->getRight()) {
                 case Rights::LECTURE:
@@ -80,16 +79,16 @@ int CparserJson::saveData(Data& data) {
 
         if (!fileUser.open(QIODevice::WriteOnly))
         {
-            // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON en écriture
+            /* Affiche un message d'erreur en cas d'échec d'ouverture du fichier .json en écriture */
             throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_ECRIRE_DANS_LA_SAUVEGARDE_USER);
         }
 
-        // Écrit le nouveau document JSON dans le fichier
+        /* Créer un objet .json pour les utilisateurs */
         QJsonDocument newDocUser(usersArray);
         fileUser.write(newDocUser.toJson());
         fileUser.close();
 
-        // Créer un objet JSON pour l'utilisateur
+        /* Créer un objet .json pour l'utilisateur */
         QJsonArray adminsArray;
         for (User* administrator : data.getAdministrators()) {
             QJsonObject adminObject;
@@ -101,7 +100,7 @@ int CparserJson::saveData(Data& data) {
             for (Profile* profile : administrator->getProfiles()) {
                 QJsonObject profileObject;
                 profileObject["title"] = profile->getTitle();
-                // Convert Rights enum to string
+                /* On convertit l'enum Rights en string */
                 QString rightString;
                 switch (profile->getRight()) {
                 case Rights::LECTURE:
@@ -131,12 +130,12 @@ int CparserJson::saveData(Data& data) {
 
         if (!fileAdmin.open(QIODevice::WriteOnly))
         {
-            // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON en écriture
+            /* Affiche un message d'erreur en cas d'échec d'ouverture du fichier .json en écriture */
             throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_ECRIRE_DANS_LA_SAUVEGARDE_ADMIN);
             return ERROR;
         }
 
-        // Écrit le nouveau document JSON dans le fichier
+        /* Écrit le nouveau document .json dans le fichier */
         QJsonDocument newDocAdmin(adminsArray);
         fileAdmin.write(newDocAdmin.toJson());
         fileAdmin.close();
@@ -156,31 +155,27 @@ int CparserJson::saveData(Data& data) {
 int CparserJson::updateData(Data& data) {
     try {
         QFile fileUser(FILEPATHUSER);
-        if (!fileUser.open(QIODevice::ReadOnly))
-        {
-            // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
+        if (!fileUser.open(QIODevice::ReadOnly)) {
+            /* Affiche un message d'erreur en cas d'échec d'ouverture du fichier .json */
             throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_CHARGER_USER);
         }
 
         QFile fileAdmin(FILEPATHADMIN);
-        if (!fileAdmin.open(QIODevice::ReadOnly))
-        {
-            // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
+        if (!fileAdmin.open(QIODevice::ReadOnly)) {
+            /* Affiche un message d'erreur en cas d'échec d'ouverture du fichier .json */
             throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_CHARGER_ADMIN);
         }
 
-        // Lit le contenu du fichier JSON
+        /* Lit le contenu du fichier .json */
         QByteArray byteArray = fileUser.readAll();
         QJsonDocument docUser(QJsonDocument::fromJson(byteArray));
 
-        if (docUser.isArray())
-        {
-            // Si le document JSON est un tableau
+        if (docUser.isArray()) {
+            /* Si le document .json est un tableau */
             QJsonArray usersArray = docUser.array();
 
-            for (const QJsonValue &userValue : usersArray)
-            {
-                // Parcours chaque utilisateur dans le tableau JSON
+            for (const QJsonValue &userValue : usersArray) {
+                /* Parcours chaque utilisateur dans le tableau .json */
                 QJsonObject userObject = userValue.toObject();
 
                 User* user = new User(QString::fromStdString(userObject["id"].toString().toStdString()), QString::fromStdString(userObject["firstname"].toString().toStdString())
@@ -207,7 +202,7 @@ int CparserJson::updateData(Data& data) {
 
                     Profile* profile = new Profile(user, QString::fromStdString(profileObject["title"].toString().toStdString()), right);
 
-                    // TO DO : Gérer les bases de données
+                    // TODO : Gérer les bases de données
 
                     user->addProfile(*profile);
                 }
@@ -218,18 +213,16 @@ int CparserJson::updateData(Data& data) {
 
         fileUser.close();
 
-        // Lit le contenu du fichier JSON
+        /* Lit le contenu du fichier JSON */
         byteArray = fileAdmin.readAll();
         QJsonDocument docAdmin(QJsonDocument::fromJson(byteArray));
 
-        if (docAdmin.isArray())
-        {
-            // Si le document JSON est un tableau
+        if (docAdmin.isArray()) {
+            /* Si le document .json est un tableau */
             QJsonArray adminsArray = docAdmin.array();
 
-            for (const QJsonValue &adminValue : adminsArray)
-            {
-                // Parcours chaque utilisateur dans le tableau JSON
+            for (const QJsonValue &adminValue : adminsArray) {
+                /* Parcours chaque utilisateur dans le tableau .json */
                 QJsonObject adminObject = adminValue.toObject();
                 User* admin = new User(QString::fromStdString(adminObject["id"].toString().toStdString()), QString::fromStdString(adminObject["firstname"].toString().toStdString())
                                                        , QString::fromStdString(adminObject["lastname"].toString().toStdString()));
@@ -307,8 +300,7 @@ void CparserJson::setPassword(QString id, QString password) {
  * Entree : std::string password
  * Sortie : std::string
  */
-QString CparserJson::getPassword(QString id)
-{
+QString CparserJson::getPassword(QString id) {
     try {
         /* On ouvre le fichier des mots de passe */
         QFile file(FILEPATHPASSWORDS);
@@ -317,13 +309,13 @@ QString CparserJson::getPassword(QString id)
         }
         /* On lit le contenu du fichier */
         QByteArray byteArray = file.readAll();
-        QJsonDocument doc = QJsonDocument::fromJson(byteArray);// On le convertit en document JSON
+        QJsonDocument doc = QJsonDocument::fromJson(byteArray); // On le convertit en document .json
 
         if (doc.isNull() || doc.isEmpty())
-            doc = QJsonDocument::fromJson("{}");// Si le document est vide, on le remplit avec un objet vide
+            doc = QJsonDocument::fromJson("{}"); // Si le document est vide, on le remplit avec un objet vide
 
         QJsonObject obj = doc.object();
-        return Encryption::decrypt(QString::fromStdString(obj[id].toString().toStdString()));// On retourne le mot de passe decrypte
+        return Encryption::decrypt(QString::fromStdString(obj[id].toString().toStdString())); // On retourne le mot de passe decrypte
     }
     catch (Exception* e) {
         e->EXCAffichageErreur();

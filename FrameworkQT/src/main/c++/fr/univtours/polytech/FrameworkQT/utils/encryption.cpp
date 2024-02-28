@@ -13,10 +13,10 @@
 QString Encryption::encrypt(const QString& str) {
     QByteArray byteData = str.toUtf8();
 
-    // Encrypt data
+    /* On encrypte la chaîne de caracteres */
     QByteArray encryptedData = QAESEncryption::Crypt(QAESEncryption::AES_128, QAESEncryption::ECB, byteData, "\xCEh\x19\xCCuB\xA9""8'\x9D\xDAL\xBC\xA4M2");
 
-    // Convert encrypted data back to QString
+    /* On convertit en QString puis on renvoie */
     return QString::fromUtf8(encryptedData.toBase64());
 }
 /**
@@ -25,15 +25,16 @@ QString Encryption::encrypt(const QString& str) {
  * Sortie : QString
  */
 QString Encryption::decrypt(const QString& encryptedText) {
-    // Decode Base64
+    /* On passe en base 64 */
     QByteArray encryptedData = QByteArray::fromBase64(encryptedText.toUtf8());
 
-    // Decrypt data
+    /* On decrypte la chaîne de caracteres */
     QByteArray decryptedData = QAESEncryption::Decrypt(QAESEncryption::AES_128, QAESEncryption::ECB, encryptedData, "\xCEh\x19\xCCuB\xA9""8'\x9D\xDAL\xBC\xA4M2");
 
+    /* On retire les caractères vides */
     decryptedData = QAESEncryption::RemovePadding(decryptedData);
 
-    // Convert decrypted data back to QString
+    /* On convertit en QString puis on renvoie */
     return QString::fromUtf8(decryptedData);
 }
 

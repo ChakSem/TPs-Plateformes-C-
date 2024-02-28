@@ -98,20 +98,20 @@ User& User::operator=(const User& user) {
 
 User::User() {} // Méthode privé, inutile de la définir
 
-/*Constructeur de copie */
+/* Constructeur de copie */
 User::User(const User& user){
     id = uuid::generate_uuid_v4();
     operator=(user);
 }
 
-/*Constructeur avec les attributs (firstname, lastname) */
+/* Constructeur avec les attributs (firstname, lastname) */
 User::User(const QString& newFirstname, const QString& newLastname) {
     id = uuid::generate_uuid_v4();
     lastname = newLastname;
     firstname = newFirstname;
 }
 
-/*Constructeur avec les attributs (firstname, lastname, liste de profils) */
+/* Constructeur avec les attributs (firstname, lastname, liste de profils) */
 User::User(const QString& newFirstname, const QString& newLastname, const QList<Profile*>& newProfiles) {
     id = uuid::generate_uuid_v4();
     lastname = newLastname;
@@ -123,14 +123,14 @@ User::User(const QString& newFirstname, const QString& newLastname, const QList<
     }
 }
 
-/*Constructeur avec les attributs (id, firstname, lastname) */
+/* Constructeur avec les attributs (id, firstname, lastname) */
 User::User(const QString& newId, const QString& newFirstname, const QString& newLastname) {
     id = newId;
     lastname = newLastname;
     firstname = newFirstname;
 }
 
-/*Destructeur */
+/* Destructeur */
 User::~User() {
     for(Profile* profile : profiles) {
         delete profile;
