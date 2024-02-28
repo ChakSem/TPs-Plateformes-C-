@@ -3,8 +3,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class DeconnectionInterface;
+namespace Ui
+{
+    class DeconnectionInterface;
 }
 
 class DeconnectionInterface : public QWidget

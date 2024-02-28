@@ -3,8 +3,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class CreationUserInterface;
+namespace Ui
+{
+    class CreationUserInterface;
 }
 
 class CreationUserInterface : public QWidget

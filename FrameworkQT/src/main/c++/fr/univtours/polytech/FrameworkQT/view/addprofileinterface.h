@@ -3,8 +3,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class AddProfileInterface;
+namespace Ui
+{
+    class AddProfileInterface;
 }
 
 class AddProfileInterface : public QWidget

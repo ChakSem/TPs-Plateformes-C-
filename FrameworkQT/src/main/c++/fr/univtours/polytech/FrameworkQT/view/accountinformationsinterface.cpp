@@ -15,8 +15,8 @@
  */
 void AccountInformationsInterface::setAccountInformations()
 {
-    Data& data = Data::getInstance();
-    User* user = data.getUserConnected();
+    Data &data = Data::getInstance();
+    User *user = data.getUserConnected();
 
     /*On rend les champs non modifiables*/
     ui->myId->setReadOnly(true);
@@ -24,26 +24,24 @@ void AccountInformationsInterface::setAccountInformations()
     ui->myLastName->setReadOnly(true);
     ui->myFirstName->setReadOnly(true);
 
-    
     ui->myId->setText(user->getId());
 
     /*On regarde si l'utilisateur est un admin en vérifiant si son id est dans la liste des administrateurs*/
-    if(data.getAdministrators().contains(user->getId())) {
+    if (data.getAdministrators().contains(user->getId()))
+    {
         ui->myRole->setText("admin");
     }
-    else {
+    else
+    {
         ui->myRole->setText("user");
     }
     ui->myLastName->setText(user->getLastname());
     ui->myFirstName->setText(user->getFirstname());
-
-
 }
 AccountInformationsInterface::AccountInformationsInterface(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::AccountInformationsInterface)
+    : QWidget(parent), ui(new Ui::AccountInformationsInterface)
 {
-    
+
     ui->setupUi(this);
 }
 
@@ -51,4 +49,3 @@ AccountInformationsInterface::~AccountInformationsInterface()
 {
     delete ui;
 }
-

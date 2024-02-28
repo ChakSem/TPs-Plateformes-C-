@@ -37,10 +37,10 @@ int CparserJson::saveData(Data& data) {
             // Affiche un message d'erreur en cas d'échec d'ouverture du fichier JSON
             throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_ADMIN);
         }
-
-        // Créer un objet JSON pour l'utilisateur
-        QJsonArray usersArray;
+        QJsonArray usersArray;// On crée un tableau JSON pour les utilisateurs
         for (User* user : data.getUsers()) {
+            
+            /*On crée un objet JSON pour les utilisateurs*/
             QJsonObject userObject;
             userObject["id"] = user->getId();
             userObject["firstname"] = user->getFirstname();

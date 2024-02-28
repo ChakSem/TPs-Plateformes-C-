@@ -4,11 +4,10 @@
 #include "mainwindow.h"
 
 BackButton::BackButton(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::BackButton)
+    : QWidget(parent), ui(new Ui::BackButton)
 {
     ui->setupUi(this);
-    // Connexion du bouton de retour à la méthode de retour
+    /*Connexion du bouton de retour à la méthode de retour*/
     connect(ui->backButton, &QPushButton::clicked, this, &BackButton::actionBack);
 }
 
@@ -26,7 +25,8 @@ void BackButton::actionBack()
 {
     MainWindow *mainWindow = MainWindow::accessToParent(this);
 
-    if (mainWindow != NULL) {
-            mainWindow->returnOnPreviousView();
+    if (mainWindow != NULL)
+    {
+        mainWindow->returnOnPreviousView();
     }
 }

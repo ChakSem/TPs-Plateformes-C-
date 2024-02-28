@@ -2,7 +2,7 @@
 #include "Profile.h"
 
 /**
- * Méthode pour récupurer l'id d'un utilisateur
+ * "Accesseur en lecture" de l'attribut id de User, permet de récupérer l'id de l'utilisateur
  * Entrée : 
  * Sortie :
  */
@@ -11,7 +11,7 @@ QString User::getId() {
 }
 
 /**
- * Méthode pour récuperer le rôle d'un utilisateur
+ * "Accesseur en lecture" de l'attribut lastname de User, permet de récupérer le nom de famille de l'utilisateur
  * Entrée : 
  * Sortie :
  */
@@ -79,7 +79,7 @@ void User::deleteProfile(const QString title) {
 }
 
 /**
- * Surcharge de l'opérateur =
+ * Surcharge de l'opérateur =, permet de copier un utilisateur dans un autre
  * Entrée : user, User&
  * Sortie : User&
  */
@@ -98,20 +98,35 @@ User& User::operator=(const User& user) {
 
 User::User() {} // Méthode privé, inutile de la définir
 
-/*Constructeur de copie */
+/**
+ * Constructeur de recopie, permet de copier un utilisateur dans un autre
+ * Entrée : user, User&
+ * Sortie : User
+ */
 User::User(const User& user){
     id = uuid::generate_uuid_v4();
     operator=(user);
 }
 
-/*Constructeur avec les attributs (firstname, lastname) */
+/**
+ * Constructeur avec les attributs (firstname, lastname)
+ * Entrée : - newFirstname, QString
+ *          - newLastname, QString
+ * Sortie : User
+ */
 User::User(const QString& newFirstname, const QString& newLastname) {
     id = uuid::generate_uuid_v4();
     lastname = newLastname;
     firstname = newFirstname;
 }
 
-/*Constructeur avec les attributs (firstname, lastname, liste de profils) */
+/**
+ * Constructeur avec les attributs (firstname, lastname, profiles)
+ * Entrée : - newFirstname, QString
+ *          - newLastname, QString
+ *          - newProfiles, QList<Profile*>
+ * Sortie : User
+ * */
 User::User(const QString& newFirstname, const QString& newLastname, const QList<Profile*>& newProfiles) {
     id = uuid::generate_uuid_v4();
     lastname = newLastname;
@@ -123,14 +138,24 @@ User::User(const QString& newFirstname, const QString& newLastname, const QList<
     }
 }
 
-/*Constructeur avec les attributs (id, firstname, lastname) */
+/**
+ * Constructeur avec les attributs (id, firstname, lastname)
+ * Entree : - newId, QString
+ *         - newFirstname, QString
+ *        - newLastname, QString
+ * Sortie : User
+ * */
 User::User(const QString& newId, const QString& newFirstname, const QString& newLastname) {
     id = newId;
     lastname = newLastname;
     firstname = newFirstname;
 }
 
-/*Destructeur */
+/**
+ * Destructeur 
+ * Entree : 
+ * Sortie : 
+ * */
 User::~User() {
     for(Profile* profile : profiles) {
         delete profile;

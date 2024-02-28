@@ -3,8 +3,9 @@
 
 #include <QWidget>
 
-namespace Ui {
-class HomeAdminInterface;
+namespace Ui
+{
+    class HomeAdminInterface;
 }
 
 class HomeAdminInterface : public QWidget

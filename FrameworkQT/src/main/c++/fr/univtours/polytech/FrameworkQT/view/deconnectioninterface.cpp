@@ -4,12 +4,11 @@
 #include "mainwindow.h"
 
 DeconnectionInterface::DeconnectionInterface(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::DeconnectionInterface)
+    : QWidget(parent), ui(new Ui::DeconnectionInterface)
 {
     ui->setupUi(this);
     /* Connexion du bouton de déconnection à la méthode de déconnection */
-    connect( ui->pushButtonDeconnection, &QPushButton::clicked, this, &DeconnectionInterface::actionDeconnection);
+    connect(ui->pushButtonDeconnection, &QPushButton::clicked, this, &DeconnectionInterface::actionDeconnection);
 }
 
 DeconnectionInterface::~DeconnectionInterface()
@@ -21,13 +20,13 @@ DeconnectionInterface::~DeconnectionInterface()
  * Entrée :
  * Sortie :
  */
-void DeconnectionInterface::actionDeconnection() {
-    //Demander une comfirmation pour la déconnection
+void DeconnectionInterface::actionDeconnection()
+{
     MainWindow::messageDialog("Voulez-vous vraiment vous déconnecter ?", "Confirmation", MESSAGEBOX_REPLY);
     MainWindow *mainWindow = MainWindow::accessToParent(this);
-    
-    if (mainWindow != NULL) {
-            mainWindow->actionDeconnection();
+
+    if (mainWindow != NULL)
+    {
+        mainWindow->actionDeconnection();
     }
-   
 }

@@ -2,8 +2,9 @@
 #define ACCOUNTINFORMATIONSINTERFACE_H
 
 #include <QWidget>
-namespace Ui {
-class AccountInformationsInterface;
+namespace Ui
+{
+    class AccountInformationsInterface;
 }
 
 class AccountInformationsInterface : public QWidget
@@ -17,10 +18,6 @@ public:
 
 private:
     Ui::AccountInformationsInterface *ui;
-
-
-  
-     
 };
 
 #endif // ACCOUNTINFORMATIONSINTERFACE_H

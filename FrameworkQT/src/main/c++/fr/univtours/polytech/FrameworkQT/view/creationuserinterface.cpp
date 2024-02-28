@@ -21,26 +21,30 @@ CreationUserInterface::~CreationUserInterface()
  * Entrée :
  * Sortie :
  */
-void CreationUserInterface::actionAddUser() {
+void CreationUserInterface::actionAddUser()
+{
     try
     {
         /* Récupération des informations */
         QString nom = ui->lastNameUser->text();
         QString prenom = ui->firstNameUser->text();
         QString mdp = ui->passwordLogin->text();
-        unsigned int roleValue = ui->radioButtonIsAdmin->isChecked() ? ROLE_ADMIN : ROLE_USER;//on récupère le role de l'utilisateur
+
+        unsigned int roleValue = ui->radioButtonIsAdmin->isChecked() ? ROLE_ADMIN : ROLE_USER; // on récupère le role de l'utilisateur
         if (nom == "" || mdp == "")
         {
             throw new Exception(ERREUR_ALL_TOUS_LES_CHAMPS_NE_SONT_PAS_REMPLIS);
         }
-        /* On crée l'utilisateur dans la base de données */
-        User* newUser = Controller::createUser(prenom, nom, mdp, roleValue);
-        MainWindow::messageDialog("L'utilisateur a bien été créé", "Information", MESSAGEBOX_OK);
 
+        /* On crée l'utilisateur dans la base de données */
+        User *newUser = Controller::createUser(prenom, nom, mdp, roleValue);
+        MainWindow::messageDialog("L'utilisateur a bien été créé", "Information", MESSAGEBOX_OK);
         MainWindow *mainWindow = MainWindow::accessToParent(this);
 
         /* S'il n'y a pas eu d'erreur */
-        if (mainWindow != NULL) {
+        if (mainWindow != NULL)
+        {
+            /* On met à jour la table des utilisateurs */
             mainWindow->updateTableView(newUser);
             mainWindow->returnOnPreviousView(); // On ouvre l'interface des profils pour l'utilisateur connecté
         }

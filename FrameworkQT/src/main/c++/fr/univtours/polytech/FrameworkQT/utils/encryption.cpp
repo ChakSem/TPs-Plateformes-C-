@@ -19,6 +19,7 @@ QString Encryption::encrypt(const QString& str) {
     // Convert encrypted data back to QString
     return QString::fromUtf8(encryptedData.toBase64());
 }
+
 /**
  * Methode qui permet de décrypter une chaine de caractere
  * Entree : encryptedText, const QString&

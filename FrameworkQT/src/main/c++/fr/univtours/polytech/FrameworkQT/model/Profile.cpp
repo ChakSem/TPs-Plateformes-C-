@@ -6,6 +6,11 @@
 #define PASTROUVE 0
 #define TROUVE 1
 
+/**
+ * "Accesseur en lecture" de l'attribut title
+ * Entree :
+ * Sortie : - title, QString (titre du profil)
+ */
 QString Profile::getTitle()
 {
     return title;
@@ -14,10 +19,11 @@ QString Profile::getTitle()
 /**
  * Fonction cherchant si un intitulé de profil est unique
  *
- * Entrée : - profiles, const QList<Profile*>&
- *          - newTitle, const QString&
- * Sortie : - PASTROUVE, (ou 0) si newTitle est bel et bien unique
- *          - TROUVE, (ou 1) si newTitle a déjà été affecté à un profil
+ * Entrée : - profiles, const QList<Profile*>& (liste des profils)
+ *          - newTitle, const QString& (nouveau titre à tester)
+ * Sortie : - int (entier indiquant si newTitle est unique ou non)
+ *              - PASTROUVE, (ou 0) si newTitle est bel et bien unique
+ *              - TROUVE, (ou 1) si newTitle a déjà été affecté à un profil
  */
 int searchTitle(const QList<Profile *> &profiles, const QString &newTitle)
 {
@@ -33,7 +39,7 @@ int searchTitle(const QList<Profile *> &profiles, const QString &newTitle)
 }
 
 /**
- * Accesseur de l'attribut title
+ * "Accesseur en ecriture" de l'attribut title
  * Entree : - newTitle, const QString&
  * Sortie :
  */
@@ -56,12 +62,21 @@ void Profile::setTitle(const QString &newTitle)
     }
 }
 
-/*Accesseur de l'attribut right */
+/**
+ * "Accesseur en lecture" de l'attribut right
+ * Entree :
+ * Sortie : - right, Rights (droit du profil)
+ */
 Rights Profile::getRight()
 {
     return right;
 }
 
+/**
+ * "Accesseur en ecriture" de l'attribut right
+ * Entree : - newRight, const Rights& (nouveau droit)
+ * Sortie :
+ */
 void Profile::setRight(const Rights &newRight)
 {
     right = newRight;
@@ -74,7 +89,7 @@ QList<QString *> Profile::getDatabases()
 }
 /**
  * Ajoute une base de données à la liste des bases de données
- * Entree : - newDatabase, const QString&
+ * Entree : - newDatabase, const QString& (nouvelle base de données à ajouter)
  * Sortie :
  */
 void Profile::addDataBase(const QString &newDatabase)
@@ -109,14 +124,18 @@ void Profile::addDataBase(const QString &newDatabase)
     }
 }
 
-/* Surcharge de l'opérateur = (pour copier un profil) */
+/**
+ * Surcharge de l'opérateur = , permet de copier un profil dans un autre
+ * Entree : - profile, const Profile&
+ * Sortie : - *this, Profile& (profil copié)
+ */
 Profile &Profile::operator=(const Profile &profile)
 {
     user = profile.user;
 
     QString uniqueTitle = profile.title;
     int copyCount = 1;
-    
+
     /* On incremente un entier, ajouté à la fin de newTile, jusqu'à avoir une chaîne unique */
     while (searchTitle(user->getProfiles(), uniqueTitle) == TROUVE)
     {
@@ -133,7 +152,11 @@ Profile &Profile::operator=(const Profile &profile)
     }
     return *this;
 }
-
+/**
+ * Constructeur de la classe Profile
+ * Entree :  - profile, const Profile&
+ * Sortie :
+ */
 Profile::Profile(const Profile &profile)
 {
     operator=(profile);
@@ -163,9 +186,9 @@ Profile::Profile(User *actualUser, const QString &newTitle)
 
 /**
  * Constructeur de la classe Profile
- * Entree : - actualUser, User*
- *          - newTitle, const QString&
- *          - newRight, const Rights&
+ * Entree : - actualUser, User* (pointeur vers l'utilisateur auquel appartient le profil)
+ *          - newTitle, const QString& (nouveau titre du profil)
+ *          - newRight, const Rights& (nouveau droit du profil)
  * Sortie :
  */
 Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRight)
@@ -199,7 +222,7 @@ Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRig
     /* On incremente un entier, ajouté à la fin de newTile, jusqu'à avoir une chaîne unique */
     QString uniqueTitle = newTitle;
     int copyCount = 1;
-    
+
     // On vérifie que le titre est unique
     while (searchTitle(user->getProfiles(), uniqueTitle) == TROUVE)
     {
