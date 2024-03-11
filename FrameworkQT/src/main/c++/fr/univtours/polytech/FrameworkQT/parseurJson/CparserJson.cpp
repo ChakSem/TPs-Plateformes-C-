@@ -32,7 +32,6 @@ int CparserJson::saveData(Data& data) {
 
         QFile fileAdmin(FILEPATHADMIN);
         if (!fileAdmin.open(QIODevice::ReadOnly)) {
-        if (!fileAdmin.open(QIODevice::ReadOnly)) {
             /* Affiche un message d'erreur en cas d'échec d'ouverture du fichier .json */
             throw new Exception(ERREUR_OUVERTURE_FICHIER_POUR_SAUVEGARDE_ADMIN);
         }
