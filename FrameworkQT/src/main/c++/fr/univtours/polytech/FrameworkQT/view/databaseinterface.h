@@ -3,6 +3,7 @@
 
 #include <QWidget>
 
+
 namespace Ui {
 class DatabaseInterface;
 }
@@ -17,6 +18,9 @@ public:
 
 private:
     Ui::DatabaseInterface *ui;
+    /*Methode pour recuperer le path d'un fichier .db ou .sqlite*/
+    QString getPathFile();
+    void actionAddDatabase();
 };
 
 #endif // DATABASEINTERFACE_H

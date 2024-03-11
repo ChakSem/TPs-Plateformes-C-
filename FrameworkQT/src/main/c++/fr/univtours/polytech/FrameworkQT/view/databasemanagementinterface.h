@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::DatabaseManagementInterface *ui;
+    /*Methode pour recuperer le path d'un fichier .db ou .sqlite*/
+    QString getPathFile();
+    void actionAddDatabase();
 };
 
 #endif // DATABASEMANAGEMENTINTERFACE_H
