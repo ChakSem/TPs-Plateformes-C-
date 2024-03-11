@@ -7,7 +7,7 @@
 #include "User.h"
 #include "../utils/exception.h"
 
-
+// A enlever plus tard , car on utilisera un objet QS
 class Database
 {
 private:
@@ -21,11 +21,11 @@ public:
     Database(User* actualUser);
     bool addDatabase(const QString& filePath);
     bool removeDatabase(const QString& databaseName);
-
+    QList<QString> getDatabases();
     QList<QString> getTables(const QString& databaseName);
-    bool executeQuery(const QString& query);
-    bool viewContent(const QString& databaseName, const QString& tableName);
-    bool viewQuery(const QString& query);
+    // bool executeQuery(const QString& query); //Utiliser une QSQLQuery
+    // bool viewContent(const QString& databaseName, const QString& tableName);
+    // bool viewQuery(const QString& query);
     QList<QString> getUserDatabases(User* user);
 };
 

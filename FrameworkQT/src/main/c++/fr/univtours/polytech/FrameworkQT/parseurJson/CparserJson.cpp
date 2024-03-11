@@ -200,7 +200,7 @@ int CparserJson::updateData(Data& data) {
                     }
 
                     Profile* profile = new Profile(user, QString::fromStdString(profileObject["title"].toString().toStdString()), right);
-
+            
                     // TODO : Gérer les bases de données
 
                     user->addProfile(*profile);

@@ -51,6 +51,11 @@ public:
     static void createProfile(QString name, unsigned int rightValue);
     static void deleteProfile(QString idUser, QString profileName);
 
+    // /* Gestion des bases de données */ ( A supprimer car on utilise les methodes associée a l'objet QSqlDatabase)
+    // bool executeQuery(const QString& query);
+    // bool viewContent(const QString& databaseName, const QString& tableName);
+    // bool viewQuery(const QString& query);
+
     /* Méthode pour le lancement de l'app */
     static unsigned int isThereUsers();
 

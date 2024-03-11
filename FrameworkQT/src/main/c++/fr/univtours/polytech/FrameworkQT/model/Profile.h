@@ -15,6 +15,8 @@ private:
     QString title;
     Rights right;
     QList<QString*> databases;
+    //Map de database a mettre (avec le nom de la database et l'addresse ) pour pouvoir les ouvrir et les fermer
+    
     User *user; // Utilisateur du profil
 
 public:

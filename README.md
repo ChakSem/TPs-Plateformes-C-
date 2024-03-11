@@ -22,3 +22,5 @@ Nous avons utilisé 3 librairies :
 Vous trouverez dans le dossier glog les differentes maquettes et une ebauche du diagramme de classe, ainsi que un fichier Choix.md qui explique certains 
 
 de nos choix que nous avons fait pour la réalisation de ce projet.
+
+// MEMO : regex requete SQL : const regex = /(\s*([\0\b\'\"\n\r\t\%\_\\]*\s*(((select\s+\S.*\s+from\s+\S+)|(insert\s+into\s+\S+)|(update\s+\S+\s+set\s+\S+)|(delete\s+from\s+\S+)|(((drop)|(create)|(alter)|(backup))\s+((table)|(index)|(function)|(PROCEDURE)|(ROUTINE)|(SCHEMA)|(TRIGGER)|(USER)|(VIEW))\s+\S+)|(truncate\s+table\s+\S+)|(exec\s+)|(\/\*)|(--)))(\s*[\;]\s*)*)+)/i;

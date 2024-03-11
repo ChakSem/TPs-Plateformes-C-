@@ -4,6 +4,7 @@
 DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::DatabaseManagementInterface)
+
 {
     ui->setupUi(this);
 }
