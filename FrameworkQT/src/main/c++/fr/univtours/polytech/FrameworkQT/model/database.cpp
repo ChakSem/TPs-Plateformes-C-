@@ -66,39 +66,29 @@ QList<QString> Database::getTables(const QString& databaseName)
     // TO DO : Implémenter la méthode qui permet de récupérer les tables d'une base de données
 }
 
-bool Database::executeQuery(const QString& query)
-{
-    try {
-    QSqlQuery myQuery;
-    if (!myQuery.exec(query))
-    {
-        qDebug() << "Error: query failed";
-       // qDebug() << myQuery.lastError();
-        return false;
-    }
-    else
-    {
-        qDebug() << "Query: success";
-        return true;
-    }
-    }
-    catch (Exception *e)
-    {
-        e->EXCAffichageErreur();
-    }
-}
+// bool Database::executeQuery(const QString& query)
+// {
+//     try {
+//     QSqlQuery myQuery;
+//     if (!myQuery.exec(query))
+//     {
+//         qDebug() << "Error: query failed";
+//        // qDebug() << myQuery.lastError();
+//         return false;
+//     }
+//     else
+//     {
+//         qDebug() << "Query: success";
+//         return true;
+//     }
+//     }
+//     catch (Exception *e)
+//     {
+//         e->EXCAffichageErreur();
+//     }
+// }
 
-bool Database::viewContent(const QString& databaseName, const QString& tableName)
-{
-    // TO DO : Implémenter la méthode qui permet de visualiser le contenu d'une table // Faudra permetre a l'utilisateur de choisir les tables
-}
-
-bool Database::viewQuery(const QString& query)
-{
-    //TO DO : Implementer la methode qui permet de visualiser le resultat d'une requete
-}
-
-QList<QString> Database::getUserDatabases(User* user)
-{
-    // TO DO : Implementer la methode qui permet de recuperer les bases de donnees d'un utilisateur
-}
+// QList<QString> Database::getUserDatabases(User* user)
+// {
+//     // TO DO : Implementer la methode qui permet de recuperer les bases de donnees d'un utilisateur
+// }

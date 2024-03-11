@@ -2,7 +2,10 @@
 #define DATABASEINTERFACE_H
 
 #include <QWidget>
-
+#include <QFileDialog>
+#include "../controller/controller.h"
+#include "../utils/exception.h"
+#include "../view/mainwindow.h"
 
 namespace Ui {
 class DatabaseInterface;

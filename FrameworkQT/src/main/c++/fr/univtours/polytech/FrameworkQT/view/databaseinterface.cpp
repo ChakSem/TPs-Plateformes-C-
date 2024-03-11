@@ -4,9 +4,10 @@
 DatabaseInterface::DatabaseInterface(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::DatabaseInterface)
-        connect(ui->pushButtonAdd, &QPushButton::clicked, this, &DatabaseInterface::actionAddDatabase);
+
 {
     ui->setupUi(this);
+     connect(ui->pushButtonAdd, &QPushButton::clicked, this, &DatabaseInterface::actionAddDatabase);
 }
 
 DatabaseInterface::~DatabaseInterface()
@@ -17,30 +18,32 @@ DatabaseInterface::~DatabaseInterface()
 // QString getPathFile();
 // void actionAddDatabase();
 
-DatabaseInterface::getPathFile()
+QString DatabaseInterface::getPathFile()
 {
     try
     {
         QString path = QFileDialog::getOpenFileName(this, "Ouvrir un fichier", QString(), "Fichier .db (*.db);;Fichier .sqlite (*.sqlite)");
         if (path.isEmpty())
         {
-            throw new Exception(ERREUR_FICHIER_NON_SELECTIONNE);
+           // throw new Exception(ERREUR_FICHIER_NON_SELECTIONNE);
         }
         return path;
     }
-    catch (Exception *e)
+    catch ( Exception *e)
     {
         e->EXCAffichageErreur();
+        return NULL;
     }
 }
 
-DatabaseInterface::actionAddDatabase()
+void DatabaseInterface::actionAddDatabase()
 {
     try
     {
         QString path = getPathFile();
-        //Controller::addDatabase(path); // Utiliser la methode associées QSQLDatabase::addDatabase qui existe de=eja 
+        // Utiliser la methode associées QSQLDatabase::addDatabase qui existe deja 
         MainWindow::messageDialog("La base de données a bien été ajoutée", "Information", MESSAGEBOX_OK);
+
     }
     catch (Exception *e)
     {
