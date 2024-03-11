@@ -56,10 +56,10 @@ bool Database::removeDatabase(const QString& databaseName)
     }
 }
 
-QList<QString> Database::getDatabases()
-{
-    return databases; 
-}
+// QList<QString> Database::getDatabases()
+// {
+//     return databases;
+// }
 
 QList<QString> Database::getTables(const QString& databaseName)
 {

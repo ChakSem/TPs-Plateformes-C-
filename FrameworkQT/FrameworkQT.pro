@@ -162,9 +162,7 @@ DISTFILES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/unit_test/moby-dick.txt \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/unit_test/shakespeare-complete-works.txt
 
-RESOURCES += \
-    forest-background.qrc \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/res.qrc
+RESOURCES +=
 
 SUBDIRS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/qaesencryption.pro

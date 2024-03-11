@@ -3,6 +3,7 @@ debug/main.o
 debug/Profile.o
 debug/User.o
 debug/data.o
+debug/database.o
 debug/CparserJson.o
 debug/qaesencryption.o
 debug/encryption.o
@@ -12,6 +13,10 @@ debug/addprofileinterface.o
 debug/backbutton.o
 debug/connectioninterface.o
 debug/creationuserinterface.o
+debug/databaseinterface.o
+debug/databasemanagementinterface.o
+debug/databasseexecutioninterface.o
+debug/databassevisualisationinterface.o
 debug/deconnectioninterface.o
 debug/firstuserinscription.o
 debug/homeadmininterface.o
@@ -19,14 +24,16 @@ debug/homeuserinterface.o
 debug/mainwindow.o
 debug/profilesinterface.o
 debug/usermanagementinterface.o
-debug/qrc_forest-background.o
-debug/qrc_res.o
 debug/moc_qaesencryption.o
 debug/moc_accountinformationsinterface.o
 debug/moc_addprofileinterface.o
 debug/moc_backbutton.o
 debug/moc_connectioninterface.o
 debug/moc_creationuserinterface.o
+debug/moc_databaseinterface.o
+debug/moc_databasemanagementinterface.o
+debug/moc_databasseexecutioninterface.o
+debug/moc_databassevisualisationinterface.o
 debug/moc_deconnectioninterface.o
 debug/moc_firstuserinscription.o
 debug/moc_homeadmininterface.o

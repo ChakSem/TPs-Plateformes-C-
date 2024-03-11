@@ -13,7 +13,7 @@ class Database
 private:
     QSqlDatabase m_db;
     User* actualUser;
-    //QList<QString> databases;
+    QList<QString> databases;
     QList<QString> tables;
 
 public:
