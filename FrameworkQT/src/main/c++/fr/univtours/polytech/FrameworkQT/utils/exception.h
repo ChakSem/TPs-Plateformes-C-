@@ -31,6 +31,9 @@
 #define ERREUR_USER_MANAGEMENT_AUCUNES_LIGNES_SELECTIONNEES 15
 #define ERREUR_USER_MANAGEMENT_SUPPRESSION_SUPER_ADMIN 17
 
+/* Erreur fatale */
+#define ERREUR_FATALE 999
+
 class Exception {
 private:
     unsigned int uiEXCCodeErreur;

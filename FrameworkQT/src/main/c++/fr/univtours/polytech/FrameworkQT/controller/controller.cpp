@@ -24,7 +24,7 @@ User *Controller::getUserConnected()
  */
 User *Controller::getUserProfiles()
 {
-    Data::getInstance().getUserProfiles();
+    return Data::getInstance().getUserProfiles();
 }
 /**
  * "Accesseur en lecture" de l'attribut profiles de User, ajoute l'élement en parametre à l'attribut profiles

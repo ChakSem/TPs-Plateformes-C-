@@ -65,7 +65,16 @@ int CparserJson::saveData(Data& data) {
                     throw new Exception(ERREUR_DROIT_INCONNU);
                 }
                 profileObject["right"] = rightString;
-                // TODO : Gérer les bases de données
+
+                /* On parcourt la map et on écrit ses élements un à un */
+                for(auto it = profile->getDatabases().begin(); it != profile->getDatabases().end(); it++) {
+                    QJsonObject databaseObject;
+
+                    databaseObject["name"] = *it.key();
+                    databaseObject["filePath"] = *it.value();
+                    // TODO : Ecrire pour chaque objet
+                }
+
 
                 profilesArray.append(profileObject);
             }
@@ -142,6 +151,7 @@ int CparserJson::saveData(Data& data) {
         return SUCCESS;
     } catch (Exception* e) {
         e->EXCAffichageErreur();
+
         return ERROR;
     }
 }
@@ -259,6 +269,8 @@ int CparserJson::updateData(Data& data) {
 
     } catch (Exception* e) {
         e->EXCAffichageErreur();
+
+        delete e;
         return ERROR;
     }
 }
@@ -318,5 +330,7 @@ QString CparserJson::getPassword(QString id) {
     }
     catch (Exception* e) {
         e->EXCAffichageErreur();
+
+        return NULL;
     }
 }

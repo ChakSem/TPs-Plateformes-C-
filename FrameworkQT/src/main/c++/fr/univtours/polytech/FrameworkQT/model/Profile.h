@@ -1,5 +1,5 @@
 #include <qstring>
-#include "qlist.h"
+#include "qmap.h"
 
 #include "Rights.h"
 
@@ -14,7 +14,7 @@ private:
     /* Profile (un profil est defini par un nom(string) et son role(string issue du enum Rights mais faut voir comment on fait pour l'enum) */
     QString title;
     Rights right;
-    QList<QString*> databases;
+    QMap<QString*, QString*> databases;
     //Map de database a mettre (avec le nom de la database et l'addresse ) pour pouvoir les ouvrir et les fermer
     
     User *user; // Utilisateur du profil
@@ -29,8 +29,9 @@ public:
     Rights getRight();
 
     /* Accesseurs de l'attribut databases */
-    QList<QString*> getDatabases();
-    void addDataBase(const QString& newDatabase);
+    QMap<QString*, QString*> getDatabases();
+    QString* getPathFile(const QString& databaseName);
+    void addDataBase(const QString& databaseName, const QString& databaseFilePath);
 
     Profile& operator=(const Profile& profile);
 
@@ -44,7 +45,7 @@ public:
     Profile(const Profile& profile);
     Profile(User* actualUser, const QString& newTitle);
     Profile(User* actualUser, const QString& newTitle, const Rights& newRight);
-    Profile(User* actualUser, const QString& newTitle, const Rights& newRight, const QList<QString*>& newDatabases);
+    Profile(User* actualUser, const QString& newTitle, const Rights& newRight, const QMap<QString*, QString*>& newDatabases);
 
     ~Profile();
    

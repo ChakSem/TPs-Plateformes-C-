@@ -83,39 +83,32 @@ void Profile::setRight(const Rights &newRight)
 }
 
 /* Accesseurs de l'attribut databases */
-QList<QString *> Profile::getDatabases()
+QMap<QString *, QString *> Profile::getDatabases()
 {
     return databases;
+}
+
+
+QString* Profile::getPathFile(const QString& databaseName) {
+    return databases.find(new QString(databaseName)).value();
 }
 /**
  * Ajoute une base de données à la liste des bases de données
  * Entree : - newDatabase, const QString& (nouvelle base de données à ajouter)
  * Sortie :
  */
-void Profile::addDataBase(const QString &newDatabase)
+void Profile::addDataBase(const QString& databaseName, const QString& databaseFilePath)
 {
-    /* Foncteur qui ajoute une base de données à la liste des bases de données (si (son nom)  n'est pas déjà présente dans la liste) */
-    struct Search
-    {
-        QString newDatabase;
-        Search(QString db) : newDatabase(db) {}
-        void operator()(const QString *n) { find += *n == newDatabase; }
-        int find{0};
-    };
-
-    Search s(newDatabase);
-
-    // On vérifie que la base de données n'est pas déjà présente
-    std::for_each(databases.begin(), databases.end(), s);
     try
     {
-        if (s.find > 0)
+        // On vérifie que la base de données n'est pas déjà présente
+        if (databases.contains(new QString(databaseName)))
         {
             throw new Exception(BASE_DE_DONNEE_DEJA_AJOUTEE);
         }
         else
         {
-            databases.append(new QString(newDatabase));
+            databases.insert(new QString(databaseName), new QString(databaseFilePath));
         }
     }
     catch (Exception *e)
@@ -146,12 +139,12 @@ Profile &Profile::operator=(const Profile &profile)
     right = profile.right;
 
     /* On copie et ajoute les noms de base de données un à un */
-    for (QString *str : profile.databases)
-    {
-        databases.append(new QString(*str));
+    for (auto it = profile.databases.begin(); it != profile.databases.end(); it++) {
+        databases.insert(new QString(*it.key()), new QString(*it.value()));
     }
     return *this;
 }
+
 /**
  * Constructeur de la classe Profile
  * Entree :  - profile, const Profile&
@@ -215,7 +208,7 @@ Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRig
  *          - newDataBases, const QList<QString*>&
  * Sortie :
  */
-Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRight, const QList<QString *> &newDataBases)
+Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRight, const QMap<QString*, QString*>& newDatabases)
 {
     user = actualUser;
 
@@ -233,9 +226,8 @@ Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRig
     right = newRight;
 
     /* On copie et ajoute les noms de base de données un à un */
-    for (QString *str : newDataBases)
-    {
-        databases.append(new QString(*str));
+    for (auto it = newDatabases.begin(); it != newDatabases.end(); it++) {
+        databases.insert(new QString(*it.key()), new QString(*it.value()));
     }
 }
 

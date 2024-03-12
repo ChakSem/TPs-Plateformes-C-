@@ -43,24 +43,32 @@ MainWindow *MainWindow::accessToParent(QWidget *widget)
  */
 bool MainWindow::messageDialog(QString message, QString title, int type)
 {
-    /* En fonction du type de message on affiche un QMessageBox différent */
-    switch (type)
-    {
-    case MESSAGEBOX_OK:
-        QMessageBox::information(nullptr, title, message); // nullprt car on est dans un static et qu'on ne peut pas acceder à this
-        break;
-    case MESSAGEBOX_REPLY:
-        QMessageBox::StandardButton reply;
-        reply = QMessageBox::question(nullptr, title, message, QMessageBox::Yes | QMessageBox::No);
-        if (reply == QMessageBox::Yes)
+    try {
+        /* En fonction du type de message on affiche un QMessageBox différent */
+        switch (type)
         {
-            return true;
+        case MESSAGEBOX_OK:
+            QMessageBox::information(nullptr, title, message); // nullprt car on est dans un static et qu'on ne peut pas acceder à this
+            break;
+        case MESSAGEBOX_REPLY:
+            QMessageBox::StandardButton reply;
+            reply = QMessageBox::question(nullptr, title, message, QMessageBox::Yes | QMessageBox::No);
+            if (reply == QMessageBox::Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            break;
+        default :
+            throw new Exception(ERREUR_FATALE);
         }
-        else
-        {
-            return false;
-        }
-        break;
+    } catch (Exception* e) {
+        e->EXCAffichageErreur();
+
+        return false;
     }
 }
 

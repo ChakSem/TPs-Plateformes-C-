@@ -21,6 +21,9 @@
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/backbutton.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/connectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h"
@@ -44,6 +47,9 @@ public:
     HomeAdminInterface *homeAdmin;
     HomeUserInterface *homeUser;
     AccountInformationsInterface *myAcount;
+    DatabaseInterface *profileManagement;
+    DatabaseManagementInterface *databaseManagement;
+    DatabasseVisualisationInterface *databaseVisualisation;
     QStackedWidget *DeconnectionWidget;
     DeconnectionInterface *deconnection;
     QWidget *void_2;
@@ -1058,6 +1064,15 @@ public:
         myAcount = new AccountInformationsInterface();
         myAcount->setObjectName("myAcount");
         MainWidget->addWidget(myAcount);
+        profileManagement = new DatabaseInterface();
+        profileManagement->setObjectName("profileManagement");
+        MainWidget->addWidget(profileManagement);
+        databaseManagement = new DatabaseManagementInterface();
+        databaseManagement->setObjectName("databaseManagement");
+        MainWidget->addWidget(databaseManagement);
+        databaseVisualisation = new DatabasseVisualisationInterface();
+        databaseVisualisation->setObjectName("databaseVisualisation");
+        MainWidget->addWidget(databaseVisualisation);
         DeconnectionWidget = new QStackedWidget(centralwidget);
         DeconnectionWidget->setObjectName("DeconnectionWidget");
         DeconnectionWidget->setGeometry(QRect(500, 0, 151, 41));
@@ -1088,7 +1103,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 601, 14));
+        menubar->setGeometry(QRect(0, 0, 601, 18));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1096,7 +1111,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        MainWidget->setCurrentIndex(8);
+        MainWidget->setCurrentIndex(11);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

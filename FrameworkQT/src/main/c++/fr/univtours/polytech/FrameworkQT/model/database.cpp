@@ -33,6 +33,8 @@ bool Database::addDatabase(const QString& filePath)
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+
+        return false;
     }
 }
 

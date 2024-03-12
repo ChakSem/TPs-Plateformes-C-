@@ -962,7 +962,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>8</number>
+     <number>11</number>
     </property>
     <widget class="ConnectionInterface" name="connection"/>
     <widget class="UserManagementInterface" name="userManagement"/>
@@ -973,6 +973,9 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     <widget class="HomeAdminInterface" name="homeAdmin"/>
     <widget class="HomeUserInterface" name="homeUser"/>
     <widget class="AccountInformationsInterface" name="myAcount"/>
+    <widget class="DatabaseInterface" name="profileManagement"/>
+    <widget class="DatabaseManagementInterface" name="databaseManagement"/>
+    <widget class="DatabasseVisualisationInterface" name="databaseVisualisation"/>
    </widget>
    <widget class="QStackedWidget" name="DeconnectionWidget">
     <property name="geometry">
@@ -1016,7 +1019,7 @@ QPushButton:hover {
      <x>0</x>
      <y>0</y>
      <width>601</width>
-     <height>14</height>
+     <height>18</height>
     </rect>
    </property>
   </widget>
@@ -1087,6 +1090,24 @@ QPushButton:hover {
    <class>AccountInformationsInterface</class>
    <extends>QWidget</extends>
    <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/accountinformationsinterface.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DatabaseInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DatabaseManagementInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>DatabasseVisualisationInterface</class>
+   <extends>QWidget</extends>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

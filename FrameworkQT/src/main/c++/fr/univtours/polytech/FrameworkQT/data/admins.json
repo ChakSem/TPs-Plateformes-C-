@@ -4,6 +4,10 @@
         "id": "59b1fca3",
         "lastname": "admin",
         "profiles": [
+            {
+                "right": "LECTURE",
+                "title": "az"
+            }
         ]
     }
 ]
