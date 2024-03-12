@@ -92,6 +92,7 @@ int UserManagementInterface::init() {
     /* Sortie erreur */
     catch (Exception* e) {
         e->EXCAffichageErreur();
+        delete e;
         return NO_LINE_SELECTED;
     }
 }
@@ -150,6 +151,7 @@ void UserManagementInterface::actionDeleteUser() {
     }
     catch (Exception* e) {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 

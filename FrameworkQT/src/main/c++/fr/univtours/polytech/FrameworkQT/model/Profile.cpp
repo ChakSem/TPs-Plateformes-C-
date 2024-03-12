@@ -59,6 +59,7 @@ void Profile::setTitle(const QString &newTitle)
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 
@@ -114,6 +115,7 @@ void Profile::addDataBase(const QString& databaseName, const QString& databaseFi
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 

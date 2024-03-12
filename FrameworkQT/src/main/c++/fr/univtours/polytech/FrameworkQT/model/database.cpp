@@ -33,6 +33,7 @@ bool Database::addDatabase(const QString& filePath)
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
 
         return false;
     }
@@ -55,6 +56,7 @@ bool Database::removeDatabase(const QString& databaseName)
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 
@@ -87,6 +89,7 @@ QList<QString> Database::getTables(const QString& databaseName)
 //     catch (Exception *e)
 //     {
 //         e->EXCAffichageErreur();
+//         delete e;
 //     }
 // }
 

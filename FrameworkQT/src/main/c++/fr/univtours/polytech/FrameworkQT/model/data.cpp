@@ -46,6 +46,7 @@ User* Data::getUser(QString id) {
 
     catch(Exception* e) {
         e->EXCAffichageErreur();
+        delete e;
         return NULL;
     }
 }
@@ -80,6 +81,7 @@ void Data::removeUser(QString id) {
 
     catch(Exception* e) {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 
@@ -110,6 +112,7 @@ void Data::connect(User* user, unsigned int isAdminParam) {
     }
     catch (Exception* e) {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 

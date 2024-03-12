@@ -48,6 +48,7 @@ void ProfilesInterface::actionAddInterface() {
     }
     catch (Exception* e) {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 
@@ -71,6 +72,7 @@ void ProfilesInterface::actionDeleteInterface() {
     }
     catch (Exception* e) {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 

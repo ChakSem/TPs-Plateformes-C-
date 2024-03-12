@@ -101,6 +101,7 @@ void Controller::openUserProfilesForCurrentUser()
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 
@@ -186,6 +187,7 @@ User *Controller::createUser(QString firstname, QString lastname, QString passwo
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
         return NULL;
     }
 }
@@ -240,6 +242,7 @@ void Controller::createProfile(QString name, unsigned int rightValue)
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
 

@@ -52,5 +52,6 @@ void CreationUserInterface::actionAddUser()
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
     }
 }

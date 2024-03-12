@@ -50,5 +50,6 @@ void FirstUserInscription::actionAddUser()
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
     }
 }

@@ -29,6 +29,7 @@ MainWindow *MainWindow::accessToParent(QWidget *widget)
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
         return NULL;
     }
 }
@@ -67,6 +68,7 @@ bool MainWindow::messageDialog(QString message, QString title, int type)
         }
     } catch (Exception* e) {
         e->EXCAffichageErreur();
+        delete e;
 
         return false;
     }

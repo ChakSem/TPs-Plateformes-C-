@@ -70,5 +70,6 @@ void AddProfileInterface::actionCreateProfile()
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
     }
 }

@@ -151,6 +151,7 @@ int CparserJson::saveData(Data& data) {
         return SUCCESS;
     } catch (Exception* e) {
         e->EXCAffichageErreur();
+        delete e;
 
         return ERROR;
     }

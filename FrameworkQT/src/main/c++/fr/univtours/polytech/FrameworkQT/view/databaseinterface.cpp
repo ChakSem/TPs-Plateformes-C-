@@ -32,6 +32,7 @@ QString DatabaseInterface::getPathFile()
     catch ( Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
         return NULL;
     }
 }
@@ -48,5 +49,6 @@ void DatabaseInterface::actionAddDatabase()
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
+        delete e;
     }
 }
