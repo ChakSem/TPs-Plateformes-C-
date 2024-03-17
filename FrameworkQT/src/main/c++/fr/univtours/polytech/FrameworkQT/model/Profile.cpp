@@ -309,4 +309,5 @@ Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRig
 
 Profile::~Profile()
 {
+    // TODO
 }

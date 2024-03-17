@@ -90,9 +90,7 @@ void ProfilesInterface::actionManageInterface() {
         MainWindow *mainWindow = MainWindow::accessToParent(this);
 
         if (mainWindow != NULL) {
-            MainWindow::messageDialog("Cette fonctionnalité sera implémentée plus tard(Partie 2).", "Information", MESSAGEBOX_OK);
-            // TODO : ouvrir l'interface ManageProfile
-            // mainWindow->openManageProfile(profile);
+            mainWindow->openDatabaseManagement(profile);
         }
     }
 }

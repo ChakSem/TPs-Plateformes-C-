@@ -42,14 +42,14 @@ void HomeAdminInterface::actionAccount()
  */
 void HomeAdminInterface::actionDatabase()
 {
-    MainWindow *mainWindow = MainWindow::accessToParent(this);
+    // MainWindow *mainWindow = MainWindow::accessToParent(this);
 
-    /* S'il n'y a pas eu d'erreur */
-    if (mainWindow != NULL)
-    {
+    // /* S'il n'y a pas eu d'erreur */
+    // if (mainWindow != NULL)
+    // {
 
-        mainWindow->openDatabases(); // On ouvre l'interface pour les base de données
-    }
+    //     mainWindow->openDatabaseManagement(); // On ouvre l'interface pour les base de données
+    // }
 }
 
 /**

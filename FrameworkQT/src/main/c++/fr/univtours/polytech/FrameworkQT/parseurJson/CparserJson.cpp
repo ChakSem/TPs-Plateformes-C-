@@ -66,15 +66,21 @@ int CparserJson::saveData(Data& data) {
                 }
                 profileObject["right"] = rightString;
 
+                QJsonArray databasesArray;
                 /* On parcourt la map et on écrit ses élements un à un */
-                for(auto it = profile->getDatabases().begin(); it != profile->getDatabases().end(); it++) {
+                QMap<QString*, QString*> databases = profile->getDatabases();
+                for (auto it = databases.begin(); it != databases.end(); ++it) {
+                    const QString& databaseName = *it.key();
+                    const QString& databasePath = *it.value();
+
                     QJsonObject databaseObject;
 
-                    databaseObject["name"] = *it.key();
-                    databaseObject["filePath"] = *it.value();
-                    // TODO : Ecrire pour chaque objet
-                }
+                    databaseObject["name"] = databaseName;
+                    databaseObject["filePath"] = databasePath;
 
+                    databasesArray.append(databaseObject);
+                }
+                profileObject["databases"] = databasesArray;
 
                 profilesArray.append(profileObject);
             }
@@ -125,12 +131,26 @@ int CparserJson::saveData(Data& data) {
                     return ERROR;
                 }
                 profileObject["right"] = rightString;
+
+                QJsonArray databasesArray;
+                /* On parcourt la map et on écrit ses élements un à un */
+                QMap<QString*, QString*> databases = profile->getDatabases();
+                for (auto it = databases.begin(); it != databases.end(); ++it) {
+                    const QString& databaseName = *it.key();
+                    const QString& databasePath = *it.value();
+
+                    QJsonObject databaseObject;
+
+                    databaseObject["name"] = databaseName;
+                    databaseObject["filePath"] = databasePath;
+
+                    databasesArray.append(databaseObject);
+                }
+                profileObject["databases"] = databasesArray;
+
                 profilesArray.append(profileObject);
             }
             adminObject["profiles"] = profilesArray;
-
-            // TODO : Gérer les bases de données
-
             adminsArray.append(adminObject);
         }
 

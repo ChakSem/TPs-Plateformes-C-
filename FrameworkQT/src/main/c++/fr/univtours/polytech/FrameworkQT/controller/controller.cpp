@@ -255,6 +255,22 @@ void Controller::deleteProfile(QString idUser, QString profileName)
 {
     Data::getInstance().getUser(idUser)->deleteProfile(profileName);
 }
+
+
+/* Gestion du profil visionneé */
+void Controller::setProfileDatabases(Profile* profile) {
+    Data::getInstance().setProfileDatabases(profile);
+}
+
+void Controller::clearProfileDatabases() {
+    Data::getInstance().clearProfileDatabases();
+}
+
+Profile* Controller::getProfileDatabases() {
+    Data::getInstance().getProfileDatabases();
+}
+
+
 /**
  *Méthode pour vérifier si des utilisateurs sont présents
  * Entrée :

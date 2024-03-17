@@ -139,6 +139,18 @@ User* Data::getUserProfiles() {
     return userProfiles;
 }
 
+/* Accesseurs de l'attibut userProfiles */
+void Data::setProfileDatabases(Profile* profile) {
+    profileDatabases = profile;
+}
+
+void Data::clearProfileDatabases() {
+    profileDatabases = NULL;
+}
+
+Profile* Data::getProfileDatabases() {
+    return profileDatabases;
+}
 
 /* Destructeur, qui sera appelé automatiquement à la fin du programme */
 Data::~Data() {

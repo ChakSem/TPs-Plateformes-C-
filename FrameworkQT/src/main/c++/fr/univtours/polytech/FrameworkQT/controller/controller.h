@@ -56,6 +56,11 @@ public:
     // bool viewContent(const QString& databaseName, const QString& tableName);
     // bool viewQuery(const QString& query);
 
+    /* Gestion du profil visionneé */
+    static void setProfileDatabases(Profile* profile);
+    static void clearProfileDatabases();
+    static Profile* getProfileDatabases();
+
     /* Méthode pour le lancement de l'app */
     static unsigned int isThereUsers();
 

@@ -248,18 +248,30 @@ void MainWindow::openProfiles()
 }
 
 /**
- * TODO : partie 2 (Permettra de rediriger vers l'interface de connexion avec les BDDs)
+ * Permet de rediriger vers l'inteface de gestion des bases de données du profil
  * Entrée :
  * Sortie :
  */
-void MainWindow::openDatabases()
+void MainWindow::openDatabaseManagement(Profile* profile)
 {
-    // QMessageBox::information(this, "Information", "Cette fonctionnalité sera implémentée plus tard(Partie 2).");
-    MainWindow::messageDialog("Cette fonctionnalité sera implémentée plus tard(Partie 2).", "Information", MESSAGEBOX_OK);
-    // TODO : partie 2
-    // ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);
-    // previousPages.push_front(MAINWIDGET_CONNECTION); // On ajoute MAINWIDGET_CONNECTION au chemin pour le retour
+    previousPages.push_front(MAINWIDGET_DATABASE_MANAGEMENT);
+    Controller::setProfileDatabases(profile);
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_DATABASE_MANAGEMENT); // Access à la page de gestion des bases de données du profil
+    QWidget *widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_DATABASE_MANAGEMENT);
+    qobject_cast<DatabaseManagementInterface *>(widgetToRefresh)->initializeComboBox();
 }
+
+/**
+ * Permet de rediriger vers l'inteface de visualisation de la base de données
+ * Entrée :
+ * Sortie :
+ */
+void MainWindow::openDatabaseVisualisation()
+{
+    previousPages.push_front(MAINWIDGET_DATABASE_MANAGEMENT);
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_DATABASE_VISUALISATION); // Access à la page de visualisation de la base de données
+}
+
 /**
  * Permet de rediriger vers l'inteface de création d'utilisateur
  * Entrée :
@@ -315,6 +327,9 @@ void MainWindow::returnOnPreviousView()
         ui->BackWidget->setCurrentIndex(BACKWIDGET_VOID);
         Controller::closeUserProfiles();
 
+        break;
+    case MAINWIDGET_DATABASE_MANAGEMENT:
+        Controller::clearProfileDatabases();
         break;
     }
 }

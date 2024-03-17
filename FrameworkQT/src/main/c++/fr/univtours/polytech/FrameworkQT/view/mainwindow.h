@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "../model/Profile.h"
 
 /* Réference sur les pages des StackedWidget */
 #define MAINWIDGET_CONNECTION 0
@@ -56,6 +57,8 @@ public:
     void openAccount();
     void openMyProfiles();
     void openProfiles(User* user);
+    void openDatabaseManagement(Profile* profile);
+    void openDatabaseVisualisation();
     void openDatabases();
     void openCreateUser();
     void openAddProfiles();

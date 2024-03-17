@@ -19,6 +19,8 @@ private:
 
     User* userProfiles; // Permettra de stocké l'utilisateur dont on visionne les profils pour la vue Profiles
 
+    Profile* profileDatabases; // Permettra de stocké le profil visionné
+
     //Map des données des utilisateurs ( clé: id de l'utilisateur, valeur: l'utilisateur)
     QMap<QString, User*> users;
     QMap<QString, User*> administrators;
@@ -53,6 +55,11 @@ public:
     void setUserProfiles(User* user);
     void clearUserProfiles();
     User* getUserProfiles();
+
+    /* Accesseurs de l'attibut userProfiles */
+    void setProfileDatabases(Profile* profile);
+    void clearProfileDatabases();
+    Profile* getProfileDatabases();
 
 private :
 /* Destructeur, sera appelé automatiquement à la fin du programme */

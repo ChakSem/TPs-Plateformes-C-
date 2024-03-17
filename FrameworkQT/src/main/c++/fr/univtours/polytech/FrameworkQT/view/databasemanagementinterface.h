@@ -15,6 +15,13 @@ public:
     explicit DatabaseManagementInterface(QWidget *parent = nullptr);
     ~DatabaseManagementInterface();
 
+    /* Actions réalisées par les boutons */
+    void initializeComboBox();
+
+    void actionOpenFromFiles();
+    void actionVisualization();
+    void actionExecute();
+
 private:
     Ui::DatabaseManagementInterface *ui;
     /*Methode pour recuperer le path d'un fichier .db ou .sqlite*/
