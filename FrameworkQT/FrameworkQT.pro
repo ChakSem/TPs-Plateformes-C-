@@ -16,6 +16,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/data.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/database.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/CparserJson.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/parseurSqlite/cparsersqlite.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/qaesencryption.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/encryption.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.cpp \
@@ -90,6 +91,7 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/ordered_map.hpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/thirdparty/hedley/hedley.hpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/parseurSqlite/cparsersqlite.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/aesni/aesni-enc-cbc.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/aesni/aesni-enc-ecb.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/aesni/aesni-key-exp.h \

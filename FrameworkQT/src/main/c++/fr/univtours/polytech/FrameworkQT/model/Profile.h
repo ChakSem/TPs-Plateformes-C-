@@ -1,5 +1,8 @@
 #include <qstring>
 #include "qmap.h"
+//include pour utiliser QSQLdatabase a mettre
+#include <QtSql>
+#include <QSqlDatabase>
 
 #include "Rights.h"
 
@@ -32,9 +35,13 @@ public:
     QMap<QString*, QString*> getDatabases();
     QString* getPathFile(const QString& databaseName);
     void addDataBase(const QString& databaseName, const QString& databaseFilePath);
+    void removeDataBase(const QString& databaseName);
+
+    /* Méthode pour récupérer la liste des tables d'une base de données */
+    QList<QString> getTables(const QString& databaseName);
+
 
     Profile& operator=(const Profile& profile);
-
 
 private:
     /* Constructeur à ne pas utiliser (on veut avoir des utilisateurs nommés) */
@@ -53,3 +60,4 @@ public:
 };
 
 #endif
+

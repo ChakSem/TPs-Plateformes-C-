@@ -5,6 +5,7 @@ debug/User.o
 debug/data.o
 debug/database.o
 debug/CparserJson.o
+debug/cparsersqlite.o
 debug/qaesencryption.o
 debug/encryption.o
 debug/exception.o
@@ -24,8 +25,6 @@ debug/homeuserinterface.o
 debug/mainwindow.o
 debug/profilesinterface.o
 debug/usermanagementinterface.o
-debug/qrc_forest-background.o
-debug/qrc_res.o
 debug/moc_qaesencryption.o
 debug/moc_accountinformationsinterface.o
 debug/moc_addprofileinterface.o

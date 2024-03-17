@@ -89,8 +89,8 @@ QMap<QString *, QString *> Profile::getDatabases()
     return databases;
 }
 
-
-QString* Profile::getPathFile(const QString& databaseName) {
+QString *Profile::getPathFile(const QString &databaseName)
+{
     return databases.find(new QString(databaseName)).value();
 }
 /**
@@ -98,7 +98,7 @@ QString* Profile::getPathFile(const QString& databaseName) {
  * Entree : - newDatabase, const QString& (nouvelle base de données à ajouter)
  * Sortie :
  */
-void Profile::addDataBase(const QString& databaseName, const QString& databaseFilePath)
+void Profile::addDataBase(const QString &databaseName, const QString &databaseFilePath)
 {
     try
     {
@@ -117,6 +117,78 @@ void Profile::addDataBase(const QString& databaseName, const QString& databaseFi
         e->EXCAffichageErreur();
         delete e;
     }
+}
+
+/**
+ * Supprime une base de données de la liste des bases de données
+ * Entree : - databaseName, const QString& (nom de la base de données à supprimer)
+ * Sortie :
+ */
+void Profile::removeDataBase(const QString &databaseName)
+{
+    try
+    {
+        // On vérifie que la base de données est bien présente
+        if (!databases.contains(new QString(databaseName)))
+        {
+            throw new Exception(BASE_DE_DONNEE_NON_TROUVEE);
+        }
+        else
+        {
+            databases.remove(new QString(databaseName));
+        }
+    }
+    catch (Exception *e)
+    {
+        e->EXCAffichageErreur();
+        delete e;
+    }
+}
+
+/**
+ * Methode pour récupérer la liste des tables d'une base de données
+ * Entree : - databaseName, const QString& (nom de la base de données)
+ * Sortie : - tables, QList<QString> (liste des tables de la base de données)
+ */
+QList<QString> Profile::getTables(const QString &databaseName)
+{
+    QList<QString> tables;
+    try
+    {
+        // On vérifie que la base de données est bien présente
+        if (!databases.contains(new QString(databaseName)))
+        {
+            throw new Exception(BASE_DE_DONNEE_NON_TROUVEE);
+        }
+        else
+        {
+            // Ouvrir la base de données SQLite
+            QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "connectionName");
+            QString dbFilePath = *databases[new QString(databaseName)];
+            db.setDatabaseName(dbFilePath);
+
+            if (!db.open())
+            {
+                qDebug() << "Error: Unable to open database.";
+                return tables;
+            }
+
+            // Récupérer la liste des tables de la base de données
+            QStringList tableNames = db.tables();
+            foreach (const QString &tableName, tableNames)
+            {
+                tables.append(tableName);
+            }
+
+            db.close();
+        }
+    }
+    catch (Exception *e)
+    {
+        e->EXCAffichageErreur();
+        delete e;
+    }
+    return tables;
 }
 
 /**
@@ -141,7 +213,8 @@ Profile &Profile::operator=(const Profile &profile)
     right = profile.right;
 
     /* On copie et ajoute les noms de base de données un à un */
-    for (auto it = profile.databases.begin(); it != profile.databases.end(); it++) {
+    for (auto it = profile.databases.begin(); it != profile.databases.end(); it++)
+    {
         databases.insert(new QString(*it.key()), new QString(*it.value()));
     }
     return *this;
@@ -210,7 +283,7 @@ Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRig
  *          - newDataBases, const QList<QString*>&
  * Sortie :
  */
-Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRight, const QMap<QString*, QString*>& newDatabases)
+Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRight, const QMap<QString *, QString *> &newDatabases)
 {
     user = actualUser;
 
@@ -228,7 +301,8 @@ Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRig
     right = newRight;
 
     /* On copie et ajoute les noms de base de données un à un */
-    for (auto it = newDatabases.begin(); it != newDatabases.end(); it++) {
+    for (auto it = newDatabases.begin(); it != newDatabases.end(); it++)
+    {
         databases.insert(new QString(*it.key()), new QString(*it.value()));
     }
 }
