@@ -25,11 +25,10 @@ public:
     QLabel *labelDatabaseManagement;
     QPlainTextEdit *plainTextEdit;
     QLabel *labelRequest;
-    QPushButton *pushButtonVisualiza;
+    QPushButton *pushButtonVisualization;
     QPushButton *pushButtonExecute;
     QComboBox *comboBoxTable;
     QComboBox *comboBoxCommand;
-    QPushButton *pushButtonOpenFromFiles;
 
     void setupUi(QWidget *DatabaseManagementInterface)
     {
@@ -59,9 +58,9 @@ public:
         font1.setPointSize(12);
         font1.setBold(true);
         labelRequest->setFont(font1);
-        pushButtonVisualiza = new QPushButton(DatabaseManagementInterface);
-        pushButtonVisualiza->setObjectName("pushButtonVisualiza");
-        pushButtonVisualiza->setGeometry(QRect(350, 100, 80, 24));
+        pushButtonVisualization = new QPushButton(DatabaseManagementInterface);
+        pushButtonVisualization->setObjectName("pushButtonVisualization");
+        pushButtonVisualization->setGeometry(QRect(350, 100, 80, 24));
         pushButtonExecute = new QPushButton(DatabaseManagementInterface);
         pushButtonExecute->setObjectName("pushButtonExecute");
         pushButtonExecute->setGeometry(QRect(460, 180, 80, 24));
@@ -72,9 +71,6 @@ public:
         comboBoxCommand->addItem(QString());
         comboBoxCommand->setObjectName("comboBoxCommand");
         comboBoxCommand->setGeometry(QRect(30, 180, 61, 22));
-        pushButtonOpenFromFiles = new QPushButton(DatabaseManagementInterface);
-        pushButtonOpenFromFiles->setObjectName("pushButtonOpenFromFiles");
-        pushButtonOpenFromFiles->setGeometry(QRect(480, 100, 101, 24));
 
         retranslateUi(DatabaseManagementInterface);
 
@@ -86,11 +82,10 @@ public:
         DatabaseManagementInterface->setWindowTitle(QCoreApplication::translate("DatabaseManagementInterface", "Form", nullptr));
         labelDatabaseManagement->setText(QCoreApplication::translate("DatabaseManagementInterface", "Table", nullptr));
         labelRequest->setText(QCoreApplication::translate("DatabaseManagementInterface", "Commandes", nullptr));
-        pushButtonVisualiza->setText(QCoreApplication::translate("DatabaseManagementInterface", "Visualiser", nullptr));
+        pushButtonVisualization->setText(QCoreApplication::translate("DatabaseManagementInterface", "Visualiser", nullptr));
         pushButtonExecute->setText(QCoreApplication::translate("DatabaseManagementInterface", "Executer", nullptr));
         comboBoxCommand->setItemText(0, QCoreApplication::translate("DatabaseManagementInterface", "Select", nullptr));
 
-        pushButtonOpenFromFiles->setText(QCoreApplication::translate("DatabaseManagementInterface", "Ouvrir une bdd", nullptr));
     } // retranslateUi
 
 };

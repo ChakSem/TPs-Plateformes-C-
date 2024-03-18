@@ -7,6 +7,7 @@
 #include <QMap>
 #include "../model/User.h"
 #include "../model/Profile.h"
+#include "../model/data.h"
 // #include "../model/Rights.h"
 
 class CparserSqlite
@@ -36,7 +37,12 @@ public:
     /*Méthode pour traiter les requêtes DELETE (tout en verifiant les droits de l'utilisateur)*/
     bool processDeleteQuery(const QString &query, Profile *profile);
 
+    /*Methode pour recuperer la liste des tables d'une base de données*/
+    static QList<QString> getProfileDatabasesTables(const QString &databaseName);
+
+
     void displayQueryError();
+
 };
 
 #endif // CPARSER_SQLITE_H

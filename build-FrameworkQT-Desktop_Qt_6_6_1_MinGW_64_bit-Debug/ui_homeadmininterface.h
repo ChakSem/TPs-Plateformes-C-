@@ -25,9 +25,8 @@ public:
     QFrame *frame;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButtonAccount;
     QPushButton *pushButtonUser;
-    QPushButton *pushButtonDatabase;
+    QPushButton *pushButtonAccount;
     QPushButton *pushButtonProfile;
     QLabel *labelConnection;
 
@@ -627,20 +626,15 @@ public:
         gridLayout_2 = new QGridLayout(gridLayoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButtonAccount = new QPushButton(gridLayoutWidget);
-        pushButtonAccount->setObjectName("pushButtonAccount");
-
-        gridLayout_2->addWidget(pushButtonAccount, 4, 0, 1, 1);
-
         pushButtonUser = new QPushButton(gridLayoutWidget);
         pushButtonUser->setObjectName("pushButtonUser");
 
         gridLayout_2->addWidget(pushButtonUser, 0, 0, 1, 1);
 
-        pushButtonDatabase = new QPushButton(gridLayoutWidget);
-        pushButtonDatabase->setObjectName("pushButtonDatabase");
+        pushButtonAccount = new QPushButton(gridLayoutWidget);
+        pushButtonAccount->setObjectName("pushButtonAccount");
 
-        gridLayout_2->addWidget(pushButtonDatabase, 5, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonAccount, 4, 0, 1, 1);
 
         pushButtonProfile = new QPushButton(gridLayoutWidget);
         pushButtonProfile->setObjectName("pushButtonProfile");
@@ -669,9 +663,8 @@ public:
     void retranslateUi(QWidget *HomeAdminInterface)
     {
         HomeAdminInterface->setWindowTitle(QCoreApplication::translate("HomeAdminInterface", "Form", nullptr));
-        pushButtonAccount->setText(QCoreApplication::translate("HomeAdminInterface", "Mon compte", nullptr));
         pushButtonUser->setText(QCoreApplication::translate("HomeAdminInterface", "Utilsateurs", nullptr));
-        pushButtonDatabase->setText(QCoreApplication::translate("HomeAdminInterface", "Bdds", nullptr));
+        pushButtonAccount->setText(QCoreApplication::translate("HomeAdminInterface", "Mon compte", nullptr));
         pushButtonProfile->setText(QCoreApplication::translate("HomeAdminInterface", "Mes profils", nullptr));
         labelConnection->setText(QCoreApplication::translate("HomeAdminInterface", "Page Accueil", nullptr));
     } // retranslateUi

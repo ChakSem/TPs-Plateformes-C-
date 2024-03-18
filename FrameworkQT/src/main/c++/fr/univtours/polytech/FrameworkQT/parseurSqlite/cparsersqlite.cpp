@@ -202,3 +202,13 @@ bool CparserSqlite::processDeleteQuery(const QString &query, Profile *profile)
     }
 }
 
+/**
+ * Methode pour récupérer la liste des tables d'une base de données d'
+ * Entree : - databaseName, const QString& (nom de la base de données)
+ * Sortie : - tables, QList<QString> (liste des tables de la base de données)
+ */
+QList<QString> CparserSqlite::getProfileDatabasesTables(const QString &databaseName)
+{  
+    Profile *profile = Data::getInstance().getProfileDatabases();
+    return profile->getTables(databaseName);
+}
