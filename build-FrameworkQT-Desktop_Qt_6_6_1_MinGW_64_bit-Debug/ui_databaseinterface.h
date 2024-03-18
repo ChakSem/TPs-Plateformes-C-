@@ -29,7 +29,7 @@ public:
     QLabel *labelConnection_2;
     QWidget *layoutWidget;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButtonDelete;
+    QPushButton *pushButtonRemove;
     QPushButton *pushButtonAdd;
     QPushButton *pushButtonManage;
 
@@ -660,10 +660,10 @@ public:
         gridLayout_2 = new QGridLayout(layoutWidget);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        pushButtonDelete = new QPushButton(layoutWidget);
-        pushButtonDelete->setObjectName("pushButtonDelete");
+        pushButtonRemove = new QPushButton(layoutWidget);
+        pushButtonRemove->setObjectName("pushButtonRemove");
 
-        gridLayout_2->addWidget(pushButtonDelete, 4, 0, 1, 1);
+        gridLayout_2->addWidget(pushButtonRemove, 4, 0, 1, 1);
 
         pushButtonAdd = new QPushButton(layoutWidget);
         pushButtonAdd->setObjectName("pushButtonAdd");
@@ -686,7 +686,7 @@ public:
         DatabaseInterface->setWindowTitle(QCoreApplication::translate("DatabaseInterface", "Form", nullptr));
         labelConnection_3->setText(QCoreApplication::translate("DatabaseInterface", "Base de donn\303\251es de ", nullptr));
         labelConnection_2->setText(QCoreApplication::translate("DatabaseInterface", "Veuillez selectionner une base de donn\303\251e : ", nullptr));
-        pushButtonDelete->setText(QCoreApplication::translate("DatabaseInterface", "Supprimer", nullptr));
+        pushButtonRemove->setText(QCoreApplication::translate("DatabaseInterface", "Supprimer", nullptr));
         pushButtonAdd->setText(QCoreApplication::translate("DatabaseInterface", "Ajouter", nullptr));
         pushButtonManage->setText(QCoreApplication::translate("DatabaseInterface", "G\303\251rer", nullptr));
     } // retranslateUi

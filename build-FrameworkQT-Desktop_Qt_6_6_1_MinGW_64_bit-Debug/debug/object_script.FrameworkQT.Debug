@@ -3,7 +3,6 @@ debug/main.o
 debug/Profile.o
 debug/User.o
 debug/data.o
-debug/database.o
 debug/CparserJson.o
 debug/cparsersqlite.o
 debug/qaesencryption.o
@@ -16,7 +15,6 @@ debug/connectioninterface.o
 debug/creationuserinterface.o
 debug/databaseinterface.o
 debug/databasemanagementinterface.o
-debug/databasseexecutioninterface.o
 debug/databassevisualisationinterface.o
 debug/deconnectioninterface.o
 debug/firstuserinscription.o
@@ -33,7 +31,6 @@ debug/moc_connectioninterface.o
 debug/moc_creationuserinterface.o
 debug/moc_databaseinterface.o
 debug/moc_databasemanagementinterface.o
-debug/moc_databasseexecutioninterface.o
 debug/moc_databassevisualisationinterface.o
 debug/moc_deconnectioninterface.o
 debug/moc_firstuserinscription.o
