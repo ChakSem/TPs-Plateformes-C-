@@ -1,11 +1,18 @@
-- parser des bases de donnees (?)
-- parser profil (lecture)
+
+
+- ~~parser des bases de donnees (?)~~ (A verifier si fonctionnel)
+- ~~parser profil (lecture)~~
 - code des vues
 - gerer les controllers
 - voir pour qsqldatabase
 - destructeur profile
 
 Fait :
+- Parser les bases de donnees (lecture) ==> C'est a dire recuperer les tables et les colonnes (A verifier )
+- Executer les requetes SELECT (lecture) => Droit LECTURE
+- Executer les requetes UPDATE (ecriture) ==> Droit LECTURE_MODIFICATION
+- Executer les requetes INSERT (ecriture)=> Droit LECTURE_MODIFICATION
+- Executer les requetes DELETE () => Droit LECTURE_MODIFICATION_SUPPRESSION
 - parser ecriture (lecture)
 - enregistrer l'adresse des bases de donnees pour chaques profil, via des map
 - ==> MODIFICATIONS des methodes qu'utilisent profils
