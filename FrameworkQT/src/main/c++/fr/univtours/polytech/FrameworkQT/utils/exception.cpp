@@ -110,9 +110,6 @@ void Exception::EXCAffichageErreur()
         case BASE_DE_DONNEE_NON_OUVERTE :
              qDebug() << "La base de donnee n'a pas ete ouverte";
             break;
-        case QUERY_VIDE :
-             qDebug() << "La requete est vide";
-            break;
 
         case ERREUR_FATALE :
             qDebug() << "Les problemes ...";

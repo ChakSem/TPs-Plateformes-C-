@@ -122,8 +122,7 @@ bool CparserSqlite::processUpdateQuery(const QString &query, Profile *profile)
 {
     try
     {
-        if (query.isEmpty()) // Vérification si la requête est vide
-            throw new Exception(QUERY_VIDE);
+     
 
         if (profile->getRight() != Rights::LECTURE_MODIFICATION && profile->getRight() != Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION)
             throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
@@ -154,9 +153,6 @@ bool CparserSqlite::processInsertQuery(const QString &query, Profile *profile)
 {
     try
     {
-        if (query.isEmpty()) // Vérification si la requête est vide
-            throw new Exception(QUERY_VIDE);
-
         if (profile->getRight() != Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION)
             throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
 
@@ -185,8 +181,6 @@ bool CparserSqlite::processDeleteQuery(const QString &query, Profile *profile)
 {
     try
     {
-        if (query.isEmpty()) // Vérification si la requête est vide
-            throw new Exception(QUERY_VIDE);
 
         if (profile->getRight() != Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION)
             throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
