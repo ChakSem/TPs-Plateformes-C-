@@ -16,8 +16,6 @@ public:
     ~DatabaseManagementInterface();
 
     /* Actions réalisées par les boutons */
-    void initializeComboBox();
-
     void actionOpenFromFiles();
     void actionVisualization();
     void actionExecute();

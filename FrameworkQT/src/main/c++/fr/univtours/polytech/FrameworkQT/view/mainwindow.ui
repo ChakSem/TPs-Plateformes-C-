@@ -962,7 +962,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>11</number>
+     <number>9</number>
     </property>
     <widget class="ConnectionInterface" name="connection"/>
     <widget class="UserManagementInterface" name="userManagement"/>
@@ -973,9 +973,10 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     <widget class="HomeAdminInterface" name="homeAdmin"/>
     <widget class="HomeUserInterface" name="homeUser"/>
     <widget class="AccountInformationsInterface" name="myAcount"/>
-    <widget class="DatabaseInterface" name="profileManagement"/>
+    <widget class="DatabaseInterface" name="databaseInterface"/>
     <widget class="DatabaseManagementInterface" name="databaseManagement"/>
     <widget class="DatabasseVisualisationInterface" name="databaseVisualisation"/>
+    <widget class="QWidget" name="page"/>
    </widget>
    <widget class="QStackedWidget" name="DeconnectionWidget">
     <property name="geometry">

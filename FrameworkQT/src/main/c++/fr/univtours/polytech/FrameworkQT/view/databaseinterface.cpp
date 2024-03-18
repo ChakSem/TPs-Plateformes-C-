@@ -1,6 +1,15 @@
 #include "databaseinterface.h"
 #include "ui_databaseinterface.h"
 
+void DatabaseInterface::initializeComboBox() {
+    QComboBox* combo =  ui->comboBoxDatabases;
+    combo->clear();
+
+    for(QString* databaseName : Controller::getProfileDatabases()->getDatabases().keys()) {
+        combo->addItem(*databaseName);
+    }
+}
+
 DatabaseInterface::DatabaseInterface(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::DatabaseInterface)
@@ -10,45 +19,22 @@ DatabaseInterface::DatabaseInterface(QWidget *parent)
      connect(ui->pushButtonAdd, &QPushButton::clicked, this, &DatabaseInterface::actionAddDatabase);
 }
 
-DatabaseInterface::~DatabaseInterface()
-{
-    delete ui;
-}
-// /*Methode pour recuperer le path d'un fichier .db ou .sqlite*/
-// QString getPathFile();
-// void actionAddDatabase();
-
-QString DatabaseInterface::getPathFile()
-{
-    try
-    {
-        QString path = QFileDialog::getOpenFileName(this, "Ouvrir un fichier", QString(), "Fichier .db (*.db);;Fichier .sqlite (*.sqlite)");
-        if (path.isEmpty())
-        {
-           // throw new Exception(ERREUR_FICHIER_NON_SELECTIONNE);
-        }
-        return path;
-    }
-    catch ( Exception *e)
-    {
-        e->EXCAffichageErreur();
-        delete e;
-        return NULL;
-    }
-}
-
 void DatabaseInterface::actionAddDatabase()
 {
-    try
-    {
-        QString path = getPathFile();
-        // Utiliser la methode associées QSQLDatabase::addDatabase qui existe deja 
-        MainWindow::messageDialog("La base de données a bien été ajoutée", "Information", MESSAGEBOX_OK);
+    QString filePath  = QFileDialog::getOpenFileName(this, tr("Ouvrir un fichier"), QDir::homePath(), tr("Fichiers (*.sqlite)"));
+
+    if (!filePath.isEmpty()) {
+        QString name = QFileInfo(filePath).baseName(); // Utilisez le nom de fichier sans extension comme nom de base de données
+
+        Controller::getProfileDatabases()->addDataBase(name, filePath);
+
+        ui->comboBoxDatabases->addItem(name);
+    } else {
 
     }
-    catch (Exception *e)
-    {
-        e->EXCAffichageErreur();
-        delete e;
-    }
+}
+
+ DatabaseInterface::~DatabaseInterface()
+{
+    delete ui;
 }

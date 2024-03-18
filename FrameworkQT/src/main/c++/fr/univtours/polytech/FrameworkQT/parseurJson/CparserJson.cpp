@@ -3,6 +3,7 @@
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QFile>
+#include <QString>
 
 #include "../model/User.h"
 #include "../model/Data.h"
@@ -230,9 +231,16 @@ int CparserJson::updateData(Data& data) {
                         }
                     }
 
-                    Profile* profile = new Profile(user, QString::fromStdString(profileObject["title"].toString().toStdString()), right);
-            
-                    // TODO : Gérer les bases de données
+                    QJsonArray databasesArray = profileObject["databases"].toArray();
+                    QMap<QString*, QString*> map;
+                    /* On parcourt la map et on écrit ses élements un à un */
+                    for (const QJsonValue &databaseValue : databasesArray) {
+                        QJsonObject databaseObject = databaseValue.toObject();
+
+                        map.insert(new QString(databaseObject["filePath"].toString()), new QString(databaseObject["name"].toString()));
+                    }
+
+                    Profile* profile = new Profile(user, QString::fromStdString(profileObject["title"].toString().toStdString()), right, map);
 
                     user->addProfile(*profile);
                 }
@@ -276,8 +284,16 @@ int CparserJson::updateData(Data& data) {
                         }
                     }
 
-                    Profile* profile = new Profile(admin, QString::fromStdString(profileObject["title"].toString().toStdString()), right);
-                    // TODO : Gérer les bases de données
+                    QJsonArray databasesArray = profileObject["databases"].toArray();
+                    QMap<QString*, QString*> map;
+                    /* On parcourt la map et on écrit ses élements un à un */
+                    for (const QJsonValue &databaseValue : databasesArray) {
+                        QJsonObject databaseObject = databaseValue.toObject();
+
+                        map.insert(new QString(databaseObject["filePath"].toString()), new QString(databaseObject["name"].toString()));
+                    }
+
+                    Profile* profile = new Profile(admin, QString::fromStdString(profileObject["title"].toString().toStdString()), right, map);
 
                     admin->addProfile(*profile);
                 }

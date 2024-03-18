@@ -5,6 +5,7 @@ debug/User.o
 debug/data.o
 debug/database.o
 debug/CparserJson.o
+debug/cparsersqlite.o
 debug/qaesencryption.o
 debug/encryption.o
 debug/exception.o

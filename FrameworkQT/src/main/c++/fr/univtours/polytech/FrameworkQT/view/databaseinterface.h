@@ -19,11 +19,12 @@ public:
     explicit DatabaseInterface(QWidget *parent = nullptr);
     ~DatabaseInterface();
 
+
+    void initializeComboBox();
+    /* Actions réalisées par les boutons */
+    void actionAddDatabase();
 private:
     Ui::DatabaseInterface *ui;
-    /*Methode pour recuperer le path d'un fichier .db ou .sqlite*/
-    QString getPathFile();
-    void actionAddDatabase();
 };
 
 #endif // DATABASEINTERFACE_H

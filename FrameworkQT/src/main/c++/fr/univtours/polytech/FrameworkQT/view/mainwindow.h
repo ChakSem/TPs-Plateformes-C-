@@ -14,7 +14,7 @@
 #define MAINWIDGET_HOME_ADMIN 6
 #define MAINWIDGET_HOME_USER 7
 #define MAINWIDGET_MY_ACCOUNT 8
-#define MAINWIDGET_PROFILE_MANAGEMENT 9
+#define MAINWIDGET_DATABASE_INTERFACE 9
 #define MAINWIDGET_DATABASE_MANAGEMENT 10
 #define MAINWIDGET_DATABASE_VISUALISATION 11
 
@@ -57,7 +57,8 @@ public:
     void openAccount();
     void openMyProfiles();
     void openProfiles(User* user);
-    void openDatabaseManagement(Profile* profile);
+    void openDatabaseInterface(Profile* profile);
+    void openDatabaseManagement();
     void openDatabaseVisualisation();
     void openDatabases();
     void openCreateUser();

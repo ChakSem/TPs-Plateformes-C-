@@ -6,14 +6,7 @@
 #include "../controller/controller.h"
 #include "../model/Profile.h"
 
-void DatabaseManagementInterface::initializeComboBox() {
-    QComboBox* combo =  ui->comboBoxTable;
-    combo->clear();
 
-    for(QString* databaseName : Controller::getProfileDatabases()->getDatabases().keys()) {
-        combo->addItem(*databaseName);
-    }
-}
 
 
 DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
@@ -35,17 +28,7 @@ DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
  */
 void DatabaseManagementInterface::actionOpenFromFiles()
 {
-    QString filePath  = QFileDialog::getOpenFileName(this, tr("Ouvrir un fichier"), QDir::homePath(), tr("Fichiers (*.sqlite)"));
 
-    if (!filePath.isEmpty()) {
-        QString name = QFileInfo(filePath).baseName(); // Utilisez le nom de fichier sans extension comme nom de base de données
-
-        Controller::getProfileDatabases()->addDataBase(name, filePath);
-
-        ui->comboBoxTable->addItem(name);
-    } else {
-
-    }
 }
 
 /**

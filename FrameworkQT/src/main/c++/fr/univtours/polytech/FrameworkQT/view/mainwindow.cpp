@@ -252,6 +252,20 @@ void MainWindow::openProfiles()
  * Entrée :
  * Sortie :
  */
+void MainWindow::openDatabaseInterface(Profile* profile) {
+    previousPages.push_front(MAINWIDGET_DATABASE_INTERFACE);
+    Controller::setProfileDatabases(profile);
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_DATABASE_INTERFACE); // Access à la page de gestion des bases de données du profil
+    QWidget *widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_DATABASE_INTERFACE);
+    qobject_cast<DatabaseInterface *>(widgetToRefresh)->initializeComboBox();
+}
+}
+
+/**
+ * Permet de rediriger vers l'inteface de gestion des tables  de la base de donnée
+ * Entrée :
+ * Sortie :
+ */
 void MainWindow::openDatabaseManagement(Profile* profile)
 {
     previousPages.push_front(MAINWIDGET_DATABASE_MANAGEMENT);
@@ -328,7 +342,7 @@ void MainWindow::returnOnPreviousView()
         Controller::closeUserProfiles();
 
         break;
-    case MAINWIDGET_DATABASE_MANAGEMENT:
+    case MAINWIDGET_DATABASE_INTERFACE:
         Controller::clearProfileDatabases();
         break;
     }

@@ -5,6 +5,7 @@ release/User.o
 release/data.o
 release/database.o
 release/CparserJson.o
+release/cparsersqlite.o
 release/qaesencryption.o
 release/encryption.o
 release/exception.o

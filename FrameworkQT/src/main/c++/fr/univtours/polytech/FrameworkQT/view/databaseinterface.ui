@@ -629,7 +629,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QComboBox" name="comboBoxProfiles">
+   <widget class="QComboBox" name="comboBoxDatabases">
     <property name="geometry">
      <rect>
       <x>5</x>
