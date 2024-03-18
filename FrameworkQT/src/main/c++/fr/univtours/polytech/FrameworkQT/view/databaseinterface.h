@@ -23,6 +23,8 @@ public:
     void initializeComboBox();
     /* Actions réalisées par les boutons */
     void actionAddDatabase();
+    void actionManageDatabase();
+    void actionRemoveDatabase();
 private:
     Ui::DatabaseInterface *ui;
 };

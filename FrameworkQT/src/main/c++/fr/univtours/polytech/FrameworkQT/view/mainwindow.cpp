@@ -261,17 +261,14 @@ void MainWindow::openDatabaseInterface(Profile* profile) {
 }
 
 /**
- * Permet de rediriger vers l'inteface de gestion des tables  de la base de donnée
+ * Permet de rediriger vers l'inteface de gestion des tables de la base de donnée
  * Entrée :
  * Sortie :
  */
-void MainWindow::openDatabaseManagement(Profile* profile)
+void MainWindow::openDatabaseManagement()
 {
     previousPages.push_front(MAINWIDGET_DATABASE_MANAGEMENT);
-    Controller::setProfileDatabases(profile);
-    ui->MainWidget->setCurrentIndex(MAINWIDGET_DATABASE_MANAGEMENT); // Access à la page de gestion des bases de données du profil
-    QWidget *widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_DATABASE_MANAGEMENT);
-    qobject_cast<DatabaseManagementInterface *>(widgetToRefresh)->initializeComboBox();
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_DATABASE_MANAGEMENT); // Access à la page de gestion des tables de la base de donnée
 }
 
 /**

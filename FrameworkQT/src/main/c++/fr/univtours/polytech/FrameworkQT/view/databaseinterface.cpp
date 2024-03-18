@@ -16,7 +16,9 @@ DatabaseInterface::DatabaseInterface(QWidget *parent)
 
 {
     ui->setupUi(this);
-     connect(ui->pushButtonAdd, &QPushButton::clicked, this, &DatabaseInterface::actionAddDatabase);
+    connect(ui->pushButtonAdd, &QPushButton::clicked, this, &DatabaseInterface::actionAddDatabase);
+    connect(ui->pushButtonManage, &QPushButton::clicked, this, &DatabaseInterface::actionManageDatabase);
+    connect(ui->pushButtonRemove, &QPushButton::clicked, this, &DatabaseInterface::actionRemoveDatabase);
 }
 
 void DatabaseInterface::actionAddDatabase()
@@ -32,6 +34,16 @@ void DatabaseInterface::actionAddDatabase()
     } else {
 
     }
+}
+
+void DatabaseInterface::actionManageDatabase()
+{
+    // TODO : ouvrir la vue databasemanagement
+}
+
+void DatabaseInterface::actionRemoveDatabase()
+{
+    // TODO : suppr
 }
 
  DatabaseInterface::~DatabaseInterface()
