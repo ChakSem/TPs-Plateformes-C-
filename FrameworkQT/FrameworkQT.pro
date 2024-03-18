@@ -14,7 +14,6 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/Profile.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/User.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/data.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/model/database.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/CparserJson.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurSqlite/cparsersqlite.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/utils/Qt-AES-master/qaesencryption.cpp \
@@ -27,7 +26,6 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasseexecutioninterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.cpp \
@@ -44,7 +42,6 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/UUID.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/User.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/model/data.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/model/database.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/CparserJson.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/adl_serializer.hpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/parseurJson/nlohmann/byte_container_with_subtype.hpp \
@@ -106,7 +103,6 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasseexecutioninterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h \
@@ -127,7 +123,6 @@ FORMS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasseexecutioninterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.ui \

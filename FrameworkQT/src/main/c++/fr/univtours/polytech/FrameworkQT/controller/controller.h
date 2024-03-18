@@ -60,6 +60,7 @@ public:
     static void setProfileDatabases(Profile* profile);
     static void clearProfileDatabases();
     static Profile* getProfileDatabases();
+    static QList<QString> getProfileDatabasesTables(const QString &databaseName);
 
     /* Gestion des bases de donné du profilDatabases */
     static unsigned int removeDataBase(const QString& databaseName);
