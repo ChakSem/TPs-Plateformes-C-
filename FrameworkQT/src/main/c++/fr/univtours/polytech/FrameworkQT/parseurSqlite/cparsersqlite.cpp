@@ -3,6 +3,10 @@
 
 CparserSqlite::CparserSqlite() {}
 
+/** Méthode pour ouvrir une connexion à une base de données
+ * Entree : - filePath, const QString& (chemin du fichier de la base de données)
+ * Sortie : - db, QSqlDatabase (base de données ouverte)
+ */
 QSqlDatabase CparserSqlite::openDatabase(const QString &filePath)
 {
     try
@@ -38,7 +42,7 @@ void CparserSqlite::closeDatabase(const QString &databaseName)
     QSqlDatabase::removeDatabase(databaseName);
 }
 
-/** Méthode pour effectuer le parsing d'une base de données
+/** Méthode pour effectuer le parsing d'une base de données 
  * Entree : - database, QSqlDatabase& (base de données à parser)
  * Sortie : - tables, QMap<QString, QList<QString>> (tables et colonnes de la base de données)
  */
