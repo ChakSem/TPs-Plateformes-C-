@@ -104,6 +104,15 @@ void Exception::EXCAffichageErreur()
         case ERREUR_OUVERTURE_FICHIER_POUR_MOTS_DE_PASSE :
              qDebug() << "Impossible d'ouvrir le fichier des mots de passe";
             break;
+        case BASE_DE_DONNEE_NON_TROUVEE :
+             qDebug() << "La base de donnee n'a pas ete trouvee";
+            break;
+        case BASE_DE_DONNEE_NON_OUVERTE :
+             qDebug() << "La base de donnee n'a pas ete ouverte";
+            break;
+        case QUERY_VIDE :
+             qDebug() << "La requete est vide";
+            break;
 
         case ERREUR_FATALE :
             qDebug() << "Les problemes ...";
