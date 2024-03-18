@@ -7,8 +7,8 @@
             {
                 "databases": [
                     {
-                        "name": "S:/Polytech/DI4/S8/Tp-Plateformes-NET/TP-Gestion de Stock/Hector.SQLite",
-                        "filePath": "Hector"
+                        "name": "TP .Net",
+                        "filePath": "S:/Polytech/DI4/S8/Tp-Plateformes-NET/TP-Gestion de Stock/Hector.SQLite"
                         
                     }
                 ],
