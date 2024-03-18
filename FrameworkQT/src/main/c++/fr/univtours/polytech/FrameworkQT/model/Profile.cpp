@@ -123,15 +123,19 @@ void Profile::addDataBase(const QString &databaseName, const QString &databaseFi
  */
 unsigned int Profile::removeDataBase(const QString &databaseName)
 {
+    qDebug() << databaseName;
+
     try
     {
         // On vérifie que la base de données est bien présente
         if (!databases.contains(new QString(databaseName)))
         {
+            qDebug() << "Erreur";
             throw new Exception(BASE_DE_DONNEE_NON_TROUVEE);
         }
         else
         {
+            qDebug() << "OK";
             databases.remove(new QString(databaseName));
 
             return TROUVE;
