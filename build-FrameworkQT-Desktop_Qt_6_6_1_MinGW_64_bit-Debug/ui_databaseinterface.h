@@ -25,7 +25,7 @@ class Ui_DatabaseInterface
 public:
     QLabel *labelConnection_3;
     QFrame *frame;
-    QComboBox *comboBoxProfiles;
+    QComboBox *comboBoxDatabases;
     QLabel *labelConnection_2;
     QWidget *layoutWidget;
     QGridLayout *gridLayout_2;
@@ -638,9 +638,9 @@ public:
 "}"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
-        comboBoxProfiles = new QComboBox(frame);
-        comboBoxProfiles->setObjectName("comboBoxProfiles");
-        comboBoxProfiles->setGeometry(QRect(5, 150, 300, 22));
+        comboBoxDatabases = new QComboBox(frame);
+        comboBoxDatabases->setObjectName("comboBoxDatabases");
+        comboBoxDatabases->setGeometry(QRect(5, 150, 300, 22));
         labelConnection_2 = new QLabel(frame);
         labelConnection_2->setObjectName("labelConnection_2");
         labelConnection_2->setGeometry(QRect(10, 130, 631, 13));

@@ -47,9 +47,10 @@ public:
     HomeAdminInterface *homeAdmin;
     HomeUserInterface *homeUser;
     AccountInformationsInterface *myAcount;
-    DatabaseInterface *profileManagement;
+    DatabaseInterface *databaseInterface;
     DatabaseManagementInterface *databaseManagement;
     DatabasseVisualisationInterface *databaseVisualisation;
+    QWidget *page;
     QStackedWidget *DeconnectionWidget;
     DeconnectionInterface *deconnection;
     QWidget *void_2;
@@ -1064,15 +1065,18 @@ public:
         myAcount = new AccountInformationsInterface();
         myAcount->setObjectName("myAcount");
         MainWidget->addWidget(myAcount);
-        profileManagement = new DatabaseInterface();
-        profileManagement->setObjectName("profileManagement");
-        MainWidget->addWidget(profileManagement);
+        databaseInterface = new DatabaseInterface();
+        databaseInterface->setObjectName("databaseInterface");
+        MainWidget->addWidget(databaseInterface);
         databaseManagement = new DatabaseManagementInterface();
         databaseManagement->setObjectName("databaseManagement");
         MainWidget->addWidget(databaseManagement);
         databaseVisualisation = new DatabasseVisualisationInterface();
         databaseVisualisation->setObjectName("databaseVisualisation");
         MainWidget->addWidget(databaseVisualisation);
+        page = new QWidget();
+        page->setObjectName("page");
+        MainWidget->addWidget(page);
         DeconnectionWidget = new QStackedWidget(centralwidget);
         DeconnectionWidget->setObjectName("DeconnectionWidget");
         DeconnectionWidget->setGeometry(QRect(500, 0, 151, 41));
@@ -1111,7 +1115,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        MainWidget->setCurrentIndex(11);
+        MainWidget->setCurrentIndex(9);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
