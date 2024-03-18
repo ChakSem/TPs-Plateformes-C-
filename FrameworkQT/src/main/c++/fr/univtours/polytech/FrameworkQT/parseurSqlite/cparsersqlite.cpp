@@ -80,20 +80,19 @@ QList<QList<QString>> CparserSqlite::processSelectQuery(const QString &query, Pr
         if (query.isEmpty()) // Vérification si la requête est vide
             throw new Exception(BASE_DE_DONNEE_NON_OUVERTE);
 
-        if (profile->getRight() != Rights::LECTURE && profile->getRight() != Rights::LECTURE_MODIFICATION && profile->getRight() != Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION)
-            throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
 
         QSqlDatabase db = openDatabase(query);
         QSqlQuery myQuery(db);
         if (!myQuery.exec(query))
         {
-                displayQueryError();
-                return QList<QList<QString>>();
+                return QList<QList<QString>>(); // Renvoyer une liste vide
         }
         QList<QList<QString>> result;
+        /* Récupération des résultats de la requête */
         while (myQuery.next())
         {
                 QList<QString> row;
+
                 for (int i = 0; i < myQuery.record().count(); ++i)
                 {
                     row.append(myQuery.value(i).toString());
@@ -127,9 +126,9 @@ bool CparserSqlite::processUpdateQuery(const QString &query, Profile *profile)
 
         QSqlDatabase db = openDatabase(query);
         QSqlQuery myQuery(db);
+        /* Exécution de la requête */
         if (!myQuery.exec(query))
         {
-            displayQueryError();
             return false;
         }
 
@@ -161,7 +160,6 @@ bool CparserSqlite::processInsertQuery(const QString &query, Profile *profile)
         QSqlQuery myQuery(db);
         if (!myQuery.exec(query))
         {
-            displayQueryError();
             return false;
         }
 
@@ -193,7 +191,6 @@ bool CparserSqlite::processDeleteQuery(const QString &query, Profile *profile)
         QSqlQuery myQuery(db);
         if (!myQuery.exec(query))
         {
-            displayQueryError();
             return false;
         }
 
@@ -207,6 +204,3 @@ bool CparserSqlite::processDeleteQuery(const QString &query, Profile *profile)
     }
 }
 
-void CparserSqlite::displayQueryError()
-{
-}

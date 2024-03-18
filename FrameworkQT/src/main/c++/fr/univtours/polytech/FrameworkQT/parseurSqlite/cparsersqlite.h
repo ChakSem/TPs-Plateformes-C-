@@ -15,7 +15,7 @@ private:
 public:
     CparserSqlite();
     /* Méthode pour ouvrir une connexion à une base de données*/
-    QSqlDatabase openDatabase(const QString& filePath);
+         openDatabase(const QString& filePath);
 
     /* Méthode pour fermer une connexion à une base de données*/
     void closeDatabase(const QString& databaseName);
