@@ -90,7 +90,7 @@ void ProfilesInterface::actionManageInterface() {
         MainWindow *mainWindow = MainWindow::accessToParent(this);
 
         if (mainWindow != NULL) {
-            mainWindow->openDatabaseManagement(profile);
+            mainWindow->openDatabaseInterface(profile);
         }
     }
 }

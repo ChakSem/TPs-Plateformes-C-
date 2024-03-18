@@ -259,7 +259,6 @@ void MainWindow::openDatabaseInterface(Profile* profile) {
     QWidget *widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_DATABASE_INTERFACE);
     qobject_cast<DatabaseInterface *>(widgetToRefresh)->initializeComboBox();
 }
-}
 
 /**
  * Permet de rediriger vers l'inteface de gestion des tables  de la base de donnée
