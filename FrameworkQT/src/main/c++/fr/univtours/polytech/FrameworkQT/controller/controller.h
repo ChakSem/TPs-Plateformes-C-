@@ -61,6 +61,9 @@ public:
     static void clearProfileDatabases();
     static Profile* getProfileDatabases();
 
+    /* Gestion des bases de donné du profilDatabases */
+    static unsigned int removeDataBase(const QString& databaseName);
+
     /* Méthode pour le lancement de l'app */
     static unsigned int isThereUsers();
 

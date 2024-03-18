@@ -4,6 +4,16 @@
         "id": "0222fcc1",
         "lastname": "test",
         "profiles": [
+            {
+                "databases": [
+                    {
+                        "filePath": "fzfgzfhzuifhZIFEZiu",
+                        "name": "Hector"
+                    }
+                ],
+                "right": "LECTURE",
+                "title": "profile"
+            }
         ]
     }
 ]

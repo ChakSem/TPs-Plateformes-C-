@@ -270,6 +270,10 @@ Profile* Controller::getProfileDatabases() {
     Data::getInstance().getProfileDatabases();
 }
 
+/* Gestion des bases de donné du profilDatabases */
+unsigned int Controller::removeDataBase(const QString& databaseName) {
+    return getProfileDatabases()->removeDataBase(databaseName);
+}
 
 /**
  *Méthode pour vérifier si des utilisateurs sont présents

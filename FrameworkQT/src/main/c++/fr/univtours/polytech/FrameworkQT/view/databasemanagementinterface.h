@@ -16,7 +16,6 @@ public:
     ~DatabaseManagementInterface();
 
     /* Actions réalisées par les boutons */
-    void actionOpenFromFiles();
     void actionVisualization();
     void actionExecute();
 

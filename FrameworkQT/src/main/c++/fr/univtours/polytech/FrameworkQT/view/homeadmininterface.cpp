@@ -9,7 +9,6 @@ HomeAdminInterface::HomeAdminInterface(QWidget *parent)
     ui->setupUi(this);
     /* Connexion des boutons aux méthodes(Redirecction vers les informations du compte, les bases de données, les profils et les utilisateurs) */
     connect(ui->pushButtonAccount, &QPushButton::clicked, this, &HomeAdminInterface::actionAccount);
-    connect(ui->pushButtonDatabase, &QPushButton::clicked, this, &HomeAdminInterface::actionDatabase);
     connect(ui->pushButtonProfile, &QPushButton::clicked, this, &HomeAdminInterface::actionProfile);
     connect(ui->pushButtonUser, &QPushButton::clicked, this, &HomeAdminInterface::actionUser);
 }
@@ -33,23 +32,6 @@ void HomeAdminInterface::actionAccount()
     {
         mainWindow->openAccount(); // On ouvre l'interface de visionage du compte
     }
-}
-
-/**
- * Permet de rediriger vers la page de gestion des bases de données
- * Entrée :
- * Sortie :
- */
-void HomeAdminInterface::actionDatabase()
-{
-    // MainWindow *mainWindow = MainWindow::accessToParent(this);
-
-    // /* S'il n'y a pas eu d'erreur */
-    // if (mainWindow != NULL)
-    // {
-
-    //     mainWindow->openDatabaseManagement(); // On ouvre l'interface pour les base de données
-    // }
 }
 
 /**

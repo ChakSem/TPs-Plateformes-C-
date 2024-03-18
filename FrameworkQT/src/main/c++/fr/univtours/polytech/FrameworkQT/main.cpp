@@ -21,6 +21,6 @@ int main(int argc, char *argv[])
 
     passwordEnc = Encryption::encrypt("super_password");
 
-    qDebug() << passwordEnc << " - " << Encryption::decrypt(passwordEnc);
+    qDebug() << passwordEnc << " - " << Encryption::decrypt("L+CESy3uGzIABgPUFWVNOw==");
     return a.exec();
 }

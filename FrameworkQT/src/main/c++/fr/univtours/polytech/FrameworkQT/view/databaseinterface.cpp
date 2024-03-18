@@ -1,5 +1,7 @@
 #include "databaseinterface.h"
 #include "ui_databaseinterface.h"
+#include "../utils/exception.h"
+#include "../model/Profile.h"
 
 void DatabaseInterface::initializeComboBox() {
     QComboBox* combo =  ui->comboBoxDatabases;
@@ -38,12 +40,19 @@ void DatabaseInterface::actionAddDatabase()
 
 void DatabaseInterface::actionManageDatabase()
 {
-    // TODO : ouvrir la vue databasemanagement
+    MainWindow *mainWindow = MainWindow::accessToParent(this);
+
+    if (mainWindow != NULL) {
+        mainWindow->openDatabaseManagement();
+    }
 }
 
 void DatabaseInterface::actionRemoveDatabase()
 {
-    // TODO : suppr
+    qDebug() << Controller::removeDataBase(ui->comboBoxDatabases->currentText());
+    if (Controller::removeDataBase(ui->comboBoxDatabases->itemText(ui->comboBoxDatabases->currentIndex())) == TROUVE) {
+        //ui->comboBoxDatabases->removeItem(ui->comboBoxDatabases->currentIndex());
+    }
 }
 
  DatabaseInterface::~DatabaseInterface()

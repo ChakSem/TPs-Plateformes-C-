@@ -9,6 +9,9 @@
 #ifndef PROFILE
 #define PROFILE 1
 
+#define PASTROUVE 0
+#define TROUVE 1
+
 class User;
 
 class Profile
@@ -35,11 +38,10 @@ public:
     QMap<QString*, QString*> getDatabases();
     QString* getPathFile(const QString& databaseName);
     void addDataBase(const QString& databaseName, const QString& databaseFilePath);
-    void removeDataBase(const QString& databaseName);
+    unsigned int removeDataBase(const QString& databaseName);
 
     /* Méthode pour récupérer la liste des tables d'une base de données */
     QList<QString> getTables(const QString& databaseName);
-
 
     Profile& operator=(const Profile& profile);
 

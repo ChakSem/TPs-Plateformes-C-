@@ -3,9 +3,6 @@
 #include "User.h"
 #include "../utils/exception.h"
 
-#define PASTROUVE 0
-#define TROUVE 1
-
 /**
  * "Accesseur en lecture" de l'attribut title
  * Entree :
@@ -124,7 +121,7 @@ void Profile::addDataBase(const QString &databaseName, const QString &databaseFi
  * Entree : - databaseName, const QString& (nom de la base de données à supprimer)
  * Sortie :
  */
-void Profile::removeDataBase(const QString &databaseName)
+unsigned int Profile::removeDataBase(const QString &databaseName)
 {
     try
     {
@@ -136,12 +133,16 @@ void Profile::removeDataBase(const QString &databaseName)
         else
         {
             databases.remove(new QString(databaseName));
+
+            return TROUVE;
         }
     }
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
         delete e;
+
+        return PASTROUVE;
     }
 }
 

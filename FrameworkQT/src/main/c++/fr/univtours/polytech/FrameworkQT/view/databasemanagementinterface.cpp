@@ -5,6 +5,7 @@
 #include "../utils/exception.h"
 #include "../controller/controller.h"
 #include "../model/Profile.h"
+#include "mainwindow.h""
 
 
 
@@ -16,19 +17,8 @@ DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
 {
     ui->setupUi(this);
     /* Connexion des boutons aux méthodes(Redirecction vers les informations du compte, les bases de données, les profils et les utilisateurs) */
-    connect(ui->pushButtonOpenFromFiles, &QPushButton::clicked, this, &DatabaseManagementInterface::actionOpenFromFiles);
-    connect(ui->pushButtonVisualiza, &QPushButton::clicked, this, &DatabaseManagementInterface::actionVisualization);
+    connect(ui->pushButtonVisualization, &QPushButton::clicked, this, &DatabaseManagementInterface::actionVisualization);
     connect(ui->pushButtonExecute, &QPushButton::clicked, this, &DatabaseManagementInterface::actionExecute);
-}
-
-/**
- * Permet de rediriger vers la page de gestion des profils
- * Entrée :
- * Sortie :
- */
-void DatabaseManagementInterface::actionOpenFromFiles()
-{
-
 }
 
 /**
@@ -38,7 +28,11 @@ void DatabaseManagementInterface::actionOpenFromFiles()
  */
 void DatabaseManagementInterface::actionVisualization()
 {
-    // TODO
+    MainWindow *mainWindow = MainWindow::accessToParent(this);
+
+    if (mainWindow != NULL) {
+        mainWindow->openDatabaseVisualisation();
+    }
 }
 
 /**

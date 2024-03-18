@@ -73,7 +73,7 @@
     <string>Commandes</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButtonVisualiza">
+  <widget class="QPushButton" name="pushButtonVisualization">
    <property name="geometry">
     <rect>
      <x>350</x>
@@ -123,19 +123,6 @@
      <string>Select</string>
     </property>
    </item>
-  </widget>
-  <widget class="QPushButton" name="pushButtonOpenFromFiles">
-   <property name="geometry">
-    <rect>
-     <x>480</x>
-     <y>100</y>
-     <width>101</width>
-     <height>24</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Ouvrir une bdd</string>
-   </property>
   </widget>
  </widget>
  <resources/>

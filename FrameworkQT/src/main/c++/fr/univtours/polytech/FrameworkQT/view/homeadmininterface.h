@@ -18,7 +18,6 @@ public:
 
     /* Actions réalisées par les boutons */
     void actionAccount();
-    void actionDatabase();
     void actionProfile();
     void actionUser();
 
