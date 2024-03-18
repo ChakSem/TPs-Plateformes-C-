@@ -237,7 +237,7 @@ int CparserJson::updateData(Data& data) {
                     for (const QJsonValue &databaseValue : databasesArray) {
                         QJsonObject databaseObject = databaseValue.toObject();
 
-                        map.insert(new QString(databaseObject["filePath"].toString()), new QString(databaseObject["name"].toString()));
+                        map.insert(new QString(databaseObject["name"].toString()), new QString(databaseObject["filepath"].toString()));
                     }
 
                     Profile* profile = new Profile(user, QString::fromStdString(profileObject["title"].toString().toStdString()), right, map);
@@ -290,7 +290,7 @@ int CparserJson::updateData(Data& data) {
                     for (const QJsonValue &databaseValue : databasesArray) {
                         QJsonObject databaseObject = databaseValue.toObject();
 
-                        map.insert(new QString(databaseObject["filePath"].toString()), new QString(databaseObject["name"].toString()));
+                        map.insert(new QString(databaseObject["name"].toString()), new QString(databaseObject["filepath"].toString()));
                     }
 
                     Profile* profile = new Profile(admin, QString::fromStdString(profileObject["title"].toString().toStdString()), right, map);
