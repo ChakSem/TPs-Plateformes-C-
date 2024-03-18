@@ -3,7 +3,6 @@ release/main.o
 release/Profile.o
 release/User.o
 release/data.o
-release/database.o
 release/CparserJson.o
 release/cparsersqlite.o
 release/qaesencryption.o
@@ -16,7 +15,6 @@ release/connectioninterface.o
 release/creationuserinterface.o
 release/databaseinterface.o
 release/databasemanagementinterface.o
-release/databasseexecutioninterface.o
 release/databassevisualisationinterface.o
 release/deconnectioninterface.o
 release/firstuserinscription.o
@@ -33,7 +31,6 @@ release/moc_connectioninterface.o
 release/moc_creationuserinterface.o
 release/moc_databaseinterface.o
 release/moc_databasemanagementinterface.o
-release/moc_databasseexecutioninterface.o
 release/moc_databassevisualisationinterface.o
 release/moc_deconnectioninterface.o
 release/moc_firstuserinscription.o

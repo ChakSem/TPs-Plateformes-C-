@@ -1,11 +1,17 @@
-
-
 - ~~parser des bases de donnees (?)~~ (A verifier si fonctionnel)
 - ~~parser profil (lecture)~~
 - code des vues
 - gerer les controllers
 - voir pour qsqldatabase
 - destructeur profile
+- QString * à QString
+- suppression bdd
+- test affichage des table (méthode)
+- initilisation de la vue databasemanagement
+- test les requetes
+- destructeur profil
+- initialisation databasevisualisation
+- bouton execute
 
 Fait :
 - Parser les bases de donnees (lecture) ==> C'est a dire recuperer les tables et les colonnes (A verifier )
@@ -18,5 +24,3 @@ Fait :
 - ==> MODIFICATIONS des methodes qu'utilisent profils
 - integerer les vues dans le mainWindow (pages)
 - Exceptions => supprimer dans les catch
-
-Bouton Databases ? (admin)

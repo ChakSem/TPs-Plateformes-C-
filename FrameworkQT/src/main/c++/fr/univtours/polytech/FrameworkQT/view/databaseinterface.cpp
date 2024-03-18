@@ -49,7 +49,6 @@ void DatabaseInterface::actionManageDatabase()
 
 void DatabaseInterface::actionRemoveDatabase()
 {
-    qDebug() << Controller::removeDataBase(ui->comboBoxDatabases->currentText());
     if (Controller::removeDataBase(ui->comboBoxDatabases->itemText(ui->comboBoxDatabases->currentIndex())) == TROUVE) {
         //ui->comboBoxDatabases->removeItem(ui->comboBoxDatabases->currentIndex());
     }
