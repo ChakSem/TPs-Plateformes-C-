@@ -110,13 +110,19 @@ void Exception::EXCAffichageErreur()
         case BASE_DE_DONNEE_NON_OUVERTE :
              qDebug() << "La base de donnee n'a pas ete ouverte";
             break;
+        case ERREUR_CHEMIN_VIDE :
+            qDebug() << "La chemin de la base de donnee indiqué est vide";
+            break;
+        case ERREUR_BASE_DE_DONNEE_DEJA_AJOUTEE :
+            qDebug() << "La base de donnee a deja ete ajoutee a ce profil";
+            break;
+
 
         case ERREUR_FATALE :
-            qDebug() << "Les problemes ...";
+            qDebug() << "Erreur fatale";
             exit(EXIT_FAILURE);
         default:
             qDebug() << "INCONNUE";
-
             throw new Exception(ERREUR_FATALE);
         }
 

@@ -267,7 +267,7 @@ void Controller::clearProfileDatabases() {
 }
 
 Profile* Controller::getProfileDatabases() {
-    Data::getInstance().getProfileDatabases();
+    return Data::getInstance().getProfileDatabases();
 }
 
 /* Gestion des bases de donné du profilDatabases */

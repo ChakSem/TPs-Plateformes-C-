@@ -3,17 +3,14 @@
 - code des vues
 - gerer les controllers
 - voir pour qsqldatabase
-- destructeur profile
-- QString * à QString
-- suppression bdd
 - test affichage des table (méthode)
 - initilisation de la vue databasemanagement
 - test les requetes
-- destructeur profil
 - initialisation databasevisualisation
 - bouton execute
 
 Fait :
+- QString * à QString
 - Parser les bases de donnees (lecture) ==> C'est a dire recuperer les tables et les colonnes (A verifier )
 - Executer les requetes SELECT (lecture) => Droit LECTURE
 - Executer les requetes UPDATE (ecriture) ==> Droit LECTURE_MODIFICATION
@@ -24,3 +21,4 @@ Fait :
 - ==> MODIFICATIONS des methodes qu'utilisent profils
 - integerer les vues dans le mainWindow (pages)
 - Exceptions => supprimer dans les catch
+- suppression bdd

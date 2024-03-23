@@ -7,8 +7,8 @@ void DatabaseInterface::initializeComboBox() {
     QComboBox* combo =  ui->comboBoxDatabases;
     combo->clear();
 
-    for(QString* databaseName : Controller::getProfileDatabases()->getDatabases().keys()) {
-        combo->addItem(*databaseName);
+    for(QString databaseName : Controller::getProfileDatabases()->getDatabases().keys()) {
+        combo->addItem(databaseName);
     }
 }
 
@@ -25,16 +25,27 @@ DatabaseInterface::DatabaseInterface(QWidget *parent)
 
 void DatabaseInterface::actionAddDatabase()
 {
-    QString filePath  = QFileDialog::getOpenFileName(this, tr("Ouvrir un fichier"), QDir::homePath(), tr("Fichiers (*.sqlite)"));
+    try {
+        QString filePath  = QFileDialog::getOpenFileName(this, tr("Ouvrir un fichier"), QDir::homePath(), tr("Fichiers (*.sqlite)"));
 
-    if (!filePath.isEmpty()) {
-        QString name = QFileInfo(filePath).baseName(); // Utilisez le nom de fichier sans extension comme nom de base de données
+        if (filePath.isEmpty()) {
+            throw new Exception(ERREUR_CHEMIN_VIDE);
+        }
+        Profile* profileDatabases = Controller::getProfileDatabases();
+        QString name = QFileInfo(filePath).baseName();// Utilisez le nom de fichier sans extension comme nom de base de données
 
-        Controller::getProfileDatabases()->addDataBase(name, filePath);
+        for (auto it = profileDatabases->getDatabases().begin(); it != profileDatabases->getDatabases().end(); it++) {
+            if(it.key() == name) {
+                throw new Exception(ERREUR_BASE_DE_DONNEE_DEJA_AJOUTEE);
+            }
+        }
+        profileDatabases->addDataBase(name, filePath);
 
         ui->comboBoxDatabases->addItem(name);
-    } else {
 
+    } catch (Exception* e) {
+        e->EXCAffichageErreur();
+        delete e;
     }
 }
 
@@ -50,7 +61,7 @@ void DatabaseInterface::actionManageDatabase()
 void DatabaseInterface::actionRemoveDatabase()
 {
     if (Controller::removeDataBase(ui->comboBoxDatabases->itemText(ui->comboBoxDatabases->currentIndex())) == TROUVE) {
-        //ui->comboBoxDatabases->removeItem(ui->comboBoxDatabases->currentIndex());
+        ui->comboBoxDatabases->removeItem(ui->comboBoxDatabases->currentIndex());
     }
 }
 

@@ -81,14 +81,14 @@ void Profile::setRight(const Rights &newRight)
 }
 
 /* Accesseurs de l'attribut databases */
-QMap<QString *, QString *> Profile::getDatabases()
+QMap<QString, QString> Profile::getDatabases()
 {
     return databases;
 }
 
-QString *Profile::getPathFile(const QString &databaseName)
+QString Profile::getPathFile(const QString &databaseName)
 {
-    return databases.find(new QString(databaseName)).value();
+    return databases.find(databaseName).value();
 }
 /**
  * Ajoute une base de données à la liste des bases de données
@@ -100,13 +100,13 @@ void Profile::addDataBase(const QString &databaseName, const QString &databaseFi
     try
     {
         // On vérifie que la base de données n'est pas déjà présente
-        if (databases.contains(new QString(databaseName)))
+        if (databases.contains(databaseName))
         {
             throw new Exception(BASE_DE_DONNEE_DEJA_AJOUTEE);
         }
         else
         {
-            databases.insert(new QString(databaseName), new QString(databaseFilePath));
+            databases.insert(databaseName, databaseFilePath);
         }
     }
     catch (Exception *e)
@@ -128,7 +128,7 @@ unsigned int Profile::removeDataBase(const QString &databaseName)
     try
     {
         // On vérifie que la base de données est bien présente
-        if (!databases.contains(new QString(databaseName)))
+        if (!databases.contains(databaseName))
         {
             qDebug() << "Erreur";
             throw new Exception(BASE_DE_DONNEE_NON_TROUVEE);
@@ -136,7 +136,7 @@ unsigned int Profile::removeDataBase(const QString &databaseName)
         else
         {
             qDebug() << "OK";
-            databases.remove(new QString(databaseName));
+            databases.remove(databaseName);
 
             return TROUVE;
         }
@@ -161,7 +161,7 @@ QList<QString> Profile::getTables(const QString &databaseName)
     try
     {
         // On vérifie que la base de données est bien présente
-        if (!databases.contains(new QString(databaseName)))
+        if (!databases.contains(databaseName))
         {
             throw new Exception(BASE_DE_DONNEE_NON_TROUVEE);
         }
@@ -169,7 +169,7 @@ QList<QString> Profile::getTables(const QString &databaseName)
         {
             // Ouvrir la base de données SQLite
             QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "connectionName");
-            QString dbFilePath = *databases[new QString(databaseName)];
+            QString dbFilePath = getPathFile(databaseName);
             db.setDatabaseName(dbFilePath);
 
             if (!db.open())
@@ -220,7 +220,7 @@ Profile &Profile::operator=(const Profile &profile)
     /* On copie et ajoute les noms de base de données un à un */
     for (auto it = profile.databases.begin(); it != profile.databases.end(); it++)
     {
-        databases.insert(new QString(*it.key()), new QString(*it.value()));
+        databases.insert(it.key(), it.value());
     }
     return *this;
 }
@@ -288,7 +288,7 @@ Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRig
  *          - newDataBases, const QList<QString*>&
  * Sortie :
  */
-Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRight, const QMap<QString *, QString *> &newDatabases)
+Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRight, const QMap<QString, QString> &newDatabases)
 {
     user = actualUser;
 
@@ -308,11 +308,10 @@ Profile::Profile(User *actualUser, const QString &newTitle, const Rights &newRig
     /* On copie et ajoute les noms de base de données un à un */
     for (auto it = newDatabases.begin(); it != newDatabases.end(); it++)
     {
-        databases.insert(new QString(*it.key()), new QString(*it.value()));
+        databases.insert(it.key(), it.value());
     }
 }
 
 Profile::~Profile()
 {
-    // TODO
 }

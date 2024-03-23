@@ -69,10 +69,10 @@ int CparserJson::saveData(Data& data) {
 
                 QJsonArray databasesArray;
                 /* On parcourt la map et on écrit ses élements un à un */
-                QMap<QString*, QString*> databases = profile->getDatabases();
+                QMap<QString, QString> databases = profile->getDatabases();
                 for (auto it = databases.begin(); it != databases.end(); ++it) {
-                    const QString& databaseName = *it.key();
-                    const QString& databasePath = *it.value();
+                    const QString& databaseName = it.key();
+                    const QString& databasePath = it.value();
 
                     QJsonObject databaseObject;
 
@@ -135,10 +135,10 @@ int CparserJson::saveData(Data& data) {
 
                 QJsonArray databasesArray;
                 /* On parcourt la map et on écrit ses élements un à un */
-                QMap<QString*, QString*> databases = profile->getDatabases();
+                QMap<QString, QString> databases = profile->getDatabases();
                 for (auto it = databases.begin(); it != databases.end(); ++it) {
-                    const QString& databaseName = *it.key();
-                    const QString& databasePath = *it.value();
+                    const QString& databaseName = it.key();
+                    const QString& databasePath = it.value();
 
                     QJsonObject databaseObject;
 
@@ -232,12 +232,12 @@ int CparserJson::updateData(Data& data) {
                     }
 
                     QJsonArray databasesArray = profileObject["databases"].toArray();
-                    QMap<QString*, QString*> map;
+                    QMap<QString, QString> map;
                     /* On parcourt la map et on écrit ses élements un à un */
                     for (const QJsonValue &databaseValue : databasesArray) {
                         QJsonObject databaseObject = databaseValue.toObject();
 
-                        map.insert(new QString(databaseObject["name"].toString()), new QString(databaseObject["filePath"].toString()));
+                        map.insert(databaseObject["name"].toString(), databaseObject["filePath"].toString());
                     }
 
                     Profile* profile = new Profile(user, QString::fromStdString(profileObject["title"].toString().toStdString()), right, map);
@@ -285,12 +285,12 @@ int CparserJson::updateData(Data& data) {
                     }
 
                     QJsonArray databasesArray = profileObject["databases"].toArray();
-                    QMap<QString*, QString*> map;
+                    QMap<QString, QString> map;
                     /* On parcourt la map et on écrit ses élements un à un */
                     for (const QJsonValue &databaseValue : databasesArray) {
                         QJsonObject databaseObject = databaseValue.toObject();
 
-                        map.insert(new QString(databaseObject["name"].toString()), new QString(databaseObject["filePath"].toString()));
+                        map.insert(databaseObject["name"].toString(), databaseObject["filePath"].toString());
                     }
 
                     Profile* profile = new Profile(admin, QString::fromStdString(profileObject["title"].toString().toStdString()), right, map);

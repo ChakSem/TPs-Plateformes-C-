@@ -42,7 +42,8 @@ void CparserSqlite::closeDatabase(const QString &databaseName)
     QSqlDatabase::removeDatabase(databaseName);
 }
 
-/** Méthode pour effectuer le parsing d'une base de données 
+/**
+ * Méthode pour effectuer le parsing d'une base de données
  * Entree : - database, QSqlDatabase& (base de données à parser)
  * Sortie : - tables, QMap<QString, QList<QString>> (tables et colonnes de la base de données)
  */

@@ -6,10 +6,6 @@
         "profiles": [
             {
                 "databases": [
-                    {
-                        "filePath": "fzfgzfhzuifhZIFEZiu",
-                        "name": "Hector"
-                    }
                 ],
                 "right": "LECTURE",
                 "title": "profile"
