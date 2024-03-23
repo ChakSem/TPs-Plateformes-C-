@@ -265,10 +265,14 @@ void MainWindow::openDatabaseInterface(Profile* profile) {
  * Entrée :
  * Sortie :
  */
-void MainWindow::openDatabaseManagement()
+void MainWindow::openDatabaseManagement(QString filePath)
 {
+    Controller::openDatabase(filePath);
+
     previousPages.push_front(MAINWIDGET_DATABASE_MANAGEMENT);
     ui->MainWidget->setCurrentIndex(MAINWIDGET_DATABASE_MANAGEMENT); // Access à la page de gestion des tables de la base de donnée
+    QWidget *widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_DATABASE_MANAGEMENT);
+    qobject_cast<DatabaseManagementInterface *>(widgetToRefresh)->initializeComboBox();
 }
 
 /**
@@ -276,10 +280,12 @@ void MainWindow::openDatabaseManagement()
  * Entrée :
  * Sortie :
  */
-void MainWindow::openDatabaseVisualisation()
+void MainWindow::openDatabaseVisualisation(QString tableName)
 {
-    previousPages.push_front(MAINWIDGET_DATABASE_MANAGEMENT);
+    previousPages.push_front(MAINWIDGET_DATABASE_VISUALISATION);
     ui->MainWidget->setCurrentIndex(MAINWIDGET_DATABASE_VISUALISATION); // Access à la page de visualisation de la base de données
+    QWidget *widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_DATABASE_VISUALISATION);
+    qobject_cast<DatabaseVisualisationInterface*>(widgetToRefresh)->initializeTableWidget(tableName);
 }
 
 /**
@@ -332,13 +338,17 @@ void MainWindow::returnOnPreviousView()
         Controller::closeUserProfiles();
 
         break;
+    case MAINWIDGET_DATABASE_INTERFACE:
+        Controller::closeDatabase();
+
+        break;
     case MAINWIDGET_HOME_ADMIN:
     case MAINWIDGET_HOME_USER:
         ui->BackWidget->setCurrentIndex(BACKWIDGET_VOID);
         Controller::closeUserProfiles();
 
         break;
-    case MAINWIDGET_DATABASE_INTERFACE:
+    case MAINWIDGET_PROFILES:
         Controller::clearProfileDatabases();
         break;
     }

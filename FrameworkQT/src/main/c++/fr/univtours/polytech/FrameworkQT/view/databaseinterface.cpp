@@ -52,10 +52,22 @@ void DatabaseInterface::actionAddDatabase()
 void DatabaseInterface::actionManageDatabase()
 {
     MainWindow *mainWindow = MainWindow::accessToParent(this);
+    QString databaseNameSelected = ui->comboBoxDatabases->itemText(ui->comboBoxDatabases->currentIndex());
 
-    if (mainWindow != NULL) {
-        mainWindow->openDatabaseManagement();
+    try {
+        if (databaseNameSelected == "")
+            throw new Exception(ERREUR_COMBOBOX_VIDE);
+
+        QString filePath = Controller::getProfileDatabases()->getDatabases()[databaseNameSelected];
+        if (mainWindow != NULL) {
+            mainWindow->openDatabaseManagement(filePath);
+        }
+    } catch (Exception* e) {
+        e->EXCAffichageErreur();
+
+        delete e;
     }
+
 }
 
 void DatabaseInterface::actionRemoveDatabase()

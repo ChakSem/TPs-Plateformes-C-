@@ -10,6 +10,8 @@
 #define ADMIN 1
 #define NOTADMIN 2
 
+class CparserSqlite;
+
 class Data
 {
 private:
@@ -21,9 +23,12 @@ private:
 
     Profile* profileDatabases; // Permettra de stocké le profil visionné
 
-    //Map des données des utilisateurs ( clé: id de l'utilisateur, valeur: l'utilisateur)
+    /* Map des données des utilisateurs ( clé: id de l'utilisateur, valeur: l'utilisateur) */
     QMap<QString, User*> users;
     QMap<QString, User*> administrators;
+
+    /* Gerera le stockge de la base de donnee ouverte dans les vues database */
+    CparserSqlite* openedDatabase;
     
 public:
     //Singleton
@@ -60,6 +65,11 @@ public:
     void setProfileDatabases(Profile* profile);
     void clearProfileDatabases();
     Profile* getProfileDatabases();
+
+    /* Accesseurs de l'attibut openedDatabase */
+    void openDatabase(QString filePath);
+    CparserSqlite* getOpenedDatabase();
+    void closeDatabase();
 
 private :
 /* Destructeur, sera appelé automatiquement à la fin du programme */

@@ -2,8 +2,9 @@
 
 #include "../parseurJson/CparserJson.h"
 #include "../utils/Exception.h"
-#include <QDebug>
+#include "../parseurSqlite/cparsersqlite.h"
 
+#include <QDebug>
 /* Accesseurs de l'attribut users */
 void Data::addUser(User* user) {
     users.insert(user->getId(), user);
@@ -150,6 +151,20 @@ void Data::clearProfileDatabases() {
 
 Profile* Data::getProfileDatabases() {
     return profileDatabases;
+}
+
+/* Accesseurs de l'attibut openedDatabase */
+void Data::openDatabase(QString filePath) {
+    openedDatabase = new CparserSqlite(filePath);
+}
+
+CparserSqlite* Data::getOpenedDatabase() {
+    return openedDatabase;
+}
+
+void Data::closeDatabase() {
+    delete openedDatabase;
+    openedDatabase = NULL;
 }
 
 /* Destructeur, qui sera appelé automatiquement à la fin du programme */

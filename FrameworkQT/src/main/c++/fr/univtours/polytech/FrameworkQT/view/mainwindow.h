@@ -58,8 +58,8 @@ public:
     void openMyProfiles();
     void openProfiles(User* user);
     void openDatabaseInterface(Profile* profile);
-    void openDatabaseManagement();
-    void openDatabaseVisualisation();
+    void openDatabaseManagement(QString filePath);
+    void openDatabaseVisualisation(QString tableName);
     void openDatabases();
     void openCreateUser();
     void openAddProfiles();

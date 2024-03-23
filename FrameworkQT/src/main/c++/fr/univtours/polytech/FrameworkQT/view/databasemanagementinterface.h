@@ -15,6 +15,7 @@ public:
     explicit DatabaseManagementInterface(QWidget *parent = nullptr);
     ~DatabaseManagementInterface();
 
+    void initializeComboBox();
     /* Actions réalisées par les boutons */
     void actionVisualization();
     void actionExecute();

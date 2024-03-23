@@ -15,7 +15,7 @@ release/connectioninterface.o
 release/creationuserinterface.o
 release/databaseinterface.o
 release/databasemanagementinterface.o
-release/databassevisualisationinterface.o
+release/databasevisualisationinterface.o
 release/deconnectioninterface.o
 release/firstuserinscription.o
 release/homeadmininterface.o
@@ -31,7 +31,7 @@ release/moc_connectioninterface.o
 release/moc_creationuserinterface.o
 release/moc_databaseinterface.o
 release/moc_databasemanagementinterface.o
-release/moc_databassevisualisationinterface.o
+release/moc_databasevisualisationinterface.o
 release/moc_deconnectioninterface.o
 release/moc_firstuserinscription.o
 release/moc_homeadmininterface.o

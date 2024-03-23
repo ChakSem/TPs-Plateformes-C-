@@ -962,7 +962,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 }</string>
     </property>
     <property name="currentIndex">
-     <number>9</number>
+     <number>11</number>
     </property>
     <widget class="ConnectionInterface" name="connection"/>
     <widget class="UserManagementInterface" name="userManagement"/>
@@ -975,7 +975,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     <widget class="AccountInformationsInterface" name="myAcount"/>
     <widget class="DatabaseInterface" name="databaseInterface"/>
     <widget class="DatabaseManagementInterface" name="databaseManagement"/>
-    <widget class="DatabasseVisualisationInterface" name="databaseVisualisation"/>
+    <widget class="DatabaseVisualisationInterface" name="databaseVisualisation"/>
     <widget class="QWidget" name="page"/>
    </widget>
    <widget class="QStackedWidget" name="DeconnectionWidget">
@@ -1106,9 +1106,9 @@ QPushButton:hover {
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>DatabasseVisualisationInterface</class>
+   <class>DatabaseVisualisationInterface</class>
    <extends>QWidget</extends>
-   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.h</header>
+   <header>../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasevisualisationinterface.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

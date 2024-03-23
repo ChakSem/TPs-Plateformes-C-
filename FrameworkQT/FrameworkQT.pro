@@ -26,7 +26,7 @@ SOURCES += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.cpp \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.cpp \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasevisualisationinterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.cpp \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.cpp \
@@ -103,7 +103,7 @@ HEADERS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.h \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.h \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasevisualisationinterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h \
@@ -123,7 +123,7 @@ FORMS += \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.ui \
-    src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.ui \
+    src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasevisualisationinterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.ui \
     src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.ui \

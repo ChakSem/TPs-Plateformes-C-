@@ -1,13 +1,7 @@
-- ~~parser des bases de donnees (?)~~ (A verifier si fonctionnel)
-- ~~parser profil (lecture)~~
-- code des vues
-- gerer les controllers
-- voir pour qsqldatabase
-- test affichage des table (méthode)
-- initilisation de la vue databasemanagement
+- test affichage des table (méthode) <= Verifier avec une bdd qui contient des donnees
 - test les requetes
-- initialisation databasevisualisation
 - bouton execute
+- probleme lorsque meme db ajoute 2 fois
 
 Fait :
 - QString * à QString
@@ -22,3 +16,8 @@ Fait :
 - integerer les vues dans le mainWindow (pages)
 - Exceptions => supprimer dans les catch
 - suppression bdd
+- ~~parser profil (lecture)~~
+- gerer les controllers
+- voir pour qsqldatabase
+- initilisation de la vue databasemanagement
+- initialisation databasevisualisation

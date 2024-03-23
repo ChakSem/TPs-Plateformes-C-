@@ -23,7 +23,7 @@
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.h"
-#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasevisualisationinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h"
@@ -49,7 +49,7 @@ public:
     AccountInformationsInterface *myAcount;
     DatabaseInterface *databaseInterface;
     DatabaseManagementInterface *databaseManagement;
-    DatabasseVisualisationInterface *databaseVisualisation;
+    DatabaseVisualisationInterface *databaseVisualisation;
     QWidget *page;
     QStackedWidget *DeconnectionWidget;
     DeconnectionInterface *deconnection;
@@ -1071,7 +1071,7 @@ public:
         databaseManagement = new DatabaseManagementInterface();
         databaseManagement->setObjectName("databaseManagement");
         MainWidget->addWidget(databaseManagement);
-        databaseVisualisation = new DatabasseVisualisationInterface();
+        databaseVisualisation = new DatabaseVisualisationInterface();
         databaseVisualisation->setObjectName("databaseVisualisation");
         MainWidget->addWidget(databaseVisualisation);
         page = new QWidget();
@@ -1115,7 +1115,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        MainWidget->setCurrentIndex(9);
+        MainWidget->setCurrentIndex(11);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

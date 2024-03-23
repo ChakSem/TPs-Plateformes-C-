@@ -6,6 +6,10 @@
         "profiles": [
             {
                 "databases": [
+                    {
+                        "filePath": "S:/Polytech/DI4/S8/Tp-Plateformes-NET/TP-Gestion de Stock/Hector.SQLite",
+                        "name": "Hector"
+                    }
                 ],
                 "right": "LECTURE",
                 "title": "profile"

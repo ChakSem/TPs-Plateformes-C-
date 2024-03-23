@@ -3,12 +3,20 @@
 #include "QFileDialog"
 #include "QFileInfo"
 #include "../utils/exception.h"
+#include "../parseurSqlite/cparsersqlite.h"
 #include "../controller/controller.h"
 #include "../model/Profile.h"
 #include "mainwindow.h""
 
 
+void DatabaseManagementInterface::initializeComboBox()
+{
+    CparserSqlite* db = Controller::getOpenedDatabase();
 
+    for (QString tableName : db->getTablesNames()) {
+        ui->comboBoxTable->addItem(tableName);
+    }
+}
 
 DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
     : QWidget(parent)
@@ -29,9 +37,17 @@ DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
 void DatabaseManagementInterface::actionVisualization()
 {
     MainWindow *mainWindow = MainWindow::accessToParent(this);
+    QString tableNameSelected = ui->comboBoxTable->itemText(ui->comboBoxTable->currentIndex());
 
-    if (mainWindow != NULL) {
-        mainWindow->openDatabaseVisualisation();
+    try {
+        if (tableNameSelected == "")
+            throw new Exception(ERREUR_COMBOBOX_VIDE);
+
+        mainWindow->openDatabaseVisualisation(tableNameSelected);
+    } catch (Exception* e) {
+        e->EXCAffichageErreur();
+
+        delete e;
     }
 }
 

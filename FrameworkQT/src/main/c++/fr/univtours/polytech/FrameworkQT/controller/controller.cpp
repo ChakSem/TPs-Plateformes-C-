@@ -275,6 +275,18 @@ unsigned int Controller::removeDataBase(const QString& databaseName) {
     return getProfileDatabases()->removeDataBase(databaseName);
 }
 
+void Controller::openDatabase(QString filePath) {
+    Data::getInstance().openDatabase(filePath);
+}
+
+CparserSqlite* Controller::getOpenedDatabase() {
+    return Data::getInstance().getOpenedDatabase();
+}
+
+void Controller::closeDatabase() {
+    Data::getInstance().closeDatabase();
+}
+
 /**
  *Méthode pour vérifier si des utilisateurs sont présents
  * Entrée :
