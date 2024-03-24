@@ -1,7 +1,7 @@
-- test affichage des table (méthode) <= Verifier avec une bdd qui contient des donnees
 - test les requetes
 - bouton execute
-- probleme lorsque meme db ajoute 2 fois
+
+=> Utiliser la base de donnee test.sqlite que j'ai crée
 
 Fait :
 - QString * à QString
@@ -21,3 +21,6 @@ Fait :
 - voir pour qsqldatabase
 - initilisation de la vue databasemanagement
 - initialisation databasevisualisation
+- probleme lorsque meme db ajoute 2 fois
+- réparer affichage des table (méthode)
+

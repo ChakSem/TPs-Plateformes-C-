@@ -119,6 +119,9 @@ void Exception::EXCAffichageErreur()
         case ERREUR_COMBOBOX_VIDE :
             qDebug() << "Aucunes base de donnees n'est liee a ce profil";
             break;
+        case ERREUR_REQUETE_SQL:
+            qDebug() << "La requete SQL a rencontree une erreur";
+            break;
 
         case ERREUR_FATALE :
             qDebug() << "Erreur fatale";

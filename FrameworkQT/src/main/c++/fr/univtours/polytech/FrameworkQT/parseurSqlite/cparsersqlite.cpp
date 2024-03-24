@@ -37,34 +37,58 @@ void CparserSqlite::closeDatabase()
 
 /**
  * Méthode pour effectuer le parsing d'une base de données
- * Entree : - database, QSqlDatabase& (base de données à parser)
- * Sortie : - tables, QMap<QString, QList<QString>> (tables et colonnes de la base de données)
+ * Entree : - tableName, QString le nom de la table dont l'on veut le contenu
+ * Sortie : - content, QList<QList<QString>> le contenu de la table
  */
-
-QList<QString>* CparserSqlite::parseDatabase(QString tableName)
+QList<QList<QString>> CparserSqlite::parseDatabase(QString tableName)
 {
-    QList<QString>* content = new QList<QString>();
+    QList<QList<QString>> content;
+
     try
     {
         if (!database.isOpen()) // Vérification si la base de données est ouverte
             throw new Exception(BASE_DE_DONNEE_NON_OUVERTE);
 
+        content.append(getFields(tableName));
 
-        QSqlRecord record = database.record(tableName);
-        for (int i = 0; i < record.count(); ++i)
+        QSqlQuery query(database);
+        QString queryString = QString("SELECT * FROM %1").arg(tableName);
+        if (!query.exec(queryString))
+            throw new Exception(ERREUR_REQUETE_SQL);
+
+        while (query.next())
         {
-            content->append(record.fieldName(i));
+            QList<QString> row;
+            for (int i = 0; i < query.record().count(); ++i)
+            {
+                row.append(query.value(i).toString());
+            }
+            content.append(row);
         }
-
-        return content;
     }
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
         delete e;
-
-        return NULL;
     }
+
+    return content;
+}
+
+/**
+ * Méthode pour récuperer les champs d'une table
+ * Entree : - tableName, QString le nom de la table dont l'on veut les champs
+ * Sortie : - fields, QList<QString> la liste des champs de la table
+ */
+QList<QString> CparserSqlite::getFields(QString tableName) {
+    QList<QString> fields;
+
+    QSqlRecord record = database.record(tableName);
+    for (int i = 0; i < record.count(); ++i) {
+        fields.append(record.fieldName(i));
+    }
+
+    return fields;
 }
 
 /**

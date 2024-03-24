@@ -34,14 +34,9 @@ void DatabaseInterface::actionAddDatabase()
         Profile* profileDatabases = Controller::getProfileDatabases();
         QString name = QFileInfo(filePath).baseName();// Utilisez le nom de fichier sans extension comme nom de base de données
 
-        for (auto it = profileDatabases->getDatabases().begin(); it != profileDatabases->getDatabases().end(); it++) {
-            if(it.key() == name) {
-                throw new Exception(ERREUR_BASE_DE_DONNEE_DEJA_AJOUTEE);
-            }
+        if (profileDatabases->addDataBase(name, filePath) == DATABASE_ADD_SUCCESS) {
+            ui->comboBoxDatabases->addItem(name);
         }
-        profileDatabases->addDataBase(name, filePath);
-
-        ui->comboBoxDatabases->addItem(name);
 
     } catch (Exception* e) {
         e->EXCAffichageErreur();

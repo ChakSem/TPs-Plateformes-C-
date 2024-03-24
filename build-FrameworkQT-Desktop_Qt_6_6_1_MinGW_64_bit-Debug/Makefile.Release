@@ -1925,6 +1925,9 @@ release/moc_databasevisualisationinterface.cpp: ../FrameworkQT/src/main/c++/fr/u
 		C:/Qt/6.6.1/mingw_64/include/QtCore/QSizeF \
 		C:/Qt/6.6.1/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/QStandardItemModel \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qstandarditemmodel.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qabstractitemmodel.h \
 		release/moc_predefs.h \
 		C:/Qt/6.6.1/mingw_64/bin/moc.exe
 	C:\Qt\6.6.1\mingw_64\bin\moc.exe $(DEFINES) --include S:/Polytech/DI4/S8/TPs-Plateformes-C-/build-FrameworkQT-Desktop_Qt_6_6_1_MinGW_64_bit-Debug/release/moc_predefs.h -IC:/Qt/6.6.1/mingw_64/mkspecs/win32-g++ -IS:/Polytech/DI4/S8/TPs-Plateformes-C-/FrameworkQT -IC:/Qt/6.6.1/mingw_64/include -IC:/Qt/6.6.1/mingw_64/include/QtWidgets -IC:/Qt/6.6.1/mingw_64/include/QtGui -IC:/Qt/6.6.1/mingw_64/include/QtSql -IC:/Qt/6.6.1/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\databasevisualisationinterface.h -o release\moc_databasevisualisationinterface.cpp
@@ -5814,7 +5817,10 @@ ui_mainwindow.h: ../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/v
 		C:/Qt/6.6.1/mingw_64/include/QtCore/QSize \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/QSizeF \
 		C:/Qt/6.6.1/mingw_64/include/QtGui/QTransform \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qnativeinterface.h
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/QStandardItemModel \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qstandarditemmodel.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qabstractitemmodel.h
 	C:\Qt\6.6.1\mingw_64\bin\uic.exe ..\FrameworkQT\src\main\c++\fr\univtours\polytech\FrameworkQT\view\mainwindow.ui -o ui_mainwindow.h
 
 ui_profilesinterface.h: ../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.ui \
@@ -11431,7 +11437,57 @@ release/databasevisualisationinterface.o: ../FrameworkQT/src/main/c++/fr/univtou
 		C:/Qt/6.6.1/mingw_64/include/QtCore/QSizeF \
 		C:/Qt/6.6.1/mingw_64/include/QtGui/QTransform \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qnativeinterface.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/QStandardItemModel \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qstandarditemmodel.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qabstractitemmodel.h \
 		ui_databasevisualisationinterface.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/QVariant \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/QApplication \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qcoreapplication.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qeventloop.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qfuture.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qfutureinterface.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qmutex.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qdeadlinetimer.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qelapsedtimer.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qresultstore.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qfuture_impl.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qthreadpool.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qthread.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qrunnable.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qexception.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qpromise.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qguiapplication.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qinputmethod.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qlocale.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/QHeaderView \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qheaderview.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.6.1/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/QLabel \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qpicture.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/QTableWidget \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtablewidget.h \
+		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtableview.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/parseurSqlite/cparsersqlite.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/QString \
@@ -11456,28 +11512,11 @@ release/databasevisualisationinterface.o: ../FrameworkQT/src/main/c++/fr/univtou
 		C:/Qt/6.6.1/mingw_64/include/QtCore/q23functional.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qeventloop.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qanimationgroup.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qapplicationstatic.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/QMutex \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qmutex.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qdeadlinetimer.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qelapsedtimer.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qtsan_impl.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qcoreapplication.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qfuture.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qfutureinterface.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qresultstore.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qfuture_impl.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qthreadpool.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qthread.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qrunnable.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qexception.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qpromise.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qassociativeiterable.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qbasictimer.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qbitarray.h \
@@ -11485,12 +11524,10 @@ release/databasevisualisationinterface.o: ../FrameworkQT/src/main/c++/fr/univtou
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qbytearraymatcher.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qcache.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qcalendar.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qcborarray.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qcborvalue.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qdatetime.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qcborcommon.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qregularexpression.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/quuid.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qendian.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qcbormap.h \
@@ -11516,7 +11553,6 @@ release/databasevisualisationinterface.o: ../FrameworkQT/src/main/c++/fr/univtou
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qfuturesynchronizer.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qfuturewatcher.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qidentityproxymodel.h \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qjsonarray.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qjsonvalue.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qjsondocument.h \
@@ -11578,7 +11614,6 @@ release/databasevisualisationinterface.o: ../FrameworkQT/src/main/c++/fr/univtou
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qurlquery.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qvarianthash.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/QHash \
-		C:/Qt/6.6.1/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qvariantlist.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qvariantmap.h \
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qvector.h \
@@ -11597,20 +11632,7 @@ release/databasevisualisationinterface.o: ../FrameworkQT/src/main/c++/fr/univtou
 		C:/Qt/6.6.1/mingw_64/include/QtSql/qsqlquerymodel.h \
 		C:/Qt/6.6.1/mingw_64/include/QtSql/qsqlrelationaldelegate.h \
 		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qstyleditemdelegate.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qstyleoption.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/6.6.1/mingw_64/include/QtGui/qvalidator.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qslider.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractslider.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qstyle.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtabbar.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qtabwidget.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qrubberband.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qlistview.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qcombobox.h \
 		C:/Qt/6.6.1/mingw_64/include/QtSql/qsqlrelationaltablemodel.h \
 		C:/Qt/6.6.1/mingw_64/include/QtSql/qsqltablemodel.h \
@@ -13470,14 +13492,15 @@ release/mainwindow.o: ../FrameworkQT/src/main/c++/fr/univtours/polytech/Framewor
 		C:/Qt/6.6.1/mingw_64/include/QtCore/qdebug \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/utils/exception.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.h \
+		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasevisualisationinterface.h \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/QStandardItemModel \
+		C:/Qt/6.6.1/mingw_64/include/QtGui/qstandarditemmodel.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeuserinterface.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/profilesinterface.h \
 		../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/usermanagementinterface.h \
-		C:/Qt/6.6.1/mingw_64/include/QtGui/QStandardItemModel \
-		C:/Qt/6.6.1/mingw_64/include/QtGui/qstandarditemmodel.h \
 		C:/Qt/6.6.1/mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.6.1/mingw_64/include/QtWidgets/qlabel.h \
 		C:/Qt/6.6.1/mingw_64/include/QtGui/qpicture.h \

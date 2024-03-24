@@ -2,6 +2,7 @@
 #define DATABASEVISUALISATIONINTERFACE_H
 
 #include <QWidget>
+#include "QStandardItemModel"
 
 namespace Ui {
 class DatabaseVisualisationInterface;
@@ -19,6 +20,8 @@ public:
 
 private:
     Ui::DatabaseVisualisationInterface *ui;
+
+    QStandardItemModel* model;
 };
 
 #endif // DATABASEVISUALISATIONINTERFACE_H

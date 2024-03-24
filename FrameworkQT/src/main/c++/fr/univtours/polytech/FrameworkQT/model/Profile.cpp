@@ -95,7 +95,7 @@ QString Profile::getPathFile(const QString &databaseName)
  * Entree : - newDatabase, const QString& (nouvelle base de données à ajouter)
  * Sortie :
  */
-void Profile::addDataBase(const QString &databaseName, const QString &databaseFilePath)
+unsigned int Profile::addDataBase(const QString &databaseName, const QString &databaseFilePath)
 {
     try
     {
@@ -107,12 +107,16 @@ void Profile::addDataBase(const QString &databaseName, const QString &databaseFi
         else
         {
             databases.insert(databaseName, databaseFilePath);
+
+            return DATABASE_ADD_SUCCESS;
         }
     }
     catch (Exception *e)
     {
         e->EXCAffichageErreur();
         delete e;
+
+        return DATABASE_ADD_ERROR;
     }
 }
 
@@ -148,52 +152,6 @@ unsigned int Profile::removeDataBase(const QString &databaseName)
 
         return PASTROUVE;
     }
-}
-
-/**
- * Methode pour récupérer la liste des tables d'une base de données
- * Entree : - databaseName, const QString& (nom de la base de données)
- * Sortie : - tables, QList<QString> (liste des tables de la base de données)
- */
-QList<QString> Profile::getTables(const QString &databaseName)
-{
-    QList<QString> tables;
-    try
-    {
-        // On vérifie que la base de données est bien présente
-        if (!databases.contains(databaseName))
-        {
-            throw new Exception(BASE_DE_DONNEE_NON_TROUVEE);
-        }
-        else
-        {
-            // Ouvrir la base de données SQLite
-            QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", "connectionName");
-            QString dbFilePath = getPathFile(databaseName);
-            db.setDatabaseName(dbFilePath);
-
-            if (!db.open())
-            {
-                qDebug() << "Error: Unable to open database.";
-                return tables;
-            }
-
-            // Récupérer la liste des tables de la base de données
-            QStringList tableNames = db.tables();
-            foreach (const QString &tableName, tableNames)
-            {
-                tables.append(tableName);
-            }
-
-            db.close();
-        }
-    }
-    catch (Exception *e)
-    {
-        e->EXCAffichageErreur();
-        delete e;
-    }
-    return tables;
 }
 
 /**

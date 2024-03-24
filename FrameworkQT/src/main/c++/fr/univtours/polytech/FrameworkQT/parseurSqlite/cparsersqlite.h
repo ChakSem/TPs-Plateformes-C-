@@ -23,7 +23,7 @@ public:
     void closeDatabase();
 
     /* Méthode pour effectuer le parsing d'une base de données, le parsing consiste à récupérer les tables et les colonnes de la base de données */
-    QList<QString>* parseDatabase(QString tableName);
+    QList<QList<QString>> parseDatabase(QString tableName);
 
     /* Méthode pour traiter les requêtes SELECT (tout en verifiant les droits de l'utilisateur) */
     QList<QList<QString>> processSelectQuery(const QString &query, Profile *profile);
@@ -46,6 +46,8 @@ public:
     ~CparserSqlite();
 
 private :
+    QList<QString> getFields(QString tableName);
+
     CparserSqlite();
     CparserSqlite(CparserSqlite& CparserSqliteParam);
 };

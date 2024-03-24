@@ -12,6 +12,9 @@
 #define PASTROUVE 0
 #define TROUVE 1
 
+#define DATABASE_ADD_SUCCESS 0
+#define DATABASE_ADD_ERROR 1
+
 class User;
 
 class Profile
@@ -20,8 +23,7 @@ private:
     /* Profile (un profil est defini par un nom(string) et son role(string issue du enum Rights mais faut voir comment on fait pour l'enum) */
     QString title;
     Rights right;
-    QMap<QString, QString> databases;
-    //Map de database a mettre (avec le nom de la database et l'addresse ) pour pouvoir les ouvrir et les fermer
+    QMap<QString, QString> databases; //Map de database a mettre (avec le nom de la database et l'addresse ) pour pouvoir les ouvrir et les fermer
     
     User *user; // Utilisateur du profil
 
@@ -37,11 +39,8 @@ public:
     /* Accesseurs de l'attribut databases */
     QMap<QString, QString> getDatabases();
     QString getPathFile(const QString& databaseName);
-    void addDataBase(const QString& databaseName, const QString& databaseFilePath);
+    unsigned int addDataBase(const QString& databaseName, const QString& databaseFilePath);
     unsigned int removeDataBase(const QString& databaseName);
-
-    /* Méthode pour récupérer la liste des tables d'une base de données */
-    QList<QString> getTables(const QString& databaseName);
 
     Profile& operator=(const Profile& profile);
 
