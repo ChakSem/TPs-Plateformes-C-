@@ -37,6 +37,29 @@ void DatabaseVisualisationInterface::initializeTableWidget(QString tableName) {
     ui->tableWidget->verticalHeader()->setStyleSheet("font-weight: bold;");
 }
 
+void DatabaseVisualisationInterface::initializeTableWidgetForSelectQuery(QString requete) {
+    ui->tableWidget->clear();
+
+    QList<QList<QString>> donneesTable = Controller::getOpenedDatabase()->processSelectQuery(requete);
+
+    unsigned int lineNb = donneesTable.size();
+    unsigned int columnNb = donneesTable[0].size();
+
+    ui->tableWidget->setRowCount(lineNb);
+    ui->tableWidget->setColumnCount(columnNb);
+
+    for (unsigned int i = 0; i < lineNb; i ++) {
+        for (unsigned int j = 0; j < columnNb; j ++) {
+            QTableWidgetItem *item = new QTableWidgetItem(donneesTable[i][j]);
+            ui->tableWidget->setItem(i, j, item);
+        }
+    }
+
+    ui->tableWidget->setSelectionMode(QAbstractItemView::NoSelection);
+    ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    ui->tableWidget->verticalHeader()->setStyleSheet("font-weight: bold;");
+}
+
 DatabaseVisualisationInterface::DatabaseVisualisationInterface(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::DatabaseVisualisationInterface)

@@ -60,6 +60,7 @@ public:
     void openDatabaseInterface(Profile* profile);
     void openDatabaseManagement(QString filePath);
     void openDatabaseVisualisation(QString tableName);
+    void openDatabaseVisualisationForSelectQuery(QString requete);
     void openDatabases();
     void openCreateUser();
     void openAddProfiles();

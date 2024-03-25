@@ -1,7 +1,5 @@
-- test les requetes
-- bouton execute
-
-=> Utiliser la base de donnee test.sqlite que j'ai crée
+- commentaire 
+- nommage
 
 Fait :
 - QString * à QString
@@ -23,4 +21,8 @@ Fait :
 - initialisation databasevisualisation
 - probleme lorsque meme db ajoute 2 fois
 - réparer affichage des table (méthode)
+- test les requetes
+- bouton execute
+
+=> Utiliser la base de donnee test.sqlite que j'ai crée
 

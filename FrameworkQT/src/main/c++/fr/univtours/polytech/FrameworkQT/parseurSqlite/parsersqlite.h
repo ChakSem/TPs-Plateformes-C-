@@ -26,7 +26,7 @@ public:
     QList<QList<QString>> parseDatabase(QString tableName);
 
     /* Méthode pour traiter les requêtes SELECT (tout en verifiant les droits de l'utilisateur) */
-    QList<QList<QString>> processSelectQuery(const QString &query, Profile *profile);
+    QList<QList<QString>> processSelectQuery(const QString &query);
 
     /* Méthode pour traiter les requêtes UPDATE (tout en verifiant les droits de l'utilisateur) */
     bool processUpdateQuery(const QString &query, Profile *profile);
