@@ -4,7 +4,7 @@
 #include "../utils/exception.h"
 #include "../controller/controller.h"
 
-#include "../parseurJson/CparserJson.h"
+#include "../parseurJson/parserJson.h"
 #include "../utils/Exception.h"
 #include <QDebug>
 

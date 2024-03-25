@@ -1,10 +1,10 @@
 release/controller.o
 release/main.o
-release/Profile.o
-release/User.o
+release/profile.o
+release/user.o
 release/data.o
-release/CparserJson.o
-release/cparsersqlite.o
+release/parserJson.o
+release/parsersqlite.o
 release/qaesencryption.o
 release/encryption.o
 release/exception.o

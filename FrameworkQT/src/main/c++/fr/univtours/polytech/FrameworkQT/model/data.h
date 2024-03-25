@@ -10,7 +10,7 @@
 #define ADMIN 1
 #define NOTADMIN 2
 
-class CparserSqlite;
+class parserSqlite;
 
 class Data
 {
@@ -28,7 +28,7 @@ private:
     QMap<QString, User*> administrators;
 
     /* Gerera le stockge de la base de donnee ouverte dans les vues database */
-    CparserSqlite* openedDatabase;
+    parserSqlite* openedDatabase;
     
 public:
     //Singleton
@@ -68,7 +68,7 @@ public:
 
     /* Accesseurs de l'attibut openedDatabase */
     void openDatabase(QString filePath);
-    CparserSqlite* getOpenedDatabase();
+    parserSqlite* getOpenedDatabase();
     void closeDatabase();
 
 private :

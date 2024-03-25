@@ -1,8 +1,8 @@
 #include "data.h"
 
-#include "../parseurJson/CparserJson.h"
+#include "../parseurJson/parserJson.h"
 #include "../utils/Exception.h"
-#include "../parseurSqlite/cparsersqlite.h"
+#include "../parseurSqlite/parsersqlite.h"
 
 /* Accesseurs de l'attribut users */
 void Data::addUser(User* user) {
@@ -159,10 +159,10 @@ Profile* Data::getProfileDatabases() {
  * Sortie :
  */
 void Data::openDatabase(QString filePath) {
-    openedDatabase = new CparserSqlite(filePath);
+    openedDatabase = new parserSqlite(filePath);
 }
 
-CparserSqlite* Data::getOpenedDatabase() {
+parserSqlite* Data::getOpenedDatabase() {
     return openedDatabase;
 }
 
@@ -178,7 +178,7 @@ void Data::closeDatabase() {
 
 /* Destructeur, qui sera appelé automatiquement à la fin du programme */
 Data::~Data() {
-    CparserJson::saveData(*this);
+    parserJson::saveData(*this);
 
     for(User* user : users) {
         delete user;
@@ -190,5 +190,5 @@ Data::~Data() {
 
 /* Constructeurs et opérateur = à ne pas utiliser (Singleton) */
 Data::Data() {
-    CparserJson::updateData(*this);
+    parserJson::updateData(*this);
 }

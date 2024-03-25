@@ -3,7 +3,7 @@
 #include "QFileDialog"
 #include "QFileInfo"
 #include "../utils/exception.h"
-#include "../parseurSqlite/cparsersqlite.h"
+#include "../parseurSqlite/parsersqlite.h"
 #include "../controller/controller.h"
 #include "../model/Profile.h"
 #include "mainwindow.h"
@@ -13,7 +13,7 @@ void DatabaseManagementInterface::initializeComboBox()
 {
     ui->comboBoxTable->clear();
 
-    CparserSqlite* db = Controller::getOpenedDatabase();
+    parserSqlite* db = Controller::getOpenedDatabase();
 
     for (QString tableName : db->getTablesNames()) {
         ui->comboBoxTable->addItem(tableName);
