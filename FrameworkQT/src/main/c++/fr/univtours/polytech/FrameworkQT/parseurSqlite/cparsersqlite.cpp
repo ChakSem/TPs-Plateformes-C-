@@ -4,9 +4,9 @@
 CparserSqlite::CparserSqlite() {}
 
 /**
- * Méthode pour ouvrir une connexion à une base de données
+ * Méthode pour ouvrir une connexion à une base de données, sur l'attribut database
  * Entree : - filePath, const QString& (chemin du fichier de la base de données)
- * Sortie : - db, QSqlDatabase (base de données ouverte)
+ * Sortie :
  */
 void CparserSqlite::openDatabase(const QString &filePath)
 {
@@ -36,7 +36,7 @@ void CparserSqlite::closeDatabase()
 }
 
 /**
- * Méthode pour effectuer le parsing d'une base de données
+ * Méthode pour effectuer lire les données d'une table de database
  * Entree : - tableName, QString le nom de la table dont l'on veut le contenu
  * Sortie : - content, QList<QList<QString>> le contenu de la table
  */
@@ -92,9 +92,8 @@ QList<QString> CparserSqlite::getFields(QString tableName) {
 }
 
 /**
- * Méthode pour traiter les requêtes SELECT (tout en verifiant les droits de l'utilisateur)
+ * Méthode pour traiter les requêtes SELECT
  * Entree : - query, const QString& (requête à traiter)
- *          - user, User* (utilisateur effectuant la requête)
  * Sortie : - result, QList<QList<QString>> (résultat de la requête)
  **/
 QList<QList<QString>> CparserSqlite::processSelectQuery(const QString &query)
@@ -137,7 +136,7 @@ QList<QList<QString>> CparserSqlite::processSelectQuery(const QString &query)
 }
 
 /**
- * Méthode pour traiter les requêtes UPDATE (tout en verifiant les droits de l'utilisateur)
+ * Méthode pour traiter les requêtes UPDATE
  * Entree : - query, const QString& (requête à traiter)
  *          - user, User* (utilisateur effectuant la requête)
  * Sortie : -result, bool (indique si la requête a été effectuée avec succès)
@@ -170,7 +169,7 @@ bool CparserSqlite::processUpdateQuery(const QString &query, Profile *profile)
 }
 
 /**
- * Méthode pour traiter les requêtes INSERT (tout en verifiant les droits de l'utilisateur)
+ * Méthode pour traiter les requêtes INSERT INTO
  * Entree : - query, const QString& (requête à traiter)
  *          - user, User* (utilisateur effectuant la requête)
  * Sortie : -result, bool (indique si la requête a été effectuée avec succès)
@@ -203,7 +202,7 @@ bool CparserSqlite::processInsertQuery(const QString &query, Profile *profile)
 }
 
 /**
- * Méthode pour traiter les requêtes DELETE (tout en verifiant les droits de l'utilisateur)
+ * Méthode pour traiter les requêtes DELETE FROM
  * Entree : - query, const QString& (requête à traiter)
  *          - user, User* (utilisateur effectuant la requête)
  * Sortie : -result, bool (indique si la requête a été effectuée avec succès)
@@ -235,8 +234,8 @@ bool CparserSqlite::processDeleteQuery(const QString &query, Profile *profile)
 }
 
 /**
- * Methode pour récupérer la liste des tables d'une base de données d'
- * Entree : - databaseName, const QString& (nom de la base de données)
+ * Methode pour récupérer la liste des tables d'une base de données
+ * Entree :
  * Sortie : - tables, QList<QString> (liste des tables de la base de données)
  */
 QList<QString> CparserSqlite::getTablesNames()
@@ -244,10 +243,16 @@ QList<QString> CparserSqlite::getTablesNames()
     return database.tables();
 }
 
+/**
+ * Constructeur de confort de ParserSqlite (constructeur à utiliser)
+ */
 CparserSqlite::CparserSqlite(QString filePath) {
     openDatabase(filePath);
 }
 
+/**
+ * Destructeur de ParserSqlite
+ */
 CparserSqlite::~CparserSqlite() {
     closeDatabase();
 }

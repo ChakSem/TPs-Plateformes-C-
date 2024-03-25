@@ -271,24 +271,40 @@ Profile* Controller::getProfileDatabases() {
 }
 
 /* Gestion des bases de donné du profilDatabases */
+/**
+ * Supprime une base de donnée du profil ProfileDatabases
+ * Entree : databaseName, const QString&
+ * Sortie : unsigned int
+ */
 unsigned int Controller::removeDataBase(const QString& databaseName) {
     return getProfileDatabases()->removeDataBase(databaseName);
 }
 
-void Controller::openDatabase(QString filePath) {
+/**
+ * Ouvre la base de donnee au chemin filePath
+ * Entree : filePath, QString
+ * Sortie :
+ */
+void Controller::openDatabase(const QString& filePath) {
     Data::getInstance().openDatabase(filePath);
 }
+
 
 CparserSqlite* Controller::getOpenedDatabase() {
     return Data::getInstance().getOpenedDatabase();
 }
 
+/**
+ * Ferme openedDatabase
+ * Entree :
+ * Sortie :
+ */
 void Controller::closeDatabase() {
     Data::getInstance().closeDatabase();
 }
 
 /**
- *Méthode pour vérifier si des utilisateurs sont présents
+ * Méthode pour vérifier si des utilisateurs sont présents
  * Entrée :
  * Sortie : unsigned int :  - NO_USERS : s'il n'y a pas d'utilisateurs
  *                         - SOME_USERS : s'il y a des utilisateurs

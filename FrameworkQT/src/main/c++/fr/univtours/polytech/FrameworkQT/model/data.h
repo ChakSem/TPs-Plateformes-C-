@@ -72,10 +72,10 @@ public:
     void closeDatabase();
 
 private :
-/* Destructeur, sera appelé automatiquement à la fin du programme */
+    /* Destructeur, sera appelé automatiquement à la fin du programme */
     ~Data();
 
-/* Constructeurs et opérateur = à ne pas utiliser (Singleton) */
+    /* Constructeurs et opérateur = à ne pas utiliser (Singleton) */
     Data();
     Data(const Data&);
     Data& operator=(const Data&);

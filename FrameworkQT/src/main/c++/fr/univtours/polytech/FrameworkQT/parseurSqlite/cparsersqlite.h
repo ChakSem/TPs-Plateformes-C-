@@ -8,46 +8,38 @@
 #include "../model/User.h"
 #include "../model/Profile.h"
 #include "../model/data.h"
-// #include "../model/Rights.h"
 
 class CparserSqlite
 {
 private:
-    QSqlDatabase database;
+    QSqlDatabase database; //
 
 public:
-    /* Méthode pour ouvrir une connexion à une base de données */
+    /* Méthodes pour gérer l'attribue database */
     void openDatabase(const QString &filePath);
-
-    /* Méthode pour fermer une connexion à une base de données */
     void closeDatabase();
 
-    /* Méthode pour effectuer le parsing d'une base de données, le parsing consiste à récupérer les tables et les colonnes de la base de données */
+    /* Méthode pour la recuperation des donnees dans le cadre d'une requete SELECT */
     QList<QList<QString>> parseDatabase(QString tableName);
-
-    /* Méthode pour traiter les requêtes SELECT (tout en verifiant les droits de l'utilisateur) */
     QList<QList<QString>> processSelectQuery(const QString &query);
 
-    /* Méthode pour traiter les requêtes UPDATE (tout en verifiant les droits de l'utilisateur) */
+    /* Méthode pour traiter les requêtes UPDATE / INSERT INTO / DELETE FROM */
     bool processUpdateQuery(const QString &query, Profile *profile);
-
-    /* Méthode pour traiter les requêtes INSERT (tout en verifiant les droits de l'utilisateur) */
     bool processInsertQuery(const QString &query, Profile *profile);
-
-    /* Méthode pour traiter les requêtes DELETE (tout en verifiant les droits de l'utilisateur) */
     bool processDeleteQuery(const QString &query, Profile *profile);
 
     /* Methode pour recuperer la liste des tables d'une base de données */
     QList<QString> getTablesNames();
 
-    void displayQueryError();
-
+    /* Constructeur et Destructeur à utiliser */
     CparserSqlite(QString filePath);
     ~CparserSqlite();
 
 private :
+    /* Méthode pour récuperer les champs d'une table */
     QList<QString> getFields(QString tableName);
 
+    /* Constructeurs à bannir */
     CparserSqlite();
     CparserSqlite(CparserSqlite& CparserSqliteParam);
 };

@@ -53,11 +53,6 @@ public:
     static void createProfile(QString name, unsigned int rightValue);
     static void deleteProfile(QString idUser, QString profileName);
 
-    // /* Gestion des bases de données */ ( A supprimer car on utilise les methodes associée a l'objet QSqlDatabase)
-    // bool executeQuery(const QString& query);
-    // bool viewContent(const QString& databaseName, const QString& tableName);
-    // bool viewQuery(const QString& query);
-
     /* Gestion du profil visionneé */
     static void setProfileDatabases(Profile* profile);
     static void clearProfileDatabases();
@@ -65,15 +60,15 @@ public:
 
     /* Accesseurs de l'attibut openedDatabase */
     static unsigned int removeDataBase(const QString& databaseName);
-    static void openDatabase(QString filePath);
+    static void openDatabase(const QString& filePath);
     static CparserSqlite* getOpenedDatabase();
     static void closeDatabase();
 
     /* Méthode pour le lancement de l'app */
     static unsigned int isThereUsers();
 
-    /* Contient uniquement des méthodes statiques, donc inutile de créer des objets de ce Controller */
 private:
+    /* Contient uniquement des méthodes statiques, donc inutile de créer des objets de ce Controller */
     Controller();
     Controller(Controller& copy);
     ~Controller();

@@ -4,7 +4,6 @@
 #include "../utils/Exception.h"
 #include "../parseurSqlite/cparsersqlite.h"
 
-#include <QDebug>
 /* Accesseurs de l'attribut users */
 void Data::addUser(User* user) {
     users.insert(user->getId(), user);
@@ -154,6 +153,11 @@ Profile* Data::getProfileDatabases() {
 }
 
 /* Accesseurs de l'attibut openedDatabase */
+/**
+ * Ouvre une connexion sur l'attribut de openedDatabase
+ * Entree : filePath, chemin de la base de donnees
+ * Sortie :
+ */
 void Data::openDatabase(QString filePath) {
     openedDatabase = new CparserSqlite(filePath);
 }
@@ -162,6 +166,11 @@ CparserSqlite* Data::getOpenedDatabase() {
     return openedDatabase;
 }
 
+/**
+ * Ferme la connexion de openedDatabase
+ * Entree :
+ * Sortie :
+ */
 void Data::closeDatabase() {
     delete openedDatabase;
     openedDatabase = NULL;
