@@ -1,8 +1,8 @@
 #include "data.h"
 
-#include "../parseurJson/parserJson.h"
-#include "../utils/Exception.h"
-#include "../parseurSqlite/parsersqlite.h"
+#include "../parserJson/parserjson.h"
+#include "../utils/exception.h"
+#include "../parserSqlite/parsersqlite.h"
 
 /* Accesseurs de l'attribut users */
 void Data::addUser(User* user) {

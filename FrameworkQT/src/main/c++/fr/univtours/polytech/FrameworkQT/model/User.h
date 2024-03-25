@@ -1,7 +1,7 @@
 #include <qstring>
 #include "qlist.h"
 
-#include "UUID.h"
+#include "uuid.h"
 
 #ifndef USER
 #define USER 1

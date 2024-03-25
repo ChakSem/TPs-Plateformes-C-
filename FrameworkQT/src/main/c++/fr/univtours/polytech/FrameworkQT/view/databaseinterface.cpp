@@ -1,7 +1,7 @@
 #include "databaseinterface.h"
 #include "ui_databaseinterface.h"
 #include "../utils/exception.h"
-#include "../model/Profile.h"
+#include "../model/profile.h"
 
 void DatabaseInterface::initializeComboBox() {
     QComboBox* combo =  ui->comboBoxDatabases;

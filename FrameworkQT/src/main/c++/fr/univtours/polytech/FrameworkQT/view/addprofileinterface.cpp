@@ -1,7 +1,7 @@
 #include "addprofileinterface.h"
 #include "ui_addprofileinterface.h"
 #include "../utils/exception.h"
-#include "../parseurJson/parserJson.h"
+#include "../parseurJson/parserjson.h"
 #include "../model/data.h"
 #include <QMessageBox>
 #include "../controller/controller.h"

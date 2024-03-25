@@ -3,7 +3,7 @@ debug/main.o
 debug/profile.o
 debug/user.o
 debug/data.o
-debug/parserJson.o
+debug/parserjson.o
 debug/parsersqlite.o
 debug/qaesencryption.o
 debug/encryption.o

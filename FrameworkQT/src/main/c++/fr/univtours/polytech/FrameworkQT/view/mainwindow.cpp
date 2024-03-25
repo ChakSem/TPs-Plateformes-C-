@@ -3,7 +3,6 @@
 #include "../controller/controller.h"
 #include "../utils/exception.h"
 #include <QLabel>
-#include <QDebug>
 #include <QMessageBox>
 
 /**
@@ -72,6 +71,7 @@ bool MainWindow::messageDialog(QString message, QString title, int type)
 
         return false;
     }
+    return true;
 }
 
 /**

@@ -1,7 +1,7 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
 #include "QString"
-#include "../model/User.h"
+#include "../model/user.h"
 
 #define ERROR 0
 #define SUCCESS_ADMIN 1

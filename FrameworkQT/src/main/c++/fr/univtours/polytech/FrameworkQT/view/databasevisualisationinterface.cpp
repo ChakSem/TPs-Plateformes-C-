@@ -1,7 +1,7 @@
 #include "databasevisualisationinterface.h"
 #include "ui_databasevisualisationinterface.h"
 #include "../utils/exception.h"
-#include "../parseurSqlite/parsersqlite.h"
+#include "../parserSqlite/parsersqlite.h"
 #include "../controller/controller.h"
 
 

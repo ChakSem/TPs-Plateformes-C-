@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "../model/Profile.h"
+#include "../model/profile.h"
 
 /* Réference sur les pages des StackedWidget */
 #define MAINWIDGET_CONNECTION 0

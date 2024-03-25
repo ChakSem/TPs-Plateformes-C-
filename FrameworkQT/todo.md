@@ -1,5 +1,5 @@
 - commentaire 
-- nommage
+- poffine la mise en forme
 
 Fait :
 - QString * à QString
@@ -23,6 +23,7 @@ Fait :
 - réparer affichage des table (méthode)
 - test les requetes
 - bouton execute
+- nommage
 
 => Utiliser la base de donnee test.sqlite que j'ai crée
 

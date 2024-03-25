@@ -3,9 +3,9 @@
 #include "QFileDialog"
 #include "QFileInfo"
 #include "../utils/exception.h"
-#include "../parseurSqlite/parsersqlite.h"
+#include "../parserSqlite/parsersqlite.h"
 #include "../controller/controller.h"
-#include "../model/Profile.h"
+#include "../model/profile.h"
 #include "mainwindow.h"
 
 

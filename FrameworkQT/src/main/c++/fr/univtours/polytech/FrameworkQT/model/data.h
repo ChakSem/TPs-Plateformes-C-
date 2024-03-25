@@ -1,6 +1,6 @@
 #include <qstring>
 
-#include "User.h"
+#include "user.h"
 #include "qmap.h"
 
 #ifndef DATA_H

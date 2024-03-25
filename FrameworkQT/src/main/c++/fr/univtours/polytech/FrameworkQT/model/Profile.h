@@ -4,7 +4,7 @@
 #include <QtSql>
 #include <QSqlDatabase>
 
-#include "Rights.h"
+#include "rights.h"
 
 #ifndef PROFILE
 #define PROFILE 1
