@@ -289,6 +289,19 @@ void MainWindow::openDatabaseVisualisation(QString tableName)
 }
 
 /**
+ * Permet de rediriger vers l'inteface de visualisation de la base de données
+ * Entrée :
+ * Sortie :
+ */
+void MainWindow::openDatabaseVisualisationForSelectQuery(QString requete)
+{
+    previousPages.push_front(MAINWIDGET_DATABASE_VISUALISATION);
+    ui->MainWidget->setCurrentIndex(MAINWIDGET_DATABASE_VISUALISATION); // Access à la page de visualisation de la base de données
+    QWidget *widgetToRefresh = ui->MainWidget->widget(MAINWIDGET_DATABASE_VISUALISATION);
+    qobject_cast<DatabaseVisualisationInterface*>(widgetToRefresh)->initializeTableWidgetForSelectQuery(requete);
+}
+
+/**
  * Permet de rediriger vers l'inteface de création d'utilisateur
  * Entrée :
  * Sortie :

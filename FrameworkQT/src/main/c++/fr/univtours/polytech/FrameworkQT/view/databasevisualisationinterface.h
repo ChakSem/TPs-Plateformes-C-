@@ -17,6 +17,7 @@ public:
     ~DatabaseVisualisationInterface();
 
     void initializeTableWidget(QString tableName);
+    void initializeTableWidgetForSelectQuery(QString requete);
 
 private:
     Ui::DatabaseVisualisationInterface *ui;

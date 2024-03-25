@@ -97,10 +97,12 @@ QList<QString> CparserSqlite::getFields(QString tableName) {
  *          - user, User* (utilisateur effectuant la requête)
  * Sortie : - result, QList<QList<QString>> (résultat de la requête)
  **/
-QList<QList<QString>> CparserSqlite::processSelectQuery(const QString &query, Profile *profile)
+QList<QList<QString>> CparserSqlite::processSelectQuery(const QString &query)
 {
     try
     {
+        qDebug() << "Execution de la requete : " + query;
+
         if (query.isEmpty()) { // Vérification si la requête est vide
             throw new Exception(BASE_DE_DONNEE_NON_OUVERTE);
         }
@@ -122,6 +124,7 @@ QList<QList<QString>> CparserSqlite::processSelectQuery(const QString &query, Pr
                 }
                 result.append(row);
         }
+        qDebug() << " => requete executee avec succes\n";
 
         return result;
     }
@@ -143,6 +146,7 @@ bool CparserSqlite::processUpdateQuery(const QString &query, Profile *profile)
 {
     try
     {
+        qDebug() << "Execution de la requete : " + query;
         if (profile->getRight() != Rights::LECTURE_MODIFICATION && profile->getRight() != Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION)
             throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
 
@@ -150,8 +154,10 @@ bool CparserSqlite::processUpdateQuery(const QString &query, Profile *profile)
         /* Exécution de la requête */
         if (!myQuery.exec(query))
         {
+            qDebug() << " => la requete a echouee\n";
             return false;
         }
+        qDebug() << " => requete executee avec succes\n";
 
         return true;
     }
@@ -173,6 +179,7 @@ bool CparserSqlite::processInsertQuery(const QString &query, Profile *profile)
 {
     try
     {
+        qDebug() << "Execution de la requete : " + query;
         if (profile->getRight() != Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION)
             throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
 
@@ -180,8 +187,10 @@ bool CparserSqlite::processInsertQuery(const QString &query, Profile *profile)
         QSqlQuery myQuery(database);
         if (!myQuery.exec(query))
         {
+            qDebug() << " => la requete a echouee\n";
             return false;
         }
+        qDebug() << " => requete executee avec succes\n";
 
         return true;
     }
@@ -203,14 +212,17 @@ bool CparserSqlite::processDeleteQuery(const QString &query, Profile *profile)
 {
     try
     {
+        qDebug() << "Execution de la requete : " + query;
         if (profile->getRight() != Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION)
             throw new Exception(ERREUR_AUCUN_DROIT_CORRESPONDANT);
 
         QSqlQuery myQuery(database);
         if (!myQuery.exec(query))
         {
+            qDebug() << " => la requete a echouee\n";
             return false;
         }
+        qDebug() << " => requete executee avec succes\n";
 
         return true;
     }

@@ -75,8 +75,30 @@ void DatabaseManagementInterface::actionVisualization()
 void DatabaseManagementInterface::actionExecute()
 {
     QString typeDeRequete = ui->comboBoxCommand->currentText();
-    if(typeDeRequete == "SELECT") {
 
+    if(typeDeRequete == "SELECT") {
+        MainWindow *mainWindow = MainWindow::accessToParent(this);
+        QString tableNameSelected = ui->comboBoxTable->itemText(ui->comboBoxTable->currentIndex());
+
+        try {
+            if (tableNameSelected == "")
+                throw new Exception(ERREUR_COMBOBOX_VIDE);
+
+            mainWindow->openDatabaseVisualisationForSelectQuery("Select " + ui->plainTextEdit->toPlainText());
+        } catch (Exception* e) {
+            e->EXCAffichageErreur();
+
+            delete e;
+        }
+    }
+    if(typeDeRequete == "UPDATE") {
+        Controller::getOpenedDatabase()->processUpdateQuery("Update " + ui->plainTextEdit->toPlainText(), Controller::getProfileDatabases());
+    }
+    if(typeDeRequete == "INSERT INTO") {
+        Controller::getOpenedDatabase()->processInsertQuery("Insert into " + ui->plainTextEdit->toPlainText(), Controller::getProfileDatabases());
+    }
+    if(typeDeRequete == "DELETE FROM") {
+        Controller::getOpenedDatabase()->processUpdateQuery("Delete From " + ui->plainTextEdit->toPlainText(), Controller::getProfileDatabases());
     }
 }
 
