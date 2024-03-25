@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -23,7 +24,7 @@
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/creationuserinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databaseinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasemanagementinterface.h"
-#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databassevisualisationinterface.h"
+#include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/databasevisualisationinterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/deconnectioninterface.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/firstuserinscription.h"
 #include "../FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/view/homeadmininterface.h"
@@ -49,7 +50,7 @@ public:
     AccountInformationsInterface *myAcount;
     DatabaseInterface *databaseInterface;
     DatabaseManagementInterface *databaseManagement;
-    DatabasseVisualisationInterface *databaseVisualisation;
+    DatabaseVisualisationInterface *databaseVisualisation;
     QWidget *page;
     QStackedWidget *DeconnectionWidget;
     DeconnectionInterface *deconnection;
@@ -65,6 +66,9 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(601, 450);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8("../../../../../../../../icone.png"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         MainWindow->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -1071,7 +1075,7 @@ public:
         databaseManagement = new DatabaseManagementInterface();
         databaseManagement->setObjectName("databaseManagement");
         MainWidget->addWidget(databaseManagement);
-        databaseVisualisation = new DatabasseVisualisationInterface();
+        databaseVisualisation = new DatabaseVisualisationInterface();
         databaseVisualisation->setObjectName("databaseVisualisation");
         MainWidget->addWidget(databaseVisualisation);
         page = new QWidget();
@@ -1115,7 +1119,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        MainWidget->setCurrentIndex(9);
+        MainWidget->setCurrentIndex(11);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1123,7 +1127,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Super Appli", nullptr));
     } // retranslateUi
 
 };

@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Super Appli</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../../../../../icone.png</normaloff>../../../../../../../../icone.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">/*

@@ -6,16 +6,32 @@
 #include "../parseurSqlite/cparsersqlite.h"
 #include "../controller/controller.h"
 #include "../model/Profile.h"
-#include "mainwindow.h""
+#include "mainwindow.h"
 
 
 void DatabaseManagementInterface::initializeComboBox()
 {
+    ui->comboBoxTable->clear();
+
     CparserSqlite* db = Controller::getOpenedDatabase();
 
     for (QString tableName : db->getTablesNames()) {
         ui->comboBoxTable->addItem(tableName);
     }
+
+    ui->comboBoxCommand->clear();
+
+    ui->comboBoxCommand->addItem("SELECT");
+
+    if(Controller::getProfileDatabases()->getRight() != Rights::LECTURE) {
+        ui->comboBoxCommand->addItem("UPDATE");
+        ui->comboBoxCommand->addItem("INSERT INTO");
+
+        if(Controller::getProfileDatabases()->getRight() == Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION) {
+            ui->comboBoxCommand->addItem("DELETE FROM");
+        }
+    }
+
 }
 
 DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
@@ -58,7 +74,10 @@ void DatabaseManagementInterface::actionVisualization()
  */
 void DatabaseManagementInterface::actionExecute()
 {
-    // TODO
+    QString typeDeRequete = ui->comboBoxCommand->currentText();
+    if(typeDeRequete == "SELECT") {
+
+    }
 }
 
 DatabaseManagementInterface::~DatabaseManagementInterface()

@@ -47,9 +47,9 @@
   <widget class="QPlainTextEdit" name="plainTextEdit">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>120</x>
      <y>180</y>
-     <width>371</width>
+     <width>341</width>
      <height>191</height>
     </rect>
    </property>
@@ -112,17 +112,12 @@
   <widget class="QComboBox" name="comboBoxCommand">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>180</y>
-     <width>61</width>
+     <width>111</width>
      <height>22</height>
     </rect>
    </property>
-   <item>
-    <property name="text">
-     <string>Select</string>
-    </property>
-   </item>
   </widget>
  </widget>
  <resources/>

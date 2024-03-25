@@ -50,7 +50,7 @@ public:
         labelDatabaseManagement->setFont(font);
         plainTextEdit = new QPlainTextEdit(DatabaseManagementInterface);
         plainTextEdit->setObjectName("plainTextEdit");
-        plainTextEdit->setGeometry(QRect(90, 180, 371, 191));
+        plainTextEdit->setGeometry(QRect(120, 180, 341, 191));
         labelRequest = new QLabel(DatabaseManagementInterface);
         labelRequest->setObjectName("labelRequest");
         labelRequest->setGeometry(QRect(60, 150, 311, 21));
@@ -68,9 +68,8 @@ public:
         comboBoxTable->setObjectName("comboBoxTable");
         comboBoxTable->setGeometry(QRect(50, 100, 300, 22));
         comboBoxCommand = new QComboBox(DatabaseManagementInterface);
-        comboBoxCommand->addItem(QString());
         comboBoxCommand->setObjectName("comboBoxCommand");
-        comboBoxCommand->setGeometry(QRect(30, 180, 61, 22));
+        comboBoxCommand->setGeometry(QRect(10, 180, 111, 22));
 
         retranslateUi(DatabaseManagementInterface);
 
@@ -84,8 +83,6 @@ public:
         labelRequest->setText(QCoreApplication::translate("DatabaseManagementInterface", "Commandes", nullptr));
         pushButtonVisualization->setText(QCoreApplication::translate("DatabaseManagementInterface", "Visualiser", nullptr));
         pushButtonExecute->setText(QCoreApplication::translate("DatabaseManagementInterface", "Executer", nullptr));
-        comboBoxCommand->setItemText(0, QCoreApplication::translate("DatabaseManagementInterface", "Select", nullptr));
-
     } // retranslateUi
 
 };
