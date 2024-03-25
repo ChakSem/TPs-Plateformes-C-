@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../../../../../../../icone.png</normaloff>../../../../../../../../icone.png</iconset>
+    <normaloff>../../../../../../../../icone.ico</normaloff>../../../../../../../../icone.ico</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">/*
@@ -1024,7 +1024,7 @@ QPushButton:hover {
      <x>0</x>
      <y>0</y>
      <width>601</width>
-     <height>18</height>
+     <height>14</height>
     </rect>
    </property>
   </widget>
