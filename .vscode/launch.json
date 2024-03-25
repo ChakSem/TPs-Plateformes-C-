@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/utils",
-      "program": "c:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/utils/build/Debug/outDebug",
+      "cwd": "c:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/parseurSqlite",
+      "program": "c:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/FrameworkQT/src/main/c++/fr/univtours/polytech/FrameworkQT/parseurSqlite/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

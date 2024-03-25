@@ -1,10 +1,10 @@
 debug/controller.o
 debug/main.o
-debug/Profile.o
-debug/User.o
+debug/profile.o
+debug/user.o
 debug/data.o
-debug/CparserJson.o
-debug/cparsersqlite.o
+debug/parserJson.o
+debug/parsersqlite.o
 debug/qaesencryption.o
 debug/encryption.o
 debug/exception.o

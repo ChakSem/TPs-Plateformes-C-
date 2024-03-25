@@ -1,6 +1,6 @@
 #include <algorithm>
-#include "Profile.h"
-#include "User.h"
+#include "profile.h"
+#include "user.h"
 #include "../utils/exception.h"
 
 /**

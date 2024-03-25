@@ -3,7 +3,7 @@
 
 #include "QString"
 #include "controller.h"
-#include "../parseurJson/CparserJson.h"
+#include "../parseurJson/parserJson.h"
 #include "../model/Data.h"
 #include "../utils/exception.h"
 
@@ -48,7 +48,7 @@ User *Controller::getUser(QString id)
 unsigned int Controller::connection(const QString id, QString password)
 {
 
-    if (CparserJson::getPassword(id) != password)
+    if (parserJson::getPassword(id) != password)
     {
         return ERROR;
     }
@@ -179,7 +179,7 @@ User *Controller::createUser(QString firstname, QString lastname, QString passwo
         default:
             throw new Exception(ERREUR_AUCUN_ROLE_CORRESPONDANT);
         }
-        CparserJson::setPassword(newUser->getId(), password);
+        parserJson::setPassword(newUser->getId(), password);
 
         return newUser;
     }
@@ -279,7 +279,7 @@ void Controller::openDatabase(QString filePath) {
     Data::getInstance().openDatabase(filePath);
 }
 
-CparserSqlite* Controller::getOpenedDatabase() {
+parserSqlite* Controller::getOpenedDatabase() {
     return Data::getInstance().getOpenedDatabase();
 }
 

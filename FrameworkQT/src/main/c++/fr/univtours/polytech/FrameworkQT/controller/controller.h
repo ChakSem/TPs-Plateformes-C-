@@ -23,7 +23,7 @@
 #define NO_USERS 0
 #define SOME_USERS 1
 
-class CparserSqlite;
+class parserSqlite;
 
 class Controller
 {
@@ -66,7 +66,7 @@ public:
     /* Accesseurs de l'attibut openedDatabase */
     static unsigned int removeDataBase(const QString& databaseName);
     static void openDatabase(QString filePath);
-    static CparserSqlite* getOpenedDatabase();
+    static parserSqlite* getOpenedDatabase();
     static void closeDatabase();
 
     /* Méthode pour le lancement de l'app */

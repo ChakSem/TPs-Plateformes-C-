@@ -1,5 +1,5 @@
-#include "User.h"
-#include "Profile.h"
+#include "user.h"
+#include "profile.h"
 
 /**
  * "Accesseur en lecture" de l'attribut id de User, permet de récupérer l'id de l'utilisateur

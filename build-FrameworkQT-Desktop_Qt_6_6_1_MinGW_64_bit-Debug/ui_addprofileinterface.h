@@ -28,8 +28,8 @@ public:
     QPushButton *pushButton;
     QWidget *layoutWidget;
     QGridLayout *gridLayout;
-    QLabel *labelId;
     QLineEdit *idLogin;
+    QLabel *labelId;
     QLabel *labelConnection_2;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout_2;
@@ -644,6 +644,12 @@ public:
         gridLayout = new QGridLayout(layoutWidget);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
+        idLogin = new QLineEdit(layoutWidget);
+        idLogin->setObjectName("idLogin");
+        idLogin->setProperty("long", QVariant(Q_INT64_C(0)));
+
+        gridLayout->addWidget(idLogin, 1, 1, 1, 1);
+
         labelId = new QLabel(layoutWidget);
         labelId->setObjectName("labelId");
         QFont font2;
@@ -651,13 +657,7 @@ public:
         font2.setBold(true);
         labelId->setFont(font2);
 
-        gridLayout->addWidget(labelId, 2, 0, 1, 1, Qt::AlignRight);
-
-        idLogin = new QLineEdit(layoutWidget);
-        idLogin->setObjectName("idLogin");
-        idLogin->setProperty("long", QVariant(Q_INT64_C(0)));
-
-        gridLayout->addWidget(idLogin, 2, 1, 1, 1);
+        gridLayout->addWidget(labelId, 1, 0, 1, 1, Qt::AlignRight);
 
         labelConnection_2 = new QLabel(layoutWidget);
         labelConnection_2->setObjectName("labelConnection_2");

@@ -625,7 +625,14 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
-     <item row="2" column="0" alignment="Qt::AlignRight">
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="idLogin">
+       <property name="long" stdset="0">
+        <longLong>0</longLong>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" alignment="Qt::AlignRight">
       <widget class="QLabel" name="labelId">
        <property name="font">
         <font>
@@ -635,13 +642,6 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
        </property>
        <property name="text">
         <string>Nom :</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="idLogin">
-       <property name="long" stdset="0">
-        <longLong>0</longLong>
        </property>
       </widget>
      </item>
