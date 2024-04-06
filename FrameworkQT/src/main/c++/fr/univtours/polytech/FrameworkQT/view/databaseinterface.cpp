@@ -79,9 +79,7 @@ void DatabaseInterface::actionManageDatabase()
 
         delete e;
     }
-
 }
-
 
 /**
  * Méthode pour supprimer la base de données selectionnée

@@ -221,7 +221,7 @@ int parserJson::updateData(Data& data) {
                         right = Rights::LECTURE;
                     } else {
                         if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION") {
-                            right = Rights::LECTURE;
+                            right = Rights::LECTURE_MODIFICATION;
                         } else {
                             if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION") {
                                 right = Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION;
@@ -274,7 +274,7 @@ int parserJson::updateData(Data& data) {
                         right = Rights::LECTURE;
                     } else {
                         if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION") {
-                            right = Rights::LECTURE;
+                            right = Rights::LECTURE_MODIFICATION;
                         } else {
                             if(profileObject["right"].toString().toStdString() == "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION") {
                                 right = Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION;

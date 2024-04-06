@@ -1,7 +1,7 @@
 #include "view/mainwindow.h"
 #include "model/User.h"
 #include "model/data.h"
-#include "parseurJson/parserJson.h"
+#include "parserJson/parserJson.h"
 #include "controller/controller.h"
 #include "utils/encryption.h"
 

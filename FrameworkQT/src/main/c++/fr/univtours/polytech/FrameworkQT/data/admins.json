@@ -5,14 +5,8 @@
         "lastname": "admin",
         "profiles": [
             {
-                "databases": [
-                    {
-                        "filePath": "S:/Polytech/DI4/S8/TPs-Plateformes-C-/test.sqlite",
-                        "name": "test"
-                    }
-                ],
                 "right": "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION",
-                "title": "az"
+                "title": "Profil_Super_Admin"
             }
         ]
     }

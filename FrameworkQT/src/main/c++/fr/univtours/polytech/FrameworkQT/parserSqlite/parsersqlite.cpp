@@ -46,7 +46,7 @@ QList<QList<QString>> parserSqlite::parseDatabase(QString tableName)
 
     try
     {
-        if (!database.isOpen()) // Vérification si la base de données est ouverte
+        if (!database.isOpen()) // On vérifie que la bdd est ouverte
             throw new Exception(BASE_DE_DONNEE_NON_OUVERTE);
 
         content.append(getFields(tableName));
@@ -93,16 +93,14 @@ QList<QString> parserSqlite::getFields(QString tableName) {
 
 /**
  * Méthode pour traiter les requêtes SELECT
- * Entree : - query, const QString& (requête à traiter)
+ * Entree : - query, const QString& (requête SELECT à traiter)
  * Sortie : - result, QList<QList<QString>> (résultat de la requête)
- **/
+ */
 QList<QList<QString>> parserSqlite::processSelectQuery(const QString &query)
 {
     try
     {
-        qDebug() << "Execution de la requete : " + query;
-
-        if (query.isEmpty()) { // Vérification si la requête est vide
+        if (!database.isOpen()){ // On vérifie que la bdd est ouverte
             throw new Exception(BASE_DE_DONNEE_NON_OUVERTE);
         }
 
@@ -112,6 +110,15 @@ QList<QList<QString>> parserSqlite::processSelectQuery(const QString &query)
                 return QList<QList<QString>>(); // Renvoyer une liste vide
         }
         QList<QList<QString>> result;
+
+        /* Récupération des noms des colonnes */
+        QList<QString> columnNames;
+        for (int i = 0; i < myQuery.record().count(); ++i)
+        {
+            columnNames.append(myQuery.record().fieldName(i));
+        }
+        result.append(columnNames);
+
         /* Récupération des résultats de la requête */
         while (myQuery.next())
         {
@@ -123,7 +130,6 @@ QList<QList<QString>> parserSqlite::processSelectQuery(const QString &query)
                 }
                 result.append(row);
         }
-        qDebug() << " => requete executee avec succes\n";
 
         return result;
     }
@@ -131,6 +137,7 @@ QList<QList<QString>> parserSqlite::processSelectQuery(const QString &query)
     {
         e->EXCAffichageErreur();
         delete e;
+
         return QList<QList<QString>>(); // Renvoyer une liste vide
     }
 }
@@ -164,6 +171,7 @@ bool parserSqlite::processUpdateQuery(const QString &query, Profile *profile)
     {
         e->EXCAffichageErreur();
         delete e;
+
         return false;
     }
 }
@@ -197,6 +205,7 @@ bool parserSqlite::processInsertQuery(const QString &query, Profile *profile)
     {
         e->EXCAffichageErreur();
         delete e;
+
         return false;
     }
 }
@@ -229,6 +238,7 @@ bool parserSqlite::processDeleteQuery(const QString &query, Profile *profile)
     {
         e->EXCAffichageErreur();
         delete e;
+
         return false;
     }
 }

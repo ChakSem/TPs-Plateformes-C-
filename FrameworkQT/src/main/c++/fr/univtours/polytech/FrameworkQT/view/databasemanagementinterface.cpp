@@ -31,21 +31,16 @@ void DatabaseManagementInterface::initializeComboBox()
     if(Controller::getProfileDatabases()->getRight() != Rights::LECTURE)// Si l'utilisateur a les droits de modification
     {
         ui->comboBoxCommand->addItem("UPDATE");
-        ui->comboBoxCommand->addItem("INSERT INTO");
 
         if(Controller::getProfileDatabases()->getRight() == Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION) //Si Admin
         {
+            ui->comboBoxCommand->addItem("INSERT INTO");
             ui->comboBoxCommand->addItem("DELETE FROM");
         }
     }
 
 }
 
-/**
- * Constructeur de la classe DatabaseManagementInterface
- * Entrée :
- * Sortie :
- */
 DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::DatabaseManagementInterface)
@@ -57,8 +52,13 @@ DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
     connect(ui->pushButtonExecute, &QPushButton::clicked, this, &DatabaseManagementInterface::actionExecute);
 }
 
+DatabaseManagementInterface::~DatabaseManagementInterface()
+{
+    delete ui;
+}
+
 /**
- * Méthode pour visualiser les données de la table selectionnée
+ * Méthode pour visualiser les données de la table selectionnée dans le combobox
  * Entrée :
  * Sortie :
  */
@@ -90,12 +90,9 @@ void DatabaseManagementInterface::actionExecute()
 
     if(typeDeRequete == "SELECT") {
         MainWindow *mainWindow = MainWindow::accessToParent(this);
-        QString tableNameSelected = ui->comboBoxTable->itemText(ui->comboBoxTable->currentIndex());
 
         try {
-            if (tableNameSelected == "")
-                throw new Exception(ERREUR_COMBOBOX_VIDE);
-
+            /* On ouvre l'interface de visualisation avec les résultats de la requête Select */
             mainWindow->openDatabaseVisualisationForSelectQuery("Select " + ui->plainTextEdit->toPlainText());
         } catch (Exception* e) {
             e->EXCAffichageErreur();
@@ -113,10 +110,3 @@ void DatabaseManagementInterface::actionExecute()
         Controller::getOpenedDatabase()->processUpdateQuery("Delete From " + ui->plainTextEdit->toPlainText(), Controller::getProfileDatabases());
     }
 }
-
-DatabaseManagementInterface::~DatabaseManagementInterface()
-{
-    delete ui;
-}
-
-

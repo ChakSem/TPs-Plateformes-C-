@@ -4,20 +4,6 @@
         "id": "0222fcc1",
         "lastname": "test",
         "profiles": [
-            {
-                "databases": [
-                    {
-                        "filePath": "S:/Polytech/DI4/S8/Tp-Plateformes-NET/TP-Gestion de Stock/Hector.SQLite",
-                        "name": "Hector"
-                    },
-                    {
-                        "filePath": "S:/Polytech/DI4/S8/TPs-Plateformes-C-/test.sqlite",
-                        "name": "test"
-                    }
-                ],
-                "right": "LECTURE",
-                "title": "profile"
-            }
         ]
     }
 ]
