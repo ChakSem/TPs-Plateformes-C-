@@ -1,4 +1,4 @@
-#include "parsersqlite.h"
+ #include "parsersqlite.h"
 #include "../utils/exception.h"
 
 parserSqlite::parserSqlite() {}

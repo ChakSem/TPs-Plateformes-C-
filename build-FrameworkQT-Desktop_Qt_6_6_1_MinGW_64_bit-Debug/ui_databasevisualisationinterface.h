@@ -54,7 +54,7 @@ public:
     void retranslateUi(QWidget *DatabaseVisualisationInterface)
     {
         DatabaseVisualisationInterface->setWindowTitle(QCoreApplication::translate("DatabaseVisualisationInterface", "Form", nullptr));
-        labelConnection->setText(QCoreApplication::translate("DatabaseVisualisationInterface", "Table", nullptr));
+        labelConnection->setText(QString());
     } // retranslateUi
 
 };
