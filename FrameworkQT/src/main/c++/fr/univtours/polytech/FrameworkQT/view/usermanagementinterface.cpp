@@ -37,6 +37,11 @@ void UserManagementInterface::initializeTableView() {
     ui->tableView->setSelectionMode(QAbstractItemView::SingleSelection);
 }
 
+/**
+ * Permet d'ajouter un utilisateur à la TableView
+ * Entrée : user, User* : l'utilisateur à ajouter
+ * Sortie :
+ */
 void UserManagementInterface::insertNewUser(User* user) {
     // Création des items pour chaque colonne
     QStandardItem *idItem = new QStandardItem(user->getId());
@@ -61,6 +66,7 @@ UserManagementInterface::UserManagementInterface(QWidget *parent)
 
     initializeTableView();
 
+    /* Connexion des boutons aux méthodes(Redirecction vers les informations du compte, les bases de données, les profils et les utilisateurs) */
     connect( ui->pushButtonAdd, &QPushButton::clicked, this, &UserManagementInterface::actionAddUser);
     connect( ui->pushButtonDelete, &QPushButton::clicked, this, &UserManagementInterface::actionDeleteUser);
     connect( ui->pushButtonProfiles, &QPushButton::clicked, this, &UserManagementInterface::actionUpdateUser);
@@ -138,7 +144,8 @@ void UserManagementInterface::actionDeleteUser() {
             ui->tableView->model()->removeRow(selectedRow);
 
             row -= 1;
-
+            
+            /* Si l'utilisateur supprimé est l'utilisateur connecté */
             if(id == Controller::getUserConnected()->getId()) {
                 MainWindow *mainWindow = MainWindow::accessToParent(this); // On récupère une réference sur MainWindow
 

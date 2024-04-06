@@ -6,6 +6,11 @@
 #include "mainwindow.h"
 #include <QMessageBox>
 
+/**
+ * Methode qui permet d'initialiser le comboBox avec les profils de l'utilisateur
+ * Entrée :
+ * Sortie :
+ */
 void ProfilesInterface::initializeComboBox() {
     ui->comboBoxProfiles->clear(); // On vide le comboBox
 
@@ -63,7 +68,7 @@ void ProfilesInterface::actionDeleteInterface() {
         QString profileTitle = ui->comboBoxProfiles->currentText();
         Profile* profile = Controller::getProfileByTitle(profileTitle);
         if (profile != NULL) {
-                /*On demande confirmation à l'utilisateur*/
+                /*On demande confirmation de la suppression*/
                 if (MainWindow::messageDialog("Voulez-vous vraiment supprimer le profil " + profileTitle + " ?", "Confirmation", MESSAGEBOX_REPLY)) {
                     Controller::deleteProfile(Controller::getUserProfiles()->getId(), profileTitle);
                     initializeComboBox();
@@ -86,6 +91,7 @@ void ProfilesInterface::actionDeleteInterface() {
 void ProfilesInterface::actionManageInterface() {
     QString profileTitle = ui->comboBoxProfiles->currentText();
     Profile* profile = Controller::getProfileByTitle(profileTitle);
+    
     if (profile != NULL) {
         MainWindow *mainWindow = MainWindow::accessToParent(this);
 

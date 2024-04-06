@@ -21,6 +21,7 @@ public:
 
 
     void initializeComboBox();
+    
     /* Actions réalisées par les boutons */
     void actionAddDatabase();
     void actionManageDatabase();

@@ -42,6 +42,7 @@ public:
     unsigned int addDataBase(const QString& databaseName, const QString& databaseFilePath);
     unsigned int removeDataBase(const QString& databaseName);
 
+    /* Surcharge de l'opérateur = */
     Profile& operator=(const Profile& profile);
 
 private:

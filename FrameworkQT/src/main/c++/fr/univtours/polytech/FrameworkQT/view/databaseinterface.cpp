@@ -3,10 +3,16 @@
 #include "../utils/exception.h"
 #include "../model/profile.h"
 
+/**
+ * Méthode pour initialiser le comboBox avec les bases de données
+ * Entrée :
+ * Sortie :
+ */
 void DatabaseInterface::initializeComboBox() {
     QComboBox* combo =  ui->comboBoxDatabases;
     combo->clear();
 
+    /* On réinitialise par rapport aux données de Data */
     for(QString databaseName : Controller::getProfileDatabases()->getDatabases().keys()) {
         combo->addItem(databaseName);
     }
@@ -23,6 +29,12 @@ DatabaseInterface::DatabaseInterface(QWidget *parent)
     connect(ui->pushButtonRemove, &QPushButton::clicked, this, &DatabaseInterface::actionRemoveDatabase);
 }
 
+
+/**
+ * Méthode pour ajouter une base de données selectionée dans l'explorateur de fichiers
+ * Entrée :
+ * Sortie :
+ */
 void DatabaseInterface::actionAddDatabase()
 {
     try {
@@ -44,16 +56,21 @@ void DatabaseInterface::actionAddDatabase()
     }
 }
 
+/**
+ * Méthode pour gérer la base de données selectionnée
+ * Entrée :
+ * Sortie :
+ */
 void DatabaseInterface::actionManageDatabase()
 {
     MainWindow *mainWindow = MainWindow::accessToParent(this);
-    QString databaseNameSelected = ui->comboBoxDatabases->itemText(ui->comboBoxDatabases->currentIndex());
+    QString databaseNameSelected = ui->comboBoxDatabases->itemText(ui->comboBoxDatabases->currentIndex()); // Récupère le nom de la base de données selectionnée
 
     try {
         if (databaseNameSelected == "")
             throw new Exception(ERREUR_COMBOBOX_VIDE);
 
-        QString filePath = Controller::getProfileDatabases()->getDatabases()[databaseNameSelected];
+        QString filePath = Controller::getProfileDatabases()->getDatabases()[databaseNameSelected]; // Récupère le chemin de la base de données selectionnée
         if (mainWindow != NULL) {
             mainWindow->openDatabaseManagement(filePath);
         }
@@ -65,6 +82,12 @@ void DatabaseInterface::actionManageDatabase()
 
 }
 
+
+/**
+ * Méthode pour supprimer la base de données selectionnée
+ * Entrée :
+ * Sortie :
+ */
 void DatabaseInterface::actionRemoveDatabase()
 {
     if (Controller::removeDataBase(ui->comboBoxDatabases->itemText(ui->comboBoxDatabases->currentIndex())) == TROUVE) {

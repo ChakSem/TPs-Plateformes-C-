@@ -8,12 +8,16 @@
 #include "../model/profile.h"
 #include "mainwindow.h"
 
-
+/**
+ * Méthode pour initialiser la comboBox avec les tables de la base de données
+ * Entrée :
+ * Sortie :
+ */
 void DatabaseManagementInterface::initializeComboBox()
 {
     ui->comboBoxTable->clear();
 
-    parserSqlite* db = Controller::getOpenedDatabase();
+    parserSqlite* db = Controller::getOpenedDatabase();// On récupère la base de données ouverte
 
     for (QString tableName : db->getTablesNames()) {
         ui->comboBoxTable->addItem(tableName);
@@ -23,17 +27,25 @@ void DatabaseManagementInterface::initializeComboBox()
 
     ui->comboBoxCommand->addItem("SELECT");
 
-    if(Controller::getProfileDatabases()->getRight() != Rights::LECTURE) {
+    /* On ajoute les commandes en fonction des droits de l'utilisateur */
+    if(Controller::getProfileDatabases()->getRight() != Rights::LECTURE)// Si l'utilisateur a les droits de modification
+    {
         ui->comboBoxCommand->addItem("UPDATE");
         ui->comboBoxCommand->addItem("INSERT INTO");
 
-        if(Controller::getProfileDatabases()->getRight() == Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION) {
+        if(Controller::getProfileDatabases()->getRight() == Rights::LECTURE_MODIFICATION_ECRITURE_SUPPRESSION) //Si Admin
+        {
             ui->comboBoxCommand->addItem("DELETE FROM");
         }
     }
 
 }
 
+/**
+ * Constructeur de la classe DatabaseManagementInterface
+ * Entrée :
+ * Sortie :
+ */
 DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::DatabaseManagementInterface)
@@ -46,7 +58,7 @@ DatabaseManagementInterface::DatabaseManagementInterface(QWidget *parent)
 }
 
 /**
- * Permet de rediriger vers la page de gestion des profils
+ * Méthode pour visualiser les données de la table selectionnée
  * Entrée :
  * Sortie :
  */
@@ -68,7 +80,7 @@ void DatabaseManagementInterface::actionVisualization()
 }
 
 /**
- * Permet de rediriger vers la page de gestion des profils
+ * Méthode pour exécuter une requête SQL
  * Entrée :
  * Sortie :
  */

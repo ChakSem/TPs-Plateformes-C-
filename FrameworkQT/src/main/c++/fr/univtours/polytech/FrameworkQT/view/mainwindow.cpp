@@ -83,6 +83,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
     if (Controller::isThereUsers() == SOME_USERS)
     {
         ui->MainWidget->setCurrentIndex(MAINWIDGET_CONNECTION);

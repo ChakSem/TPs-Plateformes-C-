@@ -17,7 +17,11 @@ ConnectionInterface::~ConnectionInterface()
 {
     delete ui;
 }
-
+/**
+ * Méthode pour se connecter
+ * Entrée :
+ * Sortie :
+ */
 void ConnectionInterface::actionConnection()
 {
     MainWindow *mainWindow = MainWindow::accessToParent(this);
