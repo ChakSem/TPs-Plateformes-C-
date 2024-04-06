@@ -5,6 +5,8 @@
         "lastname": "admin",
         "profiles": [
             {
+                "databases": [
+                ],
                 "right": "LECTURE_MODIFICATION_ECRITURE_SUPPRESSION",
                 "title": "Profil_Super_Admin"
             }

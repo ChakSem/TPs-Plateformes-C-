@@ -16,7 +16,7 @@
   <widget class="QLabel" name="labelDatabaseManagement">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>220</x>
      <y>20</y>
      <width>351</width>
      <height>27</height>
@@ -41,7 +41,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Table</string>
+    <string>Interface BDD</string>
    </property>
   </widget>
   <widget class="QPlainTextEdit" name="plainTextEdit">
@@ -57,8 +57,8 @@
   <widget class="QLabel" name="labelRequest">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>150</y>
+     <x>10</x>
+     <y>160</y>
      <width>311</width>
      <height>21</height>
     </rect>
@@ -76,7 +76,7 @@
   <widget class="QPushButton" name="pushButtonVisualization">
    <property name="geometry">
     <rect>
-     <x>350</x>
+     <x>460</x>
      <y>100</y>
      <width>80</width>
      <height>24</height>
@@ -102,9 +102,9 @@
   <widget class="QComboBox" name="comboBoxTable">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>120</x>
      <y>100</y>
-     <width>300</width>
+     <width>341</width>
      <height>22</height>
     </rect>
    </property>

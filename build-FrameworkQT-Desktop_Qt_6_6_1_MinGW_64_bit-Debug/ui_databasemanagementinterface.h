@@ -37,7 +37,7 @@ public:
         DatabaseManagementInterface->resize(600, 400);
         labelDatabaseManagement = new QLabel(DatabaseManagementInterface);
         labelDatabaseManagement->setObjectName("labelDatabaseManagement");
-        labelDatabaseManagement->setGeometry(QRect(150, 20, 351, 27));
+        labelDatabaseManagement->setGeometry(QRect(220, 20, 351, 27));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -53,20 +53,20 @@ public:
         plainTextEdit->setGeometry(QRect(120, 180, 341, 191));
         labelRequest = new QLabel(DatabaseManagementInterface);
         labelRequest->setObjectName("labelRequest");
-        labelRequest->setGeometry(QRect(60, 150, 311, 21));
+        labelRequest->setGeometry(QRect(10, 160, 311, 21));
         QFont font1;
         font1.setPointSize(12);
         font1.setBold(true);
         labelRequest->setFont(font1);
         pushButtonVisualization = new QPushButton(DatabaseManagementInterface);
         pushButtonVisualization->setObjectName("pushButtonVisualization");
-        pushButtonVisualization->setGeometry(QRect(350, 100, 80, 24));
+        pushButtonVisualization->setGeometry(QRect(460, 100, 80, 24));
         pushButtonExecute = new QPushButton(DatabaseManagementInterface);
         pushButtonExecute->setObjectName("pushButtonExecute");
         pushButtonExecute->setGeometry(QRect(460, 180, 80, 24));
         comboBoxTable = new QComboBox(DatabaseManagementInterface);
         comboBoxTable->setObjectName("comboBoxTable");
-        comboBoxTable->setGeometry(QRect(50, 100, 300, 22));
+        comboBoxTable->setGeometry(QRect(120, 100, 341, 22));
         comboBoxCommand = new QComboBox(DatabaseManagementInterface);
         comboBoxCommand->setObjectName("comboBoxCommand");
         comboBoxCommand->setGeometry(QRect(10, 180, 111, 22));
@@ -79,7 +79,7 @@ public:
     void retranslateUi(QWidget *DatabaseManagementInterface)
     {
         DatabaseManagementInterface->setWindowTitle(QCoreApplication::translate("DatabaseManagementInterface", "Form", nullptr));
-        labelDatabaseManagement->setText(QCoreApplication::translate("DatabaseManagementInterface", "Table", nullptr));
+        labelDatabaseManagement->setText(QCoreApplication::translate("DatabaseManagementInterface", "Interface BDD", nullptr));
         labelRequest->setText(QCoreApplication::translate("DatabaseManagementInterface", "Commandes", nullptr));
         pushButtonVisualization->setText(QCoreApplication::translate("DatabaseManagementInterface", "Visualiser", nullptr));
         pushButtonExecute->setText(QCoreApplication::translate("DatabaseManagementInterface", "Executer", nullptr));

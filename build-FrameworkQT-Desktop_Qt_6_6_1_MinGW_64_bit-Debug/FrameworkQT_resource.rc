@@ -1,6 +1,6 @@
 #include <windows.h>
 
-IDI_ICON1	ICON	"S:\\Polytech\\DI4\\S8\\TPs-Plateformes-C-\\FrameworkQT\\icone.ico"
+IDI_ICON1	ICON	"C:\\Users\\33611\\Dossier_codes\\DC-S8\\TPs-Plateformes-C-\\FrameworkQT\\icone.ico"
 
 VS_VERSION_INFO VERSIONINFO
 	FILEVERSION 0,0,0,0

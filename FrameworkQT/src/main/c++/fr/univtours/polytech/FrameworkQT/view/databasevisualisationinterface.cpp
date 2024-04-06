@@ -12,6 +12,8 @@
  */
 void DatabaseVisualisationInterface::initializeTableWidget(QString tableName) {
     ui->tableWidget->clear();
+    ui->labelConnection->setText("Table : " + tableName);
+
 
     QList<QList<QString>> donneesTable = Controller::getOpenedDatabase()->parseDatabase(tableName); // On récupère les données de la table
 
@@ -50,6 +52,7 @@ void DatabaseVisualisationInterface::initializeTableWidget(QString tableName) {
  */
 void DatabaseVisualisationInterface::initializeTableWidgetForSelectQuery(QString requete) {
     ui->tableWidget->clear();
+    ui->labelConnection->setText("Resultat de la requete : " );
 
     QList<QList<QString>> donneesTable = Controller::getOpenedDatabase()->processSelectQuery(requete); // On récupère les données de la requête
 
@@ -103,3 +106,4 @@ DatabaseVisualisationInterface::~DatabaseVisualisationInterface()
 {
     delete ui;
 }
+

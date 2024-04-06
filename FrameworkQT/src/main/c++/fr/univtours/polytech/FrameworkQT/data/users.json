@@ -4,6 +4,16 @@
         "id": "0222fcc1",
         "lastname": "test",
         "profiles": [
+            {
+                "databases": [
+                    {
+                        "filePath": "C:/Users/33611/Dossier_codes/DC-S8/TP-Plateformes-C++/TPs-Plateformes-C-/test.sqlite",
+                        "name": "test"
+                    }
+                ],
+                "right": "LECTURE_MODIFICATION",
+                "title": "test"
+            }
         ]
     }
 ]

@@ -684,7 +684,7 @@ public:
     void retranslateUi(QWidget *DatabaseInterface)
     {
         DatabaseInterface->setWindowTitle(QCoreApplication::translate("DatabaseInterface", "Form", nullptr));
-        labelConnection_3->setText(QCoreApplication::translate("DatabaseInterface", "Base de donn\303\251es de ", nullptr));
+        labelConnection_3->setText(QCoreApplication::translate("DatabaseInterface", "Page des Base de donn\303\251es ", nullptr));
         labelConnection_2->setText(QCoreApplication::translate("DatabaseInterface", "Veuillez selectionner une base de donn\303\251e : ", nullptr));
         pushButtonRemove->setText(QCoreApplication::translate("DatabaseInterface", "Supprimer", nullptr));
         pushButtonAdd->setText(QCoreApplication::translate("DatabaseInterface", "Ajouter", nullptr));

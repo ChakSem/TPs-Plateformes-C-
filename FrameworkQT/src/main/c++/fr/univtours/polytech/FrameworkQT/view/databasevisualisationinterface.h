@@ -18,11 +18,11 @@ public:
 
     void initializeTableWidget(QString tableName);
     void initializeTableWidgetForSelectQuery(QString requete);
+    QString getRequeteType(QString requete);
 
 private:
     Ui::DatabaseVisualisationInterface *ui;
 
     QStandardItemModel* model;
 };
-
 #endif // DATABASEVISUALISATIONINTERFACE_H
