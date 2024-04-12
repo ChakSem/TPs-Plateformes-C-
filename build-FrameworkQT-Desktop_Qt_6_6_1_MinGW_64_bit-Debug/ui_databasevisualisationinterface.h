@@ -31,7 +31,7 @@ public:
         DatabaseVisualisationInterface->resize(600, 400);
         labelConnection = new QLabel(DatabaseVisualisationInterface);
         labelConnection->setObjectName("labelConnection");
-        labelConnection->setGeometry(QRect(120, 10, 351, 27));
+        labelConnection->setGeometry(QRect(20, 20, 351, 27));
         QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -54,7 +54,7 @@ public:
     void retranslateUi(QWidget *DatabaseVisualisationInterface)
     {
         DatabaseVisualisationInterface->setWindowTitle(QCoreApplication::translate("DatabaseVisualisationInterface", "Form", nullptr));
-        labelConnection->setText(QCoreApplication::translate("DatabaseVisualisationInterface", "Table", nullptr));
+        labelConnection->setText(QString());
     } // retranslateUi
 
 };

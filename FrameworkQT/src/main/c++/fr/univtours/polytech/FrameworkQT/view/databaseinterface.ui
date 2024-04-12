@@ -50,7 +50,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Base de données de </string>
+    <string>Page des Base de données </string>
    </property>
   </widget>
   <widget class="QFrame" name="frame">

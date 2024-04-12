@@ -32,6 +32,7 @@ public:
     QLineEdit *idLogin;
     QLabel *labelMdp;
     QLabel *labelConnection;
+    QLabel *labelConnection_2;
 
     void setupUi(QWidget *ConnectionInterface)
     {
@@ -40,7 +41,7 @@ public:
         ConnectionInterface->resize(600, 400);
         frame = new QFrame(ConnectionInterface);
         frame->setObjectName("frame");
-        frame->setGeometry(QRect(0, 100, 600, 300));
+        frame->setGeometry(QRect(0, 100, 600, 301));
         frame->setStyleSheet(QString::fromUtf8("/*\n"
 "Aqua Style Sheet for QT Applications\n"
 "Author: Jaime A. Quiroga P.\n"
@@ -676,6 +677,17 @@ public:
         font2.setPointSize(20);
         font2.setBold(true);
         labelConnection->setFont(font2);
+        labelConnection_2 = new QLabel(ConnectionInterface);
+        labelConnection_2->setObjectName("labelConnection_2");
+        labelConnection_2->setGeometry(QRect(190, 360, 581, 21));
+        sizePolicy.setHeightForWidth(labelConnection_2->sizePolicy().hasHeightForWidth());
+        labelConnection_2->setSizePolicy(sizePolicy);
+        labelConnection_2->setMinimumSize(QSize(0, 13));
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Arial Nova Cond")});
+        font3.setPointSize(8);
+        font3.setBold(true);
+        labelConnection_2->setFont(font3);
 
         retranslateUi(ConnectionInterface);
 
@@ -689,6 +701,7 @@ public:
         labelId->setText(QCoreApplication::translate("ConnectionInterface", "Identifiant :", nullptr));
         labelMdp->setText(QCoreApplication::translate("ConnectionInterface", "Mot de Passe :", nullptr));
         labelConnection->setText(QCoreApplication::translate("ConnectionInterface", "Connexion", nullptr));
+        labelConnection_2->setText(QCoreApplication::translate("ConnectionInterface", "Realisee par Crochemore Arthur et Chakori Semmane Alaa", nullptr));
     } // retranslateUi
 
 };
