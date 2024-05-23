@@ -3,7 +3,7 @@
 
 #include "QString"
 #include "controller.h"
-#include "../parseurjson/parserjson.h"
+#include "../parserjson/parserjson.h"
 #include "../model/data.h"
 #include "../utils/exception.h"
 
